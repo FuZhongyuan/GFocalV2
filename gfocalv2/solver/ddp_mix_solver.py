@@ -236,7 +236,6 @@ class DDPMixSolver(object):
         if self.local_rank != 0:
             return
             
-        # 不需要再次创建目录，因为在__init__中已经创建
         print(f"保存权重到 {last_weight_path}")
         torch.save(cpkt, last_weight_path)
         if mean_ap > self.best_map:

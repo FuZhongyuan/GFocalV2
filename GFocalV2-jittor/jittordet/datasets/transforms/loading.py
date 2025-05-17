@@ -44,7 +44,7 @@ class LoadAnnotations:
 
         results['gt_bboxes'] = np.array(
             gt_bboxes, dtype=np.float32).reshape((-1, 4))
-        results['gt_ignore_flags'] = np.array(gt_ignore_flags, dtype=np.bool)
+        results['gt_ignore_flags'] = np.array(gt_ignore_flags, dtype=np.bool_)
 
     def _load_labels(self, results):
         gt_bboxes_labels = []
