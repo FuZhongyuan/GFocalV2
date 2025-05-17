@@ -4,7 +4,8 @@ import torch
 import torch.distributed as dist
 from tqdm import tqdm
 from torch import nn
-
+import time
+import datetime
 from torch import amp
 from torch.utils.data.distributed import DistributedSampler
 from datasets.coco import COCODataSets
@@ -95,6 +96,15 @@ class DDPMixSolver(object):
         self.iou_loss_logger = AverageLogger()
         self.match_num_logger = AverageLogger()
         self.loss_logger = AverageLogger()
+                
+        # 创建一个唯一的训练子目录
+        current_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.unique_subdir = f"{self.cfg['model_name']}_{self.model_cfg['backbone']}_{current_time}"
+        self.weight_save_path = os.path.join(self.val_cfg['weight_path'], self.unique_subdir)
+        if dist.get_rank() == 0:
+            os.makedirs(self.weight_save_path, exist_ok=True)
+            print(f"模型权重将保存在: {self.weight_save_path}")
+            
 
     def train(self, epoch):
         self.loss_logger.reset()
@@ -206,11 +216,14 @@ class DDPMixSolver(object):
                           map50 * 100,
                           mean_ap * 100))
             print("*" * 20, "eval end", "*" * 20)
-        last_weight_path = os.path.join(self.val_cfg['weight_path'],
-                                        "{:s}_{:s}_last.pth"
+        
+        # 使用唯一子目录保存模型权重
+        last_weight_path = os.path.join(self.weight_save_path,
+                                        "{:s}_{:s}_epoch{:03d}_last.pth"
                                         .format(self.cfg['model_name'],
-                                                self.model_cfg['backbone']))
-        best_map_weight_path = os.path.join(self.val_cfg['weight_path'],
+                                                self.model_cfg['backbone'],
+                                                epoch + 1))
+        best_map_weight_path = os.path.join(self.weight_save_path,
                                             "{:s}_{:s}_best_map.pth"
                                             .format(self.cfg['model_name'],
                                                     self.model_cfg['backbone']))
@@ -223,12 +236,8 @@ class DDPMixSolver(object):
         if self.local_rank != 0:
             return
             
-        # 确保权重目录存在
-        weight_dir = os.path.dirname(last_weight_path)
-        print(f"save weight to {last_weight_path}")
-        if not os.path.exists(weight_dir):
-            os.makedirs(weight_dir, exist_ok=True)
-            
+        # 不需要再次创建目录，因为在__init__中已经创建
+        print(f"保存权重到 {last_weight_path}")
         torch.save(cpkt, last_weight_path)
         if mean_ap > self.best_map:
             torch.save(cpkt, best_map_weight_path)
