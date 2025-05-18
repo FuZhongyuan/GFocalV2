@@ -1,5 +1,6 @@
 import jittor as jt
 import numpy as np
+from patches.torch_adapter import nms
 from tqdm import tqdm
 
 
@@ -16,10 +17,10 @@ def box_iou(box1, box2):
     Return intersection-over-union (Jaccard index) of boxes.
     Both sets of boxes are expected to be in (x1, y1, x2, y2) format.
     Arguments:
-        box1 (Tensor[N, 4])
-        box2 (Tensor[M, 4])
+        box1 (Var[N, 4])
+        box2 (Var[M, 4])
     Returns:
-        iou (Tensor[N, M]): the NxM matrix containing the pairwise
+        iou (Var[N, M]): the NxM matrix containing the pairwise
             IoU values for every element in boxes1 and boxes2
     """
 
@@ -65,8 +66,10 @@ def non_max_suppression(prediction,
                         conf_thresh=0.01,
                         iou_thresh=0.6,
                         max_det=300):
+    # 处理精度，确保使用float32
     if prediction.dtype == jt.float16:
-        prediction = prediction.float()
+        prediction = prediction.float32()
+    
     xc = prediction[..., 4] > conf_thresh
     output = [None] * prediction.shape[0]
     for xi, x in enumerate(prediction):
@@ -76,36 +79,7 @@ def non_max_suppression(prediction,
         box = xywh2xyxy(x[:, :4])
         x = jt.concat([box, x[:, [4]]], dim=-1)
         boxes, scores = x[:, :4], x[:, 4]
-        
-        # 自定义NMS实现
-        keep = []
-        order = scores.argsort(descending=True)
-        while order.size > 0:
-            i = order[0]
-            keep.append(i)
-            if len(order) == 1:
-                break
-            
-            xx1 = jt.maximum(boxes[i, 0], boxes[order[1:], 0])
-            yy1 = jt.maximum(boxes[i, 1], boxes[order[1:], 1])
-            xx2 = jt.minimum(boxes[i, 2], boxes[order[1:], 2])
-            yy2 = jt.minimum(boxes[i, 3], boxes[order[1:], 3])
-            
-            w = jt.maximum(0.0, xx2 - xx1)
-            h = jt.maximum(0.0, yy2 - yy1)
-            inter = w * h
-            
-            # 计算IoU
-            area1 = (boxes[i, 2] - boxes[i, 0]) * (boxes[i, 3] - boxes[i, 1])
-            area2 = (boxes[order[1:], 2] - boxes[order[1:], 0]) * (boxes[order[1:], 3] - boxes[order[1:], 1])
-            union = area1 + area2 - inter
-            iou = inter / union
-            
-            inds = jt.where(iou <= iou_thresh)[0]
-            order = order[inds + 1]
-        
-        i = jt.array(keep)
-        
+        i = nms(boxes, scores, iou_thresh)
         if i.shape[0] > max_det:  # limit detections
             i = i[:max_det]
         output[xi] = x[i]

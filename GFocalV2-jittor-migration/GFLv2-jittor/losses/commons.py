@@ -29,7 +29,7 @@ def smooth_l1_loss(predicts, target, beta=1. / 9):
     """
     n = jt.abs(predicts - target)
     cond = n < beta
-    loss = jt.ternary(cond, 0.5 * n ** 2 / beta, n - 0.5 * beta)
+    loss = jt.where(cond, 0.5 * n ** 2 / beta, n - 0.5 * beta)
     return loss
 
 
