@@ -388,7 +388,7 @@ class ResNetV1d(nn.Module):
         if dilate:
             self.dilation *= stride
             stride = 1
-        if ((stride != 1) or (self.inplanes != (planes * block.expansion))):
+        if ((stride != 1) or (self.inplanes != (planes * block.expansion))): 
             downsample = nn.Sequential(
                 nn.Pool(stride, stride=stride, op='mean'),
                 conv1x1(self.inplanes, (planes * block.expansion), 1),
