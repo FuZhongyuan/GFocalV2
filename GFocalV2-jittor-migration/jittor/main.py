@@ -15,7 +15,7 @@ from utils.model_utils import rand_seed
 
 def get_args():
     parser = argparse.ArgumentParser(description="Train GFocalV2 on COCO")
-    parser.add_argument("--config-file", default="configs/gfocal.yaml", type=str, help="config file")
+    parser.add_argument("--config-file", default="config/gfocal.yaml", type=str, help="config file")
     parser.add_argument("--seed", default=42, type=int, help="random seed")
     parser.add_argument("--resume", default=False, action="store_true", help="resume training")
     parser.add_argument("--work-dir", default="work_dir", type=str, help="work directory")
@@ -57,7 +57,7 @@ def main():
     cfg.seed = args.seed
     
     # 设置模型恢复
-    cfg.MODEL.resume = args.resume
+    cfg.model.resume = args.resume
     
     # 创建工作目录
     os.makedirs(args.work_dir, exist_ok=True)

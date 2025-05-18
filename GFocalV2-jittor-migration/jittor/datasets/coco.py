@@ -4,7 +4,7 @@ import numpy as np
 import jittor as jt
 import jittor.dataset as jt_dataset
 from pycocotools.coco import COCO
-from jittor.dataset.utils import get_image_from_path, get_item_array
+# from jittor.dataset.utils import get_image_from_path, get_item_array
 from utils.boxs_utils import xywh2xyxy
 from PIL import Image
 

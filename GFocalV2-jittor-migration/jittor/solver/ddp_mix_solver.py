@@ -21,23 +21,23 @@ class DDPMixSolver(object):
         self.device = "cuda" if jt.has_cuda else "cpu"
         self.rank = cfg.rank
         self.start_epoch = self.cfg.schedule.start_epoch
-        self.epochs = cfg.schedule.epochs
-        self.use_ema = cfg.MODEL.use_ema
-        self.use_epp = cfg.train.use_epp
-        self.auto_resume = cfg.MODEL.resume
-        self.local_rank = cfg.local_rank
-        self.img_size = cfg.train.img_size
-        self.no_val = cfg.train.no_val
-        self.ema_decay = cfg.MODEL.ema_decay
+        self.epochs = self.cfg.schedule.epochs
+        self.use_ema = self.cfg.model.use_ema
+        self.use_epp = self.cfg.train.use_epp
+        self.auto_resume = self.cfg.model.resume
+        self.local_rank = self.cfg.local_rank
+        self.img_size = self.cfg.train.img_size
+        self.no_val = self.cfg.train.no_val
+        self.ema_decay = self.cfg.model.ema_decay
         
         # 设置随机数种子
-        rand_seed(cfg.seed)
+        rand_seed(self.cfg.seed)
         
         # 数据集设置
-        self.img_trains = cfg.train.train_img_folder
-        self.img_vals = cfg.train.val_img_folder
-        self.train_ann = cfg.train.train_ann
-        self.val_ann = cfg.train.val_ann
+        self.img_trains = self.cfg.train.train_img_folder
+        self.img_vals = self.cfg.train.val_img_folder
+        self.train_ann = self.cfg.train.train_ann
+        self.val_ann = self.cfg.train.val_ann
         
         self.train_dataset = None
         self.val_dataset = None
@@ -131,17 +131,17 @@ class DDPMixSolver(object):
         from nets.retinanet import GFocal
         
         # 取得模型类并初始化
-        self.model = GFocal(self.cfg.MODEL)
+        self.model = GFocal(self.cfg.model)
         
         # 加载预训练权重
-        if self.cfg.MODEL.pretrained is not None and os.path.exists(self.cfg.MODEL.pretrained):
-            model_pth = jt.load(self.cfg.MODEL.pretrained)
+        if self.cfg.model.pretrained is not None and os.path.exists(self.cfg.model.pretrained):
+            model_pth = jt.load(self.cfg.model.pretrained)
             model_dict = self.model.state_dict()
             pretrained_dict = {k: v for k, v in model_pth['model'].items() if
                                k in model_dict and model_dict[k].shape == v.shape}
             model_dict.update(pretrained_dict)
             self.model.load_state_dict(model_dict)
-            print(f"Load pretrained model from {self.cfg.MODEL.pretrained}")
+            print(f"Load pretrained model from {self.cfg.model.pretrained}")
         
         # 创建优化器
         self.optimizer = split_optimizer(self.model, self.cfg.train.optimizer)
@@ -168,12 +168,12 @@ class DDPMixSolver(object):
         # 创建平均损失记录器
         if self.cfg.train.cls_loss_type == "BCE":
             self.loss_avg = {"loss": AverageLogger(), "cls_loss": AverageLogger(), "reg_loss": AverageLogger()}
-            if self.cfg.MODEL.size_dec:
+            if self.cfg.model.size_dec:
                 self.loss_avg.update({"size_loss": AverageLogger()})
         else:
             self.loss_avg = {"loss": AverageLogger(), "cls_loss": AverageLogger(), "reg_loss": AverageLogger(), 
                            "quality_loss": AverageLogger()}
-            if self.cfg.MODEL.size_dec:
+            if self.cfg.model.size_dec:
                 self.loss_avg.update({"size_loss": AverageLogger()})
         
         # 自动恢复模型
