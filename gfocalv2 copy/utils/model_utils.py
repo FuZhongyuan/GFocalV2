@@ -1,5 +1,5 @@
 import os
-import jittor as jt
+import torch
 import math
 import random
 import numpy as np
@@ -10,7 +10,11 @@ def rand_seed(seed=888):
     random.seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
-    jt.set_global_seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
 
 
 def convert_weights(weights):
@@ -23,13 +27,14 @@ def convert_weights(weights):
 
 
 def is_parallel(model):
-    # jittor不需要检查并行模型
-    return False
+    # is model is parallel with DP or DDP
+    return type(model) in (torch.nn.parallel.DataParallel, torch.nn.parallel.DistributedDataParallel)
 
 
 def freeze_bn(m):
-    # jittor不使用这个函数，在训练模式下处理
-    pass
+    classname = m.__class__.__name__
+    if classname.find('BatchNorm') != -1:
+        m.eval()
 
 
 def copy_attr(a, b, include=(), exclude=()):
@@ -42,36 +47,48 @@ def copy_attr(a, b, include=(), exclude=()):
 
 
 class ModelEMA:
-    """ Model Exponential Moving Average 
+    """ Model Exponential Moving Average from https://github.com/rwightman/pytorch-image-models
     Keep a moving average of everything in the model state_dict (parameters and buffers).
     This is intended to allow functionality like
     https://www.tensorflow.org/api_docs/python/tf/train/ExponentialMovingAverage
     A smoothed version of the weights is necessary for some training schemes to perform well.
+    This class is sensitive where it is initialized in the sequence of model init,
+    GPU assignment and distributed training wrappers.
     """
 
     def __init__(self, model, decay=0.9999, updates=0):
         # Create EMA
-        self.ema = deepcopy(model).eval()  # FP32 EMA
+        self.ema = deepcopy(model.module if is_parallel(model) else model).eval()  # FP32 EMA
+        # if next(model.parameters()).device.type != 'cpu':
+        #     self.ema.half()  # FP16 EMA
         self.updates = updates  # number of EMA updates
         self.decay = lambda x: decay * (1 - math.exp(-x / 2000))  # decay exponential ramp (to help early epochs)
         for p in self.ema.parameters():
-            p.requires_grad = False
+            p.requires_grad_(False)
 
     def update(self, model):
         # Update EMA parameters
-        with jt.no_grad():
+        with torch.no_grad():
             self.updates += 1
             d = self.decay(self.updates)
 
-            msd = model.state_dict()  # model state_dict
+            msd = model.module.state_dict() if is_parallel(model) else model.state_dict()  # model state_dict
             for k, v in self.ema.state_dict().items():
-                if v.dtype == jt.float or v.dtype == jt.float32 or v.dtype == jt.float64:
+                if v.dtype.is_floating_point:
                     v *= d
                     v += (1. - d) * msd[k].detach()
 
     def update_attr(self, model, include=(), exclude=('process_group', 'reducer')):
         # Update EMA attributes
         copy_attr(self.ema, model, include, exclude)
+
+
+def reduce_sum(tensor,clone=True):
+    import torch.distributed as dist
+    if clone:
+        tensor = tensor.clone()
+    dist.all_reduce(tensor, op=dist.ReduceOp.SUM)
+    return tensor
 
 
 class AverageLogger(object):
@@ -94,4 +111,4 @@ class AverageLogger(object):
 
     def reset(self):
         self.data = 0.
-        self.count = 0. 
+        self.count = 0.

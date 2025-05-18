@@ -1,4 +1,4 @@
-import jittor as jt
+import torch
 import math
 
 
@@ -27,9 +27,9 @@ def smooth_l1_loss(predicts, target, beta=1. / 9):
     very similar to the smooth_l1_loss from pytorch, but with
     the extra beta parameter
     """
-    n = jt.abs(predicts - target)
+    n = torch.abs(predicts - target)
     cond = n < beta
-    loss = jt.ternary(cond, 0.5 * n ** 2 / beta, n - 0.5 * beta)
+    loss = torch.where(cond, 0.5 * n ** 2 / beta, n - 0.5 * beta)
     return loss
 
 
@@ -45,8 +45,8 @@ class BoxSimilarity(object):
         :param box2:[num,4] targets
         :return:
         """
-        box1_t = box1.transpose()
-        box2_t = box2.transpose()
+        box1_t = box1.T
+        box2_t = box2.T
 
         if self.coord_type == "xyxy":
             b1_x1, b1_y1, b1_x2, b1_y2 = box1_t[0], box1_t[1], box1_t[2], box1_t[3]
@@ -63,8 +63,8 @@ class BoxSimilarity(object):
             b2_x2, b2_y2 = 0. + box2_t[2], 0. + box2_t[3]
         else:
             raise NotImplementedError("coord_type only support xyxy, xywh,ltrb")
-        inter_area = (jt.minimum(b1_x2, b2_x2) - jt.maximum(b1_x1, b2_x1)).clamp(0) * \
-                     (jt.minimum(b1_y2, b2_y2) - jt.maximum(b1_y1, b2_y1)).clamp(0)
+        inter_area = (torch.min(b1_x2, b2_x2) - torch.max(b1_x1, b2_x1)).clamp(0) * \
+                     (torch.min(b1_y2, b2_y2) - torch.max(b1_y1, b2_y1)).clamp(0)
 
         w1, h1 = b1_x2 - b1_x1, b1_y2 - b1_y1
         w2, h2 = b2_x2 - b2_x1, b2_y2 - b2_y1
@@ -73,8 +73,8 @@ class BoxSimilarity(object):
         if self.iou_type == "iou":
             return iou
 
-        cw = jt.maximum(b1_x2, b2_x2) - jt.minimum(b1_x1, b2_x1)
-        ch = jt.maximum(b1_y2, b2_y2) - jt.minimum(b1_y1, b2_y1)
+        cw = torch.max(b1_x2, b2_x2) - torch.min(b1_x1, b2_x1)
+        ch = torch.max(b1_y2, b2_y2) - torch.min(b1_y1, b2_y1)
         if self.iou_type == "giou":
             c_area = cw * ch + self.eps
             giou = iou - (c_area - union_area) / c_area
@@ -87,8 +87,8 @@ class BoxSimilarity(object):
             diou = iou - center_dis / diagonal_dis
             return diou
 
-        v = (4 / math.pi ** 2) * jt.pow(jt.atan(w2 / h2) - jt.atan(w1 / h1), 2)
-        with jt.no_grad():
+        v = (4 / math.pi ** 2) * torch.pow(torch.atan(w2 / h2) - torch.atan(w1 / h1), 2)
+        with torch.no_grad():
             alpha = v / ((1 + self.eps) - iou + v)
 
         if self.iou_type == "ciou":
@@ -109,4 +109,4 @@ class IOULoss(object):
         if self.iou_type == "iou":
             return -similarity.log()
         else:
-            return 1 - similarity 
+            return 1 - similarity

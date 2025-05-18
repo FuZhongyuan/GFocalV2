@@ -1,9 +1,11 @@
 import math
 import numpy as np
-import jittor as jt
+from torch import nn
+from torch.optim.adam import Adam
+from torch.optim.sgd import SGD
 
 
-def split_params(model):
+def split_params(model: nn.Module):
     param_other, param_weight_decay, param_bias = list(), list(), list()  # optimizer parameter groups
     for k, v in model.named_parameters():
         if v.requires_grad:
@@ -16,12 +18,12 @@ def split_params(model):
     return param_weight_decay, param_bias, param_other
 
 
-def split_optimizer(model, cfg: dict):
+def split_optimizer(model: nn.Module, cfg: dict):
     param_weight_decay, param_bias, param_other = split_params(model)
     if cfg['optimizer'] == 'Adam':
-        optimizer = jt.optim.Adam(param_other, lr=cfg['lr'])
+        optimizer = Adam(param_other, lr=cfg['lr'])
     elif cfg['optimizer'] == 'SGD':
-        optimizer = jt.optim.SGD(param_other, lr=cfg['lr'], momentum=0.9)
+        optimizer = SGD(param_other, lr=cfg['lr'], momentum=cfg['momentum'])
     else:
         raise NotImplementedError("optimizer {:s} is not support!".format(cfg['optimizer']))
     optimizer.add_param_group(
@@ -124,4 +126,4 @@ class EpochWarmUpCosineDecayLRAdjust(object):
         ulr, dlr = self.get_lr(ite, epoch)
         for i, param_group in enumerate(optimizer.param_groups):
             param_group['lr'] = dlr if self.bias_idx is not None and i == self.bias_idx else ulr
-        return ulr, dlr 
+        return ulr, dlr

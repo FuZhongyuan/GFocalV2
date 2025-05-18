@@ -1,8 +1,7 @@
 import os
-import jittor as jt
-import numpy as np
+import torch
 from typing import List
-from jittor.dataset import Dataset
+from torch.utils.data.dataset import Dataset
 from pycocotools.coco import COCO
 from utils.augmentations import *
 
@@ -47,11 +46,13 @@ default_aug_cfg = {
 
 rgb_mean = [0.485, 0.456, 0.406]
 rgb_std = [0.229, 0.224, 0.225]
+cv.setNumThreads(0)
 
 
 # noinspection PyTypeChecker
 class COCODataSets(Dataset):
     def __init__(self, img_root, annotation_path,
+                 # min_threshes=[640],
                  max_thresh=640,
                  augments=True,
                  use_crowd=True,
@@ -70,6 +71,7 @@ class COCODataSets(Dataset):
         """
         super(COCODataSets, self).__init__()
         self.coco = COCO(annotation_path)
+        # self.min_threshes = min_threshes
         self.max_thresh = max_thresh
         self.img_root = img_root
         self.use_crowd = use_crowd
@@ -92,7 +94,6 @@ class COCODataSets(Dataset):
             self.box_info_list = box_info_list[:debug]
         self.transform = None
         self.set_transform()
-        self.total_len = len(box_info_list)
 
     def __load_data(self):
         box_info_list = list()
@@ -145,14 +146,25 @@ class COCODataSets(Dataset):
         # ret_img = box_info.draw_box(colors, coco_names)
         # file_name = str(uuid.uuid4()).replace("-", "")
         # cv.imwrite("{:s}.jpg".format(file_name), ret_img)
-        img = (box_info.img[:, :, ::-1] / 255.0 - np.array(rgb_mean)) / np.array(rgb_std)
-        img = jt.array(img).permute(2, 0, 1).float()
-        target = np.concatenate([box_info.labels[:, None], box_info.boxes], axis=-1)
-        target = jt.array(target).float()
-        return img, target, [len(target)]
+        return box_info
+
+    @staticmethod
+    def collect_fn(batch: List[BoxInfo]):
+        batch_img = list()
+        batch_target = list()
+        batch_length = list()
+        for item in batch:
+            img = (item.img[:, :, ::-1] / 255.0 - np.array(rgb_mean)) / np.array(rgb_std)
+            batch_img.append(img)
+            target = np.concatenate([item.labels[:, None], item.boxes], axis=-1)
+            batch_target.append(target)
+            batch_length.append(len(target))
+        batch_img = torch.from_numpy(np.stack(batch_img, axis=0)).permute(0, 3, 1, 2).contiguous().float()
+        batch_target = torch.from_numpy(np.concatenate(batch_target, axis=0)).float()
+        return batch_img, batch_target, batch_length
 
     def __len__(self):
-        return self.total_len
+        return len(self.box_info_list)
 
     def set_transform(self):
         color_gitter = OneOf(
@@ -187,37 +199,20 @@ class COCODataSets(Dataset):
                                                       max_thresh=self.max_thresh),
                                   ]
                               ))
+
+        augment_transform = Compose(
+            transforms=[
+                OneOf(transforms=[
+                    (0.2, basic_transform),
+                    (0.0, mix_up),
+                    (0.8, mosaic)
+                ]),
+                LRFlip().reset(p=0.5)
+            ]
+        )
+        std_transform = RandScaleToMax(max_threshes=[self.max_thresh])
+
         if self.augments:
-            self.transform = RandomSelect(
-                transforms=[
-                    mosaic.reset(p=0.5),
-                    Compose(
-                        transforms=[
-                            RandCrop().reset(p=0.5),
-                            basic_transform,
-                            mix_up.reset(p=0.5)
-                        ]
-                    )
-                ],
-                p=0.7)
+            self.transform = augment_transform
         else:
-            self.transform = Compose(
-                transforms=[
-                    RandScaleToMax(max_threshes=[self.max_thresh]),
-                ]
-            )
-            
-    def collate_batch(self, batch):
-        batch_img = []
-        batch_target = []
-        batch_length = []
-        
-        for img, target, length in batch:
-            batch_img.append(img)
-            batch_target.append(target)
-            batch_length.append(length[0])
-            
-        batch_img = jt.stack(batch_img, dim=0)
-        batch_target = jt.concat(batch_target, dim=0)
-        
-        return batch_img, batch_target, batch_length 
+            self.transform = std_transform

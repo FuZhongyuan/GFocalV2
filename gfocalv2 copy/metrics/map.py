@@ -1,4 +1,4 @@
-import jittor as jt
+import torch
 import numpy as np
 from utils.boxs_utils import box_iou
 
@@ -79,6 +79,16 @@ def ap_per_class(tp, conf, pred_cls, target_cls):
             for j in range(tp.shape[1]):
                 ap[ci, j] = compute_ap(recall[:, j], precision[:, j])
 
+            # Plot
+            # fig, ax = plt.subplots(1, 1, figsize=(5, 5))
+            # ax.plot(recall, precision)
+            # ax.set_xlabel('Recall')
+            # ax.set_ylabel('Precision')
+            # ax.set_xlim(0, 1.01)
+            # ax.set_ylim(0, 1.01)
+            # fig.tight_layout()
+            # fig.savefig('PR_curve.png', dpi=300)
+
     # Compute F1 score (harmonic mean of precision and recall)
     f1 = 2 * p * r / (p + r + 1e-16)
 
@@ -91,7 +101,8 @@ def coco_map(predicts_list, targets_list):
     :param targets_list: per_img targets_shape [m, 5] (cls_id,x1,y1,x2,y2)
     :return:
     """
-    iouv = jt.linspace(0.5, 0.95, 10)
+    device = targets_list[0].device
+    iouv = torch.linspace(0.5, 0.95, 10).to(device)
     niou = iouv.numel()
     stats = list()
     for predicts, targets in zip(predicts_list, targets_list):
@@ -99,33 +110,33 @@ def coco_map(predicts_list, targets_list):
         tcls = targets[:, 0].tolist() if nl else []
         if predicts is None:
             if nl:
-                stats.append((jt.zeros([0, niou], dtype=jt.bool), jt.array([]), jt.array([]), tcls))
+                stats.append((torch.zeros(0, niou, dtype=torch.bool), torch.Tensor(), torch.Tensor(), tcls))
             continue
-        correct = jt.zeros([predicts.shape[0], niou], dtype=jt.bool)
+        correct = torch.zeros(predicts.shape[0], niou, dtype=torch.bool, device=device)
         if nl:
             detected = list()
             tcls_tensor = targets[:, 0]
             tbox = targets[:, 1:5]
 
-            for cls in jt.unique(tcls_tensor):
-                ti = (cls == tcls_tensor).nonzero().view(-1)
-                pi = (cls == predicts[:, 5]).nonzero().view(-1)
+            for cls in torch.unique(tcls_tensor):
+                ti = (cls == tcls_tensor).nonzero(as_tuple=False).view(-1)
+                pi = (cls == predicts[:, 5]).nonzero(as_tuple=False).view(-1)
                 if pi.shape[0]:
-                    ious, i = box_iou(predicts[pi, :4], tbox[ti]).max(dim=1)
-                    for j in (ious > iouv[0]).nonzero():
+                    ious, i = box_iou(predicts[pi, :4], tbox[ti]).max(1)
+                    for j in (ious > iouv[0]).nonzero(as_tuple=False):
                         d = ti[i[j]]
-                        if d.item() not in detected:
-                            detected.append(d.item())
+                        if d not in detected:
+                            detected.append(d)
                             correct[pi[j]] = ious[j] > iouv
                         if len(detected) == nl:
                             break
-        stats.append((correct.numpy(), predicts[:, 4].numpy(), predicts[:, 5].numpy(), tcls))
+        stats.append((correct.cpu(), predicts[:, 4].cpu(), predicts[:, 5].cpu(), tcls))
 
     stats = [np.concatenate(x, 0) for x in zip(*stats)]
-    if len(stats) and stats[0].any():
+    if len(stats):
         p, r, ap, f1, ap_class = ap_per_class(*stats)
         p, r, ap50, ap = p[:, 0], r[:, 0], ap[:, 0], ap.mean(1)  # [P, R, AP@0.5, AP@0.5:0.95]
         mp, mr, map50, map = p.mean(), r.mean(), ap50.mean(), ap.mean()
         return mp, mr, map50, map
     else:
-        return 0., 0., 0., 0. 
+        return 0., 0., 0., 0.

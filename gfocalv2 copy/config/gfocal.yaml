@@ -17,8 +17,8 @@ model:
   num_cls: 80
   anchor_sizes: [32, 64, 128, 256, 512]
   strides: [8, 16, 32, 64, 128]
-  backbone: resnet50
-  pretrained: 'jittorhub://resnet50.pkl'
+  backbone: resnet101
+  pretrained: True
   top_k: 9
   reg_max: 16
   beta: 2.0
@@ -36,8 +36,8 @@ optim:
   warm_up_epoch: 0
   weight_decay: 0.0001
   epochs: 24
-  sync_bn: False
-  amp: False
+  sync_bn: True
+  amp: True
 val:
   interval: 1
   weight_path: weights
@@ -45,4 +45,4 @@ val:
 
 gpus: 0
 
-DEBUG: True 
+DEBUG: True
