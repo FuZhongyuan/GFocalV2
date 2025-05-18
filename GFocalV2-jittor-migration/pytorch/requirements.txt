@@ -1,0 +1,7 @@
+tqdm
+pyyaml
+numpy
+opencv-python
+pycocotools
+torch >= 1.5
+torchvision >=0.6.0

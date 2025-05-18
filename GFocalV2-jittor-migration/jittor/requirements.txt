@@ -1,0 +1,6 @@
+tqdm
+pyyaml
+numpy
+opencv-python
+pycocotools
+jittor 
