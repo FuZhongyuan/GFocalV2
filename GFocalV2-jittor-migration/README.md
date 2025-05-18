@@ -1,67 +1,65 @@
-# JittorDet
+# GFocalV2 Jittor
 
-## introduction
+## 简介
 
-JittorDet is an object detection benchmark based on [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/).
+这是一个基于 [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/) 框架实现的 GFocalV2 目标检测模型。GFocalV2（Generalized Focal Loss V2）是一种高效的目标检测方法，通过改进的分类和回归损失函数提高检测精度。
 
-## Supported Models
+## 支持的模型
 
-JittorDet supports commonly used datasets (COCO, VOC) and models (RetinaNet, Faster R-CNN) out of box.
+- GFocalV2
 
-Currently supported models are as below:
+## 安装
 
-- RetinaNet
-- Faster R-CNN
-- GFocalLoss
-- PKD
-- ⭐ CrossKD: [https://github.com/jbwang1997/CrossKD](https://github.com/jbwang1997/CrossKD)
+请先按照 [教程](https://github.com/Jittor/jittor) 安装 jittor 框架。
+推荐使用已测试过的 jittor==1.3.6.10。
 
-New state-of-the-art models are also being implemented:
-
-- SARDet100K
-
-## Getting Started
-
-### Install
-
-Please first follow the [tutorial](https://github.com/Jittor/jittor) to install jittor.
-Here, we recommend using jittor==1.3.6.10, which we have tested on.
-
-Then, install the `jittordet` by running:
+然后，通过运行以下命令安装 `jittordet`：
 ```
 pip install -v -e .
 ```
 
-If you want to use multi-gpu training or testing, please install OpenMPI
+如果你想使用多GPU训练或测试，请安装 OpenMPI：
 ```
 sudo apt install openmpi-bin openmpi-common libopenmpi-dev
 ```
 
-### Training
+## 快速开始
 
-We support single-gpu, multi-gpu training.
+我们提供了一个简单的示例脚本 `example.py`，可以轻松地进行 GFocalV2 训练和测试：
+
+```bash
+# 训练
+python example.py --mode train --config configs/gfl/gfl_r50_fpn_coco_1x.yml
+
+# 测试
+python example.py --mode test --config configs/gfl/gfl_r50_fpn_coco_1x.yml
 ```
-#Single-GPU
+
+## 训练
+
+支持单GPU和多GPU训练：
+```
+# 单GPU
 python tools/train.py {CONFIG_PATH}
 
-# Multi-GPU
+# 多GPU
 bash tools/dist_train.sh {CONFIG_PATH} {NUM_GPUS}
 ```
 
-### Testing
+## 测试
 
-We support single-gpu, multi-gpu testing.
+支持单GPU和多GPU测试：
 ```
-#Single-GPU
+# 单GPU
 python tools/test.py {CONFIG_PATH}
 
-# Multi-GPU
+# 多GPU
 bash tools/dist_test.sh {CONFIG_PATH} {NUM_GPUS}
 ```
 
-# Citation
+## 引用
 
-If this work is helpful for your research, please consider citing the following entry.
+如果您发现这个工作对您的研究有帮助，请考虑引用以下条目：
 
 ```
 @article{hu2020jittor,
@@ -74,29 +72,21 @@ If this work is helpful for your research, please consider citing the following 
   year={2020}
 }
 
-@inproceedings{wang2024crosskd,
-  title={CrossKD: Cross-head knowledge distillation for object detection},
-  author={Wang, Jiabao and Chen, Yuming and Zheng, Zhaohui and Li, Xiang and Cheng, Ming-Ming and Hou, Qibin},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={16520--16530},
-  year={2024}
-}
-
-@article{li2024sardet,
-  title={Sardet-100k: Towards open-source benchmark and toolkit for large-scale sar object detection},
-  author={Li, Yuxuan and Li, Xiang and Li, Weijie and Hou, Qibin and Liu, Li and Cheng, Ming-Ming and Yang, Jian},
-  journal={arXiv preprint arXiv:2403.06534},
-  year={2024}
+@article{li2020generalizedv2,
+    title={Generalized Focal Loss V2: Learning Reliable Localization Quality Estimation for Dense Object Detection},
+    author={Li, Xiang and Wang, Wenhai and Hu, Xiaolin and Li, Jun and Tang, Jinhui and Yang, Jian},
+    journal={arXiv preprint},
+    year={2020}
 }
 ```
 
-# Acknowledge
+## 致谢
 
-Our code is developed on top of following open source codebase:
+我们的代码基于以下开源代码库开发：
 
 - [Jittor](https://github.com/Jittor/jittor)
 - [JDet](https://github.com/Jittor/JDet)
 - [MMCV](https://github.com/open-mmlab/mmcv)
 - [MMDetection](https://github.com/open-mmlab/mmdetection)
 
-We sincerely appreciate their amazing works.
+我们衷心感谢他们的卓越工作。
