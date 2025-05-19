@@ -1,4 +1,4 @@
-# Modified from mmdetection.dataset.coco
+# Modified from GFocalV2Pytorch.dataset.coco
 import copy
 import os.path as osp
 

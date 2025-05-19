@@ -1,8 +1,8 @@
 # Modified from OpenMMLab.
 # mmdet/models/task_modules/assigners/iou2d_calculator.py
 # Copyright (c) OpenMMLab. All rights reserved.
-from jittordet.engine import TASK_UTILS
-from jittordet.utils import bbox_overlaps
+from GFocalV2Jittor.engine import TASK_UTILS
+from GFocalV2Jittor.utils import bbox_overlaps
 
 
 @TASK_UTILS.register_module()

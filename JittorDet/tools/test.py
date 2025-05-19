@@ -1,7 +1,7 @@
 import argparse
 import os.path as osp
 
-from jittordet.engine import Runner, load_cfg
+from GFocalV2Jittor.engine import Runner, load_cfg
 
 
 def parse_args():

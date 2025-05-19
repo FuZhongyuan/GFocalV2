@@ -3,7 +3,7 @@ from typing import Dict, Optional, Tuple
 
 import jittor as jt
 
-from jittordet.engine import ConfigType
+from GFocalV2Jittor.engine import ConfigType
 
 
 def batched_nms(boxes: jt.Var,

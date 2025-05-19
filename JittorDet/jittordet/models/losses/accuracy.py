@@ -3,7 +3,7 @@
 import jittor as jt
 import jittor.nn as nn
 
-from jittordet.engine import MODELS
+from GFocalV2Jittor.engine import MODELS
 
 
 def accuracy(pred, target, topk=1, thresh=None):

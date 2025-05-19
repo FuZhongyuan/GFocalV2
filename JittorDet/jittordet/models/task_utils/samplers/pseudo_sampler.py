@@ -3,8 +3,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import jittor as jt
 
-from jittordet.engine import TASK_UTILS
-from jittordet.structures import InstanceData
+from GFocalV2Jittor.engine import TASK_UTILS
+from GFocalV2Jittor.structures import InstanceData
 from ..assigners import AssignResult
 from .base_sampler import BaseSampler
 from .sampling_result import SamplingResult

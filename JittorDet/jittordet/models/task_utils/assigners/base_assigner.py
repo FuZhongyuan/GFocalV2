@@ -2,7 +2,7 @@
 from abc import ABCMeta, abstractmethod
 from typing import Optional
 
-from jittordet.structures import InstanceData
+from GFocalV2Jittor.structures import InstanceData
 
 
 class BaseAssigner(metaclass=ABCMeta):

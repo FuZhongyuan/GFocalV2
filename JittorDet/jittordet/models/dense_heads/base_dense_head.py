@@ -7,10 +7,10 @@ from typing import List, Optional, Tuple
 import jittor as jt
 import jittor.nn as nn
 
-from jittordet.engine import ConfigDict
-from jittordet.models.utils import (batched_nms, filter_scores_and_topk,
+from GFocalV2Jittor.engine import ConfigDict
+from GFocalV2Jittor.models.utils import (batched_nms, filter_scores_and_topk,
                                     select_single_mlvl, unpack_gt_instances)
-from jittordet.structures import InstanceData, InstanceList, SampleList
+from GFocalV2Jittor.structures import InstanceData, InstanceList, SampleList
 
 
 class BaseDenseHead(nn.Module, metaclass=ABCMeta):
@@ -329,7 +329,7 @@ class BaseDenseHead(nn.Module, metaclass=ABCMeta):
                 # BG cat_id: num_class
                 scores = cls_score.softmax(-1)[:, :-1]
 
-            # After https://github.com/open-mmlab/mmdetection/pull/6268/,
+            # After https://github.com/open-mmlab/GFocalV2Pytorch/pull/6268/,
             # this operation keeps fewer bboxes under the same `nms_pre`.
             # There is no difference in performance for most models. If you
             # find a slight drop in performance, you can set a larger

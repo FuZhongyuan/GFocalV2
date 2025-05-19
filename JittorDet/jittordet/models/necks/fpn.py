@@ -1,8 +1,8 @@
 from jittor import nn
 
-from jittordet.engine import MODELS
-from jittordet.models.layers import ConvModule
-from jittordet.models.utils import xavier_init
+from GFocalV2Jittor.engine import MODELS
+from GFocalV2Jittor.models.layers import ConvModule
+from GFocalV2Jittor.models.utils import xavier_init
 
 
 @MODELS.register_module()

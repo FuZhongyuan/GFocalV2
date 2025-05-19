@@ -75,7 +75,7 @@ class PackDetInputs(BaseTransform):
             # `numpy.transpose()` followed by `numpy.ascontiguousarray()`
             # If image is already contiguous, use
             # `torch.permute()` followed by `torch.contiguous()`
-            # Refer to https://github.com/open-mmlab/mmdetection/pull/9533
+            # Refer to https://github.com/open-mmlab/GFocalV2Pytorch/pull/9533
             # for more details
             if not img.flags.c_contiguous:
                 img = np.ascontiguousarray(img.transpose(2, 0, 1))

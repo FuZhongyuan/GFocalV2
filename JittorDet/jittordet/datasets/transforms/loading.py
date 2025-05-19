@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from jittordet.engine import TRANSFORMS
+from GFocalV2Jittor.engine import TRANSFORMS
 
 
 @TRANSFORMS.register_module()

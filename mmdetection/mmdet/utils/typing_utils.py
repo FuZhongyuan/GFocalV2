@@ -1,5 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-"""Collecting some commonly used type hint in mmdetection."""
+"""Collecting some commonly used type hint in GFocalV2Pytorch."""
 from typing import List, Optional, Sequence, Tuple, Union
 
 from mmengine.config import ConfigDict

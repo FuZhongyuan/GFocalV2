@@ -18,7 +18,7 @@ MaskType = Union[BitmapMasks, PolygonMasks]
 
 @register_box(name='hbox')
 class HorizontalBoxes(BaseBoxes):
-    """The horizontal box class used in MMDetection by default.
+    """The horizontal box class used in GFocalV2Pytorch by default.
 
     The ``box_dim`` of ``HorizontalBoxes`` is 4, which means the length of
     the last dimension of the data should be 4. Two modes of box data are

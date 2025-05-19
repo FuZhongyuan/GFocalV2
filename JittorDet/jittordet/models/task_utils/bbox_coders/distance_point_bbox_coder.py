@@ -3,8 +3,8 @@ from typing import Optional, Sequence, Union
 
 from jittor import jt
 
-from jittordet.engine import TASK_UTILS
-from jittordet.utils import bbox2distance, distance2bbox
+from GFocalV2Jittor.engine import TASK_UTILS
+from GFocalV2Jittor.utils import bbox2distance, distance2bbox
 from .base_bbox_coder import BaseBBoxCoder
 
 

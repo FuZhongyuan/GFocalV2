@@ -383,7 +383,7 @@ class BaseDenseHead(BaseModule, metaclass=ABCMeta):
                 # BG cat_id: num_class
                 scores = cls_score.softmax(-1)[:, :-1]
 
-            # After https://github.com/open-mmlab/mmdetection/pull/6268/,
+            # After https://github.com/open-mmlab/GFocalV2Pytorch/pull/6268/,
             # this operation keeps fewer bboxes under the same `nms_pre`.
             # There is no difference in performance for most models. If you
             # find a slight drop in performance, you can set a larger

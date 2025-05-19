@@ -5,7 +5,7 @@ from abc import ABCMeta, abstractmethod
 
 import jittor as jt
 
-from jittordet.structures import InstanceData
+from GFocalV2Jittor.structures import InstanceData
 from ..assigners import AssignResult
 from .sampling_result import SamplingResult
 

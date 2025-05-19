@@ -27,12 +27,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # 配置文件路径
-JITTOR_CONFIG = "/root/data-fs/GFocalV2/JittorDet/configs/gfl/gfl_r50_fpn_coco_1x.yml"
-PYTORCH_CONFIG = "/root/data-fs/GFocalV2/mmdetection/configs/gfl/gfl_r50_fpn_1x_coco.py"
+JITTOR_CONFIG = "/root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml"
+PYTORCH_CONFIG = "/root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py"
 
 # 工作目录
-JITTOR_WORKDIR = "/root/data-fs/GFocalV2/JittorDet"
-PYTORCH_WORKDIR = "/root/data-fs/GFocalV2/mmdetection"
+JITTOR_WORKDIR = "/root/data-fs/GFocalV2/GFocalV2Jittor"
+PYTORCH_WORKDIR = "/root/data-fs/GFocalV2/GFocalV2Pytorch"
 
 class LogParser:
     """解析训练日志并提取关键信息"""

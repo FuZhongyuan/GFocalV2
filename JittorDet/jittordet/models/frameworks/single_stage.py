@@ -4,8 +4,8 @@ from typing import List, Tuple, Union
 
 import jittor as jt
 
-from jittordet.engine import MODELS, ConfigType, OptConfigType
-from jittordet.structures import OptSampleList, SampleList
+from GFocalV2Jittor.engine import MODELS, ConfigType, OptConfigType
+from GFocalV2Jittor.structures import OptSampleList, SampleList
 from .base_framework import BaseFramework
 
 

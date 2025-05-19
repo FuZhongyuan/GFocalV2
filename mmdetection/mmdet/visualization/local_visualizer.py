@@ -23,7 +23,7 @@ from .palette import _get_adaptive_scales, get_palette, jitter_color
 
 @VISUALIZERS.register_module()
 class DetLocalVisualizer(Visualizer):
-    """MMDetection Local Visualizer.
+    """GFocalV2Pytorch Local Visualizer.
 
     Args:
         name (str): Name of the instance. Defaults to 'visualizer'.

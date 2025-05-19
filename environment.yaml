@@ -1,4 +1,4 @@
-name: jittordet
+name: GFocalV2Jittor
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
   - nvidia
@@ -180,4 +180,4 @@ dependencies:
     - virtualenv==20.29.2
     - yapf==0.43.0
     - zipp==3.20.2
-prefix: /root/miniconda3/envs/jittordet
+prefix: /root/miniconda3/envs/GFocalV2Jittor

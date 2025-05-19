@@ -2,7 +2,7 @@
 import jittor as jt
 import numpy as np
 
-from jittordet.engine import TASK_UTILS
+from GFocalV2Jittor.engine import TASK_UTILS
 
 
 @TASK_UTILS.register_module()

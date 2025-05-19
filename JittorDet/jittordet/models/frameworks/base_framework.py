@@ -7,10 +7,10 @@ from typing import Dict, List, Tuple, Union
 import jittor as jt
 import jittor.nn as nn
 
-from jittordet.engine import MODELS
-from jittordet.structures import (DetDataSample, InstanceList, OptSampleList,
+from GFocalV2Jittor.engine import MODELS
+from GFocalV2Jittor.structures import (DetDataSample, InstanceList, OptSampleList,
                                   SampleList)
-from jittordet.utils import is_list_of
+from GFocalV2Jittor.utils import is_list_of
 
 ForwardResults = Union[Dict[str, jt.Var], List[DetDataSample], Tuple[jt.Var],
                        jt.Var]

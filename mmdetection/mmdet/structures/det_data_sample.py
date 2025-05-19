@@ -5,7 +5,7 @@ from mmengine.structures import BaseDataElement, InstanceData, PixelData
 
 
 class DetDataSample(BaseDataElement):
-    """A data structure interface of MMDetection. They are used as interfaces
+    """A data structure interface of GFocalV2Pytorch. They are used as interfaces
     between different components.
 
     The attributes in ``DetDataSample`` are divided into several parts:

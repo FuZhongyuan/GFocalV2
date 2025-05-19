@@ -8,9 +8,9 @@ import jittor as jt
 import jittor.nn as nn
 import numpy as np
 
-from jittordet.engine import MODELS
-from jittordet.structures import DetDataSample
-from jittordet.utils import is_list_of
+from GFocalV2Jittor.engine import MODELS
+from GFocalV2Jittor.structures import DetDataSample
+from GFocalV2Jittor.utils import is_list_of
 
 
 @MODELS.register_module()

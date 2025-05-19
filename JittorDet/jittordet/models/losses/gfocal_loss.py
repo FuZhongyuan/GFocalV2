@@ -4,7 +4,7 @@ from functools import partial
 import jittor as jt
 import jittor.nn as nn
 
-from jittordet.engine import MODELS
+from GFocalV2Jittor.engine import MODELS
 from .cross_entropy_loss import binary_cross_entropy_with_logits
 from .utils import weighted_loss
 

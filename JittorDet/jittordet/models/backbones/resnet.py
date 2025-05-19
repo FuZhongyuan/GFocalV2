@@ -2,7 +2,7 @@
 import jittor as jt
 from jittor import nn
 
-from jittordet.engine import MODELS
+from GFocalV2Jittor.engine import MODELS
 
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):

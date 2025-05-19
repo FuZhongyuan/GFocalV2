@@ -9,7 +9,7 @@ from .det_data_sample import DetDataSample
 
 
 class TrackDataSample(BaseDataElement):
-    """A data structure interface of tracking task in MMDetection. It is used
+    """A data structure interface of tracking task in GFocalV2Pytorch. It is used
     as interfaces between different components.
 
     This data structure can be viewd as a wrapper of multiple DetDataSample to

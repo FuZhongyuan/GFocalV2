@@ -3,7 +3,7 @@ from math import ceil
 import jittor as jt
 import numpy as np
 
-from jittordet.engine import BATCH_SAMPLERS
+from GFocalV2Jittor.engine import BATCH_SAMPLERS
 from .base_batch_sampler import BaseBatchSampler
 
 

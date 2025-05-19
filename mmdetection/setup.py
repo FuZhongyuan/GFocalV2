@@ -193,10 +193,10 @@ if __name__ == '__main__':
         description='OpenMMLab Detection Toolbox and Benchmark',
         long_description=readme(),
         long_description_content_type='text/markdown',
-        author='MMDetection Contributors',
+        author='GFocalV2Pytorch Contributors',
         author_email='openmmlab@gmail.com',
         keywords='computer vision, object detection',
-        url='https://github.com/open-mmlab/mmdetection',
+        url='https://github.com/open-mmlab/GFocalV2Pytorch',
         packages=find_packages(exclude=('configs', 'tools', 'demo')),
         include_package_data=True,
         classifiers=[
