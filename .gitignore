@@ -64,7 +64,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/en/_build/
+docs/zh_cn/_build/
 
 # PyBuilder
 target/
@@ -102,8 +103,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
 data/
+data
 .vscode
 .idea
 .DS_Store
@@ -112,11 +113,20 @@ data/
 *.pkl
 *.pkl.json
 *.log.json
+docs/modelzoo_statistics.md
+mmdet/.mim
 work_dirs/
 
 # Pytorch
 *.pth
 *.py~
 *.sh~
-
-submit/
+data/
+.pkl
+.pt
+.pth
+.pth.tar
+.pth.tar.gz
+.pth.tar.bz2
+.pth.tar.xz
+.pth.tar.lzma

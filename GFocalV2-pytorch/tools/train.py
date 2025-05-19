@@ -8,7 +8,7 @@ import warnings
 import mmcv
 import torch
 from mmcv import Config, DictAction
-from mmcv.runner import init_dist
+from mmcv.runner.dist_utils import init_dist
 from mmcv.utils import get_git_hash
 
 from mmdet import __version__
