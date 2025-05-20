@@ -5,6 +5,7 @@
 ## 目录
 
 - [环境配置](#环境配置)
+- [项目结构](#项目结构)
 - [数据准备](#数据准备)
 - [训练脚本](#训练脚本)
 - [测试脚本](#测试脚本)
@@ -16,6 +17,81 @@
   - [推理性能对比](#推理性能对比)
 - [实验日志对齐](#实验日志对齐)
 - [结论](#结论)
+
+## 项目结构
+
+本项目组织结构如下：
+
+```
+GFocalV2                                      # 项目根目录
+├── GFocalV2Jittor/                           # Jittor框架实现
+│   ├── configs/                              # 模型配置文件
+│   ├── jittordet/                            # Jittor检测模型实现
+│   ├── tools/                                # 训练和测试工具
+│   ├── work_dirs/                            # 训练输出和检查点
+│   └── temp_test_results/                    # 测试结果临时存储
+│
+├── GFocalV2Pytorch/                          # PyTorch框架实现
+│   ├── configs/                              # 模型配置文件
+│   ├── mmdet/                                # PyTorch检测模型实现
+│   ├── tools/                                # 训练和测试工具
+│   ├── work_dirs/                            # 训练输出和检查点
+│   └── temp_test_results/                    # 测试结果临时存储
+│
+├── GFocalV2-jittor-migration/                # Jittor迁移过程相关文件
+│
+├── framework_comparison/                     # 框架比较分析结果
+│   ├── visualization/                        # 可视化结果图表
+│   │   ├── loss_comparison.png               # 损失对比图
+│   │   ├── smoothed_loss_comparison.png      # 平滑损失对比图
+│   │   ├── map_comparison.png                # mAP对比图
+│   │   ├── ar_comparison.png                 # 召回率对比图
+│   │   ├── speed_comparison.png              # 速度对比图
+│   │   ├── epoch_time_comparison.png         # 每轮训练时间对比图
+│   │   └── radar_comparison.png              # 综合性能雷达图
+│   ├── performance_summary.csv               # 性能对比汇总(CSV格式)
+│   └── performance_summary.json              # 性能对比汇总(JSON格式)
+│
+├── inference_final_report/                   # 推理性能报告
+│   ├── inference_comparison_report.md        # 推理性能对比报告
+│   ├── inference_time_comparison.png         # 推理时间分布图
+│   ├── inference_time_boxplot.png            # 推理时间箱线图
+│   └── ap_comparison.png                     # AP对比图
+│
+├── comparison_results/                       # 比较实验结果
+│   ├── jittor/                               # Jittor实验输出
+│   └── pytorch/                              # PyTorch实验输出
+│
+├── data/                                     # 数据集目录
+│
+├── requirements.txt                          # 项目依赖项
+├── run_comparison.sh                         # 运行框架比较的主脚本
+├── run_inference_comparison.sh               # 运行推理性能对比的脚本
+├── run_analysis.sh                           # 运行结果分析的脚本
+├── compare_gfl_frameworks.py                 # 框架比较核心逻辑
+├── compare_gfl_inference.py                  # 推理性能对比核心逻辑
+├── analyze_framework_logs.py                 # 分析框架日志的工具
+└── README.md                                 # 项目说明文档
+```
+
+### 主要组件说明
+
+1. **GFocalV2Jittor**: Jittor框架实现的GFocalV2检测模型，包含完整的训练、测试和推理逻辑。
+   
+2. **GFocalV2Pytorch**: PyTorch框架实现的GFocalV2检测模型，基于MMDetection框架进行适配。
+
+3. **framework_comparison**: 存储框架比较的分析结果和可视化图表，包括训练损失、检测精度、训练速度等方面的对比。
+
+4. **inference_final_report**: 推理性能对比的详细报告，包含推理时间和检测精度的对比图表。
+
+5. **comparison_results**: 存储两个框架的实验输出，包括训练日志、检查点和测试结果。
+
+6. **核心脚本**:
+   - `compare_gfl_frameworks.py`: 实现框架对比的核心逻辑
+   - `compare_gfl_inference.py`: 实现推理性能对比的核心逻辑
+   - `analyze_framework_logs.py`: 分析训练日志并生成可视化结果
+   - `run_comparison.sh`: 一键式运行完整框架对比流程
+   - `run_inference_comparison.sh`: 一键式运行推理性能对比
 
 ## 环境配置
 
