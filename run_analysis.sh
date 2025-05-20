@@ -8,8 +8,8 @@ NC='\033[0m' # No Color
 echo -e "${YELLOW}开始GFL框架训练日志分析...${NC}"
 
 # 设置日志路径
-JITTOR_LOG="/root/data-fs/GFocalV2/comparison_results/jittor/train_full_output.log"
-PYTORCH_LOG="/root/data-fs/GFocalV2/comparison_results/pytorch/train_full_output.log"
+JITTOR_LOG="/root/data-fs/GFocalV2/comparison_results/jittor/jittor_train_full_output.log"
+PYTORCH_LOG="/root/data-fs/GFocalV2/comparison_results/pytorch/pytorch_train_full_output.log"
 OUTPUT_DIR="framework_comparison"
 
 # 安装所需依赖
