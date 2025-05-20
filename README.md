@@ -39,6 +39,8 @@ GFocalV2                                      # 项目根目录
 │   └── temp_test_results/                    # 测试结果临时存储
 │
 ├── GFocalV2-jittor-migration/                # Jittor迁移过程相关文件
+│   ├── GFLv2-pytorch/                        # 独立实现的PyTorch版GFocalV2，不基于mmdetection
+│   └── GFLv2-jittor/                        # 从PyTorch版迁移而来的Jittor实现
 │
 ├── framework_comparison/                     # 框架比较分析结果
 │   ├── visualization/                        # 可视化结果图表
@@ -80,13 +82,19 @@ GFocalV2                                      # 项目根目录
    
 2. **GFocalV2Pytorch**: PyTorch框架实现的GFocalV2检测模型，基于MMDetection框架进行适配。
 
-3. **framework_comparison**: 存储框架比较的分析结果和可视化图表，包括训练损失、检测精度、训练速度等方面的对比。
+3. **GFocalV2-jittor-migration**: 独立开发的不基于MMDetection的GFocalV2实现。
+   - **GFLv2-pytorch/**: 自主实现的PyTorch版GFocalV2，已经能够正常运行。
+   - **GFLv2-jittor/**: 从PyTorch版迁移而来的Jittor实现，尚未完成测试，存在若干bug。
+   
+   这个实现是完全独立的代码库，不依赖于MMDetection框架，旨在提供更加灵活和可定制的GFocalV2实现方案。
 
-4. **inference_final_report**: 推理性能对比的详细报告，包含推理时间和检测精度的对比图表。
+4. **framework_comparison**: 存储框架比较的分析结果和可视化图表，包括训练损失、检测精度、训练速度等方面的对比。
 
-5. **comparison_results**: 存储两个框架的实验输出，包括训练日志、检查点和测试结果。
+5. **inference_final_report**: 推理性能对比的详细报告，包含推理时间和检测精度的对比图表。
 
-6. **核心脚本**:
+6. **comparison_results**: 存储两个框架的实验输出，包括训练日志、检查点和测试结果。
+
+7. **核心脚本**:
    - `compare_gfl_frameworks.py`: 实现框架对比的核心逻辑
    - `compare_gfl_inference.py`: 实现推理性能对比的核心逻辑
    - `analyze_framework_logs.py`: 分析训练日志并生成可视化结果
@@ -124,14 +132,51 @@ pip install matplotlib numpy pycocotools scipy shapely six terminaltables tqdm
 
 ## 数据准备
 
-本实验使用COCO数据集进行训练和验证。为了在计算资源有限的情况下进行快速验证，我们使用了少量数据样本进行训练。
+本实验使用tiny_coco数据集进行训练和验证。这是一个专为训练调试设计的小型COCO数据集，其训练集和测试集各包含50张图像以及相应的实例、关键点和标注信息。
+
+### tiny_coco数据集
+
+我们使用[tiny_coco数据集](https://github.com/lizhogn/tiny_coco_dataset)作为实验数据，这是一个专为深度学习模型调试设计的微型COCO格式数据集。
+
+```bash
+# 克隆tiny_coco数据集
+git clone https://github.com/lizhogn/tiny_coco_dataset.git
+cd tiny_coco_dataset
+
+# 复制数据集到项目数据目录
+mkdir -p ../data
+cp -r tiny_coco ../data/
+```
+
+数据集结构如下：
+```
+tiny_coco
+    |-annotations
+    |   |-instances_train2017.json
+    |   |-instances_val2017.json
+    |   |-...
+    |
+    |-train2017
+    |   |-000000005802.jpg
+    |   |-000000005803.jpg
+    |   |-...
+    |
+    |-val2017
+    |   |-000000005802.jpg
+    |   |-000000005803.jpg
+    |   |-...
+```
+
+### 完整COCO数据集（可选）
+
+如果需要使用完整的COCO数据集进行更全面的训练和评估，可以按以下步骤准备：
 
 ```bash
 # 数据集准备脚本
 mkdir -p data/coco
 cd data/coco
 
-# 下载COCO2017数据集样本
+# 下载COCO2017数据集
 wget http://images.cocodataset.org/zips/train2017.zip
 wget http://images.cocodataset.org/zips/val2017.zip
 wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
@@ -401,3 +446,51 @@ python compare_gfl_inference.py \
 4. 探索混合精度训练对两个框架性能的影响。
 
 5. 针对实际应用场景，考虑模型量化和部署优化的差异。
+
+## 待办事项和开发计划
+
+针对独立开发的GFocalV2-jittor-migration实现，以下是待完成的工作：
+
+### GFocalV2 Jittor迁移 TODO 清单
+
+- [ ] 修复Jittor实现中的已知bug
+  - [ ] 修复损失函数中的梯度计算问题
+  - [ ] 解决Jittor版本在处理特定尺寸图像时的内存问题
+  - [ ] 修复特征提取网络中的维度不匹配问题
+  - [ ] 调试检测头(Detection Head)的运行逻辑
+  - [ ] 解决数据加载过程中的问题
+
+- [ ] 性能优化
+  - [ ] 提高Jittor实现的推理速度
+  - [ ] 优化内存使用效率
+  - [ ] 添加混合精度训练支持
+
+- [ ] 测试和验证
+  - [ ] 在tiny_coco数据集上进行完整的训练和验证
+  - [ ] 与PyTorch版本进行性能对比
+  - [ ] 进行推理性能的基准测试
+
+- [ ] 文档完善
+  - [ ] 编写详细的使用文档
+  - [ ] 添加模型结构和实现细节说明
+  - [ ] 提供代码示例和训练指南
+
+- [ ] 与基于MMDetection的实现进行对比
+  - [ ] 训练速度对比
+  - [ ] 检测精度对比
+  - [ ] 代码复杂度和可维护性对比
+
+### 开发进度
+
+- 已完成：
+  - GFocalV2的PyTorch独立实现，不依赖MMDetection
+  - 基本的Jittor迁移框架
+  - 数据加载和预处理模块
+
+- 进行中：
+  - Jittor版本的调试和问题修复
+  - 模型优化和性能提升
+
+### 注意事项
+
+在使用独立实现的GFLv2代码时，建议先使用PyTorch版本进行测试。Jittor版本由于尚有bug，暂不建议用于实际项目中。
