@@ -95,6 +95,13 @@ GFocalV2                                      # 项目根目录
 
 ## 环境配置
 
+### 一键安装完整环境
+
+```bash
+# 全套环境配置
+conda env create -f environment.yaml
+```
+
 ### Jittor 环境
 
 ```bash
