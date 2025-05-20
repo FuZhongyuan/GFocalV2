@@ -117,7 +117,7 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 | 平均损失 | 2.4533 | 2.1965 | 0.2568 |
 | 最终损失 | 2.0895 | 1.8335 | 0.2560 |
 
-![损失对比](./framework_comparison/loss_comparison.png)
+![损失对比](./framework_comparison/visualization/loss_comparison.png)
 
 *图1: Jittor和PyTorch训练过程中的损失变化对比*
 
