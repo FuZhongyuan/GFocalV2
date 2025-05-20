@@ -1,0 +1,507 @@
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/data-fs/GFocalV2/GFocalV2Jittor
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: jittor>1.3.6 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (1.3.9.14)
+Requirement already satisfied: matplotlib in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (3.7.5)
+Requirement already satisfied: numpy==1.23.5 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (1.23.5)
+Requirement already satisfied: opencv-python in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (4.11.0.86)
+Requirement already satisfied: Pillow in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (9.4.0)
+Requirement already satisfied: pycocotools in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (2.0.7)
+Requirement already satisfied: terminaltables in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (3.1.10)
+Requirement already satisfied: tqdm in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittor>1.3.6->jittordet==0.0.1) (4.65.2)
+Requirement already satisfied: astunparse in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittor>1.3.6->jittordet==0.0.1) (1.6.3)
+Requirement already satisfied: contourpy>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (1.4.7)
+Requirement already satisfied: packaging>=20.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (24.2)
+Requirement already satisfied: pyparsing>=2.3.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (2.9.0.post0)
+Requirement already satisfied: importlib-resources>=3.2.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (6.4.5)
+Requirement already satisfied: zipp>=3.1.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from importlib-resources>=3.2.0->matplotlib->jittordet==0.0.1) (3.20.2)
+Requirement already satisfied: six>=1.5 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->jittordet==0.0.1) (1.16.0)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from astunparse->jittor>1.3.6->jittordet==0.0.1) (0.37.1)
+Installing collected packages: jittordet
+  Attempting uninstall: jittordet
+    Found existing installation: jittordet 0.0.1
+    Uninstalling jittordet-0.0.1:
+      Successfully uninstalled jittordet-0.0.1
+  DEPRECATION: Legacy editable install of jittordet==0.0.1 from file:///root/data-fs/GFocalV2/GFocalV2Jittor (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for jittordet
+Successfully installed jittordet
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[38;5;2m[i 0520 11:09:53.573394 40 compiler.py:956] Jittor(1.3.9.14) src: /root/miniconda3/envs/jittordet/lib/python3.8/site-packages/jittor[m
+[38;5;2m[i 0520 11:09:53.578923 40 compiler.py:957] g++ at /usr/bin/g++(9.3.0)[m
+[38;5;2m[i 0520 11:09:53.578999 40 compiler.py:958] cache_path: /root/.cache/jittor/jt1.3.9/g++9.3.0/py3.8.2/Linux-5.15.0-9xaa/IntelRXeonRSilx76/2997/default[m
+[38;5;2m[i 0520 11:09:53.586123 40 __init__.py:412] Found nvcc(11.3.109) at /usr/local/cuda/bin/nvcc.[m
+[38;5;2m[i 0520 11:09:53.592420 40 __init__.py:412] Found addr2line(2.34) at /usr/bin/addr2line.[m
+[38;5;2m[i 0520 11:09:53.843267 40 compiler.py:1013] cuda key:cu11.3.109_sm_70[m
+[38;5;2m[i 0520 11:09:54.483436 40 __init__.py:227] Total mem: 503.29GB, using 16 procs for compiling.[m
+[38;5;2m[i 0520 11:09:54.652293 40 jit_compiler.cc:28] Load cc_path: /usr/bin/g++[m
+[38;5;2m[i 0520 11:09:54.844119 40 init.cc:63] Found cuda archs: [70,][m
+2025-05-20 11:10:01,878 - jittordet - INFO - Start initialize model weights.
+[38;5;3m[w 0520 11:10:02.273585 40 __init__.py:1645] load parameter fc.weight failed ...[m
+[38;5;3m[w 0520 11:10:02.273701 40 __init__.py:1645] load parameter fc.bias failed ...[m
+[38;5;3m[w 0520 11:10:02.273756 40 __init__.py:1664] load total 267 params, 2 failed[m
+2025-05-20 11:10:02,274 - jittordet - INFO - Initialize succeed.
+[38;5;2m[i 0520 11:10:02.274782 40 cuda_flags.cc:49] CUDA enabled.[m
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+[38;5;3m[w 0520 11:10:07.954335 40 cudnn_conv__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFORMAT_abcd_____hash_4d5b3e2d24c769d3_op.cc:214] forward_ algorithm cache is full[m
+[38;5;3m[w 0520 11:10:08.405491 40 cudnn_conv_backward_w__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFO___hash_8e480e8564e59906_op.cc:210] backward w algorithm cache is full[m
+[38;5;3m[w 0520 11:10:08.707576 40 cudnn_conv_backward_x__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFO___hash_af8994a8aef53c1c_op.cc:206] backward x algorithm cache is full[m
+2025-05-20 11:10:08,836 - jittordet - INFO - Epoch [ 1/12] Iter [10/49]  eta: 0 day 00:05:30  time: 0.5715  lr: 2.0980e-04  loss: 1.9541  loss_cls: 0.2394  loss_bbox: 1.1630  loss_dfl: 0.5517
+2025-05-20 11:10:10,601 - jittordet - INFO - Epoch [ 1/12] Iter [20/49]  eta: 0 day 00:03:32  time: 0.3733  lr: 4.0960e-04  loss: 2.3322  loss_cls: 0.2389  loss_bbox: 1.4385  loss_dfl: 0.6548
+2025-05-20 11:10:12,188 - jittordet - INFO - Epoch [ 1/12] Iter [30/49]  eta: 0 day 00:02:48  time: 0.3013  lr: 6.0940e-04  loss: 2.1337  loss_cls: 0.5066  loss_bbox: 1.1097  loss_dfl: 0.5174
+2025-05-20 11:10:13,730 - jittordet - INFO - Epoch [ 1/12] Iter [40/49]  eta: 0 day 00:02:25  time: 0.2641  lr: 8.0920e-04  loss: 2.1757  loss_cls: 0.6332  loss_bbox: 1.0406  loss_dfl: 0.5018
+2025-05-20 11:10:13,730 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:17,719 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_1.pkl
+2025-05-20 11:10:19,150 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:03  time: 0.0889
+2025-05-20 11:10:19,649 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:02  time: 0.0689
+2025-05-20 11:10:20,141 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0620
+2025-05-20 11:10:20,625 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0584
+2025-05-20 11:10:20,626 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:21,105 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0561
+2025-05-20 11:10:21,105 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0561
+2025-05-20 11:10:21,137 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:10:21,420 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:10:21,421 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:10:22,815 - jittordet - INFO - Epoch [ 2/12] Iter [10/49]  eta: 0 day 00:01:59  time: 0.2259  lr: 1.1888e-03  loss: 2.3363  loss_cls: 0.5756  loss_bbox: 1.2175  loss_dfl: 0.5432
+2025-05-20 11:10:24,277 - jittordet - INFO - Epoch [ 2/12] Iter [20/49]  eta: 0 day 00:01:51  time: 0.2141  lr: 1.3886e-03  loss: 2.2243  loss_cls: 0.5026  loss_bbox: 1.1812  loss_dfl: 0.5405
+2025-05-20 11:10:25,780 - jittordet - INFO - Epoch [ 2/12] Iter [30/49]  eta: 0 day 00:01:44  time: 0.2059  lr: 1.5884e-03  loss: 2.3548  loss_cls: 0.6264  loss_bbox: 1.1763  loss_dfl: 0.5521
+2025-05-20 11:10:27,201 - jittordet - INFO - Epoch [ 2/12] Iter [40/49]  eta: 0 day 00:01:39  time: 0.1985  lr: 1.7882e-03  loss: 2.1998  loss_cls: 0.7553  loss_bbox: 0.9663  loss_dfl: 0.4782
+2025-05-20 11:10:27,201 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:30,969 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_2.pkl
+2025-05-20 11:10:31,566 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0564
+2025-05-20 11:10:32,063 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0553
+2025-05-20 11:10:32,542 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0542
+2025-05-20 11:10:33,032 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0536
+2025-05-20 11:10:33,032 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:33,511 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0529
+2025-05-20 11:10:33,512 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0530
+2025-05-20 11:10:33,603 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:10:34,209 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:10:34,209 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:10:35,603 - jittordet - INFO - Epoch [ 3/12] Iter [10/49]  eta: 0 day 00:01:30  time: 0.1882  lr: 2.1678e-03  loss: 2.6324  loss_cls: 1.0190  loss_bbox: 1.0685  loss_dfl: 0.5448
+2025-05-20 11:10:37,037 - jittordet - INFO - Epoch [ 3/12] Iter [20/49]  eta: 0 day 00:01:26  time: 0.1843  lr: 2.3676e-03  loss: 2.4005  loss_cls: 0.7799  loss_bbox: 1.0736  loss_dfl: 0.5470
+2025-05-20 11:10:38,478 - jittordet - INFO - Epoch [ 3/12] Iter [30/49]  eta: 0 day 00:01:23  time: 0.1811  lr: 2.5674e-03  loss: 2.3391  loss_cls: 0.8904  loss_bbox: 0.9483  loss_dfl: 0.5005
+2025-05-20 11:10:39,903 - jittordet - INFO - Epoch [ 3/12] Iter [40/49]  eta: 0 day 00:01:20  time: 0.1782  lr: 2.7672e-03  loss: 2.0987  loss_cls: 0.7708  loss_bbox: 0.8909  loss_dfl: 0.4370
+2025-05-20 11:10:39,903 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:43,604 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_3.pkl
+2025-05-20 11:10:44,115 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0526
+2025-05-20 11:10:44,583 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0521
+2025-05-20 11:10:45,052 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0516
+2025-05-20 11:10:45,533 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0513
+2025-05-20 11:10:45,533 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:46,002 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0509
+2025-05-20 11:10:46,002 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0510
+2025-05-20 11:10:46,095 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:10:46,749 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.001  bbox_mAP_l: 0.000
+2025-05-20 11:10:46,749 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.001  bbox_mAP_l: 0.000
+2025-05-20 11:10:48,154 - jittordet - INFO - Epoch [ 4/12] Iter [10/49]  eta: 0 day 00:01:15  time: 0.1738  lr: 3.1469e-03  loss: 2.0673  loss_cls: 0.5641  loss_bbox: 0.9916  loss_dfl: 0.5117
+2025-05-20 11:10:49,577 - jittordet - INFO - Epoch [ 4/12] Iter [20/49]  eta: 0 day 00:01:12  time: 0.1719  lr: 3.3467e-03  loss: 2.0534  loss_cls: 0.4830  loss_bbox: 1.0584  loss_dfl: 0.5120
+2025-05-20 11:10:51,007 - jittordet - INFO - Epoch [ 4/12] Iter [30/49]  eta: 0 day 00:01:10  time: 0.1702  lr: 3.5465e-03  loss: 2.2386  loss_cls: 0.7658  loss_bbox: 0.9562  loss_dfl: 0.5166
+2025-05-20 11:10:52,444 - jittordet - INFO - Epoch [ 4/12] Iter [40/49]  eta: 0 day 00:01:07  time: 0.1687  lr: 3.7463e-03  loss: 2.1179  loss_cls: 0.6072  loss_bbox: 0.9906  loss_dfl: 0.5201
+2025-05-20 11:10:52,444 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:56,120 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_4.pkl
+2025-05-20 11:10:56,676 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0511
+2025-05-20 11:10:57,168 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0509
+2025-05-20 11:10:57,661 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0508
+2025-05-20 11:10:58,164 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0507
+2025-05-20 11:10:58,164 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:10:58,656 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0505
+2025-05-20 11:10:58,656 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0506
+2025-05-20 11:10:58,657 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:10:58,913 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:10:58,913 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:00,290 - jittordet - INFO - Epoch [ 5/12] Iter [10/49]  eta: 0 day 00:01:03  time: 0.1658  lr: 4.1259e-03  loss: 3.6244  loss_cls: 2.5816  loss_bbox: 0.6989  loss_dfl: 0.3439
+2025-05-20 11:11:01,735 - jittordet - INFO - Epoch [ 5/12] Iter [20/49]  eta: 0 day 00:01:01  time: 0.1647  lr: 4.3257e-03  loss: 2.6335  loss_cls: 1.3791  loss_bbox: 0.8378  loss_dfl: 0.4166
+2025-05-20 11:11:03,165 - jittordet - INFO - Epoch [ 5/12] Iter [30/49]  eta: 0 day 00:00:59  time: 0.1637  lr: 4.5255e-03  loss: 2.3935  loss_cls: 0.8435  loss_bbox: 1.0653  loss_dfl: 0.4847
+2025-05-20 11:11:04,552 - jittordet - INFO - Epoch [ 5/12] Iter [40/49]  eta: 0 day 00:00:57  time: 0.1626  lr: 4.7253e-03  loss: 2.1540  loss_cls: 1.2044  loss_bbox: 0.6382  loss_dfl: 0.3114
+2025-05-20 11:11:04,552 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:08,305 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_5.pkl
+2025-05-20 11:11:08,819 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0505
+2025-05-20 11:11:09,288 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0503
+2025-05-20 11:11:09,758 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0501
+2025-05-20 11:11:10,244 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0500
+2025-05-20 11:11:10,244 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:10,719 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0499
+2025-05-20 11:11:10,720 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0499
+2025-05-20 11:11:10,811 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:11:11,176 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:11,176 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:12,570 - jittordet - INFO - Epoch [ 6/12] Iter [10/49]  eta: 0 day 00:00:53  time: 0.1610  lr: 5.1049e-03  loss: 1.9421  loss_cls: 0.7454  loss_bbox: 0.8041  loss_dfl: 0.3927
+2025-05-20 11:11:13,989 - jittordet - INFO - Epoch [ 6/12] Iter [20/49]  eta: 0 day 00:00:51  time: 0.1603  lr: 5.3047e-03  loss: 1.9479  loss_cls: 0.7269  loss_bbox: 0.8364  loss_dfl: 0.3847
+2025-05-20 11:11:15,433 - jittordet - INFO - Epoch [ 6/12] Iter [30/49]  eta: 0 day 00:00:50  time: 0.1596  lr: 5.5045e-03  loss: 2.0784  loss_cls: 0.7083  loss_bbox: 0.9354  loss_dfl: 0.4347
+2025-05-20 11:11:16,883 - jittordet - INFO - Epoch [ 6/12] Iter [40/49]  eta: 0 day 00:00:48  time: 0.1591  lr: 5.7043e-03  loss: 2.1058  loss_cls: 0.9867  loss_bbox: 0.7493  loss_dfl: 0.3698
+2025-05-20 11:11:16,884 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:20,571 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_6.pkl
+2025-05-20 11:11:21,081 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0499
+2025-05-20 11:11:21,548 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0497
+2025-05-20 11:11:22,014 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0496
+2025-05-20 11:11:22,495 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0495
+2025-05-20 11:11:22,495 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:22,962 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0494
+2025-05-20 11:11:22,962 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0494
+2025-05-20 11:11:23,019 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:11:23,548 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:23,549 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:24,889 - jittordet - INFO - Epoch [ 7/12] Iter [10/49]  eta: 0 day 00:00:44  time: 0.1578  lr: 6.0839e-03  loss: 4.4982  loss_cls: 3.0601  loss_bbox: 0.9805  loss_dfl: 0.4576
+2025-05-20 11:11:26,328 - jittordet - INFO - Epoch [ 7/12] Iter [20/49]  eta: 0 day 00:00:43  time: 0.1573  lr: 6.2837e-03  loss: 2.3960  loss_cls: 0.6986  loss_bbox: 1.1304  loss_dfl: 0.5670
+2025-05-20 11:11:27,803 - jittordet - INFO - Epoch [ 7/12] Iter [30/49]  eta: 0 day 00:00:41  time: 0.1569  lr: 6.4835e-03  loss: 2.3304  loss_cls: 0.7117  loss_bbox: 1.1010  loss_dfl: 0.5177
+2025-05-20 11:11:29,242 - jittordet - INFO - Epoch [ 7/12] Iter [40/49]  eta: 0 day 00:00:39  time: 0.1565  lr: 6.6833e-03  loss: 2.2420  loss_cls: 0.6717  loss_bbox: 1.0771  loss_dfl: 0.4932
+2025-05-20 11:11:29,242 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:32,889 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_7.pkl
+2025-05-20 11:11:33,396 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0494
+2025-05-20 11:11:33,858 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0492
+2025-05-20 11:11:34,321 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0491
+2025-05-20 11:11:34,797 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0490
+2025-05-20 11:11:34,798 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:35,264 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0489
+2025-05-20 11:11:35,265 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0490
+2025-05-20 11:11:35,305 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:11:35,631 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:35,631 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:37,057 - jittordet - INFO - Epoch [ 8/12] Iter [10/49]  eta: 0 day 00:00:36  time: 0.1557  lr: 7.0629e-03  loss: 2.4668  loss_cls: 0.8558  loss_bbox: 1.1082  loss_dfl: 0.5029
+2025-05-20 11:11:38,484 - jittordet - INFO - Epoch [ 8/12] Iter [20/49]  eta: 0 day 00:00:35  time: 0.1553  lr: 7.2627e-03  loss: 3.2815  loss_cls: 1.7846  loss_bbox: 1.0368  loss_dfl: 0.4600
+2025-05-20 11:11:39,881 - jittordet - INFO - Epoch [ 8/12] Iter [30/49]  eta: 0 day 00:00:33  time: 0.1548  lr: 7.4625e-03  loss: 2.0183  loss_cls: 0.6397  loss_bbox: 0.9559  loss_dfl: 0.4227
+2025-05-20 11:11:41,312 - jittordet - INFO - Epoch [ 8/12] Iter [40/49]  eta: 0 day 00:00:31  time: 0.1545  lr: 7.6623e-03  loss: 2.7538  loss_cls: 1.2653  loss_bbox: 1.0171  loss_dfl: 0.4715
+2025-05-20 11:11:41,312 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:44,944 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_8.pkl
+2025-05-20 11:11:45,448 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:02  time: 0.0489
+2025-05-20 11:11:45,905 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0488
+2025-05-20 11:11:46,364 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0487
+2025-05-20 11:11:46,841 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0487
+2025-05-20 11:11:46,842 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:47,299 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0486
+2025-05-20 11:11:47,299 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0487
+2025-05-20 11:11:47,308 - jittordet - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.08s).
+Accumulating evaluation results...
+DONE (t=0.19s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.27s).
+Accumulating evaluation results...
+DONE (t=0.30s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.004
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.003
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.31s).
+Accumulating evaluation results...
+DONE (t=0.30s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.002
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.008
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.10s).
+Accumulating evaluation results...
+DONE (t=0.15s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.10s).
+Accumulating evaluation results...
+DONE (t=0.23s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.002
+Loading and preparing results...
+DONE (t=0.06s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.22s).
+Accumulating evaluation results...
+DONE (t=0.23s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.09s).
+Accumulating evaluation results...
+DONE (t=0.22s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.003
+Loading and preparing results...2025-05-20 11:11:47,592 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:47,592 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:48,995 - jittordet - INFO - Epoch [ 9/12] Iter [10/49]  eta: 0 day 00:00:28  time: 0.1538  lr: 8.0420e-03  loss: 3.1683  loss_cls: 1.4697  loss_bbox: 1.1731  loss_dfl: 0.5254
+2025-05-20 11:11:50,439 - jittordet - INFO - Epoch [ 9/12] Iter [20/49]  eta: 0 day 00:00:27  time: 0.1536  lr: 8.2418e-03  loss: 2.7802  loss_cls: 1.2167  loss_bbox: 1.0854  loss_dfl: 0.4780
+2025-05-20 11:11:51,887 - jittordet - INFO - Epoch [ 9/12] Iter [30/49]  eta: 0 day 00:00:25  time: 0.1533  lr: 8.4416e-03  loss: 3.7739  loss_cls: 2.1859  loss_bbox: 1.0960  loss_dfl: 0.4921
+2025-05-20 11:11:53,295 - jittordet - INFO - Epoch [ 9/12] Iter [40/49]  eta: 0 day 00:00:24  time: 0.1530  lr: 8.6414e-03  loss: 2.5453  loss_cls: 1.0093  loss_bbox: 1.0692  loss_dfl: 0.4668
+2025-05-20 11:11:53,295 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:56,970 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_9.pkl
+2025-05-20 11:11:57,475 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:01  time: 0.0486
+2025-05-20 11:11:57,940 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0485
+2025-05-20 11:11:58,404 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0484
+2025-05-20 11:11:58,880 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0484
+2025-05-20 11:11:58,880 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:11:59,347 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0484
+2025-05-20 11:11:59,347 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0484
+2025-05-20 11:11:59,387 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:11:59,701 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:11:59,702 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:01,126 - jittordet - INFO - Epoch [10/12] Iter [10/49]  eta: 0 day 00:00:21  time: 0.1525  lr: 9.0210e-03  loss: 2.3592  loss_cls: 0.8107  loss_bbox: 1.0448  loss_dfl: 0.5037
+2025-05-20 11:12:02,585 - jittordet - INFO - Epoch [10/12] Iter [20/49]  eta: 0 day 00:00:19  time: 0.1523  lr: 9.2208e-03  loss: 3.4518  loss_cls: 1.5734  loss_bbox: 1.3108  loss_dfl: 0.5677
+2025-05-20 11:12:04,037 - jittordet - INFO - Epoch [10/12] Iter [30/49]  eta: 0 day 00:00:17  time: 0.1521  lr: 9.4206e-03  loss: 2.5120  loss_cls: 0.9510  loss_bbox: 1.0929  loss_dfl: 0.4682
+2025-05-20 11:12:05,497 - jittordet - INFO - Epoch [10/12] Iter [40/49]  eta: 0 day 00:00:16  time: 0.1519  lr: 9.6204e-03  loss: 2.3221  loss_cls: 0.7179  loss_bbox: 1.1063  loss_dfl: 0.4979
+2025-05-20 11:12:05,497 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:09,193 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_10.pkl
+2025-05-20 11:12:09,704 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:01  time: 0.0484
+2025-05-20 11:12:10,173 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0483
+2025-05-20 11:12:10,641 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0483
+2025-05-20 11:12:11,124 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0483
+2025-05-20 11:12:11,124 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:11,592 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0482
+2025-05-20 11:12:11,593 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0483
+2025-05-20 11:12:11,653 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:12:12,137 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:12,138 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:13,553 - jittordet - INFO - Epoch [11/12] Iter [10/49]  eta: 0 day 00:00:13  time: 0.1515  lr: 1.0000e-02  loss: 2.4883  loss_cls: 0.7377  loss_bbox: 1.1952  loss_dfl: 0.5555
+2025-05-20 11:12:15,015 - jittordet - INFO - Epoch [11/12] Iter [20/49]  eta: 0 day 00:00:11  time: 0.1514  lr: 1.0000e-02  loss: 2.3326  loss_cls: 0.6111  loss_bbox: 1.1929  loss_dfl: 0.5286
+2025-05-20 11:12:16,441 - jittordet - INFO - Epoch [11/12] Iter [30/49]  eta: 0 day 00:00:10  time: 0.1512  lr: 1.0000e-02  loss: 2.1197  loss_cls: 0.6976  loss_bbox: 0.9603  loss_dfl: 0.4619
+2025-05-20 11:12:17,884 - jittordet - INFO - Epoch [11/12] Iter [40/49]  eta: 0 day 00:00:08  time: 0.1510  lr: 1.0000e-02  loss: 2.2780  loss_cls: 0.6761  loss_bbox: 1.1120  loss_dfl: 0.4899
+2025-05-20 11:12:17,885 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:21,545 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_11.pkl
+2025-05-20 11:12:22,059 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:01  time: 0.0482
+2025-05-20 11:12:22,532 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0482
+2025-05-20 11:12:23,000 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0482
+2025-05-20 11:12:23,480 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0481
+2025-05-20 11:12:23,480 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:23,948 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0481
+2025-05-20 11:12:23,949 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0482
+2025-05-20 11:12:24,024 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:12:24,460 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:24,460 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:25,869 - jittordet - INFO - Epoch [12/12] Iter [10/49]  eta: 0 day 00:00:06  time: 0.1506  lr: 1.0000e-03  loss: 2.4724  loss_cls: 0.7371  loss_bbox: 1.2038  loss_dfl: 0.5315
+2025-05-20 11:12:27,309 - jittordet - INFO - Epoch [12/12] Iter [20/49]  eta: 0 day 00:00:04  time: 0.1505  lr: 1.0000e-03  loss: 2.2261  loss_cls: 0.8016  loss_bbox: 0.9532  loss_dfl: 0.4713
+2025-05-20 11:12:28,740 - jittordet - INFO - Epoch [12/12] Iter [30/49]  eta: 0 day 00:00:03  time: 0.1503  lr: 1.0000e-03  loss: 2.3149  loss_cls: 0.6903  loss_bbox: 1.1175  loss_dfl: 0.5071
+2025-05-20 11:12:30,171 - jittordet - INFO - Epoch [12/12] Iter [40/49]  eta: 0 day 00:00:01  time: 0.1502  lr: 1.0000e-03  loss: 2.0895  loss_cls: 0.6239  loss_bbox: 1.0187  loss_dfl: 0.4469
+2025-05-20 11:12:30,171 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:33,910 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250520_110958_train/epoch_12.pkl
+2025-05-20 11:12:34,423 - jittordet - INFO - (val) [1/1][10/50]  eta: 0 day 00:00:01  time: 0.0481
+2025-05-20 11:12:34,894 - jittordet - INFO - (val) [1/1][20/50]  eta: 0 day 00:00:01  time: 0.0481
+2025-05-20 11:12:35,365 - jittordet - INFO - (val) [1/1][30/50]  eta: 0 day 00:00:01  time: 0.0481
+2025-05-20 11:12:35,844 - jittordet - INFO - (val) [1/1][40/50]  eta: 0 day 00:00:00  time: 0.0480
+2025-05-20 11:12:35,845 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_110958
+2025-05-20 11:12:36,313 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0480
+2025-05-20 11:12:36,313 - jittordet - INFO - (val) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0481
+2025-05-20 11:12:36,391 - jittordet - INFO - Evaluating bbox...
+2025-05-20 11:12:36,910 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 11:12:36,911 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.11s).
+Accumulating evaluation results...
+DONE (t=0.17s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.08s).
+Accumulating evaluation results...
+DONE (t=0.22s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.19s).
+Accumulating evaluation results...
+DONE (t=0.27s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.004
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.004
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.006
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.010
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.14s).
+Accumulating evaluation results...
+DONE (t=0.27s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.010
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.16s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.010

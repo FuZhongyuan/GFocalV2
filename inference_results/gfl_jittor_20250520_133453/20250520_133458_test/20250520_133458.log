@@ -1,0 +1,12 @@
+2025-05-20 13:35:01,596 - jittordet - INFO - Start load parameters from /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+2025-05-20 13:35:03,222 - jittordet - INFO - Finish loading checkpoint
+2025-05-20 13:35:06,222 - jittordet - INFO - (test) [1/1][10/50]  eta: 0 day 00:00:09  time: 0.2409
+2025-05-20 13:35:06,711 - jittordet - INFO - (test) [1/1][20/50]  eta: 0 day 00:00:04  time: 0.1444
+2025-05-20 13:35:07,189 - jittordet - INFO - (test) [1/1][30/50]  eta: 0 day 00:00:02  time: 0.1119
+2025-05-20 13:35:07,672 - jittordet - INFO - (test) [1/1][40/50]  eta: 0 day 00:00:01  time: 0.0957
+2025-05-20 13:35:07,672 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_133458
+2025-05-20 13:35:08,199 - jittordet - INFO - (test) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0869
+2025-05-20 13:35:08,199 - jittordet - INFO - (test) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0870
+2025-05-20 13:35:08,278 - jittordet - INFO - Evaluating bbox...
+2025-05-20 13:35:08,756 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 13:35:08,756 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000

@@ -1,0 +1,836 @@
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/data-fs/GFocalV2/GFocalV2Pytorch
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: matplotlib in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (3.7.5)
+Requirement already satisfied: numpy in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (1.23.5)
+Requirement already satisfied: pycocotools in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (2.0.7)
+Requirement already satisfied: scipy in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (1.10.1)
+Requirement already satisfied: shapely in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (2.0.7)
+Requirement already satisfied: six in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (1.16.0)
+Requirement already satisfied: terminaltables in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (3.1.10)
+Requirement already satisfied: tqdm in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from mmdet==3.2.0) (4.65.2)
+Requirement already satisfied: contourpy>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (1.4.7)
+Requirement already satisfied: packaging>=20.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (24.2)
+Requirement already satisfied: pillow>=6.2.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (9.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (2.9.0.post0)
+Requirement already satisfied: importlib-resources>=3.2.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->mmdet==3.2.0) (6.4.5)
+Requirement already satisfied: zipp>=3.1.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from importlib-resources>=3.2.0->matplotlib->mmdet==3.2.0) (3.20.2)
+Installing collected packages: mmdet
+  Attempting uninstall: mmdet
+    Found existing installation: mmdet 3.2.0
+    Uninstalling mmdet-3.2.0:
+      Successfully uninstalled mmdet-3.2.0
+  DEPRECATION: Legacy editable install of mmdet==3.2.0 from file:///root/data-fs/GFocalV2/GFocalV2Pytorch (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for mmdet
+Successfully installed mmdet
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+05/20 11:12:50 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.8.2 (default, Mar 25 2020, 17:03:02) [GCC 7.3.0]
+    CUDA available: True
+    MUSA available: False
+    numpy_random_seed: 780082629
+    GPU 0: Tesla V100-SXM2-16GB
+    CUDA_HOME: /usr/local/cuda
+    NVCC: Cuda compilation tools, release 11.3, V11.3.109
+    GCC: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+    PyTorch: 1.10.1
+    PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.4-Product Build 20210904 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.2.3 (Git Hash 7336ca9f055cf1bfa13efb658fe15dc9b41f0740)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX512
+  - CUDA Runtime 11.3
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 8.2
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.3, CUDNN_VERSION=8.2.0, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.10.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+    TorchVision: 0.11.2
+    OpenCV: 4.11.0
+    MMEngine: 0.10.7
+
+Runtime environment:
+    cudnn_benchmark: False
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    dist_cfg: {'backend': 'nccl'}
+    seed: 780082629
+    Distributed launcher: none
+    Distributed training: False
+    GPU number: 1
+------------------------------------------------------------
+
+05/20 11:12:50 - mmengine - INFO - Config:
+auto_scale_lr = dict(base_batch_size=16, enable=False)
+backend_args = None
+data_root = 'data/coco/'
+dataset_type = 'CocoDataset'
+default_hooks = dict(
+    checkpoint=dict(interval=1, type='CheckpointHook'),
+    logger=dict(interval=10, type='LoggerHook'),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    timer=dict(type='IterTimerHook'),
+    visualization=dict(type='DetVisualizationHook'))
+default_scope = 'mmdet'
+env_cfg = dict(
+    cudnn_benchmark=False,
+    dist_cfg=dict(backend='nccl'),
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0))
+launcher = 'none'
+load_from = None
+log_level = 'INFO'
+log_processor = dict(by_epoch=True, type='LogProcessor', window_size=50)
+model = dict(
+    backbone=dict(
+        depth=50,
+        frozen_stages=1,
+        init_cfg=dict(checkpoint='torchvision://resnet50', type='Pretrained'),
+        norm_cfg=dict(requires_grad=True, type='BN'),
+        norm_eval=True,
+        num_stages=4,
+        out_indices=(
+            0,
+            1,
+            2,
+            3,
+        ),
+        style='pytorch',
+        type='ResNet'),
+    bbox_head=dict(
+        anchor_generator=dict(
+            octave_base_scale=8,
+            ratios=[
+                1.0,
+            ],
+            scales_per_octave=1,
+            strides=[
+                8,
+                16,
+                32,
+                64,
+                128,
+            ],
+            type='AnchorGenerator'),
+        feat_channels=256,
+        in_channels=256,
+        loss_bbox=dict(loss_weight=2.0, type='GIoULoss'),
+        loss_cls=dict(
+            beta=2.0,
+            loss_weight=1.0,
+            type='QualityFocalLoss',
+            use_sigmoid=True),
+        loss_dfl=dict(loss_weight=0.25, type='DistributionFocalLoss'),
+        num_classes=80,
+        reg_max=16,
+        stacked_convs=4,
+        type='GFLHead'),
+    data_preprocessor=dict(
+        bgr_to_rgb=True,
+        mean=[
+            123.675,
+            116.28,
+            103.53,
+        ],
+        pad_size_divisor=32,
+        std=[
+            58.395,
+            57.12,
+            57.375,
+        ],
+        type='DetDataPreprocessor'),
+    neck=dict(
+        add_extra_convs='on_output',
+        in_channels=[
+            256,
+            512,
+            1024,
+            2048,
+        ],
+        num_outs=5,
+        out_channels=256,
+        start_level=1,
+        type='FPN'),
+    test_cfg=dict(
+        max_per_img=100,
+        min_bbox_size=0,
+        nms=dict(iou_threshold=0.6, type='nms'),
+        nms_pre=1000,
+        score_thr=0.05),
+    train_cfg=dict(
+        allowed_border=-1,
+        assigner=dict(topk=9, type='ATSSAssigner'),
+        debug=False,
+        pos_weight=-1),
+    type='GFL')
+optim_wrapper = dict(
+    optimizer=dict(lr=0.01, momentum=0.9, type='SGD', weight_decay=0.0001),
+    type='OptimWrapper')
+param_scheduler = [
+    dict(
+        begin=0, by_epoch=False, end=500, start_factor=0.001, type='LinearLR'),
+    dict(
+        begin=0,
+        by_epoch=True,
+        end=12,
+        gamma=0.1,
+        milestones=[
+            8,
+            11,
+        ],
+        type='MultiStepLR'),
+]
+resume = False
+test_cfg = dict(type='TestLoop')
+test_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        ann_file='annotations/instances_val2017.json',
+        backend_args=None,
+        data_prefix=dict(img='val2017/'),
+        data_root='data/coco/',
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                ),
+                type='PackDetInputs'),
+        ],
+        test_mode=True,
+        type='CocoDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+test_evaluator = dict(
+    ann_file='data/coco/annotations/instances_val2017.json',
+    backend_args=None,
+    format_only=False,
+    metric='bbox',
+    type='CocoMetric')
+test_pipeline = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(keep_ratio=True, scale=(
+        1333,
+        800,
+    ), type='Resize'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'scale_factor',
+        ),
+        type='PackDetInputs'),
+]
+train_cfg = dict(max_epochs=12, type='EpochBasedTrainLoop', val_interval=1)
+train_dataloader = dict(
+    batch_sampler=dict(type='AspectRatioBatchSampler'),
+    batch_size=2,
+    dataset=dict(
+        ann_file='annotations/instances_train2017.json',
+        backend_args=None,
+        data_prefix=dict(img='train2017/'),
+        data_root='data/coco/',
+        filter_cfg=dict(filter_empty_gt=True, min_size=32),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(prob=0.5, type='RandomFlip'),
+            dict(type='PackDetInputs'),
+        ],
+        type='CocoDataset'),
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(shuffle=True, type='DefaultSampler'))
+train_pipeline = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(keep_ratio=True, scale=(
+        1333,
+        800,
+    ), type='Resize'),
+    dict(prob=0.5, type='RandomFlip'),
+    dict(type='PackDetInputs'),
+]
+val_cfg = dict(type='ValLoop')
+val_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        ann_file='annotations/instances_val2017.json',
+        backend_args=None,
+        data_prefix=dict(img='val2017/'),
+        data_root='data/coco/',
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                ),
+                type='PackDetInputs'),
+        ],
+        test_mode=True,
+        type='CocoDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+val_evaluator = dict(
+    ann_file='data/coco/annotations/instances_val2017.json',
+    backend_args=None,
+    format_only=False,
+    metric='bbox',
+    type='CocoMetric')
+vis_backends = [
+    dict(type='LocalVisBackend'),
+]
+visualizer = dict(
+    name='visualizer',
+    type='DetLocalVisualizer',
+    vis_backends=[
+        dict(type='LocalVisBackend'),
+    ])
+work_dir = 'comparison_results/pytorch/work_dirs'
+
+05/20 11:12:54 - mmengine - INFO - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+05/20 11:12:54 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_test_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+05/20 11:12:55 - mmengine - INFO - load model from: torchvision://resnet50
+05/20 11:12:55 - mmengine - INFO - Loads checkpoint by torchvision backend from path: torchvision://resnet50
+05/20 11:12:55 - mmengine - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: fc.weight, fc.bias
+
+05/20 11:12:55 - mmengine - WARNING - "FileClient" will be deprecated in future. Please use io functions in https://mmengine.readthedocs.io/en/latest/api/fileio.html#file-io
+05/20 11:12:55 - mmengine - WARNING - "HardDiskBackend" is the alias of "LocalBackend" and the former will be deprecated in future.
+05/20 11:12:55 - mmengine - INFO - Checkpoints will be saved to /root/data-fs/GFocalV2/GFocalV2Pytorch/comparison_results/pytorch/work_dirs.
+/root/data-fs/GFocalV2/GFocalV2Pytorch/mmdet/models/dense_heads/anchor_head.py:108: UserWarning: DeprecationWarning: `num_anchors` is deprecated, for consistency or also use `num_base_priors` instead
+  warnings.warn('DeprecationWarning: `num_anchors` is deprecated, '
+/root/data-fs/GFocalV2/GFocalV2Pytorch/mmdet/datasets/api_wrappers/coco_api.py:22: UserWarning: mmpycocotools is deprecated. Please install official pycocotools by "pip install pycocotools"
+  warnings.warn(
+05/20 11:12:58 - mmengine - INFO - Epoch(train)  [1][10/25]  lr: 1.9018e-04  eta: 0:01:31  time: 0.3152  data_time: 0.0559  memory: 3271  loss: 2.4657  loss_cls: 0.1882  loss_bbox: 1.5558  loss_dfl: 0.7217
+05/20 11:13:00 - mmengine - INFO - Epoch(train)  [1][20/25]  lr: 3.9038e-04  eta: 0:01:12  time: 0.2600  data_time: 0.0306  memory: 3271  loss: 2.4346  loss_cls: 0.2164  loss_bbox: 1.5231  loss_dfl: 0.6951
+05/20 11:13:01 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:01 - mmengine - INFO - Saving checkpoint at 1 epochs
+05/20 11:13:03 - mmengine - INFO - Epoch(val)  [1][10/50]    eta: 0:00:03  time: 0.0870  data_time: 0.0460  memory: 3001  
+05/20 11:13:04 - mmengine - INFO - Epoch(val)  [1][20/50]    eta: 0:00:01  time: 0.0638  data_time: 0.0242  memory: 583  
+05/20 11:13:04 - mmengine - INFO - Epoch(val)  [1][30/50]    eta: 0:00:01  time: 0.0560  data_time: 0.0169  memory: 583  
+05/20 11:13:04 - mmengine - INFO - Epoch(val)  [1][40/50]    eta: 0:00:00  time: 0.0524  data_time: 0.0132  memory: 605  
+05/20 11:13:05 - mmengine - INFO - Epoch(val)  [1][50/50]    eta: 0:00:00  time: 0.0500  data_time: 0.0110  memory: 596  
+05/20 11:13:05 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.12s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.27s).
+Accumulating evaluation results...
+DONE (t=0.30s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+05/20 11:13:06 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.000 0.000
+05/20 11:13:06 - mmengine - INFO - Epoch(val) [1][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0000  data_time: 0.0110  time: 0.0500
+05/20 11:13:08 - mmengine - INFO - Epoch(train)  [2][10/25]  lr: 6.9068e-04  eta: 0:01:02  time: 0.2345  data_time: 0.0210  memory: 3271  loss: 2.4200  loss_cls: 0.3128  loss_bbox: 1.4493  loss_dfl: 0.6579
+05/20 11:13:10 - mmengine - INFO - Epoch(train)  [2][20/25]  lr: 8.9088e-04  eta: 0:00:58  time: 0.2282  data_time: 0.0175  memory: 3271  loss: 2.3876  loss_cls: 0.3689  loss_bbox: 1.3866  loss_dfl: 0.6320
+05/20 11:13:11 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:11 - mmengine - INFO - Saving checkpoint at 2 epochs
+05/20 11:13:12 - mmengine - INFO - Epoch(val)  [2][10/50]    eta: 0:00:01  time: 0.0419  data_time: 0.0031  memory: 3001  
+05/20 11:13:13 - mmengine - INFO - Epoch(val)  [2][20/50]    eta: 0:00:01  time: 0.0419  data_time: 0.0031  memory: 583  
+05/20 11:13:13 - mmengine - INFO - Epoch(val)  [2][30/50]    eta: 0:00:00  time: 0.0419  data_time: 0.0031  memory: 583  
+05/20 11:13:14 - mmengine - INFO - Epoch(val)  [2][40/50]    eta: 0:00:00  time: 0.0419  data_time: 0.0031  memory: 605  
+05/20 11:13:14 - mmengine - INFO - Epoch(val)  [2][50/50]    eta: 0:00:00  time: 0.0420  data_time: 0.0032  memory: 596  
+05/20 11:13:14 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.09s).
+Accumulating evaluation results...
+DONE (t=0.21s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+05/20 11:13:14 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.000 0.000
+05/20 11:13:14 - mmengine - INFO - Epoch(val) [2][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0000  data_time: 0.0032  time: 0.0418
+05/20 11:13:16 - mmengine - INFO - Epoch(train)  [3][10/25]  lr: 1.1912e-03  eta: 0:00:53  time: 0.2029  data_time: 0.0070  memory: 3271  loss: 2.3819  loss_cls: 0.5175  loss_bbox: 1.2782  loss_dfl: 0.5862
+05/20 11:13:19 - mmengine - INFO - Epoch(train)  [3][20/25]  lr: 1.3914e-03  eta: 0:00:50  time: 0.2030  data_time: 0.0069  memory: 3271  loss: 2.3614  loss_cls: 0.5833  loss_bbox: 1.2158  loss_dfl: 0.5623
+05/20 11:13:19 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:19 - mmengine - INFO - Saving checkpoint at 3 epochs
+05/20 11:13:21 - mmengine - INFO - Epoch(val)  [3][10/50]    eta: 0:00:01  time: 0.0421  data_time: 0.0032  memory: 3271  
+05/20 11:13:22 - mmengine - INFO - Epoch(val)  [3][20/50]    eta: 0:00:01  time: 0.0420  data_time: 0.0032  memory: 583  
+05/20 11:13:22 - mmengine - INFO - Epoch(val)  [3][30/50]    eta: 0:00:00  time: 0.0421  data_time: 0.0032  memory: 583  
+05/20 11:13:23 - mmengine - INFO - Epoch(val)  [3][40/50]    eta: 0:00:00  time: 0.0420  data_time: 0.0031  memory: 605  
+05/20 11:13:23 - mmengine - INFO - Epoch(val)  [3][50/50]    eta: 0:00:00  time: 0.0419  data_time: 0.0031  memory: 596  
+05/20 11:13:23 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.13s).
+Accumulating evaluation results...
+DONE (t=0.29s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.003
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.005
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.019
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.012
+05/20 11:13:24 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.003 0.000 0.000 0.005 0.001
+05/20 11:13:24 - mmengine - INFO - Epoch(val) [3][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0030  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0050  coco/bbox_mAP_l: 0.0010  data_time: 0.0030  time: 0.0417
+05/20 11:13:26 - mmengine - INFO - Epoch(train)  [4][10/25]  lr: 1.6917e-03  eta: 0:00:46  time: 0.2031  data_time: 0.0069  memory: 3271  loss: 2.2762  loss_cls: 0.6522  loss_bbox: 1.0971  loss_dfl: 0.5268
+05/20 11:13:28 - mmengine - INFO - Epoch(train)  [4][20/25]  lr: 1.8919e-03  eta: 0:00:44  time: 0.2024  data_time: 0.0069  memory: 3271  loss: 2.3237  loss_cls: 0.7247  loss_bbox: 1.0744  loss_dfl: 0.5245
+05/20 11:13:29 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:29 - mmengine - INFO - Saving checkpoint at 4 epochs
+05/20 11:13:30 - mmengine - INFO - Epoch(val)  [4][10/50]    eta: 0:00:01  time: 0.0420  data_time: 0.0028  memory: 3271  
+05/20 11:13:31 - mmengine - INFO - Epoch(val)  [4][20/50]    eta: 0:00:01  time: 0.0424  data_time: 0.0029  memory: 583  
+05/20 11:13:31 - mmengine - INFO - Epoch(val)  [4][30/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0029  memory: 583  
+05/20 11:13:32 - mmengine - INFO - Epoch(val)  [4][40/50]    eta: 0:00:00  time: 0.0432  data_time: 0.0030  memory: 605  
+05/20 11:13:32 - mmengine - INFO - Epoch(val)  [4][50/50]    eta: 0:00:00  time: 0.0436  data_time: 0.0030  memory: 596  
+05/20 11:13:32 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.12s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.004
+05/20 11:13:33 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.000 0.000
+05/20 11:13:33 - mmengine - INFO - Epoch(val) [4][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0000  data_time: 0.0030  time: 0.0434
+05/20 11:13:35 - mmengine - INFO - Epoch(train)  [5][10/25]  lr: 2.1922e-03  eta: 0:00:40  time: 0.2032  data_time: 0.0069  memory: 3271  loss: 2.3223  loss_cls: 0.7538  loss_bbox: 1.0498  loss_dfl: 0.5187
+05/20 11:13:37 - mmengine - INFO - Epoch(train)  [5][20/25]  lr: 2.3924e-03  eta: 0:00:38  time: 0.2054  data_time: 0.0070  memory: 3271  loss: 2.3042  loss_cls: 0.7697  loss_bbox: 1.0232  loss_dfl: 0.5113
+05/20 11:13:38 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:38 - mmengine - INFO - Saving checkpoint at 5 epochs
+05/20 11:13:40 - mmengine - INFO - Epoch(val)  [5][10/50]    eta: 0:00:01  time: 0.0437  data_time: 0.0033  memory: 3001  
+05/20 11:13:40 - mmengine - INFO - Epoch(val)  [5][20/50]    eta: 0:00:01  time: 0.0435  data_time: 0.0032  memory: 583  
+05/20 11:13:41 - mmengine - INFO - Epoch(val)  [5][30/50]    eta: 0:00:00  time: 0.0432  data_time: 0.0032  memory: 583  
+05/20 11:13:41 - mmengine - INFO - Epoch(val)  [5][40/50]    eta: 0:00:00  time: 0.0430  data_time: 0.0032  memory: 605  
+05/20 11:13:41 - mmengine - INFO - Epoch(val)  [5][50/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 596  
+05/20 11:13:42 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.11s).
+Accumulating evaluation results...
+DONE (t=0.27s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.002
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.008
+05/20 11:13:42 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.002 0.000 0.000 0.000 0.001
+05/20 11:13:42 - mmengine - INFO - Epoch(val) [5][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0020  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0010  data_time: 0.0032  time: 0.0426
+05/20 11:13:44 - mmengine - INFO - Epoch(train)  [6][10/25]  lr: 2.6927e-03  eta: 0:00:35  time: 0.2060  data_time: 0.0070  memory: 3271  loss: 2.3599  loss_cls: 0.7840  loss_bbox: 1.0527  loss_dfl: 0.5232
+05/20 11:13:46 - mmengine - INFO - Epoch(train)  [6][20/25]  lr: 2.8929e-03  eta: 0:00:32  time: 0.2059  data_time: 0.0071  memory: 3271  loss: 2.2976  loss_cls: 0.7120  loss_bbox: 1.0637  loss_dfl: 0.5220
+05/20 11:13:47 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:47 - mmengine - INFO - Saving checkpoint at 6 epochs
+05/20 11:13:49 - mmengine - INFO - Epoch(val)  [6][10/50]    eta: 0:00:01  time: 0.0426  data_time: 0.0031  memory: 3001  
+05/20 11:13:49 - mmengine - INFO - Epoch(val)  [6][20/50]    eta: 0:00:01  time: 0.0427  data_time: 0.0032  memory: 583  
+05/20 11:13:50 - mmengine - INFO - Epoch(val)  [6][30/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 583  
+05/20 11:13:50 - mmengine - INFO - Epoch(val)  [6][40/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 605  
+05/20 11:13:51 - mmengine - INFO - Epoch(val)  [6][50/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 596  
+05/20 11:13:51 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.26s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.007
+05/20 11:13:51 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.000 0.000
+05/20 11:13:51 - mmengine - INFO - Epoch(val) [6][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0000  data_time: 0.0032  time: 0.0426
+05/20 11:13:53 - mmengine - INFO - Epoch(train)  [7][10/25]  lr: 3.1932e-03  eta: 0:00:29  time: 0.2044  data_time: 0.0072  memory: 3271  loss: 2.1884  loss_cls: 0.6228  loss_bbox: 1.0513  loss_dfl: 0.5142
+05/20 11:13:55 - mmengine - INFO - Epoch(train)  [7][20/25]  lr: 3.3934e-03  eta: 0:00:27  time: 0.2016  data_time: 0.0071  memory: 3271  loss: 2.1805  loss_cls: 0.6199  loss_bbox: 1.0473  loss_dfl: 0.5132
+05/20 11:13:56 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:13:56 - mmengine - INFO - Saving checkpoint at 7 epochs
+05/20 11:13:58 - mmengine - INFO - Epoch(val)  [7][10/50]    eta: 0:00:01  time: 0.0430  data_time: 0.0033  memory: 3271  
+05/20 11:13:58 - mmengine - INFO - Epoch(val)  [7][20/50]    eta: 0:00:01  time: 0.0431  data_time: 0.0033  memory: 583  
+05/20 11:13:59 - mmengine - INFO - Epoch(val)  [7][30/50]    eta: 0:00:00  time: 0.0431  data_time: 0.0033  memory: 583  
+05/20 11:13:59 - mmengine - INFO - Epoch(val)  [7][40/50]    eta: 0:00:00  time: 0.0431  data_time: 0.0032  memory: 605  
+05/20 11:14:00 - mmengine - INFO - Epoch(val)  [7][50/50]    eta: 0:00:00  time: 0.0432  data_time: 0.0032  memory: 596  
+05/20 11:14:00 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.34s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.006
+05/20 11:14:01 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.000 0.000
+05/20 11:14:01 - mmengine - INFO - Epoch(val) [7][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0000  coco/bbox_mAP_l: 0.0000  data_time: 0.0032  time: 0.0430
+05/20 11:14:03 - mmengine - INFO - Epoch(train)  [8][10/25]  lr: 3.6937e-03  eta: 0:00:24  time: 0.2014  data_time: 0.0070  memory: 3001  loss: 2.1272  loss_cls: 0.6045  loss_bbox: 1.0218  loss_dfl: 0.5008
+05/20 11:14:05 - mmengine - INFO - Epoch(train)  [8][20/25]  lr: 3.8939e-03  eta: 0:00:21  time: 0.2016  data_time: 0.0070  memory: 3271  loss: 2.0952  loss_cls: 0.6076  loss_bbox: 0.9918  loss_dfl: 0.4958
+05/20 11:14:06 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:14:06 - mmengine - INFO - Saving checkpoint at 8 epochs
+05/20 11:14:07 - mmengine - INFO - Epoch(val)  [8][10/50]    eta: 0:00:01  time: 0.0430  data_time: 0.0032  memory: 3271  
+05/20 11:14:08 - mmengine - INFO - Epoch(val)  [8][20/50]    eta: 0:00:01  time: 0.0429  data_time: 0.0032  memory: 583  
+05/20 11:14:08 - mmengine - INFO - Epoch(val)  [8][30/50]    eta: 0:00:00  time: 0.0427  data_time: 0.0032  memory: 583  
+05/20 11:14:09 - mmengine - INFO - Epoch(val)  [8][40/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 605  
+05/20 11:14:09 - mmengine - INFO - Epoch(val)  [8][50/50]    eta: 0:00:00  time: 0.0424  data_time: 0.0032  memory: 596  
+05/20 11:14:09 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.14s).
+Accumulating evaluation results...
+DONE (t=0.32s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.008
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.008
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.008
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.022
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.016
+05/20 11:14:10 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.000 0.000 0.000 0.001 0.000
+05/20 11:14:10 - mmengine - INFO - Epoch(val) [8][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0000  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0000  coco/bbox_mAP_m: 0.0010  coco/bbox_mAP_l: 0.0000  data_time: 0.0032  time: 0.0422
+05/20 11:14:12 - mmengine - INFO - Epoch(train)  [9][10/25]  lr: 4.1942e-04  eta: 0:00:18  time: 0.2010  data_time: 0.0069  memory: 3271  loss: 2.1113  loss_cls: 0.6340  loss_bbox: 0.9804  loss_dfl: 0.4970
+05/20 11:14:14 - mmengine - INFO - Epoch(train)  [9][20/25]  lr: 4.3944e-04  eta: 0:00:16  time: 0.1989  data_time: 0.0069  memory: 3271  loss: 2.0815  loss_cls: 0.6224  loss_bbox: 0.9659  loss_dfl: 0.4932
+05/20 11:14:15 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:14:15 - mmengine - INFO - Saving checkpoint at 9 epochs
+05/20 11:14:16 - mmengine - INFO - Epoch(val)  [9][10/50]    eta: 0:00:01  time: 0.0425  data_time: 0.0032  memory: 3001  
+05/20 11:14:17 - mmengine - INFO - Epoch(val)  [9][20/50]    eta: 0:00:01  time: 0.0425  data_time: 0.0032  memory: 583  
+05/20 11:14:17 - mmengine - INFO - Epoch(val)  [9][30/50]    eta: 0:00:00  time: 0.0427  data_time: 0.0032  memory: 583  
+05/20 11:14:18 - mmengine - INFO - Epoch(val)  [9][40/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 605  
+05/20 11:14:18 - mmengine - INFO - Epoch(val)  [9][50/50]    eta: 0:00:00  time: 0.0429  data_time: 0.0032  memory: 596  
+05/20 11:14:18 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.10s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.35s).
+Accumulating evaluation results...
+DONE (t=0.30s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.007
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.007
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.007
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.002
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.017
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.011
+05/20 11:14:19 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.001 0.000 0.001 0.001 0.001
+05/20 11:14:19 - mmengine - INFO - Epoch(val) [9][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0010  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0010  coco/bbox_mAP_m: 0.0010  coco/bbox_mAP_l: 0.0010  data_time: 0.0032  time: 0.0427
+05/20 11:14:21 - mmengine - INFO - Epoch(train) [10][10/25]  lr: 4.6947e-04  eta: 0:00:13  time: 0.1978  data_time: 0.0071  memory: 3271  loss: 2.0393  loss_cls: 0.6279  loss_bbox: 0.9314  loss_dfl: 0.4800
+05/20 11:14:23 - mmengine - INFO - Epoch(train) [10][20/25]  lr: 4.8949e-04  eta: 0:00:11  time: 0.1990  data_time: 0.0071  memory: 3271  loss: 2.0161  loss_cls: 0.6148  loss_bbox: 0.9260  loss_dfl: 0.4753
+05/20 11:14:24 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:14:24 - mmengine - INFO - Saving checkpoint at 10 epochs
+05/20 11:14:26 - mmengine - INFO - Epoch(val) [10][10/50]    eta: 0:00:01  time: 0.0428  data_time: 0.0032  memory: 2738  
+05/20 11:14:26 - mmengine - INFO - Epoch(val) [10][20/50]    eta: 0:00:01  time: 0.0428  data_time: 0.0033  memory: 583  
+05/20 11:14:26 - mmengine - INFO - Epoch(val) [10][30/50]    eta: 0:00:00  time: 0.0428  data_time: 0.0032  memory: 583  
+05/20 11:14:27 - mmengine - INFO - Epoch(val) [10][40/50]    eta: 0:00:00  time: 0.0427  data_time: 0.0033  memory: 605  
+05/20 11:14:27 - mmengine - INFO - Epoch(val) [10][50/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0033  memory: 596  
+05/20 11:14:27 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.43s).
+Accumulating evaluation results...
+DONE (t=0.32s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.005
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.009
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.017
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.016
+05/20 11:14:28 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.001 0.000 0.001 0.005 0.001
+05/20 11:14:28 - mmengine - INFO - Epoch(val) [10][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0010  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0010  coco/bbox_mAP_m: 0.0050  coco/bbox_mAP_l: 0.0010  data_time: 0.0032  time: 0.0424
+05/20 11:14:30 - mmengine - INFO - Epoch(train) [11][10/25]  lr: 5.1952e-04  eta: 0:00:08  time: 0.1990  data_time: 0.0072  memory: 3001  loss: 1.9441  loss_cls: 0.5820  loss_bbox: 0.8985  loss_dfl: 0.4636
+05/20 11:14:32 - mmengine - INFO - Epoch(train) [11][20/25]  lr: 5.3954e-04  eta: 0:00:06  time: 0.2022  data_time: 0.0072  memory: 3271  loss: 1.9085  loss_cls: 0.5820  loss_bbox: 0.8737  loss_dfl: 0.4528
+05/20 11:14:33 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:14:33 - mmengine - INFO - Saving checkpoint at 11 epochs
+05/20 11:14:35 - mmengine - INFO - Epoch(val) [11][10/50]    eta: 0:00:01  time: 0.0426  data_time: 0.0033  memory: 3001  
+05/20 11:14:35 - mmengine - INFO - Epoch(val) [11][20/50]    eta: 0:00:01  time: 0.0426  data_time: 0.0032  memory: 583  
+05/20 11:14:36 - mmengine - INFO - Epoch(val) [11][30/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 583  
+05/20 11:14:36 - mmengine - INFO - Epoch(val) [11][40/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 605  
+05/20 11:14:37 - mmengine - INFO - Epoch(val) [11][50/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 596  
+05/20 11:14:37 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.30s).
+Accumulating evaluation results...
+DONE (t=0.33s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.019
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.012
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.012
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.012
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.002
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.037
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.018
+05/20 11:14:37 - mmengine - INFO - bbox_mAP_copypaste: 0.000 0.001 0.000 0.001 0.019 0.001
+05/20 11:14:37 - mmengine - INFO - Epoch(val) [11][50/50]    coco/bbox_mAP: 0.0000  coco/bbox_mAP_50: 0.0010  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0010  coco/bbox_mAP_m: 0.0190  coco/bbox_mAP_l: 0.0010  data_time: 0.0032  time: 0.0424
+05/20 11:14:40 - mmengine - INFO - Epoch(train) [12][10/25]  lr: 5.6957e-05  eta: 0:00:03  time: 0.2034  data_time: 0.0071  memory: 3271  loss: 1.8565  loss_cls: 0.5300  loss_bbox: 0.8749  loss_dfl: 0.4515
+05/20 11:14:42 - mmengine - INFO - Epoch(train) [12][20/25]  lr: 5.8959e-05  eta: 0:00:01  time: 0.2022  data_time: 0.0071  memory: 3166  loss: 1.8335  loss_cls: 0.5427  loss_bbox: 0.8482  loss_dfl: 0.4425
+05/20 11:14:42 - mmengine - INFO - Exp name: gfl_r50_fpn_1x_coco_20250520_111249
+05/20 11:14:42 - mmengine - INFO - Saving checkpoint at 12 epochs
+05/20 11:14:44 - mmengine - INFO - Epoch(val) [12][10/50]    eta: 0:00:01  time: 0.0426  data_time: 0.0032  memory: 3001  
+05/20 11:14:45 - mmengine - INFO - Epoch(val) [12][20/50]    eta: 0:00:01  time: 0.0426  data_time: 0.0032  memory: 583  
+05/20 11:14:45 - mmengine - INFO - Epoch(val) [12][30/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 583  
+05/20 11:14:46 - mmengine - INFO - Epoch(val) [12][40/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 605  
+05/20 11:14:46 - mmengine - INFO - Epoch(val) [12][50/50]    eta: 0:00:00  time: 0.0426  data_time: 0.0032  memory: 596  
+05/20 11:14:46 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.30s).
+Accumulating evaluation results...
+DONE (t=0.33s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.002
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.020
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.001
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.014
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.014
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.014
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.002
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.043
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.019
+05/20 11:14:47 - mmengine - INFO - bbox_mAP_copypaste: 0.001 0.002 0.000 0.001 0.020 0.001
+05/20 11:14:47 - mmengine - INFO - Epoch(val) [12][50/50]    coco/bbox_mAP: 0.0010  coco/bbox_mAP_50: 0.0020  coco/bbox_mAP_75: 0.0000  coco/bbox_mAP_s: 0.0010  coco/bbox_mAP_m: 0.0200  coco/bbox_mAP_l: 0.0010  data_time: 0.0031  time: 0.0425

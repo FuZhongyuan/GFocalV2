@@ -1,0 +1,52 @@
+[38;5;2m[i 0520 13:34:53.651170 68 compiler.py:956] Jittor(1.3.9.14) src: /root/miniconda3/envs/jittordet/lib/python3.8/site-packages/jittor[m
+[38;5;2m[i 0520 13:34:53.656958 68 compiler.py:957] g++ at /usr/bin/g++(9.3.0)[m
+[38;5;2m[i 0520 13:34:53.657039 68 compiler.py:958] cache_path: /root/.cache/jittor/jt1.3.9/g++9.3.0/py3.8.2/Linux-5.15.0-9xaa/IntelRXeonRSilx76/2997/default[m
+[38;5;2m[i 0520 13:34:53.664155 68 __init__.py:412] Found nvcc(11.3.109) at /usr/local/cuda/bin/nvcc.[m
+[38;5;2m[i 0520 13:34:53.670362 68 __init__.py:412] Found addr2line(2.34) at /usr/bin/addr2line.[m
+[38;5;2m[i 0520 13:34:53.922191 68 compiler.py:1013] cuda key:cu11.3.109_sm_70[m
+[38;5;2m[i 0520 13:34:54.593197 68 __init__.py:227] Total mem: 503.29GB, using 16 procs for compiling.[m
+[38;5;2m[i 0520 13:34:54.859966 68 jit_compiler.cc:28] Load cc_path: /usr/bin/g++[m
+[38;5;2m[i 0520 13:34:55.086357 68 init.cc:63] Found cuda archs: [70,][m
+2025-05-20 13:35:01,596 - jittordet - INFO - Start load parameters from /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+2025-05-20 13:35:03,222 - jittordet - INFO - Finish loading checkpoint
+[38;5;2m[i 0520 13:35:03.223160 68 cuda_flags.cc:49] CUDA enabled.[m
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+[38;5;3m[w 0520 13:35:05.825613 68 cudnn_conv__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFORMAT_abcd_____hash_4d5b3e2d24c769d3_op.cc:214] forward_ algorithm cache is full[m
+2025-05-20 13:35:06,222 - jittordet - INFO - (test) [1/1][10/50]  eta: 0 day 00:00:09  time: 0.2409
+2025-05-20 13:35:06,711 - jittordet - INFO - (test) [1/1][20/50]  eta: 0 day 00:00:04  time: 0.1444
+2025-05-20 13:35:07,189 - jittordet - INFO - (test) [1/1][30/50]  eta: 0 day 00:00:02  time: 0.1119
+2025-05-20 13:35:07,672 - jittordet - INFO - (test) [1/1][40/50]  eta: 0 day 00:00:01  time: 0.0957
+2025-05-20 13:35:07,672 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250520_133458
+2025-05-20 13:35:08,199 - jittordet - INFO - (test) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0869
+2025-05-20 13:35:08,199 - jittordet - INFO - (test) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0870
+2025-05-20 13:35:08,278 - jittordet - INFO - Evaluating bbox...
+2025-05-20 13:35:08,756 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-20 13:35:08,756 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.16s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.003
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.010

@@ -1,0 +1,7 @@
+usage: test.py [-h] [--work-dir WORK_DIR] [--out OUT] [--show]
+               [--show-dir SHOW_DIR] [--wait-time WAIT_TIME]
+               [--cfg-options CFG_OPTIONS [CFG_OPTIONS ...]]
+               [--launcher {none,pytorch,slurm,mpi}] [--tta]
+               [--local_rank LOCAL_RANK]
+               config checkpoint
+test.py: error: unrecognized arguments: --eval bbox --samples 10

@@ -1,0 +1,136 @@
+2025-05-20 07:26:53,044 - INFO - 开始GFL框架对比测试
+2025-05-20 07:26:53,044 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 07:26:53,045 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 07:26:53,045 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e .&& python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_072653 --cfg-options runner.max_epochs=12
+2025-05-20 07:26:53,045 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_072653/train.log
+2025-05-20 07:27:01,238 - INFO - jittor 训练完成，返回码: 2
+2025-05-20 07:27:01,240 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 07:27:01,241 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e .&& python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_072701 --cfg-options runner.max_epochs=12
+2025-05-20 07:27:01,241 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_072701/train.log
+2025-05-20 07:41:21,025 - INFO - 开始GFL框架对比测试
+2025-05-20 07:41:21,026 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 07:41:21,026 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 07:41:21,027 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e .&& python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_074121
+2025-05-20 07:41:21,027 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_074121/train.log
+2025-05-20 08:24:37,933 - INFO - 开始GFL框架对比测试
+2025-05-20 08:24:37,933 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:24:37,933 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:24:37,934 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_082437
+2025-05-20 08:24:37,934 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_082437/train.log
+2025-05-20 08:26:14,252 - INFO - 开始GFL框架对比测试
+2025-05-20 08:26:14,252 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:26:14,253 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:26:14,253 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_082614
+2025-05-20 08:26:14,253 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_082614/train.log
+2025-05-20 08:26:27,795 - INFO - jittor 训练完成，返回码: 139
+2025-05-20 08:26:27,797 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 08:26:27,798 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_082627
+2025-05-20 08:26:27,798 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_082627/train.log
+2025-05-20 08:32:07,236 - INFO - 开始GFL框架对比测试
+2025-05-20 08:32:07,236 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:32:07,237 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:32:07,238 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_083207
+2025-05-20 08:32:07,238 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_083207/train.log
+2025-05-20 08:32:40,639 - INFO - 开始GFL框架对比测试
+2025-05-20 08:32:40,639 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:32:40,646 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:32:40,646 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_083240
+2025-05-20 08:32:40,646 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_083240/train.log
+2025-05-20 08:34:06,580 - INFO - 开始GFL框架对比测试
+2025-05-20 08:34:06,580 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:34:06,581 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:34:06,581 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_083406
+2025-05-20 08:34:06,581 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_083406/train.log
+2025-05-20 08:36:37,685 - INFO - jittor 训练完成，返回码: 1
+2025-05-20 08:36:37,687 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 08:36:37,687 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_083637
+2025-05-20 08:36:37,687 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_083637/train.log
+2025-05-20 08:52:15,046 - INFO - 开始GFL框架对比测试
+2025-05-20 08:52:15,046 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 08:52:15,047 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 08:52:15,047 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_085215
+2025-05-20 08:52:15,047 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_085215/train.log
+2025-05-20 08:55:50,018 - INFO - jittor 训练完成，返回码: 0
+2025-05-20 08:55:50,021 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 08:55:50,021 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_085550
+2025-05-20 08:55:50,022 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_085550/train.log
+2025-05-20 08:58:07,245 - INFO - pytorch 训练完成，返回码: 0
+2025-05-20 08:58:07,250 - INFO - 成功解析Jittor日志，提取了0条记录
+2025-05-20 08:58:07,252 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-20 08:58:07,828 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/loss_comparison.png
+2025-05-20 08:58:07,988 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/time_comparison.png
+2025-05-20 09:09:46,609 - INFO - 开始GFL框架对比测试
+2025-05-20 09:09:46,609 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 09:09:46,610 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 09:09:46,610 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_090946
+2025-05-20 09:09:46,610 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_090946/train.log
+2025-05-20 09:12:52,911 - INFO - jittor 训练完成，返回码: 0
+2025-05-20 09:12:52,917 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 09:12:52,918 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_091252
+2025-05-20 09:12:52,918 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_091252/train.log
+2025-05-20 09:15:01,322 - INFO - pytorch 训练完成，返回码: 0
+2025-05-20 09:15:01,328 - INFO - 成功解析Jittor日志，提取了0条记录
+2025-05-20 09:15:01,330 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-20 09:15:02,192 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/loss_comparison.png
+2025-05-20 09:15:02,445 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/time_comparison.png
+2025-05-20 10:12:23,158 - INFO - 开始GFL框架对比测试
+2025-05-20 10:12:23,158 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 10:12:23,161 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 10:12:23,161 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x.yml --work-dir work_dirs/gfl_jittor_20250520_101223
+2025-05-20 10:12:23,161 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_101223/train.log
+2025-05-20 10:14:41,223 - INFO - 开始GFL框架对比测试
+2025-05-20 10:14:41,223 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 10:14:41,224 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 10:14:41,224 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x_enhanced.yml --work-dir work_dirs/gfl_jittor_20250520_101441
+2025-05-20 10:14:41,224 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_101441/train.log
+2025-05-20 10:25:12,105 - INFO - 开始GFL框架对比测试
+2025-05-20 10:25:12,105 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results', pytorch_log=None, pytorch_only=False)
+2025-05-20 10:25:12,106 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 10:25:12,106 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x_enhanced.yml --work-dir work_dirs/gfl_jittor_20250520_102512 --cfg-options runner.max_epochs=12
+2025-05-20 10:25:12,106 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_102512/train.log
+2025-05-20 10:25:21,076 - INFO - jittor 训练完成，返回码: 2
+2025-05-20 10:25:21,080 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 10:25:21,080 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_102521 --cfg-options runner.max_epochs=12
+2025-05-20 10:25:21,080 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_102521/train.log
+2025-05-20 10:30:35,444 - INFO - 开始GFL框架对比测试
+2025-05-20 10:30:35,444 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results/report', pytorch_log=None, pytorch_only=False)
+2025-05-20 10:30:35,447 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 10:30:35,447 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x_enhanced.yml --work-dir work_dirs/gfl_jittor_20250520_103035 --cfg-options runner.max_epochs=12
+2025-05-20 10:30:35,448 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_103035/train.log
+2025-05-20 10:30:44,629 - INFO - jittor 训练完成，返回码: 2
+2025-05-20 10:30:44,632 - INFO - 开始在 pytorch 框架下运行训练...
+2025-05-20 10:30:44,632 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Pytorch && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Pytorch/configs/gfl/gfl_r50_fpn_1x_coco.py --work-dir work_dirs/gfl_pytorch_20250520_103044 --cfg-options runner.max_epochs=12
+2025-05-20 10:30:44,632 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_pytorch_20250520_103044/train.log
+2025-05-20 10:31:28,357 - INFO - 开始GFL框架对比测试
+2025-05-20 10:31:28,358 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log=None, jittor_only=False, output_dir='comparison_results/report', pytorch_log=None, pytorch_only=False)
+2025-05-20 10:31:28,360 - INFO - 开始在 jittor 框架下运行训练...
+2025-05-20 10:31:28,360 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && pip install -e . && python tools/train.py /root/data-fs/GFocalV2/GFocalV2Jittor/configs/gfl/gfl_r50_fpn_coco_1x_enhanced.yml --work-dir work_dirs/gfl_jittor_20250520_103128
+2025-05-20 10:31:28,360 - INFO - 日志将保存到: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_jittor_20250520_103128/train.log
+2025-05-20 10:41:26,228 - INFO - 开始GFL框架对比测试
+2025-05-20 10:41:26,228 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log='comparison_results/jittor/train_full_output.log', jittor_only=False, output_dir='comparison_results/report', pytorch_log='comparison_results/pytorch/train_full_output.log', pytorch_only=False)
+2025-05-20 10:41:26,228 - INFO - 使用指定的Jittor日志文件: comparison_results/jittor/train_full_output.log
+2025-05-20 10:41:26,228 - INFO - 使用指定的PyTorch日志文件: comparison_results/pytorch/train_full_output.log
+2025-05-20 10:41:26,232 - WARNING - Jittor日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-20 10:41:26,232 - WARNING - 检测到测试结果为空的错误，这可能需要重新运行测试
+2025-05-20 10:41:26,233 - INFO - 成功解析Jittor日志，提取了0条记录
+2025-05-20 10:41:26,262 - WARNING - PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-20 10:41:26,263 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-20 10:41:27,118 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/loss_comparison.png
+2025-05-20 10:41:27,369 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/time_comparison.png
+2025-05-20 10:41:27,708 - INFO - mAP比较图表已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_comparison.png
+2025-05-20 10:41:28,009 - INFO - mAP雷达图已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_radar_chart.png
+2025-05-20 10:41:28,010 - INFO - 对比报告已保存到 /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-20 10:41:28,010 - INFO - 对比完成! 报告保存在: /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-20 11:14:49,272 - INFO - 开始GFL框架对比测试
+2025-05-20 11:14:49,272 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log='comparison_results/jittor/train_full_output.log', jittor_only=False, output_dir='comparison_results/report', pytorch_log='comparison_results/pytorch/train_full_output.log', pytorch_only=False)
+2025-05-20 11:14:49,272 - INFO - 使用指定的Jittor日志文件: comparison_results/jittor/train_full_output.log
+2025-05-20 11:14:49,272 - INFO - 使用指定的PyTorch日志文件: comparison_results/pytorch/train_full_output.log
+2025-05-20 11:14:49,278 - INFO - 成功解析Jittor日志，提取了12条记录
+2025-05-20 11:14:49,336 - WARNING - PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-20 11:14:49,336 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-20 11:14:50,288 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/loss_comparison.png
+2025-05-20 11:14:50,524 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/time_comparison.png
+2025-05-20 11:14:50,868 - INFO - mAP比较图表已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_comparison.png
+2025-05-20 11:14:51,184 - INFO - mAP雷达图已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_radar_chart.png
+2025-05-20 11:14:51,185 - INFO - 对比报告已保存到 /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-20 11:14:51,185 - INFO - 对比完成! 报告保存在: /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md

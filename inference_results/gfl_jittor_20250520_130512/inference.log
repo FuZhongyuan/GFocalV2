@@ -1,0 +1,17 @@
+[38;5;2m[i 0520 13:05:12.475377 52 compiler.py:956] Jittor(1.3.9.14) src: /root/miniconda3/envs/jittordet/lib/python3.8/site-packages/jittor[m
+[38;5;2m[i 0520 13:05:12.481094 52 compiler.py:957] g++ at /usr/bin/g++(9.3.0)[m
+[38;5;2m[i 0520 13:05:12.481172 52 compiler.py:958] cache_path: /root/.cache/jittor/jt1.3.9/g++9.3.0/py3.8.2/Linux-5.15.0-9xaa/IntelRXeonRSilx76/2997/default[m
+[38;5;2m[i 0520 13:05:12.488053 52 __init__.py:412] Found nvcc(11.3.109) at /usr/local/cuda/bin/nvcc.[m
+[38;5;2m[i 0520 13:05:12.494148 52 __init__.py:412] Found addr2line(2.34) at /usr/bin/addr2line.[m
+[38;5;2m[i 0520 13:05:12.731500 52 compiler.py:1013] cuda key:cu11.3.109_sm_70[m
+[38;5;2m[i 0520 13:05:13.366124 52 __init__.py:227] Total mem: 503.29GB, using 16 procs for compiling.[m
+[38;5;2m[i 0520 13:05:13.550589 52 jit_compiler.cc:28] Load cc_path: /usr/bin/g++[m
+[38;5;2m[i 0520 13:05:13.755520 52 init.cc:63] Found cuda archs: [70,][m
+Traceback (most recent call last):
+  File "tools/test.py", line 38, in <module>
+    main()
+  File "tools/test.py", line 21, in main
+    cfg = load_cfg(args.config)
+  File "/root/data-fs/GFocalV2/GFocalV2Jittor/jittordet/engine/config/config.py", line 60, in load_cfg
+    raise KeyError('f"{key}" is a reserved key')
+KeyError: 'f"{key}" is a reserved key'

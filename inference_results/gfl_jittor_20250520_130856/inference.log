@@ -1,0 +1,11 @@
+[38;5;2m[i 0520 13:08:56.611713 52 compiler.py:956] Jittor(1.3.9.14) src: /root/miniconda3/envs/jittordet/lib/python3.8/site-packages/jittor[m
+[38;5;2m[i 0520 13:08:56.617900 52 compiler.py:957] g++ at /usr/bin/g++(9.3.0)[m
+[38;5;2m[i 0520 13:08:56.617982 52 compiler.py:958] cache_path: /root/.cache/jittor/jt1.3.9/g++9.3.0/py3.8.2/Linux-5.15.0-9xaa/IntelRXeonRSilx76/2997/default[m
+[38;5;2m[i 0520 13:08:56.625396 52 __init__.py:412] Found nvcc(11.3.109) at /usr/local/cuda/bin/nvcc.[m
+[38;5;2m[i 0520 13:08:56.631957 52 __init__.py:412] Found addr2line(2.34) at /usr/bin/addr2line.[m
+[38;5;2m[i 0520 13:08:56.871399 52 compiler.py:1013] cuda key:cu11.3.109_sm_70[m
+[38;5;2m[i 0520 13:08:57.495528 52 __init__.py:227] Total mem: 503.29GB, using 16 procs for compiling.[m
+[38;5;2m[i 0520 13:08:57.661644 52 jit_compiler.cc:28] Load cc_path: /usr/bin/g++[m
+[38;5;2m[i 0520 13:08:57.855037 52 init.cc:63] Found cuda archs: [70,][m
+usage: test.py [-h] [--work-dir WORK_DIR] [--disable-cuda] config checkpoint
+test.py: error: unrecognized arguments: --eval
