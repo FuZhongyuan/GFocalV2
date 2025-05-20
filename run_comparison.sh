@@ -5,7 +5,7 @@ set -e
 
 # 帮助信息
 show_help() {
-    echo "GFL框架对比测试运行脚本"
+    echo "GFL框架训练对比测试运行脚本"
     echo ""
     echo "使用方法: $0 [选项]"
     echo ""
@@ -76,13 +76,13 @@ pip install matplotlib pandas numpy --quiet
 # 确保脚本可执行
 chmod +x compare_gfl_frameworks.py
 
-echo "开始运行GFL框架对比测试..."
-echo "参数: 训练轮数=$EPOCHS, 输出目录=$OUTPUT_DIR $EXTRA_ARGS"
+echo "开始运行GFL框架训练对比测试..."
+echo "参数: 轮数=$EPOCHS, 输出目录=$OUTPUT_DIR $EXTRA_ARGS"
 
 # 运行对比脚本
 python compare_gfl_frameworks.py --epochs "$EPOCHS" --output-dir "$OUTPUT_DIR" $EXTRA_ARGS
 
-echo "对比测试完成!"
+echo "训练对比测试完成!"
 if [ -f "$OUTPUT_DIR/framework_comparison_report.md" ]; then
     echo "报告保存在: $(realpath $OUTPUT_DIR/framework_comparison_report.md)"
 fi 

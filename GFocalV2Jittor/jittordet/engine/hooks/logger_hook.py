@@ -229,3 +229,82 @@ class LoggerHook(BaseHook):
 
         log_str = '  '.join(log_str_list) if log_str_list else None
         return log_str
+
+
+@HOOKS.register_module()
+class EnhancedLoggerHook(LoggerHook):
+    """增强版LoggerHook，确保显示所有损失细节，包括loss_cls、loss_bbox和loss_dfl"""
+
+    def format_train_log_str(self, runner, batch_idx):
+        log_str_list = []
+
+        # epoch iteration number information
+        log_str = 'Epoch '
+        cur_epoch = runner.train_loop.cur_epoch
+        max_epoch = runner.train_loop.max_epoch
+        iter_per_epoch = len(runner.train_dataset)
+        # get the max length of iteration and epoch number
+        epoch_len = len(str(max_epoch))
+        iter_len = len(str(iter_per_epoch))
+        # right just the length
+        cur_epoch = str(cur_epoch + 1).rjust(epoch_len)
+        cur_iter = str(batch_idx + 1).rjust(iter_len)
+        log_str += f'[{cur_epoch}/{max_epoch}]'
+        log_str += f' Iter [{cur_iter}/{iter_per_epoch}]'
+        log_str_list.append(log_str)
+
+        # iter time and etc time
+        iter_time = self.get_log_hitory(
+            'train', 'time', 1000, reduction='mean')
+        past_iter = runner.train_loop.cur_iter
+        total_iter = len(runner.train_dataset) * max_epoch
+        eta_time = iter_time * (total_iter - past_iter)
+        eta_time = datetime.timedelta(seconds=int(eta_time))
+        mm, ss = divmod(eta_time.seconds, 60)
+        hh, mm = divmod(mm, 60)
+        format_eta_time = f'{eta_time.days:01d} day {hh:02d}:{mm:02d}:{ss:02d}'
+        log_str_list.extend(
+            [f'eta: {format_eta_time}', f'time: {iter_time:.4f}'])
+
+        # leanring rate information
+        lr = runner.optimizer.lr
+        log_str_list.append(f'lr: {lr:.4e}')
+
+        # 确保显示总损失
+        if 'loss' in self._train_log_history:
+            total_loss = self.get_log_hitory(
+                'train', 'loss', self.interval, reduction='mean')
+            log_str_list.append(f'loss: {total_loss:.4f}')
+        
+        # 确保显示分类损失
+        if 'loss_cls' in self._train_log_history:
+            cls_loss = self.get_log_hitory(
+                'train', 'loss_cls', self.interval, reduction='mean')
+            log_str_list.append(f'loss_cls: {cls_loss:.4f}')
+        
+        # 确保显示边界框损失
+        if 'loss_bbox' in self._train_log_history:
+            bbox_loss = self.get_log_hitory(
+                'train', 'loss_bbox', self.interval, reduction='mean')
+            log_str_list.append(f'loss_bbox: {bbox_loss:.4f}')
+        
+        # 确保显示DFL损失
+        if 'loss_dfl' in self._train_log_history:
+            dfl_loss = self.get_log_hitory(
+                'train', 'loss_dfl', self.interval, reduction='mean')
+            log_str_list.append(f'loss_dfl: {dfl_loss:.4f}')
+
+        # 显示其他信息
+        for key in self._train_log_history.keys():
+            if key in ['time', 'loss', 'loss_cls', 'loss_bbox', 'loss_dfl']:
+                continue
+            if 'acc' in key:
+                log_value = self.get_log_hitory(
+                    'train', key, self.interval, reduction='mean')
+            else:
+                log_value = self.get_log_hitory(
+                    'train', key, self.interval, reduction='current')
+            log_str_list.append(f'{key}: {log_value:.4f}')
+
+        log_str = '  '.join(log_str_list)
+        return log_str
