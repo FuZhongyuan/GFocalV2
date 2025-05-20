@@ -12,7 +12,7 @@ from .utils import delete_node
 
 BASE_KEY = '_base_'
 COVER_KEY = '_cover_'
-RESERVED_KEYS = ['filename']
+RESERVED_KEYS = []
 
 
 class ConfigDict(Dict):
@@ -55,9 +55,10 @@ def load_cfg(filepath):
         raise NotImplementedError(
             f'Cannot parse "{filepath}" with {ext} type yet')
     cfg = ConfigDict(cfg_readers[ext](filepath))
+    # print(cfg)
     for key in RESERVED_KEYS:
         if key in cfg:
-            raise KeyError('f"{key}" is a reserved key')
+            raise KeyError(f"{key} is a reserved key")
 
     # use parsers to translate some leaves
     cfg['filename'] = filepath

@@ -1,0 +1,208 @@
+data_root: data/coco/
+disable_cuda: false
+filename: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/gfl_r50_fpn_coco_1x_enhanced.yml
+hooks:
+- interval: 10
+  interval_exp_name: 40
+  type: EnhancedLoggerHook
+- interval: 1
+  type: CheckpointHook
+load_from: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+model:
+  backbone:
+    depth: 50
+    frozen_stages: 1
+    norm_eval: true
+    pretrained: jittorhub://resnet50.pkl
+    return_stages:
+    - layer1
+    - layer2
+    - layer3
+    - layer4
+    type: ResNet
+  bbox_head:
+    anchor_generator:
+      octave_base_scale: 8
+      ratios:
+      - 1.0
+      scales_per_octave: 1
+      strides:
+      - 8
+      - 16
+      - 32
+      - 64
+      - 128
+      type: AnchorGenerator
+    feat_channels: 256
+    in_channels: 256
+    loss_bbox:
+      loss_weight: 2.0
+      type: GIoULoss
+    loss_cls:
+      beta: 2.0
+      loss_weight: 1.0
+      type: QualityFocalLoss
+      use_sigmoid: true
+    loss_dfl:
+      loss_weight: 0.25
+      type: DistributionFocalLoss
+    num_classes: 80
+    reg_max: 16
+    stacked_convs: 4
+    type: GFLHead
+  neck:
+    add_extra_convs: on_input
+    in_channels:
+    - 256
+    - 512
+    - 1024
+    - 2048
+    num_outs: 5
+    out_channels: 256
+    start_level: 1
+    type: FPN
+  preprocessor:
+    bgr_to_rgb: true
+    mean:
+    - 123.675
+    - 116.28
+    - 103.53
+    pad_size_divisor: 32
+    std:
+    - 58.395
+    - 57.12
+    - 57.375
+    type: Preprocessor
+  test_cfg:
+    max_per_img: 100
+    min_bbox_size: 0
+    nms:
+      thresh: 0.6
+      type: nms
+    nms_pre: 1000
+    score_thr: 0.05
+  train_cfg:
+    allowed_border: -1
+    assigner:
+      topk: 9
+      type: ATSSAssigner
+    debug: false
+    pos_weight: -1
+  type: SingleStageFramework
+num_gpus: 1
+optimizer:
+  lr: 0.01
+  momentum: 0.9
+  type: SGD
+  weight_decay: 0.0001
+scheduler:
+- type: WarmUpLR
+  warmup: linear
+  warmup_iters: 500
+  warmup_ratio: 0.001
+- gamma: 0.1
+  milestones:
+  - 8
+  - 11
+  type: MultiStepLR
+seed: null
+test_dataset:
+  batch_sampler:
+    type: PadBatchSampler
+  batch_size: 1
+  data_path:
+    ann_file: annotations/instances_val2017.json
+    img_path: val2017
+  data_root: data/coco/
+  num_workers: 1
+  test_mode: true
+  transforms:
+  - type: LoadImageFromFile
+  - type: LoadAnnotations
+    with_bbox: true
+  - keep_ratio: true
+    scale: !!python/tuple
+    - 1333
+    - 800
+    type: Resize
+  - meta_keys:
+    - img_id
+    - img_path
+    - ori_shape
+    - img_shape
+    - scale_factor
+    - sample_idx
+    type: PackDetInputs
+  type: CocoDataset
+test_evaluator:
+  ann_file: data/coco/annotations/instances_val2017.json
+  format_only: false
+  metric: bbox
+  type: CocoEvaluator
+test_loop:
+  type: TestLoop
+train_dataset:
+  batch_sampler:
+    type: AspectRatioBatchSampler
+  batch_size: 1
+  data_path:
+    ann_file: annotations/instances_train2017.json
+    img_path: train2017
+  data_root: data/coco/
+  filter_cfg:
+    filter_empty_gt: true
+    min_size: 32
+  num_workers: 1
+  transforms:
+  - type: LoadImageFromFile
+  - type: LoadAnnotations
+    with_bbox: true
+  - keep_ratio: true
+    scale: !!python/tuple
+    - 1333
+    - 800
+    type: Resize
+  - prob: 0.5
+    type: RandomFlip
+  - type: PackDetInputs
+  type: CocoDataset
+train_loop:
+  max_epoch: 12
+  type: EpochTrainLoop
+  val_interval: 1
+val_dataset:
+  batch_sampler:
+    type: PadBatchSampler
+  batch_size: 1
+  data_path:
+    ann_file: annotations/instances_val2017.json
+    img_path: val2017
+  data_root: data/coco/
+  num_workers: 1
+  test_mode: true
+  transforms:
+  - type: LoadImageFromFile
+  - type: LoadAnnotations
+    with_bbox: true
+  - keep_ratio: true
+    scale: !!python/tuple
+    - 1333
+    - 800
+    type: Resize
+  - meta_keys:
+    - img_id
+    - img_path
+    - ori_shape
+    - img_shape
+    - scale_factor
+    - sample_idx
+    type: PackDetInputs
+  type: CocoDataset
+val_evaluator:
+  ann_file: data/coco/annotations/instances_val2017.json
+  format_only: false
+  metric: bbox
+  type: CocoEvaluator
+val_loop:
+  type: ValLoop
+work_dir: /root/data-fs/GFocalV2/inference_results/gfl_jittor_20250520_133453

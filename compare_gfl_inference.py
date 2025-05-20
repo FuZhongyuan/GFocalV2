@@ -27,12 +27,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # 配置文件路径
-JITTOR_CONFIG = "/root/data-fs/GFocalV2/JittorDet/configs/gfl/gfl_r50_fpn_coco_1x.yml"
-PYTORCH_CONFIG = "/root/data-fs/GFocalV2/mmdetection/configs/gfl/gfl_r50_fpn_1x_coco.py"
+JITTOR_CONFIG = "/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/gfl_r50_fpn_coco_1x_enhanced.yml"
+PYTORCH_CONFIG = "/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/gfl_r50_fpn_1x_coco.py"
 
 # 工作目录
-JITTOR_WORKDIR = "/root/data-fs/GFocalV2/JittorDet"
-PYTORCH_WORKDIR = "/root/data-fs/GFocalV2/mmdetection"
+JITTOR_WORKDIR = "/root/data-fs/GFocalV2/GFocalV2Jittor"
+PYTORCH_WORKDIR = "/root/data-fs/GFocalV2/GFocalV2Pytorch"
+
+# 默认检查点路径
+DEFAULT_JITTOR_CHECKPOINT = "/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl"
+DEFAULT_PYTORCH_CHECKPOINT = "/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/epoch_12.pth"
 
 class InferenceLogParser:
     """解析推理日志并提取关键信息"""
@@ -55,25 +59,20 @@ class InferenceLogParser:
         with open(self.log_file, 'r', encoding='utf-8') as f:
             content = f.read()
             
-        # 提取推理时间
-        time_pattern = r"time: ([\d\.]+) ms"
+        # 提取推理时间 - Jittor格式
+        # 格式示例: (test) [1/1][50/50]  eta: 0 day 00:00:00  time: 0.0904
+        time_pattern = r'\(test\).*time: ([\d\.]+)'
         time_matches = re.findall(time_pattern, content)
         for match in time_matches:
             self.metrics['inference_time'].append(float(match))
         
-        if self.metrics['inference_time']:
-            # 计算FPS (帧每秒)
-            avg_inference_time = np.mean(self.metrics['inference_time'])
-            self.metrics['fps'] = 1000 / avg_inference_time
-            
-        # 提取评估结果
-        # COCO标准评估指标
-        ap_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-        ap_50_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-        ap_75_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.75\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-        ap_s_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=small\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-        ap_m_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=medium\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-        ap_l_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=large\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
+        # 提取coco评估指标 - 简化模式
+        ap_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95.*\]\s*=\s*([\d\.]+)"
+        ap_50_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50.*\]\s*=\s*([\d\.]+)"
+        ap_75_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.75.*\]\s*=\s*([\d\.]+)"
+        ap_s_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*small.*\]\s*=\s*([\d\.]+)"
+        ap_m_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*medium.*\]\s*=\s*([\d\.]+)"
+        ap_l_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*large.*\]\s*=\s*([\d\.]+)"
         
         ap_match = re.search(ap_pattern, content)
         ap_50_match = re.search(ap_50_pattern, content)
@@ -95,6 +94,11 @@ class InferenceLogParser:
         if ap_l_match:
             self.metrics['bbox_mAP_l'] = float(ap_l_match.group(1))
             
+        if self.metrics['inference_time']:
+            # 计算FPS (帧每秒)
+            avg_inference_time = np.mean(self.metrics['inference_time'])
+            self.metrics['fps'] = 1 / avg_inference_time  # Jittor时间单位为秒
+            
         return self.metrics
     
     def parse_pytorch_log(self):
@@ -102,76 +106,69 @@ class InferenceLogParser:
         with open(self.log_file, 'r', encoding='utf-8') as f:
             content = f.read()
             
-        # 提取推理时间
-        time_pattern = r"time: ([\d\.]+) ms"
+        # 提取推理时间 - PyTorch mmdetection格式
+        # 格式示例: 05/20 13:30:11 - mmengine - INFO - Epoch(test) [10/50]    eta: 0:00:05  time: 0.1274
+        time_pattern = r'Epoch\(test\).*time: ([\d\.]+)'
         time_matches = re.findall(time_pattern, content)
         for match in time_matches:
             self.metrics['inference_time'].append(float(match))
         
+        # PyTorch mmdetection格式的评估结果
+        # 示例: bbox_mAP_copypaste: 0.001 0.002 0.000 0.001 0.020 0.001
+        map_pattern = r"bbox_mAP_copypaste:\s*([\d\.]+)\s+([\d\.]+)\s+([\d\.]+)\s+([\d\.]+)\s+([\d\.]+)\s+([\d\.]+)"
+        map_match = re.search(map_pattern, content)
+        
+        if map_match:
+            self.metrics['bbox_mAP'] = float(map_match.group(1))
+            self.metrics['bbox_mAP_50'] = float(map_match.group(2))
+            self.metrics['bbox_mAP_75'] = float(map_match.group(3))
+            self.metrics['bbox_mAP_s'] = float(map_match.group(4))
+            self.metrics['bbox_mAP_m'] = float(map_match.group(5))
+            self.metrics['bbox_mAP_l'] = float(map_match.group(6))
+        
+        # 也尝试标准COCO格式提取
+        if not self.metrics['bbox_mAP']:
+            ap_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95.*\]\s*=\s*([\d\.]+)"
+            ap_50_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50.*\]\s*=\s*([\d\.]+)"
+            ap_75_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.75.*\]\s*=\s*([\d\.]+)"
+            ap_s_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*small.*\]\s*=\s*([\d\.]+)"
+            ap_m_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*medium.*\]\s*=\s*([\d\.]+)"
+            ap_l_pattern = r"Average Precision\s+\(AP\)\s+@\[\s*IoU=0.50:0.95\s*\|\s*area=\s*large.*\]\s*=\s*([\d\.]+)"
+            
+            ap_match = re.search(ap_pattern, content)
+            ap_50_match = re.search(ap_50_pattern, content)
+            ap_75_match = re.search(ap_75_pattern, content)
+            ap_s_match = re.search(ap_s_pattern, content)
+            ap_m_match = re.search(ap_m_pattern, content)
+            ap_l_match = re.search(ap_l_pattern, content)
+            
+            if ap_match:
+                self.metrics['bbox_mAP'] = float(ap_match.group(1))
+            if ap_50_match:
+                self.metrics['bbox_mAP_50'] = float(ap_50_match.group(1))
+            if ap_75_match:
+                self.metrics['bbox_mAP_75'] = float(ap_75_match.group(1))
+            if ap_s_match:
+                self.metrics['bbox_mAP_s'] = float(ap_s_match.group(1))
+            if ap_m_match:
+                self.metrics['bbox_mAP_m'] = float(ap_m_match.group(1))
+            if ap_l_match:
+                self.metrics['bbox_mAP_l'] = float(ap_l_match.group(1))
+        
         if self.metrics['inference_time']:
             # 计算FPS (帧每秒)
             avg_inference_time = np.mean(self.metrics['inference_time'])
-            self.metrics['fps'] = 1000 / avg_inference_time
-        
-        # 提取评估结果 (MMDetection输出格式)
-        bbox_map_pattern = r"bbox_mAP: ([\d\.]+)"
-        bbox_map_50_pattern = r"bbox_mAP_50: ([\d\.]+)"
-        bbox_map_75_pattern = r"bbox_mAP_75: ([\d\.]+)"
-        bbox_map_s_pattern = r"bbox_mAP_s: ([\d\.]+)"
-        bbox_map_m_pattern = r"bbox_mAP_m: ([\d\.]+)"
-        bbox_map_l_pattern = r"bbox_mAP_l: ([\d\.]+)"
-        
-        bbox_map_match = re.search(bbox_map_pattern, content)
-        bbox_map_50_match = re.search(bbox_map_50_pattern, content)
-        bbox_map_75_match = re.search(bbox_map_75_pattern, content)
-        bbox_map_s_match = re.search(bbox_map_s_pattern, content)
-        bbox_map_m_match = re.search(bbox_map_m_pattern, content)
-        bbox_map_l_match = re.search(bbox_map_l_pattern, content)
-        
-        if bbox_map_match:
-            self.metrics['bbox_mAP'] = float(bbox_map_match.group(1))
-        if bbox_map_50_match:
-            self.metrics['bbox_mAP_50'] = float(bbox_map_50_match.group(1))
-        if bbox_map_75_match:
-            self.metrics['bbox_mAP_75'] = float(bbox_map_75_match.group(1))
-        if bbox_map_s_match:
-            self.metrics['bbox_mAP_s'] = float(bbox_map_s_match.group(1))
-        if bbox_map_m_match:
-            self.metrics['bbox_mAP_m'] = float(bbox_map_m_match.group(1))
-        if bbox_map_l_match:
-            self.metrics['bbox_mAP_l'] = float(bbox_map_l_match.group(1))
-            
+            self.metrics['fps'] = 1 / avg_inference_time  # PyTorch时间单位为秒
+                
         return self.metrics
 
 
 def find_latest_checkpoint(framework):
     """查找最新的检查点文件"""
     if framework == 'jittor':
-        checkpoint_dir = os.path.join(JITTOR_WORKDIR, "work_dirs")
-        pattern = "*.pkl"
+        return DEFAULT_JITTOR_CHECKPOINT
     else:  # pytorch
-        checkpoint_dir = os.path.join(PYTORCH_WORKDIR, "work_dirs")
-        pattern = "*.pth"
-    
-    if not os.path.exists(checkpoint_dir):
-        logger.error(f"找不到{framework}框架的检查点目录: {checkpoint_dir}")
-        return None
-    
-    checkpoints = []
-    # 遍历所有子目录查找检查点
-    for root, dirs, files in os.walk(checkpoint_dir):
-        for file in files:
-            if file.endswith(".pth") or file.endswith(".pkl"):
-                checkpoints.append(os.path.join(root, file))
-    
-    # 按文件修改时间排序
-    checkpoints.sort(key=lambda x: os.path.getmtime(x), reverse=True)
-    
-    if checkpoints:
-        return checkpoints[0]
-    else:
-        logger.error(f"在{checkpoint_dir}中找不到任何{framework}框架的检查点")
-        return None
+        return DEFAULT_PYTORCH_CHECKPOINT
 
 
 def run_inference(framework, checkpoint=None, batch_size=1, num_samples=None):
@@ -184,27 +181,24 @@ def run_inference(framework, checkpoint=None, batch_size=1, num_samples=None):
             logger.error(f"未能找到{framework}框架的检查点，无法进行推理")
             return None
     
+    # 创建结果目录
+    result_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "inference_results")
+    os.makedirs(result_dir, exist_ok=True)
+    
     if framework == 'jittor':
         config = JITTOR_CONFIG
-        work_dir = f"infer_results/gfl_jittor_{timestamp}"
-        cmd = f"cd {JITTOR_WORKDIR} && pip install -e .&& python tools/test.py {config} {checkpoint} --eval bbox"
-        if batch_size != 1:
-            cmd += f" --batch-size {batch_size}"
-        if num_samples:
-            cmd += f" --samples {num_samples}"
-        log_file = os.path.join(JITTOR_WORKDIR, work_dir, "inference.log")
+        work_dir = os.path.join(result_dir, f"gfl_jittor_{timestamp}")
+        os.makedirs(work_dir, exist_ok=True)
+        # 简化命令，添加work-dir参数
+        cmd = f"cd {JITTOR_WORKDIR} && python tools/test.py {config} {checkpoint} --work-dir {work_dir}"
+        log_file = os.path.join(work_dir, "inference.log")
     else:  # pytorch
         config = PYTORCH_CONFIG
-        work_dir = f"infer_results/gfl_pytorch_{timestamp}"
-        cmd = f"cd {PYTORCH_WORKDIR} && pip install -e .&& python tools/test.py {config} {checkpoint} --eval bbox"
-        if batch_size != 1:
-            cmd += f" --batch-size {batch_size}"
-        if num_samples:
-            cmd += f" --samples {num_samples}"
-        log_file = os.path.join(PYTORCH_WORKDIR, work_dir, "inference.log")
-    
-    # 创建工作目录
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+        work_dir = os.path.join(result_dir, f"gfl_pytorch_{timestamp}")
+        os.makedirs(work_dir, exist_ok=True)
+        # 简化命令，添加work-dir参数
+        cmd = f"cd {PYTORCH_WORKDIR} && python tools/test.py {config} {checkpoint} --work-dir {work_dir}"
+        log_file = os.path.join(work_dir, "inference.log")
     
     logger.info(f"开始在 {framework} 框架下运行推理测试...")
     logger.info(f"使用检查点: {checkpoint}")
@@ -356,10 +350,14 @@ def generate_report(jittor_metrics, pytorch_metrics, output_dir):
         jittor_avg_time = np.mean(jittor_metrics['inference_time']) if jittor_metrics['inference_time'] else None
         pytorch_avg_time = np.mean(pytorch_metrics['inference_time']) if pytorch_metrics['inference_time'] else None
         
-        if jittor_avg_time and pytorch_avg_time:
-            speedup = pytorch_avg_time / jittor_avg_time
-            f.write(f"| 平均推理时间 | {jittor_avg_time:.2f} ms | {pytorch_avg_time:.2f} ms | {speedup:.2f}x |\n")
-            f.write(f"| FPS (帧每秒) | {jittor_metrics['fps']:.2f} | {pytorch_metrics['fps']:.2f} | {speedup:.2f}x |\n")
+        if jittor_avg_time is not None and pytorch_avg_time is not None:
+            if pytorch_avg_time != 0:  # 避免除零错误
+                speedup = jittor_avg_time / pytorch_avg_time
+                f.write(f"| 平均推理时间 | {jittor_avg_time:.2f} s | {pytorch_avg_time:.2f} s | {speedup:.2f}x |\n")
+                f.write(f"| FPS (帧每秒) | {jittor_metrics['fps']:.2f} | {pytorch_metrics['fps']:.2f} | {1/speedup:.2f}x |\n")
+            else:
+                f.write(f"| 平均推理时间 | {jittor_avg_time:.2f} s | {pytorch_avg_time:.2f} s | N/A |\n")
+                f.write(f"| FPS (帧每秒) | {jittor_metrics['fps']:.2f} | {pytorch_metrics['fps']:.2f} | N/A |\n")
         
         f.write("\n## 检测精度对比\n\n")
         f.write("| 指标 | Jittor | PyTorch | 差异比例 |\n")
@@ -380,8 +378,12 @@ def generate_report(jittor_metrics, pytorch_metrics, output_dir):
             pytorch_value = pytorch_metrics[metric_key]
             
             if jittor_value is not None and pytorch_value is not None:
-                diff_pct = abs(jittor_value - pytorch_value) / pytorch_value * 100
-                f.write(f"| {metric_name} | {jittor_value:.4f} | {pytorch_value:.4f} | {diff_pct:.2f}% |\n")
+                # 避免除零错误
+                if pytorch_value != 0:
+                    diff_pct = abs(jittor_value - pytorch_value) / pytorch_value * 100
+                    f.write(f"| {metric_name} | {jittor_value:.4f} | {pytorch_value:.4f} | {diff_pct:.2f}% |\n")
+                else:
+                    f.write(f"| {metric_name} | {jittor_value:.4f} | {pytorch_value:.4f} | N/A |\n")
         
         f.write("\n## 推理时间分布\n\n")
         f.write("![Inference Time Comparison](inference_time_comparison.png)\n\n")
@@ -394,17 +396,19 @@ def generate_report(jittor_metrics, pytorch_metrics, output_dir):
         
         # 性能结论
         f.write("1. **推理性能**: ")
-        if jittor_avg_time and pytorch_avg_time:
+        if jittor_avg_time and pytorch_avg_time and pytorch_avg_time != 0:
             if speedup > 1:
-                f.write(f"Jittor框架的推理速度比PyTorch快{speedup:.2f}倍。\n")
+                f.write(f"PyTorch框架的推理速度比Jittor快{speedup:.2f}倍。\n")
+            elif speedup < 1:
+                f.write(f"Jittor框架的推理速度比PyTorch快{1/speedup:.2f}倍。\n")
             else:
-                f.write(f"PyTorch框架的推理速度比Jittor快{1/speedup:.2f}倍。\n")
+                f.write(f"两个框架的推理速度基本相当。\n")
         else:
             f.write("未能获取完整的推理时间数据，无法比较性能。\n")
         
         # 准确率结论
         f.write("2. **检测精度**: ")
-        if jittor_metrics['bbox_mAP'] is not None and pytorch_metrics['bbox_mAP'] is not None:
+        if jittor_metrics['bbox_mAP'] is not None and pytorch_metrics['bbox_mAP'] is not None and pytorch_metrics['bbox_mAP'] != 0:
             diff_pct = abs(jittor_metrics['bbox_mAP'] - pytorch_metrics['bbox_mAP']) / pytorch_metrics['bbox_mAP'] * 100
             if diff_pct < 5:
                 f.write(f"两个框架的检测精度对齐良好，mAP差异仅为{diff_pct:.2f}%。\n")
@@ -430,6 +434,13 @@ def main():
     parser.add_argument('--pytorch-log', type=str, help='指定PyTorch推理日志文件(不运行推理)')
     
     args = parser.parse_args()
+    
+    # 设置默认检查点路径
+    if args.jittor_checkpoint is None:
+        args.jittor_checkpoint = DEFAULT_JITTOR_CHECKPOINT
+    
+    if args.pytorch_checkpoint is None:
+        args.pytorch_checkpoint = DEFAULT_PYTORCH_CHECKPOINT
     
     logger.info("开始GFL框架推理性能对比测试")
     logger.info(f"参数: {args}")

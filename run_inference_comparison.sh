@@ -3,6 +3,10 @@
 # 确保脚本执行失败时立即退出
 set -e
 
+# 默认检查点路径
+DEFAULT_JITTOR_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl"
+DEFAULT_PYTORCH_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/epoch_12.pth"
+
 # 帮助信息
 show_help() {
     echo "GFL框架推理性能对比测试运行脚本"
@@ -10,8 +14,8 @@ show_help() {
     echo "使用方法: $0 [选项]"
     echo ""
     echo "选项:"
-    echo "  -j, --jittor-checkpoint PATH    指定Jittor框架的检查点文件路径"
-    echo "  -p, --pytorch-checkpoint PATH   指定PyTorch框架的检查点文件路径"
+    echo "  -j, --jittor-checkpoint PATH    指定Jittor框架的检查点文件路径 (默认: $DEFAULT_JITTOR_CHECKPOINT)"
+    echo "  -p, --pytorch-checkpoint PATH   指定PyTorch框架的检查点文件路径 (默认: $DEFAULT_PYTORCH_CHECKPOINT)"
     echo "  -b, --batch-size NUM           设置推理批次大小（默认：1）"
     echo "  -n, --num-samples NUM          限制测试样本数量"
     echo "  -o, --output DIR               设置结果输出目录（默认：inference_comparison_results）"
@@ -83,7 +87,7 @@ done
 echo "检查并安装必要的Python依赖..."
 pip install matplotlib pandas numpy --quiet
 
-# 确保脚本可执行
+# 确保Python脚本可执行
 chmod +x compare_gfl_inference.py
 
 echo "开始运行GFL框架推理性能对比测试..."
