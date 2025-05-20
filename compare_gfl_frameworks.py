@@ -60,33 +60,41 @@ class LogParser:
         
     def parse_jittor_log(self):
         """解析Jittor框架的日志文件"""
-        with open(self.log_file, 'r', encoding='utf-8') as f:
+        with open(self.log_file, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
             
         # 检查是否有训练损失记录
         train_records = []
         
-        # 尝试解析Epoch级别的训练信息
-        train_pattern = r"Epoch\s+\[(\d+)/\d+\]\[(\d+)/\d+\].*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?lr:\s+([\d\.e\-]+).*?time:\s+([\d\.]+)"
+        # 尝试解析Epoch级别的训练信息 - 增强版LoggerHook格式
+        train_pattern = r"Epoch\s+\[(\d+)/\d+\].*?Iter\s+\[(\d+)/\d+\].*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?lr:\s+([\d\.e\-]+).*?time:\s+([\d\.]+)"
         for match in re.finditer(train_pattern, content):
             epoch, iter_num, loss, loss_cls, loss_bbox, loss_dfl, lr, time_cost = match.groups()
             train_records.append((int(epoch), int(iter_num), float(loss), float(loss_cls), float(loss_bbox), float(loss_dfl), float(lr), float(time_cost)))
         
-        # 如果没有找到Epoch级别的记录，尝试解析Iter级别的记录
+        # 如果没有找到增强版格式，尝试原始格式
         if not train_records:
-            iter_pattern = r"Iter\s+\[(\d+)/\d+\].*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?lr:\s+([\d\.e\-]+).*?time:\s+([\d\.]+)"
-            for match in re.finditer(iter_pattern, content):
-                iter_num, loss, loss_cls, loss_bbox, loss_dfl, lr, time_cost = match.groups()
-                # 根据迭代次数估算epoch
-                epoch = int(int(iter_num) / 100) + 1  # 假设每个epoch有100次迭代
-                train_records.append((epoch, int(iter_num), float(loss), float(loss_cls), float(loss_bbox), float(loss_dfl), float(lr), float(time_cost)))
+            # 原始(train)格式 
+            train_pattern = r"\(train\)\s+\[(\d+)/\d+\]\[(\d+)/\d+\].*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?lr:\s+([\d\.e\-]+).*?time:\s+([\d\.]+)"
+            for match in re.finditer(train_pattern, content):
+                epoch, iter_num, loss, loss_cls, loss_bbox, loss_dfl, lr, time_cost = match.groups()
+                train_records.append((int(epoch), int(iter_num), float(loss), float(loss_cls), float(loss_bbox), float(loss_dfl), float(lr), float(time_cost)))
         
-        # 如果还是没有找到记录，尝试解析简化的日志格式
+        # 如果仍然没有找到记录，尝试只匹配基本损失信息
         if not train_records:
-            simple_pattern = r"Epoch (\d+).*?iter (\d+).*?loss=([\d\.]+)"
-            for match in re.finditer(simple_pattern, content):
+            # 简化模式：尝试找到任何损失信息
+            loss_pattern = r"Epoch\s+\[?(\d+)/?.*?\]?.*?[Ii]ter\s+\[?(\d+)/?.*?\]?.*?loss(?:\s+|=|:)\s*([\d\.]+)"
+            for match in re.finditer(loss_pattern, content):
                 epoch, iter_num, loss = match.groups()
                 # 由于缺少详细的损失分解，使用统一的值
+                train_records.append((int(epoch), int(iter_num), float(loss), 0.0, 0.0, 0.0, 0.0, 0.0))
+        
+        # 如果没有找到任何训练记录，尝试解析任何带有训练信息的行
+        if not train_records:
+            # 尝试匹配任何可能包含epoch和iter信息的行
+            any_info_pattern = r"(?:epoch|Epoch)\s*:?\s*(\d+).*?(?:iter|Iter|iteration|batch)\s*:?\s*(\d+).*?(?:loss|Loss)\s*:?\s*([\d\.]+)"
+            for match in re.finditer(any_info_pattern, content):
+                epoch, iter_num, loss = match.groups()
                 train_records.append((int(epoch), int(iter_num), float(loss), 0.0, 0.0, 0.0, 0.0, 0.0))
         
         # 将解析结果添加到metrics中
@@ -103,7 +111,7 @@ class LogParser:
             
         # 检查是否缺少loss记录
         if not self.metrics['loss']:
-            logger.warning("Jittor日志中没有找到loss记录，可能需要修改训练代码添加loss打印")
+            logger.warning("Jittor日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式")
         
         # 提取评估结果 (mAP等)
         empty_dataset_error = "The testing results of the whole dataset is empty" in content
@@ -111,6 +119,7 @@ class LogParser:
             logger.warning("检测到测试结果为空的错误，这可能需要重新运行测试")
         
         # 尝试解析mAP结果 (coco格式)
+        # 首先尝试解析GFL特有的格式
         bbox_map_pattern = r"bbox_mAP: ([\d\.]+)\s+bbox_mAP_50: ([\d\.]+)\s+bbox_mAP_75: ([\d\.]+)\s+bbox_mAP_s: ([\d\.]+)\s+bbox_mAP_m: ([\d\.]+)\s+bbox_mAP_l: ([\d\.]+)"
         bbox_map_matches = re.findall(bbox_map_pattern, content)
         
@@ -125,12 +134,12 @@ class LogParser:
             self.eval_results['mAP_l'] = float(last_match[5])
         else:
             # 尝试找到原始COCO评估格式的结果
-            ap_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-            ap_50_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_75_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.75\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_s_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*small\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_m_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*medium\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_l_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*large\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
+            ap_50_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_75_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.75\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_s_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*small\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_m_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*medium\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_l_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*large\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
             
             # 查找所有匹配项并取最后一个
             ap_matches = re.findall(ap_pattern, content)
@@ -157,39 +166,57 @@ class LogParser:
     
     def parse_pytorch_log(self):
         """解析PyTorch框架的日志文件"""
-        with open(self.log_file, 'r', encoding='utf-8') as f:
+        with open(self.log_file, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
             
         # 提取训练损失
+        train_records = []
+        
+        # 标准PyTorch格式
         train_pattern = r"Epoch\(train\)\s+\[(\d+)\]\[(\d+)/\d+\].*?lr:\s+([\d\.e\-]+).*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?time:\s+([\d\.]+)"
         for match in re.finditer(train_pattern, content):
             epoch, iter_num, lr, loss, loss_cls, loss_bbox, loss_dfl, time_cost = match.groups()
-            self.metrics['epochs'].append(int(epoch))
-            self.metrics['iters'].append(int(iter_num))
-            self.metrics['loss'].append(float(loss))
-            self.metrics['loss_cls'].append(float(loss_cls))
-            self.metrics['loss_bbox'].append(float(loss_bbox))
-            self.metrics['loss_dfl'].append(float(loss_dfl))
-            self.metrics['lr'].append(float(lr))
-            self.metrics['time'].append(float(time_cost))
+            train_records.append((int(epoch), int(iter_num), float(loss), float(loss_cls), float(loss_bbox), float(loss_dfl), float(lr), float(time_cost)))
         
         # 如果没有找到记录，尝试不同的格式
-        if not self.metrics['loss']:
+        if not train_records:
             alt_pattern = r"Epoch\s+\[(\d+)/\d+\]\s+Iter\s+\[(\d+)/\d+\].*?loss:\s+([\d\.]+).*?loss_cls:\s+([\d\.]+).*?loss_bbox:\s+([\d\.]+).*?loss_dfl:\s+([\d\.]+).*?lr:\s+([\d\.e\-]+).*?time:\s+([\d\.]+)"
             for match in re.finditer(alt_pattern, content):
                 epoch, iter_num, loss, loss_cls, loss_bbox, loss_dfl, lr, time_cost = match.groups()
-                self.metrics['epochs'].append(int(epoch))
-                self.metrics['iters'].append(int(iter_num))
-                self.metrics['loss'].append(float(loss))
-                self.metrics['loss_cls'].append(float(loss_cls))
-                self.metrics['loss_bbox'].append(float(loss_bbox))
-                self.metrics['loss_dfl'].append(float(loss_dfl))
-                self.metrics['lr'].append(float(lr))
-                self.metrics['time'].append(float(time_cost))
+                train_records.append((int(epoch), int(iter_num), float(loss), float(loss_cls), float(loss_bbox), float(loss_dfl), float(lr), float(time_cost)))
+                
+        # 尝试更宽松的匹配模式
+        if not train_records:
+            # 简化模式：尝试找到任何损失信息
+            loss_pattern = r"Epoch\s+\[?(\d+)/?.*?\]?.*?[Ii]ter\s+\[?(\d+)/?.*?\]?.*?loss(?:\s+|=|:)\s*([\d\.]+)"
+            for match in re.finditer(loss_pattern, content):
+                epoch, iter_num, loss = match.groups()
+                # 由于缺少详细的损失分解，使用统一的值
+                train_records.append((int(epoch), int(iter_num), float(loss), 0.0, 0.0, 0.0, 0.0, 0.0))
+                
+        # 如果没有找到任何训练记录，尝试解析任何带有训练信息的行
+        if not train_records:
+            # 尝试匹配任何可能包含epoch和iter信息的行
+            any_info_pattern = r"(?:epoch|Epoch)\s*:?\s*(\d+).*?(?:iter|Iter|iteration|batch)\s*:?\s*(\d+).*?(?:loss|Loss)\s*:?\s*([\d\.]+)"
+            for match in re.finditer(any_info_pattern, content):
+                epoch, iter_num, loss = match.groups()
+                train_records.append((int(epoch), int(iter_num), float(loss), 0.0, 0.0, 0.0, 0.0, 0.0))
+                
+        # 将解析结果添加到metrics中
+        for record in train_records:
+            epoch, iter_num, loss, loss_cls, loss_bbox, loss_dfl, lr, time_cost = record
+            self.metrics['epochs'].append(epoch)
+            self.metrics['iters'].append(iter_num)
+            self.metrics['loss'].append(loss)
+            self.metrics['loss_cls'].append(loss_cls)
+            self.metrics['loss_bbox'].append(loss_bbox)
+            self.metrics['loss_dfl'].append(loss_dfl)
+            self.metrics['lr'].append(lr)
+            self.metrics['time'].append(time_cost)
         
         # 检查是否缺少loss记录
         if not self.metrics['loss']:
-            logger.warning("PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印")
+            logger.warning("PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式")
             
         # 提取评估结果
         bbox_map_pattern = r"coco/bbox_mAP:\s+([\d\.]+)\s+coco/bbox_mAP_50:\s+([\d\.]+)\s+coco/bbox_mAP_75:\s+([\d\.]+)\s+coco/bbox_mAP_s:\s+([\d\.]+)\s+coco/bbox_mAP_m:\s+([\d\.]+)\s+coco/bbox_mAP_l:\s+([\d\.]+)"
@@ -206,12 +233,12 @@ class LogParser:
             self.eval_results['mAP_l'] = float(last_match[5])
         else:
             # 尝试找到原始COCO评估格式的结果
-            ap_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
-            ap_50_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_75_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.75\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_s_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*small\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_m_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*medium\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
-            ap_l_pattern = r"Average Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*large\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s+all\s+\|\s+maxDets=100\s+\]\s+=\s+([\d\.]+)"
+            ap_50_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_75_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.75\s+\|\s+area=\s+all\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_s_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*small\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_m_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*medium\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
+            ap_l_pattern = r"Average\s+Precision\s+\(AP\)\s+@\[\s+IoU=0.50:0.95\s+\|\s+area=\s*large\s+\|\s+maxDets=\d+\s+\]\s+=\s+([\d\.]+)"
             
             # 查找所有匹配项并取最后一个
             ap_matches = re.findall(ap_pattern, content)
@@ -238,49 +265,47 @@ class LogParser:
 
 
 def run_training(framework, max_epochs=None, max_iters=None):
-    """运行指定框架的训练过程"""
+    """运行指定框架的训练过程，并捕获所有标准输出到日志文件"""
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     
     if framework == 'jittor':
         config = JITTOR_CONFIG
         work_dir = f"work_dirs/gfl_jittor_{timestamp}"
-        cmd = f"cd {JITTOR_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
+        # 创建工作目录
+        os.makedirs(os.path.join(JITTOR_WORKDIR, work_dir), exist_ok=True)
         log_file = os.path.join(JITTOR_WORKDIR, work_dir, "train.log")
+        cmd = f"cd {JITTOR_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
     else:  # pytorch
         config = PYTORCH_CONFIG
         work_dir = f"work_dirs/gfl_pytorch_{timestamp}"
-        cmd = f"cd {PYTORCH_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
+        # 创建工作目录
+        os.makedirs(os.path.join(PYTORCH_WORKDIR, work_dir), exist_ok=True) 
         log_file = os.path.join(PYTORCH_WORKDIR, work_dir, "train.log")
-    
-    # if max_epochs:
-    #     cmd += f" --cfg-options runner.max_epochs={max_epochs}"
-    # if max_iters:
-    #     cmd += f" --cfg-options runner.max_iters={max_iters}"
-    
-    # 创建工作目录
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+        cmd = f"cd {PYTORCH_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
     
     logger.info(f"开始在 {framework} 框架下运行训练...")
     logger.info(f"运行命令: {cmd}")
     logger.info(f"日志将保存到: {log_file}")
     
-    # 使用subprocess运行命令，并将输出写入日志文件
-    with open(log_file, 'w') as f:
+    # 使用subprocess运行命令，并将所有输出（包括stdout和stderr）写入日志文件
+    with open(log_file, 'w', encoding='utf-8') as f:
         process = subprocess.Popen(
             cmd,
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
-            bufsize=1
+            bufsize=1,
+            universal_newlines=True
         )
         
         # 实时读取输出并写入日志
         for line in iter(process.stdout.readline, ''):
-            sys.stdout.write(line)
+            sys.stdout.write(line)  # 在控制台也显示输出
             f.write(line)
-            f.flush()
+            f.flush()  # 确保立即写入
         
+        # 等待进程结束并获取返回码
         process.wait()
     
     return_code = process.returncode

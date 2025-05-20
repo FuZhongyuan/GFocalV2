@@ -1,191 +1,77 @@
-# GFL框架对比测试工具
+# 深度学习框架性能分析工具
 
-这个工具用于自动化对比PyTorch和Jittor框架下的GFL（Generalized Focal Loss）模型实现的训练效果、推理性能和结果。
+## 简介
 
-## 功能介绍
+这是一个用于比较不同深度学习框架（Jittor和PyTorch）在训练GFocalV2目标检测模型时性能差异的分析工具。工具通过解析训练日志，提取关键性能指标和评估结果，生成可视化图表和详细报告。
 
-该工具可以：
+## 功能特点
 
-1. 分别在PyTorch和Jittor框架下运行GFL模型的训练和推理
-2. 收集训练和推理过程中的日志数据
-3. 分析并对比两个框架下的训练损失、推理性能和结果
-4. 生成对比报告和可视化图表
+- 自动解析Jittor和PyTorch的训练日志
+- 提取和比较关键训练指标（损失函数、学习率等）
+- 提取和比较模型评估指标（mAP等）
+- 生成多种可视化图表（折线图、柱状图、雷达图等）
+- 生成详细的分析报告（Markdown格式）
 
-## 文件说明
+## 安装依赖
 
-- `compare_gfl_frameworks.py`: 训练过程对比的Python脚本
-- `run_comparison.sh`: 简化运行训练对比测试的Shell脚本
-- `compare_gfl_inference.py`: 推理性能对比的Python脚本
-- `run_inference_comparison.sh`: 简化运行推理对比测试的Shell脚本
-- `README.md`: 本说明文档
+```bash
+pip install matplotlib numpy pandas seaborn
+```
 
 ## 使用方法
 
-### 准备工作
-
-确保系统中已安装以下依赖：
-
-1. Python 3.6+
-2. matplotlib
-3. numpy
-4. pandas
-
-### 训练对比测试
-
-使用Shell脚本运行训练对比测试：
+1. 运行提供的分析脚本：
 
 ```bash
-# 赋予脚本执行权限
-chmod +x run_comparison.sh
+# 方法一：通过shell脚本运行
+chmod +x run_analysis.sh
+./run_analysis.sh
 
-# 运行默认测试（每个框架训练1个epoch）
-./run_comparison.sh
+# 方法二：直接运行Python脚本
+python analyze_framework_logs.py --jittor-log "/path/to/jittor/log" --pytorch-log "/path/to/pytorch/log" --output-dir "output_folder"
 ```
 
-#### 训练对比命令行选项
-
-```
-使用方法: ./run_comparison.sh [选项]
-
-选项:
-  -e, --epochs NUM     设置最大训练轮数（默认：1）
-  -i, --iters NUM      设置最大训练迭代数（而不是轮数）
-  -o, --output DIR     设置结果输出目录（默认：comparison_results）
-  -j, --jittor-only    仅运行Jittor框架
-  -p, --pytorch-only   仅运行PyTorch框架
-  --jittor-log FILE    指定现有的Jittor训练日志文件（不执行训练）
-  --pytorch-log FILE   指定现有的PyTorch训练日志文件（不执行训练）
-  -h, --help           显示帮助信息
-```
-
-### 推理对比测试
-
-使用Shell脚本运行推理对比测试：
+2. 查看生成的报告和可视化结果：
 
 ```bash
-# 赋予脚本执行权限
-chmod +x run_inference_comparison.sh
-
-# 运行默认测试（使用最新的检查点文件）
-./run_inference_comparison.sh
+cd framework_comparison
+# 查看README.md和visualization目录下的图表
 ```
 
-#### 推理对比命令行选项
+## 输出内容
 
-```
-使用方法: ./run_inference_comparison.sh [选项]
+运行脚本后，将在指定的输出目录中生成以下内容：
 
-选项:
-  -j, --jittor-checkpoint PATH    指定Jittor框架的检查点文件路径
-  -p, --pytorch-checkpoint PATH   指定PyTorch框架的检查点文件路径
-  -b, --batch-size NUM           设置推理批次大小（默认：1）
-  -n, --num-samples NUM          限制测试样本数量
-  -o, --output DIR               设置结果输出目录（默认：inference_comparison_results）
-  --jittor-only                  仅测试Jittor框架
-  --pytorch-only                 仅测试PyTorch框架
-  --jittor-log FILE              指定现有的Jittor推理日志文件（不执行推理）
-  --pytorch-log FILE             指定现有的PyTorch推理日志文件（不执行推理）
-  -h, --help                     显示帮助信息
-```
+- `README.md`：详细的分析报告
+- `visualization/`：包含各种可视化图表
+  - `loss_comparison.png`：损失函数对比
+  - `map_comparison.png`：mAP指标对比
+  - `performance_comparison.png`：性能指标对比
+  - `speed_comparison.png`：速度对比
+  - `radar_comparison.png`：多维度性能雷达图
 
-## 示例
+## 分析维度
 
-### 训练对比示例
+工具从以下多个维度对两个框架进行比较：
 
-1. 仅运行训练10次迭代：
+1. **训练性能**
+   - 训练速度（每迭代耗时）
+   - 损失函数收敛速度和稳定性
+   - 学习率调度
 
-```bash
-./run_comparison.sh --iters 10
-```
+2. **模型精度**
+   - 整体mAP
+   - mAP@0.5（IoU=0.5时的mAP）
+   - mAP@0.75（IoU=0.75时的mAP）
+   - 不同尺度物体的检测精度（小、中、大物体）
 
-2. 仅测试Jittor框架：
+3. **综合评估**
+   - 多维度性能雷达图
+   - 性能提升百分比
 
-```bash
-./run_comparison.sh --jittor-only
-```
+## 定制化
 
-3. 使用已有的训练日志文件：
+如需定制分析内容，可以修改以下文件：
 
-```bash
-./run_comparison.sh --jittor-log /path/to/jittor/log.txt --pytorch-log /path/to/pytorch/log.txt
-```
-
-### 推理对比示例
-
-1. 指定检查点文件：
-
-```bash
-./run_inference_comparison.sh --jittor-checkpoint /path/to/jittor_checkpoint.pkl --pytorch-checkpoint /path/to/pytorch_checkpoint.pth
-```
-
-2. 仅测试100个样本：
-
-```bash
-./run_inference_comparison.sh --num-samples 100
-```
-
-3. 使用批处理进行推理：
-
-```bash
-./run_inference_comparison.sh --batch-size 4
-```
-
-## 输出结果
-
-### 训练对比结果
-
-测试完成后，将在指定的输出目录（默认为`comparison_results`）生成以下文件：
-
-1. `framework_comparison_report.md`: 详细的训练对比报告
-2. `loss_comparison.png`: 损失曲线对比图
-3. `time_comparison.png`: 训练时间对比图
-
-### 推理对比结果
-
-测试完成后，将在指定的输出目录（默认为`inference_comparison_results`）生成以下文件：
-
-1. `inference_comparison_report.md`: 详细的推理对比报告
-2. `inference_time_comparison.png`: 推理时间分布对比图
-3. `inference_time_boxplot.png`: 推理时间箱线图
-4. `ap_comparison.png`: 检测精度(mAP)对比图
-
-## 对比内容
-
-### 训练对比
-
-训练对比的主要内容包括：
-
-1. **损失函数对比**：
-   - 总损失
-   - 分类损失（loss_cls）
-   - 边界框回归损失（loss_bbox）
-   - 分布焦点损失（loss_dfl）
-
-2. **性能对比**：
-   - 每次迭代的训练时间
-   - 总训练时间
-
-3. **结果对比**：
-   - 平均精度（mAP）等评估指标
-
-### 推理对比
-
-推理对比的主要内容包括：
-
-1. **性能对比**：
-   - 平均推理时间
-   - 帧率(FPS)
-   - 推理时间分布
-
-2. **精度对比**：
-   - mAP
-   - mAP@0.5
-   - mAP@0.75
-   - 不同尺寸物体的mAP
-
-## 注意事项
-
-1. 为了获得完整的对比结果，建议首先运行训练，然后使用训练生成的检查点进行推理测试
-2. 对于大型数据集，可以使用`--iters`参数限制训练迭代次数，以快速获得对比结果
-3. 如果已有训练日志或推理日志，可以直接使用`--jittor-log`和`--pytorch-log`参数进行分析
-4. 推理测试默认会自动查找最新的检查点文件，如果要使用特定的检查点，请使用`--jittor-checkpoint`和`--pytorch-checkpoint`参数指定
+- `analyze_framework_logs.py`：调整解析逻辑和可视化样式
+- `run_analysis.sh`：修改输入日志路径和输出目录

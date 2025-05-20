@@ -1,7 +1,7 @@
 hooks:
   - type: EnhancedLoggerHook
-    interval: 50
-    interval_exp_name: 1000
+    interval: 10
+    interval_exp_name: 40
   - type: CheckpointHook
     interval: 1
 
