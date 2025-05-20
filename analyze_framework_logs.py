@@ -679,7 +679,7 @@ class LogAnalyzer:
         ax.set_yticklabels([])  # 不显示数值刻度
         
         # 添加实际数值标签（原始值，非归一化）
-        for i, (jittor_val, pytorch_val) in enumerate(zip([
+        for i, (jittor_val, pytorch_val) in enumerate(list(zip([
                 f"{summary['jittor']['avg_iter_time']:.4f}s",
                 f"{summary['jittor']['best_map']:.4f}",
                 f"{summary['jittor']['best_map_50']:.4f}",
@@ -695,7 +695,7 @@ class LogAnalyzer:
                 f"{pytorch_map_s:.4f}",
                 f"{pytorch_map_m:.4f}",
                 f"{pytorch_map_l:.4f}"
-            ])[:-1]):
+            ]))[:-1]):
             angle = angles[i]
             if i == 0:  # 训练速度
                 plt.annotate(f"J: {jittor_val}\nP: {pytorch_val}", 
@@ -750,103 +750,32 @@ class LogAnalyzer:
             
         return summary
 
-    def generate_report(self, output_dir):
-        """生成比较报告的README.md文件"""
+    def save_summary_to_json(self, summary, output_dir):
+        """将摘要指标保存为JSON文件"""
         os.makedirs(output_dir, exist_ok=True)
         
-        summary = self.generate_summary_metrics()
+        # 将None值转换为字符串，使其可JSON序列化
+        summary_copy = json.loads(json.dumps(summary, default=lambda o: 'null' if o is None else o))
         
-        readme_content = f"""# Jittor vs PyTorch 框架比较分析报告
-
-## 概述
-
-本报告比较了在GFocalV2目标检测模型上使用Jittor和PyTorch两个框架的训练过程和性能差异。分析基于训练日志提取的性能指标和模型评估结果。
-
-## 多维度性能对比
-
-下图展示了两个框架在多个关键性能指标上的归一化比较结果：
-
-![雷达图比较](./visualization/radar_comparison.png)
-
-## 训练性能比较
-
-### 损失函数收敛对比
-
-![损失函数比较](./visualization/loss_comparison.png)
-
-我们还创建了平滑后的损失曲线，以更清晰地显示趋势：
-
-![平滑损失函数比较](./visualization/smoothed_loss_comparison.png)
-
-#### 损失函数摘要数据
-| 框架 | 平均损失 | 最终损失 |
-|------|----------|----------|
-| Jittor | {summary['jittor']['avg_loss']:.4f} | {summary['jittor']['final_loss']:.4f if summary['jittor']['final_loss'] is not None else 'N/A'} |
-| PyTorch | {summary['pytorch']['avg_loss']:.4f} | {summary['pytorch']['final_loss']:.4f if summary['pytorch']['final_loss'] is not None else 'N/A'} |
-
-### 模型评估结果对比
-
-![mAP比较](./visualization/map_comparison.png)
-
-#### 模型评估指标摘要
-| 框架 | 最佳mAP | 最佳mAP所在Epoch | 最佳mAP@0.5 |
-|------|---------|-----------------|------------|
-| Jittor | {summary['jittor']['best_map']:.4f} | {summary['jittor']['best_map_epoch'] if summary['jittor']['best_map_epoch'] is not None else 'N/A'} | {summary['jittor']['best_map_50']:.4f} |
-| PyTorch | {summary['pytorch']['best_map']:.4f} | {summary['pytorch']['best_map_epoch'] if summary['pytorch']['best_map_epoch'] is not None else 'N/A'} | {summary['pytorch']['best_map_50']:.4f} |
-
-#### 不同尺寸目标检测性能
-| 框架 | 小目标mAP | 中目标mAP | 大目标mAP |
-|------|-----------|-----------|-----------|
-| Jittor | {summary['jittor']['best_map_s']:.4f} | {summary['jittor']['best_map_m']:.4f} | {summary['jittor']['best_map_l']:.4f} |
-| PyTorch | {summary['pytorch']['best_map_s']:.4f} | {summary['pytorch']['best_map_m']:.4f} | {summary['pytorch']['best_map_l']:.4f} |
-
-### 运行速度比较
-
-![性能比较](./visualization/performance_comparison.png)
-![速度比较](./visualization/speed_comparison.png)
-
-如果生成了每个epoch的训练时间比较图，我们也可以看到更详细的训练时间分布：
-
-![Epoch时间比较](./visualization/epoch_time_comparison.png)
-
-#### 速度性能指标摘要
-| 框架 | 平均迭代时间(秒) |
-|------|-----------------|
-| Jittor | {summary['jittor']['avg_iter_time']:.4f} |
-| PyTorch | {summary['pytorch']['avg_iter_time']:.4f} |
-
-Jittor比PyTorch {'快' if summary['speedup'] > 0 else '慢'} **{abs(summary['speedup']):.2f}%**。
-
-## 分析结论
-
-### 训练过程分析
-- 损失函数收敛趋势：{'两个框架的损失下降趋势基本一致' if abs(summary['jittor']['avg_loss'] - summary['pytorch']['avg_loss']) / max(max(summary['jittor']['avg_loss'], summary['pytorch']['avg_loss']), 0.001) < 0.1 else '两个框架的损失下降趋势存在一定差异'}
-- 训练稳定性：{'两个框架训练过程均较为稳定' if len(self.jittor_metrics['loss']) > 0 and len(self.pytorch_metrics['loss']) > 0 else '需要更多数据来评估训练稳定性'}
-
-### 性能分析
-- 训练速度：Jittor框架相比PyTorch{'有明显的速度优势' if summary['speedup'] > 10 else '速度基本持平' if abs(summary['speedup']) < 5 else {'略有' + ('优势' if summary['speedup'] > 0 else '劣势') if abs(summary['speedup']) < 10 else '明显' + ('优势' if summary['speedup'] > 0 else '劣势')}}
-- 内存使用：{'根据日志分析，PyTorch的内存使用情况可见，但Jittor未提供内存使用数据' if any(x is not None for x in self.pytorch_metrics.get('memory', [])) else '根据日志内容无法直接比较内存使用情况'}
-
-### 模型精度分析
-- mAP指标：{'Jittor框架训练的模型mAP指标略高' if summary['jittor']['best_map'] > summary['pytorch']['best_map'] else 'PyTorch框架训练的模型mAP指标略高' if summary['pytorch']['best_map'] > summary['jittor']['best_map'] else '两个框架训练的模型mAP指标基本持平'}
-- 不同尺度物体检测能力比较:
-  - 小物体: {'Jittor表现更好' if summary['jittor']['best_map_s'] > summary['pytorch']['best_map_s'] else 'PyTorch表现更好' if summary['pytorch']['best_map_s'] > summary['jittor']['best_map_s'] else '两框架表现相当'}
-  - 中物体: {'Jittor表现更好' if summary['jittor']['best_map_m'] > summary['pytorch']['best_map_m'] else 'PyTorch表现更好' if summary['pytorch']['best_map_m'] > summary['jittor']['best_map_m'] else '两框架表现相当'}
-  - 大物体: {'Jittor表现更好' if summary['jittor']['best_map_l'] > summary['pytorch']['best_map_l'] else 'PyTorch表现更好' if summary['pytorch']['best_map_l'] > summary['jittor']['best_map_l'] else '两框架表现相当'}
-
-## 总结
-
-{'Jittor框架在保持相当精度的同时，具有一定的速度优势' if summary['speedup'] > 0 and abs(summary['jittor']['best_map'] - summary['pytorch']['best_map']) < 0.01 else 
-'PyTorch框架在性能与精度方面表现更为平衡' if summary['speedup'] < 0 and summary['pytorch']['best_map'] > summary['jittor']['best_map'] else
-'两个框架各有优势，选择依赖于具体应用场景需求'}。
-
-本比较基于有限的训练日志数据，实际生产环境中的性能可能会有所不同。建议根据具体任务和硬件配置进行更全面的测试。
-"""
+        # 保存为JSON文件
+        with open(os.path.join(output_dir, 'performance_summary.json'), 'w', encoding='utf-8') as f:
+            json.dump(summary_copy, f, indent=4, ensure_ascii=False)
+            
+        # 保存为CSV文件，便于在表格软件中查看
+        with open(os.path.join(output_dir, 'performance_summary.csv'), 'w', encoding='utf-8') as f:
+            f.write("指标,Jittor,PyTorch,差异\n")
+            f.write(f"平均损失,{summary['jittor']['avg_loss']:.4f},{summary['pytorch']['avg_loss']:.4f},{summary['jittor']['avg_loss']-summary['pytorch']['avg_loss']:.4f}\n")
+            if summary['jittor']['final_loss'] is not None and summary['pytorch']['final_loss'] is not None:
+                f.write(f"最终损失,{summary['jittor']['final_loss']:.4f},{summary['pytorch']['final_loss']:.4f},{summary['jittor']['final_loss']-summary['pytorch']['final_loss']:.4f}\n")
+            f.write(f"平均迭代时间(秒),{summary['jittor']['avg_iter_time']:.4f},{summary['pytorch']['avg_iter_time']:.4f},{summary['jittor']['avg_iter_time']-summary['pytorch']['avg_iter_time']:.4f}\n")
+            f.write(f"最佳mAP,{summary['jittor']['best_map']:.4f},{summary['pytorch']['best_map']:.4f},{summary['jittor']['best_map']-summary['pytorch']['best_map']:.4f}\n")
+            f.write(f"最佳mAP@0.5,{summary['jittor']['best_map_50']:.4f},{summary['pytorch']['best_map_50']:.4f},{summary['jittor']['best_map_50']-summary['pytorch']['best_map_50']:.4f}\n")
+            f.write(f"小物体mAP,{summary['jittor']['best_map_s']:.4f},{summary['pytorch']['best_map_s']:.4f},{summary['jittor']['best_map_s']-summary['pytorch']['best_map_s']:.4f}\n")
+            f.write(f"中物体mAP,{summary['jittor']['best_map_m']:.4f},{summary['pytorch']['best_map_m']:.4f},{summary['jittor']['best_map_m']-summary['pytorch']['best_map_m']:.4f}\n")
+            f.write(f"大物体mAP,{summary['jittor']['best_map_l']:.4f},{summary['pytorch']['best_map_l']:.4f},{summary['jittor']['best_map_l']-summary['pytorch']['best_map_l']:.4f}\n")
+            f.write(f"速度提升(%),,,{summary['speedup']:.2f}\n")
         
-        with open(os.path.join(output_dir, 'README.md'), 'w', encoding='utf-8') as f:
-            f.write(readme_content)
-        
-        return summary
+        print(f"性能指标摘要已保存到 {os.path.join(output_dir, 'performance_summary.json')} 和 {os.path.join(output_dir, 'performance_summary.csv')}")
 
 def main():
     parser = argparse.ArgumentParser(description='分析和可视化Jittor与PyTorch框架的训练日志')
@@ -878,8 +807,11 @@ def main():
     analyzer.visualize_radar_comparison(vis_dir)
     
     # 生成报告
-    print("生成分析报告...")
-    summary = analyzer.generate_report(args.output_dir)
+    # print("生成分析报告...")
+    summary = analyzer.generate_summary_metrics()
+    
+    # 保存摘要指标到文件
+    analyzer.save_summary_to_json(summary, args.output_dir)
     
     print(f"分析完成，输出保存到 {args.output_dir} 目录")
     print(f"Jittor 平均迭代时间: {summary['jittor']['avg_iter_time']:.4f}秒")
@@ -887,6 +819,7 @@ def main():
     print(f"速度差异: Jittor比PyTorch {'快' if summary['speedup'] > 0 else '慢'} {abs(summary['speedup']):.2f}%")
     print(f"Jittor 最佳mAP: {summary['jittor']['best_map']:.4f}")
     print(f"PyTorch 最佳mAP: {summary['pytorch']['best_map']:.4f}")
+    
 
 if __name__ == '__main__':
     main() 

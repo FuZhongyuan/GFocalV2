@@ -117,11 +117,11 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 | 平均损失 | 2.4533 | 2.1965 | 0.2568 |
 | 最终损失 | 2.0895 | 1.8335 | 0.2560 |
 
-![损失对比](./framework_comparison/visualization/visualization/loss_comparison.png)
+![损失对比](visualization/loss_comparison.png)
 
 *图1: Jittor和PyTorch训练过程中的损失变化对比*
 
-![平滑损失对比](./framework_comparison/visualization/visualization/visualization/smoothed_loss_comparison.png)
+![平滑损失对比](visualization/smoothed_loss_comparison.png)
 
 *图2: 平滑后的损失曲线对比*
 
@@ -137,11 +137,11 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 | 中物体mAP | 0.0010 | 0.0200 | -0.0190 |
 | 大物体mAP | 0.0000 | 0.0010 | -0.0010 |
 
-![mAP对比](./framework_comparison/visualization/visualization/visualization/map_comparison.png)
+![mAP对比](visualization/map_comparison.png)
 
 *图3: 不同框架下模型的mAP性能对比*
 
-![AR对比](./framework_comparison/visualization/visualization/visualization/ar_comparison.png)
+![AR对比](visualization/ar_comparison.png)
 
 *图4: 平均召回率(AR)对比*
 
@@ -153,15 +153,15 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 |------|--------|---------|---------|
 | 平均迭代时间(秒) | 0.1822 | 0.2118 | 13.96% |
 
-![速度对比](./framework_comparison/visualization/visualization/visualization/speed_comparison.png)
+![速度对比](visualization/speed_comparison.png)
 
 *图5: 训练速度对比*
 
-![每轮训练时间对比](./framework_comparison/visualization/visualization/visualization/epoch_time_comparison.png)
+![每轮训练时间对比](visualization/epoch_time_comparison.png)
 
 *图6: 每个epoch的训练时间对比*
 
-![综合性能雷达图](./framework_comparison/visualization/visualization/visualization/radar_comparison.png)
+![综合性能雷达图](visualization/radar_comparison.png)
 
 *图7: 综合性能雷达图*
 

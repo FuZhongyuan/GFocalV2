@@ -1,0 +1,25 @@
+{
+    "jittor": {
+        "avg_loss": 2.4533270833333334,
+        "final_loss": 2.0895,
+        "avg_iter_time": 0.18220416666666664,
+        "best_map": 0.0,
+        "best_map_epoch": 1,
+        "best_map_50": 0.0,
+        "best_map_s": 0.0,
+        "best_map_m": 0.001,
+        "best_map_l": 0.0
+    },
+    "pytorch": {
+        "avg_loss": 2.19655,
+        "final_loss": 1.8335,
+        "avg_iter_time": 0.2117625,
+        "best_map": 0.001,
+        "best_map_epoch": 12,
+        "best_map_50": 0.003,
+        "best_map_s": 0.001,
+        "best_map_m": 0.02,
+        "best_map_l": 0.001
+    },
+    "speedup": 13.958247250260719
+}
