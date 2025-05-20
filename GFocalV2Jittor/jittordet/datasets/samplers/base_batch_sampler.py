@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-from GFocalV2Jittor.engine import BATCH_SAMPLERS
+from jittordet.engine import BATCH_SAMPLERS
 
 
 @BATCH_SAMPLERS.register_module()

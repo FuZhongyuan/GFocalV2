@@ -295,7 +295,7 @@ class Runner:
         if jt.rank == 0 and not osp.exists(log_dir):
             os.makedirs(log_dir)
         self.log_dir = log_dir
-        self.logger = get_logger(name='GFocalV2Jittor', log_file=log_file)
+        self.logger = get_logger(name='jittordet', log_file=log_file)
 
         cfg_filename = self.cfg.get('filename', None)
         cfg_filename = 'config.yml' if cfg_filename is None else \

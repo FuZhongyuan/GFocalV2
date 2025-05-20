@@ -5,7 +5,7 @@ from typing import List
 
 import jittor as jt
 
-from GFocalV2Jittor.structures import InstanceData, OptInstanceList, SampleList
+from jittordet.structures import InstanceData, OptInstanceList, SampleList
 
 
 def unpack_gt_instances(batch_data_samples: SampleList) -> tuple:

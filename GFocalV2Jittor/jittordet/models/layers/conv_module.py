@@ -2,8 +2,8 @@ import warnings
 
 from jittor import nn
 
-from GFocalV2Jittor.engine import BRICKS
-from GFocalV2Jittor.models.utils import constant_init, kaiming_init
+from jittordet.engine import BRICKS
+from jittordet.models.utils import constant_init, kaiming_init
 
 # register padding bricks
 BRICKS.register_module('zero', module=nn.ZeroPad2d)

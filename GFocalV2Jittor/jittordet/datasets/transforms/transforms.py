@@ -2,8 +2,8 @@ from collections.abc import Sequence
 
 import numpy as np
 
-from GFocalV2Jittor.engine import TRANSFORMS
-from GFocalV2Jittor.utils import (_scale_size, imflip, imrescale, imresize,
+from jittordet.engine import TRANSFORMS
+from jittordet.utils import (_scale_size, imflip, imrescale, imresize,
                              is_list_of, is_seq_of, is_tuple_of)
 
 

@@ -4,8 +4,8 @@ from typing import List, Optional
 
 import jittor as jt
 
-from GFocalV2Jittor.engine import TASK_UTILS
-from GFocalV2Jittor.structures import InstanceData
+from jittordet.engine import TASK_UTILS
+from jittordet.structures import InstanceData
 from .assign_result import AssignResult
 from .base_assigner import BaseAssigner
 

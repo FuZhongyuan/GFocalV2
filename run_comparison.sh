@@ -22,7 +22,7 @@ show_help() {
 }
 
 # 默认参数
-EPOCHS=1
+EPOCHS=12
 OUTPUT_DIR="comparison_results"
 EXTRA_ARGS=""
 

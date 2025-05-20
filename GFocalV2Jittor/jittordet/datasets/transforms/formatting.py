@@ -1,7 +1,7 @@
 import numpy as np
 
-from GFocalV2Jittor.engine import TRANSFORMS
-from GFocalV2Jittor.structures import DetDataSample, InstanceData
+from jittordet.engine import TRANSFORMS
+from jittordet.structures import DetDataSample, InstanceData
 
 
 @TRANSFORMS.register_module()

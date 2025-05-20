@@ -1,12 +1,12 @@
-# GFocalV2Jittor
+# jittordet
 
 ## introduction
 
-GFocalV2Jittor is an object detection benchmark based on [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/).
+jittordet is an object detection benchmark based on [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/).
 
 ## Supported Models
 
-GFocalV2Jittor supports commonly used datasets (COCO, VOC) and models (RetinaNet, Faster R-CNN) out of box.
+jittordet supports commonly used datasets (COCO, VOC) and models (RetinaNet, Faster R-CNN) out of box.
 
 Currently supported models are as below:
 
@@ -27,7 +27,7 @@ New state-of-the-art models are also being implemented:
 Please first follow the [tutorial](https://github.com/Jittor/jittor) to install jittor.
 Here, we recommend using jittor==1.3.6.10, which we have tested on.
 
-Then, install the `GFocalV2Jittor` by running:
+Then, install the `jittordet` by running:
 ```
 pip install -v -e .
 ```

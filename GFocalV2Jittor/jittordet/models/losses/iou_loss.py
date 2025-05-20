@@ -4,8 +4,8 @@ import warnings
 import jittor as jt
 import jittor.nn as nn
 
-from GFocalV2Jittor.engine import MODELS
-from GFocalV2Jittor.utils import bbox_overlaps
+from jittordet.engine import MODELS
+from jittordet.utils import bbox_overlaps
 from .utils import weighted_loss
 
 

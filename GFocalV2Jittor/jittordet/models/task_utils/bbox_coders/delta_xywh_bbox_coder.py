@@ -4,7 +4,7 @@
 import jittor as jt
 import numpy as np
 
-from GFocalV2Jittor.engine import TASK_UTILS
+from jittordet.engine import TASK_UTILS
 from .base_bbox_coder import BaseBBoxCoder
 
 

@@ -4,10 +4,10 @@ from typing import List, Optional, Sequence, Tuple
 import jittor as jt
 import jittor.nn as nn
 
-from GFocalV2Jittor.engine import (MODELS, TASK_UTILS, ConfigDict, ConfigType,
+from jittordet.engine import (MODELS, TASK_UTILS, ConfigDict, ConfigType,
                               OptConfigType)
-from GFocalV2Jittor.structures import InstanceData, InstanceList, OptInstanceList
-from GFocalV2Jittor.utils import bbox_overlaps, reduce_mean
+from jittordet.structures import InstanceData, InstanceList, OptInstanceList
+from jittordet.utils import bbox_overlaps, reduce_mean
 from ..layers import ConvModule, Scale
 from ..task_utils.prior_generators import anchor_inside_flags
 from ..task_utils.samplers import PseudoSampler

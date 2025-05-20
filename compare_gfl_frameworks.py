@@ -111,18 +111,18 @@ def run_training(framework, max_epochs=None, max_iters=None):
     if framework == 'jittor':
         config = JITTOR_CONFIG
         work_dir = f"work_dirs/gfl_jittor_{timestamp}"
-        cmd = f"cd {JITTOR_WORKDIR} && python tools/train.py {config} --work-dir {work_dir}"
+        cmd = f"cd {JITTOR_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
         log_file = os.path.join(JITTOR_WORKDIR, work_dir, "train.log")
     else:  # pytorch
         config = PYTORCH_CONFIG
         work_dir = f"work_dirs/gfl_pytorch_{timestamp}"
-        cmd = f"cd {PYTORCH_WORKDIR} && python tools/train.py {config} --work-dir {work_dir}"
+        cmd = f"cd {PYTORCH_WORKDIR} && pip install -e . && python tools/train.py {config} --work-dir {work_dir}"
         log_file = os.path.join(PYTORCH_WORKDIR, work_dir, "train.log")
     
-    if max_epochs:
-        cmd += f" --cfg-options runner.max_epochs={max_epochs}"
-    if max_iters:
-        cmd += f" --cfg-options runner.max_iters={max_iters}"
+    # if max_epochs:
+    #     cmd += f" --cfg-options runner.max_epochs={max_epochs}"
+    # if max_iters:
+    #     cmd += f" --cfg-options runner.max_iters={max_iters}"
     
     # 创建工作目录
     os.makedirs(os.path.dirname(log_file), exist_ok=True)

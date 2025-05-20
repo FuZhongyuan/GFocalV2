@@ -13,7 +13,7 @@ from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from terminaltables import AsciiTable
 
-from GFocalV2Jittor.structures import BaseDataElement
+from jittordet.structures import BaseDataElement
 from ..register import EVALUATORS
 from .base_evaluator import BaseEvaluator
 from .utils import eval_recalls

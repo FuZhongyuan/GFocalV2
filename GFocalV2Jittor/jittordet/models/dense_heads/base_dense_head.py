@@ -7,10 +7,10 @@ from typing import List, Optional, Tuple
 import jittor as jt
 import jittor.nn as nn
 
-from GFocalV2Jittor.engine import ConfigDict
-from GFocalV2Jittor.models.utils import (batched_nms, filter_scores_and_topk,
+from jittordet.engine import ConfigDict
+from jittordet.models.utils import (batched_nms, filter_scores_and_topk,
                                     select_single_mlvl, unpack_gt_instances)
-from GFocalV2Jittor.structures import InstanceData, InstanceList, SampleList
+from jittordet.structures import InstanceData, InstanceList, SampleList
 
 
 class BaseDenseHead(nn.Module, metaclass=ABCMeta):

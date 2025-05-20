@@ -8,8 +8,8 @@ def readme():
 
 
 def get_version():
-    with open('GFocalV2Jittor/version.py', 'r') as f:
-        exec(compile(f.read(), 'GFocalV2Jittor/version.py', 'exec'))
+    with open('jittordet/version.py', 'r') as f:
+        exec(compile(f.read(), 'jittordet/version.py', 'exec'))
     return locals()['__version__']
 
 
@@ -21,7 +21,7 @@ def get_requires():
 
 if __name__ == '__main__':
     setup(
-        name='GFocalV2Jittor',
+        name='jittordet',
         version=get_version(),
         description='An object detection codebase based on Jittor.',
         long_description=readme(),

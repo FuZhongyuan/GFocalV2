@@ -5,8 +5,8 @@ import jittor as jt
 import numpy as np
 from jittor.dataset import Dataset
 
-from GFocalV2Jittor.engine import BATCH_SAMPLERS, TRANSFORMS
-from GFocalV2Jittor.structures import DetDataSample, InstanceData
+from jittordet.engine import BATCH_SAMPLERS, TRANSFORMS
+from jittordet.structures import DetDataSample, InstanceData
 
 
 class Compose:

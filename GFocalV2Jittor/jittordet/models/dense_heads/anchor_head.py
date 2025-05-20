@@ -5,8 +5,8 @@ from typing import List, Optional, Tuple
 import jittor as jt
 import jittor.nn as nn
 
-from GFocalV2Jittor.engine import MODELS, TASK_UTILS, ConfigType, OptConfigType
-from GFocalV2Jittor.structures import InstanceData, InstanceList, OptInstanceList
+from jittordet.engine import MODELS, TASK_UTILS, ConfigType, OptConfigType
+from jittordet.structures import InstanceData, InstanceList, OptInstanceList
 from ..task_utils import PseudoSampler, anchor_inside_flags
 from ..utils import images_to_levels, multi_apply, normal_init, unmap
 from .base_dense_head import BaseDenseHead
