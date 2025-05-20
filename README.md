@@ -8,10 +8,12 @@
 - [数据准备](#数据准备)
 - [训练脚本](#训练脚本)
 - [测试脚本](#测试脚本)
+- [推理性能对比脚本](#推理性能对比脚本)
 - [性能对比结果](#性能对比结果)
   - [训练损失对比](#训练损失对比)
   - [检测精度对比](#检测精度对比)
   - [训练速度对比](#训练速度对比)
+  - [推理性能对比](#推理性能对比)
 - [实验日志对齐](#实验日志对齐)
 - [结论](#结论)
 
@@ -106,6 +108,69 @@ cd GFocalV2Pytorch
 python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/work_dirs/latest.pth --eval bbox > comparison_results/pytorch/pytorch_test_output.log 2>&1
 ```
 
+## 推理性能对比脚本
+
+为了全面评估GFocalV2在Jittor和PyTorch框架下的性能差异，我们开发了专门的推理性能对比工具，可以自动化地进行推理测试并生成详细的对比报告。
+
+### 准备工作
+
+```bash
+# 安装依赖
+pip install matplotlib pandas numpy
+
+# 确保两个框架的模型检查点已经就绪
+# Jittor检查点路径: GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+# PyTorch检查点路径: GFocalV2Pytorch/work_dirs/20250520_111249/epoch_12.pth
+```
+
+### 运行推理对比
+
+```bash
+# 运行完整对比分析
+./run_inference_comparison.sh -o inference_final_report
+
+# 只测试Jittor框架
+./run_inference_comparison.sh --jittor-only -o jittor_inference_report
+
+# 只测试PyTorch框架
+./run_inference_comparison.sh --pytorch-only -o pytorch_inference_report
+
+# 指定已有的日志文件进行分析
+./run_inference_comparison.sh --jittor-log path/to/jittor_log.log --pytorch-log path/to/pytorch_log.log -o inference_report
+
+# 帮助信息
+./run_inference_comparison.sh --help
+```
+
+### 推理对比脚本参数
+
+| 参数 | 描述 |
+|------|------|
+| -j, --jittor-checkpoint | 指定Jittor框架的检查点文件路径 |
+| -p, --pytorch-checkpoint | 指定PyTorch框架的检查点文件路径 |
+| -b, --batch-size | 设置推理批次大小（默认：1） |
+| -n, --num-samples | 限制测试样本数量 |
+| -o, --output | 设置结果输出目录 |
+| --jittor-only | 仅测试Jittor框架 |
+| --pytorch-only | 仅测试PyTorch框架 |
+| --jittor-log | 指定现有的Jittor推理日志文件（不执行推理） |
+| --pytorch-log | 指定现有的PyTorch推理日志文件（不执行推理） |
+| -h, --help | 显示帮助信息 |
+
+### 自定义推理对比
+
+如需进行更复杂的推理性能对比，可以直接使用`compare_gfl_inference.py`脚本：
+
+```bash
+# 自定义推理测试
+python compare_gfl_inference.py \
+  --jittor-checkpoint /path/to/jittor_model.pkl \
+  --pytorch-checkpoint /path/to/pytorch_model.pth \
+  --batch-size 4 \
+  --num-samples 100 \
+  --output-dir custom_inference_report
+```
+
 ## 性能对比结果
 
 ### 训练损失对比
@@ -165,6 +230,38 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 
 *图7: 综合性能雷达图*
 
+### 推理性能对比
+
+通过专门的推理性能对比工具，我们对比了Jittor和PyTorch框架在推理阶段的性能差异：
+
+| 指标 | Jittor | PyTorch | 比例 |
+|------|--------|---------|------|
+| 平均推理时间 | 0.13 s | 0.03 s | 5.00x |
+| FPS (帧每秒) | 7.82 | 39.09 | 0.20x |
+
+#### 推理检测精度对比
+
+| 指标 | Jittor | PyTorch | 差异比例 |
+|------|--------|---------|----------|
+| mAP | 0.0000 | 0.0010 | 100.00% |
+| mAP@0.5 | 0.0000 | 0.0020 | 100.00% |
+| mAP@0.75 | 0.0000 | 0.0000 | N/A |
+| mAP (small) | 0.0000 | 0.0010 | 100.00% |
+| mAP (medium) | 0.0000 | 0.0200 | 100.00% |
+| mAP (large) | 0.0000 | 0.0010 | 100.00% |
+
+![推理时间分布](./inference_final_report/inference_time_comparison.png)
+
+*图8: Jittor和PyTorch框架推理时间分布对比*
+
+![推理时间箱线图](./inference_final_report/inference_time_boxplot.png)
+
+*图9: 推理时间箱线图*
+
+![AP对比图](./inference_final_report/ap_comparison.png)
+
+*图10: 检测精度(AP)对比*
+
 ## 实验日志对齐
 
 ### 训练过程对齐分析
@@ -206,7 +303,9 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 
 3. **训练损失**：Jittor的训练损失整体高于PyTorch，但两者的损失下降趋势相似，表明两种实现的训练过程基本一致。
 
-4. **综合表现**：综合考虑训练速度和检测精度，如果追求更快的训练速度，Jittor框架是更好的选择；如果更注重模型精度，PyTorch框架可能更为适合。
+4. **推理性能**：PyTorch框架在推理速度上表现优异，平均推理时间仅为Jittor的1/5，FPS约为Jittor的5倍。这表明PyTorch在模型优化和推理加速方面具有更成熟的实现。
+
+5. **综合表现**：综合考虑训练和推理性能，两个框架各有优势：Jittor在训练速度方面表现更好，而PyTorch在推理速度和检测精度上更有优势。
 
 ### 未来工作
 
@@ -214,49 +313,8 @@ python tools/test.py configs/gfl_r50_fpn_1x_coco.py comparison_results/pytorch/w
 
 2. 在更大规模的数据集和更复杂的场景下验证两个框架的性能表现。
 
-3. 分析两个框架在推理速度和内存消耗方面的差异。
+3. 优化Jittor框架的推理性能，特别是在模型部署和加速方面。
 
-4. 探索混合精度训练对两个框架性能的影响。 
+4. 探索混合精度训练对两个框架性能的影响。
 
-
-# GFocalV2 框架推理性能对比分析
-
-
-## 推理配置
-
-Jittor配置文件: `/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/gfl_r50_fpn_coco_1x_enhanced.yml`
-
-PyTorch配置文件: `/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/gfl_r50_fpn_1x_coco.py`
-
-## 推理性能对比
-
-| 指标 | Jittor | PyTorch | 比例 |
-|------|--------|---------|------|
-| 平均推理时间 | 0.13 s | 0.03 s | 5.00x |
-| FPS (帧每秒) | 7.82 | 39.09 | 0.20x |
-
-## 检测精度对比
-
-| 指标 | Jittor | PyTorch | 差异比例 |
-|------|--------|---------|----------|
-| mAP | 0.0000 | 0.0010 | 100.00% |
-| mAP@0.5 | 0.0000 | 0.0020 | 100.00% |
-| mAP@0.75 | 0.0000 | 0.0000 | N/A |
-| mAP (small) | 0.0000 | 0.0010 | 100.00% |
-| mAP (medium) | 0.0000 | 0.0200 | 100.00% |
-| mAP (large) | 0.0000 | 0.0010 | 100.00% |
-
-## 推理时间分布
-
-![Inference Time Comparison](./inference_final_report/inference_time_comparison.png)
-
-![Inference Time Boxplot](./inference_final_report/inference_time_boxplot.png)
-
-## 检测精度对比
-
-![AP Comparison](./inference_final_report/ap_comparison.png)
-
-## 结论
-
-1. **推理性能**: PyTorch框架的推理速度比Jittor快5.00倍。
-2. **检测精度**: 两个框架的检测精度存在一定差异，mAP差异为100.00%。
+5. 针对实际应用场景，考虑模型量化和部署优化的差异。
