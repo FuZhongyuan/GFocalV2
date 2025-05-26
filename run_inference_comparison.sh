@@ -4,8 +4,8 @@
 set -e
 
 # 默认检查点路径
-DEFAULT_JITTOR_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl"
-DEFAULT_PYTORCH_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/epoch_12.pth"
+DEFAULT_JITTOR_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/gfl_r50_fpn_coco_1x_enhanced/20250526_164328_train/epoch_12.pkl"
+DEFAULT_PYTORCH_CHECKPOINT="/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/gfl_r50_fpn_1x_coco/epoch_12.pth"
 
 # 帮助信息
 show_help() {

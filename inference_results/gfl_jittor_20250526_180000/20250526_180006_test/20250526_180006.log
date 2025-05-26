@@ -1,0 +1,8 @@
+2025-05-26 18:00:09,058 - jittordet - INFO - Start load parameters from /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+2025-05-26 18:00:10,734 - jittordet - INFO - Finish loading checkpoint
+2025-05-26 18:00:13,698 - jittordet - INFO - (test) [1/1][10/39]  eta: 0 day 00:00:07  time: 0.2363
+2025-05-26 18:00:14,195 - jittordet - INFO - (test) [1/1][20/39]  eta: 0 day 00:00:02  time: 0.1425
+2025-05-26 18:00:14,683 - jittordet - INFO - (test) [1/1][30/39]  eta: 0 day 00:00:01  time: 0.1109
+2025-05-26 18:00:15,187 - jittordet - INFO - Evaluating bbox...
+2025-05-26 18:00:15,576 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
+2025-05-26 18:00:15,576 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.000  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.000  bbox_mAP_l: 0.000
