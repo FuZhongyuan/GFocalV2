@@ -130,3 +130,6 @@ data/
 .pth.tar.bz2
 .pth.tar.xz
 .pth.tar.lzma
+tinydata/
+fulldata/
+minidata/

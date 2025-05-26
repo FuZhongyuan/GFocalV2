@@ -134,3 +134,29 @@
 2025-05-20 11:14:51,184 - INFO - mAP雷达图已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_radar_chart.png
 2025-05-20 11:14:51,185 - INFO - 对比报告已保存到 /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
 2025-05-20 11:14:51,185 - INFO - 对比完成! 报告保存在: /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-26 14:19:31,259 - INFO - 开始GFL框架对比测试
+2025-05-26 14:19:31,259 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log='comparison_results/jittor/train_full_output.log', jittor_only=False, output_dir='comparison_results/report', pytorch_log='comparison_results/pytorch/train_full_output.log', pytorch_only=False)
+2025-05-26 14:19:31,259 - INFO - 使用指定的Jittor日志文件: comparison_results/jittor/train_full_output.log
+2025-05-26 14:19:31,259 - INFO - 使用指定的PyTorch日志文件: comparison_results/pytorch/train_full_output.log
+2025-05-26 14:19:31,262 - WARNING - Jittor日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-26 14:19:31,264 - INFO - 成功解析Jittor日志，提取了0条记录
+2025-05-26 14:19:31,266 - WARNING - PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-26 14:19:31,267 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-26 14:19:32,119 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/loss_comparison.png
+2025-05-26 14:19:32,377 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/time_comparison.png
+2025-05-26 14:19:32,378 - WARNING - 没有找到有效的mAP指标，无法生成比较图表
+2025-05-26 14:19:32,379 - INFO - 对比报告已保存到 /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-26 14:19:32,379 - INFO - 对比完成! 报告保存在: /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-26 15:05:56,999 - INFO - 开始GFL框架对比测试
+2025-05-26 15:05:56,999 - INFO - 参数: Namespace(epochs=12, iters=None, jittor_log='comparison_results/jittor/train_full_output.log', jittor_only=False, output_dir='comparison_results/report', pytorch_log='comparison_results/pytorch/train_full_output.log', pytorch_only=False)
+2025-05-26 15:05:56,999 - INFO - 使用指定的Jittor日志文件: comparison_results/jittor/train_full_output.log
+2025-05-26 15:05:56,999 - INFO - 使用指定的PyTorch日志文件: comparison_results/pytorch/train_full_output.log
+2025-05-26 15:05:57,052 - INFO - 成功解析Jittor日志，提取了108条记录
+2025-05-26 15:05:58,039 - WARNING - PyTorch日志中没有找到loss记录，可能需要修改训练代码添加loss打印或检查日志格式
+2025-05-26 15:05:58,040 - INFO - 成功解析PyTorch日志，提取了0条记录
+2025-05-26 15:05:59,044 - INFO - 损失对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/loss_comparison.png
+2025-05-26 15:05:59,288 - INFO - 时间对比图已保存到 /root/data-fs/GFocalV2/comparison_results/report/time_comparison.png
+2025-05-26 15:05:59,623 - INFO - mAP比较图表已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_comparison.png
+2025-05-26 15:05:59,923 - INFO - mAP雷达图已保存到 /root/data-fs/GFocalV2/comparison_results/report/map_radar_chart.png
+2025-05-26 15:05:59,924 - INFO - 对比报告已保存到 /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md
+2025-05-26 15:05:59,924 - INFO - 对比完成! 报告保存在: /root/data-fs/GFocalV2/comparison_results/report/framework_comparison_report.md

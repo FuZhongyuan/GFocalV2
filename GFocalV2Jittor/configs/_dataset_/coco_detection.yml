@@ -3,8 +3,8 @@ num_gpus: $NUM_GPUS:1
 
 train_dataset:
   type: CocoDataset
-  batch_size: <1 * num_gpus>
-  num_workers: <1 * num_gpus>
+  batch_size: <2 * num_gpus>
+  num_workers: <2 * num_gpus>
   data_root: <data_root>
   data_path:
     ann_file: annotations/instances_train2017.json
@@ -27,8 +27,8 @@ train_dataset:
 
 val_dataset: &val_dataset
   type: CocoDataset
-  batch_size: <1 * num_gpus>
-  num_workers: <1 * num_gpus>
+  batch_size: <2 * num_gpus>
+  num_workers: <2 * num_gpus>
   data_root: <data_root>
   data_path:
     ann_file: annotations/instances_val2017.json

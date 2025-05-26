@@ -1,25 +1,25 @@
 {
     "jittor": {
-        "avg_loss": 2.4533270833333334,
-        "final_loss": 2.0895,
-        "avg_iter_time": 0.18220416666666664,
-        "best_map": 0.0,
-        "best_map_epoch": 1,
-        "best_map_50": 0.0,
-        "best_map_s": 0.0,
-        "best_map_m": 0.001,
-        "best_map_l": 0.0
+        "avg_loss": 1.8579329629629628,
+        "final_loss": 1.5095,
+        "avg_iter_time": 0.22977111111111112,
+        "best_map": 0.051,
+        "best_map_epoch": 11.5,
+        "best_map_50": 0.089,
+        "best_map_s": 0.044,
+        "best_map_m": 0.075,
+        "best_map_l": 0.116
     },
     "pytorch": {
-        "avg_loss": 2.19655,
-        "final_loss": 1.8335,
-        "avg_iter_time": 0.2117625,
-        "best_map": 0.001,
-        "best_map_epoch": 12,
-        "best_map_50": 0.003,
-        "best_map_s": 0.001,
-        "best_map_m": 0.02,
-        "best_map_l": 0.001
+        "avg_loss": 2.078704074074074,
+        "final_loss": 1.9564,
+        "avg_iter_time": 0.208205,
+        "best_map": 0.004,
+        "best_map_epoch": 5,
+        "best_map_50": 0.006,
+        "best_map_s": 0.0,
+        "best_map_m": 0.002,
+        "best_map_l": 0.015
     },
-    "speedup": 13.958247250260719
+    "speedup": -10.35811393151515
 }

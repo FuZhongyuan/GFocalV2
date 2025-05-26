@@ -90,9 +90,10 @@ class LogAnalyzer:
             
             # 每次找到两组相同的评估结果，所以我们只记录一次
             if len(self.jittor_eval['mAP']) > 0 and len(self.jittor_eval['mAP']) > epoch_counter:
+                epoch_counter += 0.5
                 continue
                 
-            epoch_counter += 1
+            epoch_counter += 0.5
             self.jittor_eval['epochs'].append(epoch_counter)
             self.jittor_eval['mAP'].append(float(mAP))
             self.jittor_eval['mAP_50'].append(float(mAP_50))

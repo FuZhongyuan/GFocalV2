@@ -1,0 +1,1179 @@
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/data-fs/GFocalV2/GFocalV2Jittor
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: jittor>1.3.6 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (1.3.9.14)
+Requirement already satisfied: matplotlib in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (3.7.5)
+Requirement already satisfied: numpy==1.23.5 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (1.23.5)
+Requirement already satisfied: opencv-python in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (4.11.0.86)
+Requirement already satisfied: Pillow in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (9.4.0)
+Requirement already satisfied: pycocotools in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (2.0.7)
+Requirement already satisfied: terminaltables in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittordet==0.0.1) (3.1.10)
+Requirement already satisfied: tqdm in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittor>1.3.6->jittordet==0.0.1) (4.65.2)
+Requirement already satisfied: astunparse in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from jittor>1.3.6->jittordet==0.0.1) (1.6.3)
+Requirement already satisfied: contourpy>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (1.4.7)
+Requirement already satisfied: packaging>=20.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (24.2)
+Requirement already satisfied: pyparsing>=2.3.1 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (2.9.0.post0)
+Requirement already satisfied: importlib-resources>=3.2.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from matplotlib->jittordet==0.0.1) (6.4.5)
+Requirement already satisfied: zipp>=3.1.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from importlib-resources>=3.2.0->matplotlib->jittordet==0.0.1) (3.20.2)
+Requirement already satisfied: six>=1.5 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->jittordet==0.0.1) (1.16.0)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in /root/data-tmp/miniconda3/envs/jittordet/lib/python3.8/site-packages (from astunparse->jittor>1.3.6->jittordet==0.0.1) (0.37.1)
+Installing collected packages: jittordet
+  Attempting uninstall: jittordet
+    Found existing installation: jittordet 0.0.1
+    Uninstalling jittordet-0.0.1:
+      Successfully uninstalled jittordet-0.0.1
+  DEPRECATION: Legacy editable install of jittordet==0.0.1 from file:///root/data-fs/GFocalV2/GFocalV2Jittor (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for jittordet
+Successfully installed jittordet
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[38;5;2m[i 0526 14:23:46.111287 20 compiler.py:956] Jittor(1.3.9.14) src: /root/miniconda3/envs/jittordet/lib/python3.8/site-packages/jittor[m
+[38;5;2m[i 0526 14:23:46.116722 20 compiler.py:957] g++ at /usr/bin/g++(9.3.0)[m
+[38;5;2m[i 0526 14:23:46.116801 20 compiler.py:958] cache_path: /root/.cache/jittor/jt1.3.9/g++9.3.0/py3.8.2/Linux-5.15.0-9xaa/IntelRXeonRSilx76/2997/default[m
+[38;5;2m[i 0526 14:23:46.123350 20 __init__.py:412] Found nvcc(11.3.109) at /usr/local/cuda/bin/nvcc.[m
+[38;5;2m[i 0526 14:23:46.129550 20 __init__.py:412] Found addr2line(2.34) at /usr/bin/addr2line.[m
+[38;5;2m[i 0526 14:23:46.347198 20 compiler.py:1013] cuda key:cu11.3.109_sm_70[m
+[38;5;2m[i 0526 14:23:46.863992 20 __init__.py:227] Total mem: 503.29GB, using 16 procs for compiling.[m
+[38;5;2m[i 0526 14:23:47.052082 20 jit_compiler.cc:28] Load cc_path: /usr/bin/g++[m
+[38;5;2m[i 0526 14:23:47.238630 20 init.cc:63] Found cuda archs: [70,][m
+2025-05-26 14:23:53,859 - jittordet - INFO - Start initialize model weights.
+[38;5;3m[w 0526 14:23:54.241122 20 __init__.py:1645] load parameter fc.weight failed ...[m
+[38;5;3m[w 0526 14:23:54.241234 20 __init__.py:1645] load parameter fc.bias failed ...[m
+[38;5;3m[w 0526 14:23:54.241289 20 __init__.py:1664] load total 267 params, 2 failed[m
+2025-05-26 14:23:54,242 - jittordet - INFO - Initialize succeed.
+[38;5;2m[i 0526 14:23:54.242259 20 cuda_flags.cc:49] CUDA enabled.[m
+loading annotations into memory...
+Done (t=0.18s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+[38;5;3m[w 0526 14:24:00.446635 20 cudnn_conv__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFORMAT_abcd_____hash_4d5b3e2d24c769d3_op.cc:214] forward_ algorithm cache is full[m
+[38;5;3m[w 0526 14:24:01.070860 20 cudnn_conv_backward_w__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFO___hash_8e480e8564e59906_op.cc:210] backward w algorithm cache is full[m
+[38;5;3m[w 0526 14:24:01.345340 20 cudnn_conv_backward_x__Tx_float32__Ty_float32__Tw_float32__XFORMAT_abcd__WFORMAT_oihw__YFO___hash_af8994a8aef53c1c_op.cc:206] backward x algorithm cache is full[m
+2025-05-26 14:24:02,525 - jittordet - INFO - Epoch [ 1/12] Iter [ 10/456]  eta: 0 day 01:04:51  time: 0.7123  lr: 2.0980e-04  loss: 2.4469  loss_cls: 0.1739  loss_bbox: 1.5503  loss_dfl: 0.7226
+2025-05-26 14:24:04,804 - jittordet - INFO - Epoch [ 1/12] Iter [ 20/456]  eta: 0 day 00:42:37  time: 0.4690  lr: 4.0960e-04  loss: 2.2725  loss_cls: 0.3040  loss_bbox: 1.3386  loss_dfl: 0.6299
+2025-05-26 14:24:07,089 - jittordet - INFO - Epoch [ 1/12] Iter [ 30/456]  eta: 0 day 00:35:12  time: 0.3882  lr: 6.0940e-04  loss: 2.3485  loss_cls: 0.5540  loss_bbox: 1.1962  loss_dfl: 0.5983
+2025-05-26 14:24:09,392 - jittordet - INFO - Epoch [ 1/12] Iter [ 40/456]  eta: 0 day 00:31:31  time: 0.3482  lr: 8.0920e-04  loss: 2.3072  loss_cls: 0.5441  loss_bbox: 1.2121  loss_dfl: 0.5510
+2025-05-26 14:24:09,392 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:11,750 - jittordet - INFO - Epoch [ 1/12] Iter [ 50/456]  eta: 0 day 00:29:23  time: 0.3253  lr: 1.0090e-03  loss: 2.2638  loss_cls: 0.4903  loss_bbox: 1.2137  loss_dfl: 0.5598
+2025-05-26 14:24:11,750 - jittordet - INFO - (train) [ 1/12][ 50/456]  eta: 0 day 00:29:24  time: 0.3253  lr: 1.0090e-03  loss: 2.3278  loss_cls: 0.4133  loss_bbox: 1.3022  loss_dfl: 0.6123
+2025-05-26 14:24:14,213 - jittordet - INFO - Epoch [ 1/12] Iter [ 60/456]  eta: 0 day 00:28:07  time: 0.3117  lr: 1.2088e-03  loss: 2.3313  loss_cls: 0.6533  loss_bbox: 1.1312  loss_dfl: 0.5468
+2025-05-26 14:24:16,509 - jittordet - INFO - Epoch [ 1/12] Iter [ 70/456]  eta: 0 day 00:26:59  time: 0.2997  lr: 1.4086e-03  loss: 2.3562  loss_cls: 0.6172  loss_bbox: 1.1562  loss_dfl: 0.5829
+2025-05-26 14:24:18,790 - jittordet - INFO - Epoch [ 1/12] Iter [ 80/456]  eta: 0 day 00:26:06  time: 0.2905  lr: 1.6084e-03  loss: 2.3308  loss_cls: 0.5941  loss_bbox: 1.1694  loss_dfl: 0.5673
+2025-05-26 14:24:18,790 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:21,120 - jittordet - INFO - Epoch [ 1/12] Iter [ 90/456]  eta: 0 day 00:25:27  time: 0.2838  lr: 1.8082e-03  loss: 2.3309  loss_cls: 0.6331  loss_bbox: 1.1494  loss_dfl: 0.5484
+2025-05-26 14:24:23,389 - jittordet - INFO - Epoch [ 1/12] Iter [100/456]  eta: 0 day 00:24:53  time: 0.2779  lr: 2.0080e-03  loss: 2.3088  loss_cls: 0.6195  loss_bbox: 1.1505  loss_dfl: 0.5388
+2025-05-26 14:24:23,390 - jittordet - INFO - (train) [ 1/12][100/456]  eta: 0 day 00:24:53  time: 0.2780  lr: 2.0080e-03  loss: 2.3316  loss_cls: 0.6234  loss_bbox: 1.1513  loss_dfl: 0.5568
+2025-05-26 14:24:25,611 - jittordet - INFO - Epoch [ 1/12] Iter [110/456]  eta: 0 day 00:24:22  time: 0.2726  lr: 2.2078e-03  loss: 2.2897  loss_cls: 0.6675  loss_bbox: 1.0878  loss_dfl: 0.5345
+2025-05-26 14:24:27,830 - jittordet - INFO - Epoch [ 1/12] Iter [120/456]  eta: 0 day 00:23:55  time: 0.2682  lr: 2.4076e-03  loss: 2.2286  loss_cls: 0.7145  loss_bbox: 1.0115  loss_dfl: 0.5025
+2025-05-26 14:24:27,830 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:30,117 - jittordet - INFO - Epoch [ 1/12] Iter [130/456]  eta: 0 day 00:23:36  time: 0.2650  lr: 2.6074e-03  loss: 2.2972  loss_cls: 0.6489  loss_bbox: 1.1087  loss_dfl: 0.5396
+2025-05-26 14:24:32,292 - jittordet - INFO - Epoch [ 1/12] Iter [140/456]  eta: 0 day 00:23:14  time: 0.2615  lr: 2.8072e-03  loss: 2.2644  loss_cls: 0.7221  loss_bbox: 1.0349  loss_dfl: 0.5074
+2025-05-26 14:24:34,513 - jittordet - INFO - Epoch [ 1/12] Iter [150/456]  eta: 0 day 00:22:57  time: 0.2587  lr: 3.0070e-03  loss: 2.2689  loss_cls: 0.8370  loss_bbox: 0.9312  loss_dfl: 0.5007
+2025-05-26 14:24:34,513 - jittordet - INFO - (train) [ 1/12][150/456]  eta: 0 day 00:22:57  time: 0.2588  lr: 3.0070e-03  loss: 2.2698  loss_cls: 0.7180  loss_bbox: 1.0348  loss_dfl: 0.5170
+2025-05-26 14:24:36,792 - jittordet - INFO - Epoch [ 1/12] Iter [160/456]  eta: 0 day 00:22:43  time: 0.2567  lr: 3.2068e-03  loss: 2.3253  loss_cls: 0.5699  loss_bbox: 1.1740  loss_dfl: 0.5814
+2025-05-26 14:24:36,792 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:39,098 - jittordet - INFO - Epoch [ 1/12] Iter [170/456]  eta: 0 day 00:22:32  time: 0.2550  lr: 3.4066e-03  loss: 2.2608  loss_cls: 0.7442  loss_bbox: 1.0027  loss_dfl: 0.5140
+2025-05-26 14:24:41,303 - jittordet - INFO - Epoch [ 1/12] Iter [180/456]  eta: 0 day 00:22:18  time: 0.2530  lr: 3.6064e-03  loss: 2.3408  loss_cls: 0.7760  loss_bbox: 1.0350  loss_dfl: 0.5297
+2025-05-26 14:24:43,635 - jittordet - INFO - Epoch [ 1/12] Iter [190/456]  eta: 0 day 00:22:10  time: 0.2518  lr: 3.8062e-03  loss: 2.1966  loss_cls: 0.7481  loss_bbox: 0.9493  loss_dfl: 0.4992
+2025-05-26 14:24:45,949 - jittordet - INFO - Epoch [ 1/12] Iter [200/456]  eta: 0 day 00:22:01  time: 0.2507  lr: 4.0060e-03  loss: 2.2781  loss_cls: 0.8092  loss_bbox: 0.9675  loss_dfl: 0.5014
+2025-05-26 14:24:45,949 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:45,949 - jittordet - INFO - (train) [ 1/12][200/456]  eta: 0 day 00:22:02  time: 0.2508  lr: 4.0060e-03  loss: 2.2803  loss_cls: 0.7295  loss_bbox: 1.0257  loss_dfl: 0.5252
+2025-05-26 14:24:48,328 - jittordet - INFO - Epoch [ 1/12] Iter [210/456]  eta: 0 day 00:21:55  time: 0.2500  lr: 4.2058e-03  loss: 2.1073  loss_cls: 0.6284  loss_bbox: 0.9797  loss_dfl: 0.4992
+2025-05-26 14:24:50,603 - jittordet - INFO - Epoch [ 1/12] Iter [220/456]  eta: 0 day 00:21:47  time: 0.2488  lr: 4.4056e-03  loss: 2.1290  loss_cls: 0.7186  loss_bbox: 0.9218  loss_dfl: 0.4886
+2025-05-26 14:24:52,899 - jittordet - INFO - Epoch [ 1/12] Iter [230/456]  eta: 0 day 00:21:39  time: 0.2479  lr: 4.6054e-03  loss: 2.2285  loss_cls: 0.7449  loss_bbox: 0.9648  loss_dfl: 0.5188
+2025-05-26 14:24:55,142 - jittordet - INFO - Epoch [ 1/12] Iter [240/456]  eta: 0 day 00:21:31  time: 0.2468  lr: 4.8052e-03  loss: 2.2615  loss_cls: 0.6947  loss_bbox: 1.0544  loss_dfl: 0.5124
+2025-05-26 14:24:55,142 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:24:57,426 - jittordet - INFO - Epoch [ 1/12] Iter [250/456]  eta: 0 day 00:21:24  time: 0.2460  lr: 5.0050e-03  loss: 2.2678  loss_cls: 0.6577  loss_bbox: 1.0779  loss_dfl: 0.5322
+2025-05-26 14:24:57,426 - jittordet - INFO - (train) [ 1/12][250/456]  eta: 0 day 00:21:25  time: 0.2461  lr: 5.0050e-03  loss: 2.1988  loss_cls: 0.6889  loss_bbox: 0.9997  loss_dfl: 0.5102
+2025-05-26 14:24:59,715 - jittordet - INFO - Epoch [ 1/12] Iter [260/456]  eta: 0 day 00:21:18  time: 0.2453  lr: 5.2048e-03  loss: 2.0895  loss_cls: 0.4945  loss_bbox: 1.0611  loss_dfl: 0.5339
+2025-05-26 14:25:01,939 - jittordet - INFO - Epoch [ 1/12] Iter [270/456]  eta: 0 day 00:21:11  time: 0.2444  lr: 5.4046e-03  loss: 2.0651  loss_cls: 0.4451  loss_bbox: 1.0970  loss_dfl: 0.5230
+2025-05-26 14:25:04,222 - jittordet - INFO - Epoch [ 1/12] Iter [280/456]  eta: 0 day 00:21:05  time: 0.2437  lr: 5.6044e-03  loss: 2.0927  loss_cls: 0.6351  loss_bbox: 0.9708  loss_dfl: 0.4868
+2025-05-26 14:25:04,222 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:06,452 - jittordet - INFO - Epoch [ 1/12] Iter [290/456]  eta: 0 day 00:20:59  time: 0.2429  lr: 5.8042e-03  loss: 2.1966  loss_cls: 0.5813  loss_bbox: 1.0791  loss_dfl: 0.5362
+2025-05-26 14:25:08,783 - jittordet - INFO - Epoch [ 1/12] Iter [300/456]  eta: 0 day 00:20:54  time: 0.2425  lr: 6.0040e-03  loss: 2.2020  loss_cls: 0.6061  loss_bbox: 1.0735  loss_dfl: 0.5225
+2025-05-26 14:25:08,783 - jittordet - INFO - (train) [ 1/12][300/456]  eta: 0 day 00:20:54  time: 0.2426  lr: 6.0040e-03  loss: 2.1292  loss_cls: 0.5524  loss_bbox: 1.0563  loss_dfl: 0.5205
+2025-05-26 14:25:08,783 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:11,050 - jittordet - INFO - Epoch [ 1/12] Iter [310/456]  eta: 0 day 00:20:49  time: 0.2419  lr: 6.2038e-03  loss: 2.2186  loss_cls: 0.5848  loss_bbox: 1.0960  loss_dfl: 0.5378
+2025-05-26 14:25:13,312 - jittordet - INFO - Epoch [ 1/12] Iter [320/456]  eta: 0 day 00:20:43  time: 0.2414  lr: 6.4036e-03  loss: 2.3253  loss_cls: 0.6454  loss_bbox: 1.0952  loss_dfl: 0.5847
+2025-05-26 14:25:13,312 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:15,524 - jittordet - INFO - Epoch [ 1/12] Iter [330/456]  eta: 0 day 00:20:37  time: 0.2407  lr: 6.6034e-03  loss: 2.1797  loss_cls: 0.5899  loss_bbox: 1.0603  loss_dfl: 0.5295
+2025-05-26 14:25:17,778 - jittordet - INFO - Epoch [ 1/12] Iter [340/456]  eta: 0 day 00:20:32  time: 0.2402  lr: 6.8032e-03  loss: 2.2538  loss_cls: 0.6640  loss_bbox: 1.0657  loss_dfl: 0.5240
+2025-05-26 14:25:20,108 - jittordet - INFO - Epoch [ 1/12] Iter [350/456]  eta: 0 day 00:20:29  time: 0.2399  lr: 7.0030e-03  loss: 2.1409  loss_cls: 0.6171  loss_bbox: 1.0242  loss_dfl: 0.4996
+2025-05-26 14:25:20,109 - jittordet - INFO - (train) [ 1/12][350/456]  eta: 0 day 00:20:29  time: 0.2400  lr: 7.0030e-03  loss: 2.2236  loss_cls: 0.6202  loss_bbox: 1.0683  loss_dfl: 0.5351
+2025-05-26 14:25:22,316 - jittordet - INFO - Epoch [ 1/12] Iter [360/456]  eta: 0 day 00:20:23  time: 0.2393  lr: 7.2028e-03  loss: 2.0407  loss_cls: 0.6291  loss_bbox: 0.9208  loss_dfl: 0.4909
+2025-05-26 14:25:22,316 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:24,586 - jittordet - INFO - Epoch [ 1/12] Iter [370/456]  eta: 0 day 00:20:19  time: 0.2389  lr: 7.4026e-03  loss: 2.0642  loss_cls: 0.6526  loss_bbox: 0.9265  loss_dfl: 0.4851
+2025-05-26 14:25:26,822 - jittordet - INFO - Epoch [ 1/12] Iter [380/456]  eta: 0 day 00:20:14  time: 0.2385  lr: 7.6024e-03  loss: 2.1579  loss_cls: 0.6972  loss_bbox: 0.9632  loss_dfl: 0.4974
+2025-05-26 14:25:29,099 - jittordet - INFO - Epoch [ 1/12] Iter [390/456]  eta: 0 day 00:20:10  time: 0.2382  lr: 7.8022e-03  loss: 2.2051  loss_cls: 0.7099  loss_bbox: 0.9982  loss_dfl: 0.4970
+2025-05-26 14:25:31,381 - jittordet - INFO - Epoch [ 1/12] Iter [400/456]  eta: 0 day 00:20:06  time: 0.2379  lr: 8.0020e-03  loss: 2.2444  loss_cls: 0.6697  loss_bbox: 1.0663  loss_dfl: 0.5085
+2025-05-26 14:25:31,381 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:31,382 - jittordet - INFO - (train) [ 1/12][400/456]  eta: 0 day 00:20:06  time: 0.2379  lr: 8.0020e-03  loss: 2.1425  loss_cls: 0.6717  loss_bbox: 0.9750  loss_dfl: 0.4958
+2025-05-26 14:25:33,648 - jittordet - INFO - Epoch [ 1/12] Iter [410/456]  eta: 0 day 00:20:02  time: 0.2375  lr: 8.2018e-03  loss: 2.0372  loss_cls: 0.5213  loss_bbox: 1.0192  loss_dfl: 0.4966
+2025-05-26 14:25:35,927 - jittordet - INFO - Epoch [ 1/12] Iter [420/456]  eta: 0 day 00:19:58  time: 0.2372  lr: 8.4016e-03  loss: 2.1488  loss_cls: 0.7420  loss_bbox: 0.9166  loss_dfl: 0.4902
+2025-05-26 14:25:38,236 - jittordet - INFO - Epoch [ 1/12] Iter [430/456]  eta: 0 day 00:19:55  time: 0.2371  lr: 8.6014e-03  loss: 2.2404  loss_cls: 0.7367  loss_bbox: 1.0178  loss_dfl: 0.4859
+2025-05-26 14:25:40,544 - jittordet - INFO - Epoch [ 1/12] Iter [440/456]  eta: 0 day 00:19:52  time: 0.2369  lr: 8.8012e-03  loss: 2.2011  loss_cls: 0.7430  loss_bbox: 0.9650  loss_dfl: 0.4932
+2025-05-26 14:25:40,544 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:25:42,852 - jittordet - INFO - Epoch [ 1/12] Iter [450/456]  eta: 0 day 00:19:48  time: 0.2367  lr: 9.0010e-03  loss: 1.9668  loss_cls: 0.5693  loss_bbox: 0.9229  loss_dfl: 0.4746
+2025-05-26 14:25:42,853 - jittordet - INFO - (train) [ 1/12][450/456]  eta: 0 day 00:19:49  time: 0.2368  lr: 9.0010e-03  loss: 2.1188  loss_cls: 0.6625  loss_bbox: 0.9683  loss_dfl: 0.4881
+2025-05-26 14:25:51,006 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_1.pkl
+2025-05-26 14:25:53,190 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.1309
+2025-05-26 14:25:54,117 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.1109
+2025-05-26 14:25:54,173 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:25:54,656 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.001  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.006  bbox_mAP_l: 0.002
+2025-05-26 14:25:54,657 - jittordet - INFO - bbox_mAP: 0.000  bbox_mAP_50: 0.001  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.006  bbox_mAP_l: 0.002
+2025-05-26 14:25:56,868 - jittordet - INFO - Epoch [ 2/12] Iter [ 10/456]  eta: 0 day 00:19:42  time: 0.2361  lr: 9.3207e-03  loss: 2.0430  loss_cls: 0.7678  loss_bbox: 0.8205  loss_dfl: 0.4547
+2025-05-26 14:25:59,150 - jittordet - INFO - Epoch [ 2/12] Iter [ 20/456]  eta: 0 day 00:19:38  time: 0.2359  lr: 9.5205e-03  loss: 1.9813  loss_cls: 0.6691  loss_bbox: 0.8567  loss_dfl: 0.4555
+2025-05-26 14:26:01,409 - jittordet - INFO - Epoch [ 2/12] Iter [ 30/456]  eta: 0 day 00:19:35  time: 0.2357  lr: 9.7203e-03  loss: 2.1847  loss_cls: 0.6095  loss_bbox: 1.0546  loss_dfl: 0.5206
+2025-05-26 14:26:03,702 - jittordet - INFO - Epoch [ 2/12] Iter [ 40/456]  eta: 0 day 00:19:32  time: 0.2355  lr: 9.9201e-03  loss: 1.9960  loss_cls: 0.6423  loss_bbox: 0.8858  loss_dfl: 0.4679
+2025-05-26 14:26:03,702 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:05,991 - jittordet - INFO - Epoch [ 2/12] Iter [ 50/456]  eta: 0 day 00:19:28  time: 0.2353  lr: 1.0000e-02  loss: 2.1926  loss_cls: 0.8582  loss_bbox: 0.8770  loss_dfl: 0.4574
+2025-05-26 14:26:05,991 - jittordet - INFO - (train) [ 2/12][ 50/456]  eta: 0 day 00:19:29  time: 0.2354  lr: 1.0000e-02  loss: 2.0795  loss_cls: 0.7094  loss_bbox: 0.8989  loss_dfl: 0.4712
+2025-05-26 14:26:08,291 - jittordet - INFO - Epoch [ 2/12] Iter [ 60/456]  eta: 0 day 00:19:25  time: 0.2352  lr: 1.0000e-02  loss: 2.1806  loss_cls: 0.8034  loss_bbox: 0.9150  loss_dfl: 0.4622
+2025-05-26 14:26:10,518 - jittordet - INFO - Epoch [ 2/12] Iter [ 70/456]  eta: 0 day 00:19:22  time: 0.2349  lr: 1.0000e-02  loss: 2.1770  loss_cls: 0.8852  loss_bbox: 0.8543  loss_dfl: 0.4375
+2025-05-26 14:26:12,754 - jittordet - INFO - Epoch [ 2/12] Iter [ 80/456]  eta: 0 day 00:19:18  time: 0.2347  lr: 1.0000e-02  loss: 2.1722  loss_cls: 0.6711  loss_bbox: 1.0127  loss_dfl: 0.4883
+2025-05-26 14:26:12,754 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:15,054 - jittordet - INFO - Epoch [ 2/12] Iter [ 90/456]  eta: 0 day 00:19:15  time: 0.2345  lr: 1.0000e-02  loss: 2.1323  loss_cls: 0.7031  loss_bbox: 0.9500  loss_dfl: 0.4792
+2025-05-26 14:26:17,311 - jittordet - INFO - Epoch [ 2/12] Iter [100/456]  eta: 0 day 00:19:12  time: 0.2343  lr: 1.0000e-02  loss: 2.2778  loss_cls: 0.7991  loss_bbox: 0.9928  loss_dfl: 0.4859
+2025-05-26 14:26:17,311 - jittordet - INFO - (train) [ 2/12][100/456]  eta: 0 day 00:19:12  time: 0.2344  lr: 1.0000e-02  loss: 2.1880  loss_cls: 0.7724  loss_bbox: 0.9450  loss_dfl: 0.4706
+2025-05-26 14:26:19,544 - jittordet - INFO - Epoch [ 2/12] Iter [110/456]  eta: 0 day 00:19:08  time: 0.2341  lr: 1.0000e-02  loss: 2.2566  loss_cls: 0.9582  loss_bbox: 0.8473  loss_dfl: 0.4511
+2025-05-26 14:26:21,830 - jittordet - INFO - Epoch [ 2/12] Iter [120/456]  eta: 0 day 00:19:05  time: 0.2340  lr: 1.0000e-02  loss: 2.2320  loss_cls: 0.6674  loss_bbox: 1.0458  loss_dfl: 0.5188
+2025-05-26 14:26:21,830 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:24,121 - jittordet - INFO - Epoch [ 2/12] Iter [130/456]  eta: 0 day 00:19:02  time: 0.2339  lr: 1.0000e-02  loss: 2.2356  loss_cls: 0.8163  loss_bbox: 0.9410  loss_dfl: 0.4782
+2025-05-26 14:26:26,419 - jittordet - INFO - Epoch [ 2/12] Iter [140/456]  eta: 0 day 00:18:59  time: 0.2337  lr: 1.0000e-02  loss: 2.1076  loss_cls: 0.7393  loss_bbox: 0.8994  loss_dfl: 0.4688
+2025-05-26 14:26:28,643 - jittordet - INFO - Epoch [ 2/12] Iter [150/456]  eta: 0 day 00:18:56  time: 0.2335  lr: 1.0000e-02  loss: 2.2131  loss_cls: 0.8900  loss_bbox: 0.8761  loss_dfl: 0.4470
+2025-05-26 14:26:28,644 - jittordet - INFO - (train) [ 2/12][150/456]  eta: 0 day 00:18:56  time: 0.2336  lr: 1.0000e-02  loss: 2.2090  loss_cls: 0.8143  loss_bbox: 0.9219  loss_dfl: 0.4728
+2025-05-26 14:26:30,921 - jittordet - INFO - Epoch [ 2/12] Iter [160/456]  eta: 0 day 00:18:53  time: 0.2334  lr: 1.0000e-02  loss: 2.1809  loss_cls: 0.8086  loss_bbox: 0.9129  loss_dfl: 0.4595
+2025-05-26 14:26:30,921 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:33,166 - jittordet - INFO - Epoch [ 2/12] Iter [170/456]  eta: 0 day 00:18:50  time: 0.2332  lr: 1.0000e-02  loss: 2.0812  loss_cls: 0.6810  loss_bbox: 0.9388  loss_dfl: 0.4615
+2025-05-26 14:26:35,442 - jittordet - INFO - Epoch [ 2/12] Iter [180/456]  eta: 0 day 00:18:47  time: 0.2331  lr: 1.0000e-02  loss: 2.0870  loss_cls: 0.7816  loss_bbox: 0.8546  loss_dfl: 0.4508
+2025-05-26 14:26:37,702 - jittordet - INFO - Epoch [ 2/12] Iter [190/456]  eta: 0 day 00:18:44  time: 0.2330  lr: 1.0000e-02  loss: 2.2053  loss_cls: 0.9192  loss_bbox: 0.8376  loss_dfl: 0.4486
+2025-05-26 14:26:39,942 - jittordet - INFO - Epoch [ 2/12] Iter [200/456]  eta: 0 day 00:18:41  time: 0.2328  lr: 1.0000e-02  loss: 2.1983  loss_cls: 0.8583  loss_bbox: 0.8900  loss_dfl: 0.4500
+2025-05-26 14:26:39,943 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:39,943 - jittordet - INFO - (train) [ 2/12][200/456]  eta: 0 day 00:18:41  time: 0.2329  lr: 1.0000e-02  loss: 2.1506  loss_cls: 0.8097  loss_bbox: 0.8868  loss_dfl: 0.4541
+2025-05-26 14:26:42,276 - jittordet - INFO - Epoch [ 2/12] Iter [210/456]  eta: 0 day 00:18:38  time: 0.2328  lr: 1.0000e-02  loss: 2.1370  loss_cls: 0.6986  loss_bbox: 0.9685  loss_dfl: 0.4699
+2025-05-26 14:26:44,506 - jittordet - INFO - Epoch [ 2/12] Iter [220/456]  eta: 0 day 00:18:35  time: 0.2326  lr: 1.0000e-02  loss: 2.0775  loss_cls: 0.7461  loss_bbox: 0.8886  loss_dfl: 0.4428
+2025-05-26 14:26:46,753 - jittordet - INFO - Epoch [ 2/12] Iter [230/456]  eta: 0 day 00:18:32  time: 0.2324  lr: 1.0000e-02  loss: 2.1536  loss_cls: 0.8673  loss_bbox: 0.8508  loss_dfl: 0.4356
+2025-05-26 14:26:48,993 - jittordet - INFO - Epoch [ 2/12] Iter [240/456]  eta: 0 day 00:18:29  time: 0.2323  lr: 1.0000e-02  loss: 2.1052  loss_cls: 0.8182  loss_bbox: 0.8558  loss_dfl: 0.4313
+2025-05-26 14:26:48,993 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:26:51,250 - jittordet - INFO - Epoch [ 2/12] Iter [250/456]  eta: 0 day 00:18:26  time: 0.2322  lr: 1.0000e-02  loss: 2.2523  loss_cls: 0.9324  loss_bbox: 0.8698  loss_dfl: 0.4501
+2025-05-26 14:26:51,251 - jittordet - INFO - (train) [ 2/12][250/456]  eta: 0 day 00:18:27  time: 0.2322  lr: 1.0000e-02  loss: 2.1451  loss_cls: 0.8125  loss_bbox: 0.8867  loss_dfl: 0.4459
+2025-05-26 14:26:53,505 - jittordet - INFO - Epoch [ 2/12] Iter [260/456]  eta: 0 day 00:18:23  time: 0.2320  lr: 1.0000e-02  loss: 2.0904  loss_cls: 0.8924  loss_bbox: 0.7781  loss_dfl: 0.4198
+2025-05-26 14:26:55,829 - jittordet - INFO - Epoch [ 2/12] Iter [270/456]  eta: 0 day 00:18:21  time: 0.2320  lr: 1.0000e-02  loss: 2.2533  loss_cls: 0.9268  loss_bbox: 0.8764  loss_dfl: 0.4501
+2025-05-26 14:26:58,152 - jittordet - INFO - Epoch [ 2/12] Iter [280/456]  eta: 0 day 00:18:18  time: 0.2320  lr: 1.0000e-02  loss: 2.1435  loss_cls: 0.6404  loss_bbox: 1.0133  loss_dfl: 0.4899
+2025-05-26 14:26:58,152 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:00,393 - jittordet - INFO - Epoch [ 2/12] Iter [290/456]  eta: 0 day 00:18:15  time: 0.2319  lr: 1.0000e-02  loss: 2.1743  loss_cls: 0.7446  loss_bbox: 0.9633  loss_dfl: 0.4664
+2025-05-26 14:27:02,671 - jittordet - INFO - Epoch [ 2/12] Iter [300/456]  eta: 0 day 00:18:13  time: 0.2318  lr: 1.0000e-02  loss: 2.2519  loss_cls: 0.7417  loss_bbox: 1.0399  loss_dfl: 0.4704
+2025-05-26 14:27:02,671 - jittordet - INFO - (train) [ 2/12][300/456]  eta: 0 day 00:18:13  time: 0.2318  lr: 1.0000e-02  loss: 2.1827  loss_cls: 0.7892  loss_bbox: 0.9342  loss_dfl: 0.4593
+2025-05-26 14:27:02,671 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:04,910 - jittordet - INFO - Epoch [ 2/12] Iter [310/456]  eta: 0 day 00:18:10  time: 0.2316  lr: 1.0000e-02  loss: 2.0872  loss_cls: 0.7726  loss_bbox: 0.8758  loss_dfl: 0.4388
+2025-05-26 14:27:07,148 - jittordet - INFO - Epoch [ 2/12] Iter [320/456]  eta: 0 day 00:18:07  time: 0.2315  lr: 1.0000e-02  loss: 2.2815  loss_cls: 0.9063  loss_bbox: 0.9021  loss_dfl: 0.4732
+2025-05-26 14:27:07,148 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:09,431 - jittordet - INFO - Epoch [ 2/12] Iter [330/456]  eta: 0 day 00:18:04  time: 0.2315  lr: 1.0000e-02  loss: 2.2729  loss_cls: 0.9996  loss_bbox: 0.8420  loss_dfl: 0.4312
+2025-05-26 14:27:11,694 - jittordet - INFO - Epoch [ 2/12] Iter [340/456]  eta: 0 day 00:18:02  time: 0.2314  lr: 1.0000e-02  loss: 2.2873  loss_cls: 0.7777  loss_bbox: 1.0262  loss_dfl: 0.4834
+2025-05-26 14:27:13,970 - jittordet - INFO - Epoch [ 2/12] Iter [350/456]  eta: 0 day 00:17:59  time: 0.2313  lr: 1.0000e-02  loss: 2.1818  loss_cls: 0.8250  loss_bbox: 0.9082  loss_dfl: 0.4486
+2025-05-26 14:27:13,970 - jittordet - INFO - (train) [ 2/12][350/456]  eta: 0 day 00:17:59  time: 0.2314  lr: 1.0000e-02  loss: 2.2221  loss_cls: 0.8562  loss_bbox: 0.9109  loss_dfl: 0.4551
+2025-05-26 14:27:16,231 - jittordet - INFO - Epoch [ 2/12] Iter [360/456]  eta: 0 day 00:17:56  time: 0.2312  lr: 1.0000e-02  loss: 2.1507  loss_cls: 0.7944  loss_bbox: 0.9111  loss_dfl: 0.4452
+2025-05-26 14:27:16,231 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:18,511 - jittordet - INFO - Epoch [ 2/12] Iter [370/456]  eta: 0 day 00:17:54  time: 0.2311  lr: 1.0000e-02  loss: 2.0702  loss_cls: 0.8180  loss_bbox: 0.8206  loss_dfl: 0.4315
+2025-05-26 14:27:20,757 - jittordet - INFO - Epoch [ 2/12] Iter [380/456]  eta: 0 day 00:17:51  time: 0.2310  lr: 1.0000e-02  loss: 2.0887  loss_cls: 0.8427  loss_bbox: 0.8190  loss_dfl: 0.4271
+2025-05-26 14:27:22,986 - jittordet - INFO - Epoch [ 2/12] Iter [390/456]  eta: 0 day 00:17:48  time: 0.2309  lr: 1.0000e-02  loss: 2.0783  loss_cls: 0.6924  loss_bbox: 0.9229  loss_dfl: 0.4630
+2025-05-26 14:27:25,236 - jittordet - INFO - Epoch [ 2/12] Iter [400/456]  eta: 0 day 00:17:45  time: 0.2308  lr: 1.0000e-02  loss: 2.1102  loss_cls: 0.7076  loss_bbox: 0.9407  loss_dfl: 0.4619
+2025-05-26 14:27:25,236 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:25,236 - jittordet - INFO - (train) [ 2/12][400/456]  eta: 0 day 00:17:46  time: 0.2309  lr: 1.0000e-02  loss: 2.0996  loss_cls: 0.7710  loss_bbox: 0.8829  loss_dfl: 0.4457
+2025-05-26 14:27:27,549 - jittordet - INFO - Epoch [ 2/12] Iter [410/456]  eta: 0 day 00:17:43  time: 0.2308  lr: 1.0000e-02  loss: 2.0230  loss_cls: 0.6539  loss_bbox: 0.9126  loss_dfl: 0.4565
+2025-05-26 14:27:29,781 - jittordet - INFO - Epoch [ 2/12] Iter [420/456]  eta: 0 day 00:17:40  time: 0.2307  lr: 1.0000e-02  loss: 2.1470  loss_cls: 0.9684  loss_bbox: 0.7730  loss_dfl: 0.4056
+2025-05-26 14:27:32,073 - jittordet - INFO - Epoch [ 2/12] Iter [430/456]  eta: 0 day 00:17:37  time: 0.2306  lr: 1.0000e-02  loss: 1.9898  loss_cls: 0.7843  loss_bbox: 0.7949  loss_dfl: 0.4106
+2025-05-26 14:27:34,354 - jittordet - INFO - Epoch [ 2/12] Iter [440/456]  eta: 0 day 00:17:35  time: 0.2306  lr: 1.0000e-02  loss: 2.0556  loss_cls: 0.7824  loss_bbox: 0.8418  loss_dfl: 0.4313
+2025-05-26 14:27:34,354 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:36,593 - jittordet - INFO - Epoch [ 2/12] Iter [450/456]  eta: 0 day 00:17:32  time: 0.2305  lr: 1.0000e-02  loss: 2.0597  loss_cls: 0.7837  loss_bbox: 0.8506  loss_dfl: 0.4254
+2025-05-26 14:27:36,594 - jittordet - INFO - (train) [ 2/12][450/456]  eta: 0 day 00:17:32  time: 0.2306  lr: 1.0000e-02  loss: 2.0550  loss_cls: 0.7945  loss_bbox: 0.8346  loss_dfl: 0.4259
+2025-05-26 14:27:40,462 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_2.pkl
+2025-05-26 14:27:41,332 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.1022
+2025-05-26 14:27:42,196 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0978
+2025-05-26 14:27:42,267 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:27:42,870 - jittordet - INFO - bbox_mAP: 0.001  bbox_mAP_50: 0.001  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.003  bbox_mAP_l: 0.005
+2025-05-26 14:27:42,871 - jittordet - INFO - bbox_mAP: 0.001  bbox_mAP_50: 0.001  bbox_mAP_75: 0.000  bbox_mAP_s: 0.000  bbox_mAP_m: 0.003  bbox_mAP_l: 0.005
+2025-05-26 14:27:45,027 - jittordet - INFO - Epoch [ 3/12] Iter [ 10/456]  eta: 0 day 00:17:28  time: 0.2303  lr: 1.0000e-02  loss: 2.0542  loss_cls: 0.8295  loss_bbox: 0.7984  loss_dfl: 0.4263
+2025-05-26 14:27:47,303 - jittordet - INFO - Epoch [ 3/12] Iter [ 20/456]  eta: 0 day 00:17:25  time: 0.2302  lr: 1.0000e-02  loss: 2.0124  loss_cls: 0.7634  loss_bbox: 0.8337  loss_dfl: 0.4153
+2025-05-26 14:27:49,562 - jittordet - INFO - Epoch [ 3/12] Iter [ 30/456]  eta: 0 day 00:17:22  time: 0.2302  lr: 1.0000e-02  loss: 2.1163  loss_cls: 0.8208  loss_bbox: 0.8648  loss_dfl: 0.4307
+2025-05-26 14:27:51,817 - jittordet - INFO - Epoch [ 3/12] Iter [ 40/456]  eta: 0 day 00:17:20  time: 0.2301  lr: 1.0000e-02  loss: 2.1744  loss_cls: 0.9130  loss_bbox: 0.8347  loss_dfl: 0.4267
+2025-05-26 14:27:51,818 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:27:54,081 - jittordet - INFO - Epoch [ 3/12] Iter [ 50/456]  eta: 0 day 00:17:17  time: 0.2300  lr: 1.0000e-02  loss: 2.0846  loss_cls: 0.8091  loss_bbox: 0.8368  loss_dfl: 0.4388
+2025-05-26 14:27:54,081 - jittordet - INFO - (train) [ 3/12][ 50/456]  eta: 0 day 00:17:17  time: 0.2301  lr: 1.0000e-02  loss: 2.0884  loss_cls: 0.8272  loss_bbox: 0.8337  loss_dfl: 0.4276
+2025-05-26 14:27:56,294 - jittordet - INFO - Epoch [ 3/12] Iter [ 60/456]  eta: 0 day 00:17:14  time: 0.2299  lr: 1.0000e-02  loss: 2.0395  loss_cls: 0.8235  loss_bbox: 0.8023  loss_dfl: 0.4137
+2025-05-26 14:27:58,559 - jittordet - INFO - Epoch [ 3/12] Iter [ 70/456]  eta: 0 day 00:17:12  time: 0.2299  lr: 1.0000e-02  loss: 2.0156  loss_cls: 0.7198  loss_bbox: 0.8801  loss_dfl: 0.4157
+2025-05-26 14:28:00,792 - jittordet - INFO - Epoch [ 3/12] Iter [ 80/456]  eta: 0 day 00:17:09  time: 0.2298  lr: 1.0000e-02  loss: 2.0745  loss_cls: 0.8525  loss_bbox: 0.8024  loss_dfl: 0.4196
+2025-05-26 14:28:00,792 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:03,157 - jittordet - INFO - Epoch [ 3/12] Iter [ 90/456]  eta: 0 day 00:16:52  time: 0.2264  lr: 1.0000e-02  loss: 2.1413  loss_cls: 0.8560  loss_bbox: 0.8514  loss_dfl: 0.4339
+2025-05-26 14:28:05,443 - jittordet - INFO - Epoch [ 3/12] Iter [100/456]  eta: 0 day 00:16:43  time: 0.2250  lr: 1.0000e-02  loss: 2.0780  loss_cls: 0.8547  loss_bbox: 0.8127  loss_dfl: 0.4107
+2025-05-26 14:28:05,444 - jittordet - INFO - (train) [ 3/12][100/456]  eta: 0 day 00:16:43  time: 0.2251  lr: 1.0000e-02  loss: 2.0698  loss_cls: 0.8213  loss_bbox: 0.8298  loss_dfl: 0.4187
+2025-05-26 14:28:07,723 - jittordet - INFO - Epoch [ 3/12] Iter [110/456]  eta: 0 day 00:16:41  time: 0.2250  lr: 1.0000e-02  loss: 2.0917  loss_cls: 0.7403  loss_bbox: 0.9024  loss_dfl: 0.4490
+2025-05-26 14:28:09,969 - jittordet - INFO - Epoch [ 3/12] Iter [120/456]  eta: 0 day 00:16:38  time: 0.2249  lr: 1.0000e-02  loss: 2.0483  loss_cls: 0.8159  loss_bbox: 0.8107  loss_dfl: 0.4217
+2025-05-26 14:28:09,970 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:12,170 - jittordet - INFO - Epoch [ 3/12] Iter [130/456]  eta: 0 day 00:16:36  time: 0.2248  lr: 1.0000e-02  loss: 2.1072  loss_cls: 0.9028  loss_bbox: 0.7851  loss_dfl: 0.4193
+2025-05-26 14:28:14,429 - jittordet - INFO - Epoch [ 3/12] Iter [140/456]  eta: 0 day 00:16:33  time: 0.2247  lr: 1.0000e-02  loss: 2.1282  loss_cls: 1.0195  loss_bbox: 0.7116  loss_dfl: 0.3972
+2025-05-26 14:28:16,691 - jittordet - INFO - Epoch [ 3/12] Iter [150/456]  eta: 0 day 00:16:30  time: 0.2245  lr: 1.0000e-02  loss: 2.0640  loss_cls: 0.7834  loss_bbox: 0.8502  loss_dfl: 0.4304
+2025-05-26 14:28:16,692 - jittordet - INFO - (train) [ 3/12][150/456]  eta: 0 day 00:16:30  time: 0.2246  lr: 1.0000e-02  loss: 2.0879  loss_cls: 0.8524  loss_bbox: 0.8120  loss_dfl: 0.4235
+2025-05-26 14:28:18,952 - jittordet - INFO - Epoch [ 3/12] Iter [160/456]  eta: 0 day 00:16:28  time: 0.2245  lr: 1.0000e-02  loss: 2.2048  loss_cls: 1.0220  loss_bbox: 0.7706  loss_dfl: 0.4122
+2025-05-26 14:28:18,953 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:21,157 - jittordet - INFO - Epoch [ 3/12] Iter [170/456]  eta: 0 day 00:16:25  time: 0.2244  lr: 1.0000e-02  loss: 1.9802  loss_cls: 1.0226  loss_bbox: 0.6121  loss_dfl: 0.3454
+2025-05-26 14:28:23,480 - jittordet - INFO - Epoch [ 3/12] Iter [180/456]  eta: 0 day 00:16:23  time: 0.2244  lr: 1.0000e-02  loss: 1.9269  loss_cls: 0.7330  loss_bbox: 0.7933  loss_dfl: 0.4006
+2025-05-26 14:28:25,782 - jittordet - INFO - Epoch [ 3/12] Iter [190/456]  eta: 0 day 00:16:21  time: 0.2244  lr: 1.0000e-02  loss: 2.0840  loss_cls: 0.8250  loss_bbox: 0.8487  loss_dfl: 0.4104
+2025-05-26 14:28:28,051 - jittordet - INFO - Epoch [ 3/12] Iter [200/456]  eta: 0 day 00:16:19  time: 0.2245  lr: 1.0000e-02  loss: 2.0644  loss_cls: 0.9079  loss_bbox: 0.7674  loss_dfl: 0.3891
+2025-05-26 14:28:28,051 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:28,051 - jittordet - INFO - (train) [ 3/12][200/456]  eta: 0 day 00:16:19  time: 0.2246  lr: 1.0000e-02  loss: 2.0521  loss_cls: 0.9021  loss_bbox: 0.7584  loss_dfl: 0.3915
+2025-05-26 14:28:30,327 - jittordet - INFO - Epoch [ 3/12] Iter [210/456]  eta: 0 day 00:16:17  time: 0.2246  lr: 1.0000e-02  loss: 2.0926  loss_cls: 0.7607  loss_bbox: 0.9001  loss_dfl: 0.4318
+2025-05-26 14:28:32,596 - jittordet - INFO - Epoch [ 3/12] Iter [220/456]  eta: 0 day 00:16:14  time: 0.2246  lr: 1.0000e-02  loss: 2.0451  loss_cls: 0.9232  loss_bbox: 0.7422  loss_dfl: 0.3797
+2025-05-26 14:28:34,810 - jittordet - INFO - Epoch [ 3/12] Iter [230/456]  eta: 0 day 00:16:12  time: 0.2246  lr: 1.0000e-02  loss: 2.0837  loss_cls: 0.9680  loss_bbox: 0.7280  loss_dfl: 0.3877
+2025-05-26 14:28:37,174 - jittordet - INFO - Epoch [ 3/12] Iter [240/456]  eta: 0 day 00:16:10  time: 0.2247  lr: 1.0000e-02  loss: 1.9872  loss_cls: 0.7571  loss_bbox: 0.8127  loss_dfl: 0.4175
+2025-05-26 14:28:37,175 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:39,419 - jittordet - INFO - Epoch [ 3/12] Iter [250/456]  eta: 0 day 00:16:08  time: 0.2247  lr: 1.0000e-02  loss: 2.0367  loss_cls: 0.9009  loss_bbox: 0.7404  loss_dfl: 0.3953
+2025-05-26 14:28:39,419 - jittordet - INFO - (train) [ 3/12][250/456]  eta: 0 day 00:16:08  time: 0.2247  lr: 1.0000e-02  loss: 2.0491  loss_cls: 0.8620  loss_bbox: 0.7847  loss_dfl: 0.4024
+2025-05-26 14:28:41,677 - jittordet - INFO - Epoch [ 3/12] Iter [260/456]  eta: 0 day 00:16:06  time: 0.2247  lr: 1.0000e-02  loss: 2.1692  loss_cls: 0.9237  loss_bbox: 0.8172  loss_dfl: 0.4283
+2025-05-26 14:28:43,985 - jittordet - INFO - Epoch [ 3/12] Iter [270/456]  eta: 0 day 00:16:04  time: 0.2247  lr: 1.0000e-02  loss: 1.9934  loss_cls: 0.8175  loss_bbox: 0.7800  loss_dfl: 0.3959
+2025-05-26 14:28:46,234 - jittordet - INFO - Epoch [ 3/12] Iter [280/456]  eta: 0 day 00:16:01  time: 0.2246  lr: 1.0000e-02  loss: 2.1178  loss_cls: 0.9824  loss_bbox: 0.7488  loss_dfl: 0.3866
+2025-05-26 14:28:46,234 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:48,519 - jittordet - INFO - Epoch [ 3/12] Iter [290/456]  eta: 0 day 00:15:59  time: 0.2245  lr: 1.0000e-02  loss: 2.0950  loss_cls: 0.9679  loss_bbox: 0.7324  loss_dfl: 0.3947
+2025-05-26 14:28:50,795 - jittordet - INFO - Epoch [ 3/12] Iter [300/456]  eta: 0 day 00:15:56  time: 0.2245  lr: 1.0000e-02  loss: 1.9721  loss_cls: 1.0116  loss_bbox: 0.6140  loss_dfl: 0.3465
+2025-05-26 14:28:50,795 - jittordet - INFO - (train) [ 3/12][300/456]  eta: 0 day 00:15:56  time: 0.2246  lr: 1.0000e-02  loss: 2.0695  loss_cls: 0.9406  loss_bbox: 0.7385  loss_dfl: 0.3904
+2025-05-26 14:28:50,795 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:53,104 - jittordet - INFO - Epoch [ 3/12] Iter [310/456]  eta: 0 day 00:15:54  time: 0.2246  lr: 1.0000e-02  loss: 2.0086  loss_cls: 0.7959  loss_bbox: 0.8013  loss_dfl: 0.4114
+2025-05-26 14:28:55,392 - jittordet - INFO - Epoch [ 3/12] Iter [320/456]  eta: 0 day 00:15:52  time: 0.2246  lr: 1.0000e-02  loss: 2.1181  loss_cls: 0.9015  loss_bbox: 0.8051  loss_dfl: 0.4115
+2025-05-26 14:28:55,393 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:28:57,732 - jittordet - INFO - Epoch [ 3/12] Iter [330/456]  eta: 0 day 00:15:50  time: 0.2246  lr: 1.0000e-02  loss: 2.1208  loss_cls: 0.9482  loss_bbox: 0.7635  loss_dfl: 0.4091
+2025-05-26 14:29:00,036 - jittordet - INFO - Epoch [ 3/12] Iter [340/456]  eta: 0 day 00:15:48  time: 0.2247  lr: 1.0000e-02  loss: 2.0520  loss_cls: 0.8188  loss_bbox: 0.8239  loss_dfl: 0.4094
+2025-05-26 14:29:02,370 - jittordet - INFO - Epoch [ 3/12] Iter [350/456]  eta: 0 day 00:15:46  time: 0.2247  lr: 1.0000e-02  loss: 2.1024  loss_cls: 0.8646  loss_bbox: 0.8134  loss_dfl: 0.4244
+2025-05-26 14:29:02,371 - jittordet - INFO - (train) [ 3/12][350/456]  eta: 0 day 00:15:46  time: 0.2248  lr: 1.0000e-02  loss: 2.0804  loss_cls: 0.8658  loss_bbox: 0.8014  loss_dfl: 0.4132
+2025-05-26 14:29:04,625 - jittordet - INFO - Epoch [ 3/12] Iter [360/456]  eta: 0 day 00:15:44  time: 0.2247  lr: 1.0000e-02  loss: 2.0725  loss_cls: 0.9069  loss_bbox: 0.7798  loss_dfl: 0.3858
+2025-05-26 14:29:04,625 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:29:06,957 - jittordet - INFO - Epoch [ 3/12] Iter [370/456]  eta: 0 day 00:15:42  time: 0.2248  lr: 1.0000e-02  loss: 1.9678  loss_cls: 0.7963  loss_bbox: 0.7738  loss_dfl: 0.3977
+2025-05-26 14:29:09,223 - jittordet - INFO - Epoch [ 3/12] Iter [380/456]  eta: 0 day 00:15:39  time: 0.2248  lr: 1.0000e-02  loss: 2.0532  loss_cls: 0.8686  loss_bbox: 0.7678  loss_dfl: 0.4167
+2025-05-26 14:29:11,504 - jittordet - INFO - Epoch [ 3/12] Iter [390/456]  eta: 0 day 00:15:37  time: 0.2248  lr: 1.0000e-02  loss: 1.9355  loss_cls: 0.9047  loss_bbox: 0.6600  loss_dfl: 0.3709
+2025-05-26 14:29:13,776 - jittordet - INFO - Epoch [ 3/12] Iter [400/456]  eta: 0 day 00:15:35  time: 0.2248  lr: 1.0000e-02  loss: 2.0676  loss_cls: 0.9997  loss_bbox: 0.6862  loss_dfl: 0.3817
+2025-05-26 14:29:13,776 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:29:13,776 - jittordet - INFO - (train) [ 3/12][400/456]  eta: 0 day 00:15:35  time: 0.2249  lr: 1.0000e-02  loss: 2.0193  loss_cls: 0.8952  loss_bbox: 0.7335  loss_dfl: 0.3906
+2025-05-26 14:29:16,028 - jittordet - INFO - Epoch [ 3/12] Iter [410/456]  eta: 0 day 00:15:33  time: 0.2248  lr: 1.0000e-02  loss: 2.0314  loss_cls: 0.9046  loss_bbox: 0.7262  loss_dfl: 0.4006
+2025-05-26 14:29:18,299 - jittordet - INFO - Epoch [ 3/12] Iter [420/456]  eta: 0 day 00:15:31  time: 0.2249  lr: 1.0000e-02  loss: 1.9801  loss_cls: 0.9542  loss_bbox: 0.6639  loss_dfl: 0.3620
+2025-05-26 14:29:20,565 - jittordet - INFO - Epoch [ 3/12] Iter [430/456]  eta: 0 day 00:15:28  time: 0.2248  lr: 1.0000e-02  loss: 2.0867  loss_cls: 0.8087  loss_bbox: 0.8567  loss_dfl: 0.4214
+2025-05-26 14:29:22,842 - jittordet - INFO - Epoch [ 3/12] Iter [440/456]  eta: 0 day 00:15:26  time: 0.2248  lr: 1.0000e-02  loss: 2.0317  loss_cls: 0.8748  loss_bbox: 0.7560  loss_dfl: 0.4009
+2025-05-26 14:29:22,843 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:29:25,065 - jittordet - INFO - Epoch [ 3/12] Iter [450/456]  eta: 0 day 00:15:24  time: 0.2248  lr: 1.0000e-02  loss: 2.0576  loss_cls: 1.0487  loss_bbox: 0.6481  loss_dfl: 0.3608
+2025-05-26 14:29:25,065 - jittordet - INFO - (train) [ 3/12][450/456]  eta: 0 day 00:15:24  time: 0.2249  lr: 1.0000e-02  loss: 2.0375  loss_cls: 0.9182  loss_bbox: 0.7302  loss_dfl: 0.3891
+2025-05-26 14:29:33,241 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_3.pkl
+2025-05-26 14:29:34,158 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.0961
+2025-05-26 14:29:35,086 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0952
+2025-05-26 14:29:35,158 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:29:35,804 - jittordet - INFO - bbox_mAP: 0.002  bbox_mAP_50: 0.004  bbox_mAP_75: 0.002  bbox_mAP_s: 0.002  bbox_mAP_m: 0.012  bbox_mAP_l: 0.010
+2025-05-26 14:29:35,805 - jittordet - INFO - bbox_mAP: 0.002  bbox_mAP_50: 0.004  bbox_mAP_75: 0.002  bbox_mAP_s: 0.002  bbox_mAP_m: 0.012  bbox_mAP_l: 0.010
+2025-05-26 14:29:37,987 - jittordet - INFO - Epoch [ 4/12] Iter [ 10/456]  eta: 0 day 00:15:20  time: 0.2247  lr: 1.0000e-02  loss: 1.9486  loss_cls: 0.8691  loss_bbox: 0.7018  loss_dfl: 0.3778
+2025-05-26 14:29:40,243 - jittordet - INFO - Epoch [ 4/12] Iter [ 20/456]  eta: 0 day 00:15:17  time: 0.2247  lr: 1.0000e-02  loss: 1.9797  loss_cls: 0.9078  loss_bbox: 0.6976  loss_dfl: 0.3743
+2025-05-26 14:29:42,492 - jittordet - INFO - Epoch [ 4/12] Iter [ 30/456]  eta: 0 day 00:15:15  time: 0.2247  lr: 1.0000e-02  loss: 2.1570  loss_cls: 1.0849  loss_bbox: 0.6926  loss_dfl: 0.3795
+2025-05-26 14:29:44,760 - jittordet - INFO - Epoch [ 4/12] Iter [ 40/456]  eta: 0 day 00:15:13  time: 0.2247  lr: 1.0000e-02  loss: 1.9398  loss_cls: 0.9514  loss_bbox: 0.6362  loss_dfl: 0.3522
+2025-05-26 14:29:44,761 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:29:47,017 - jittordet - INFO - Epoch [ 4/12] Iter [ 50/456]  eta: 0 day 00:15:11  time: 0.2247  lr: 1.0000e-02  loss: 2.1123  loss_cls: 1.0211  loss_bbox: 0.7173  loss_dfl: 0.3739
+2025-05-26 14:29:47,017 - jittordet - INFO - (train) [ 4/12][ 50/456]  eta: 0 day 00:15:11  time: 0.2247  lr: 1.0000e-02  loss: 2.0275  loss_cls: 0.9669  loss_bbox: 0.6891  loss_dfl: 0.3716
+2025-05-26 14:29:49,288 - jittordet - INFO - Epoch [ 4/12] Iter [ 60/456]  eta: 0 day 00:15:08  time: 0.2246  lr: 1.0000e-02  loss: 1.9000  loss_cls: 0.8941  loss_bbox: 0.6559  loss_dfl: 0.3501
+2025-05-26 14:29:51,585 - jittordet - INFO - Epoch [ 4/12] Iter [ 70/456]  eta: 0 day 00:15:06  time: 0.2246  lr: 1.0000e-02  loss: 1.9461  loss_cls: 0.9130  loss_bbox: 0.6628  loss_dfl: 0.3703
+2025-05-26 14:29:53,874 - jittordet - INFO - Epoch [ 4/12] Iter [ 80/456]  eta: 0 day 00:15:04  time: 0.2246  lr: 1.0000e-02  loss: 1.9792  loss_cls: 1.0261  loss_bbox: 0.6084  loss_dfl: 0.3448
+2025-05-26 14:29:53,874 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:29:56,098 - jittordet - INFO - Epoch [ 4/12] Iter [ 90/456]  eta: 0 day 00:15:01  time: 0.2246  lr: 1.0000e-02  loss: 2.0050  loss_cls: 0.9922  loss_bbox: 0.6558  loss_dfl: 0.3570
+2025-05-26 14:29:58,411 - jittordet - INFO - Epoch [ 4/12] Iter [100/456]  eta: 0 day 00:14:59  time: 0.2246  lr: 1.0000e-02  loss: 1.9959  loss_cls: 0.8530  loss_bbox: 0.7475  loss_dfl: 0.3955
+2025-05-26 14:29:58,411 - jittordet - INFO - (train) [ 4/12][100/456]  eta: 0 day 00:15:00  time: 0.2247  lr: 1.0000e-02  loss: 1.9653  loss_cls: 0.9357  loss_bbox: 0.6661  loss_dfl: 0.3635
+2025-05-26 14:30:00,676 - jittordet - INFO - Epoch [ 4/12] Iter [110/456]  eta: 0 day 00:14:57  time: 0.2246  lr: 1.0000e-02  loss: 2.0952  loss_cls: 0.9427  loss_bbox: 0.7608  loss_dfl: 0.3917
+2025-05-26 14:30:02,977 - jittordet - INFO - Epoch [ 4/12] Iter [120/456]  eta: 0 day 00:14:55  time: 0.2247  lr: 1.0000e-02  loss: 1.9604  loss_cls: 0.8329  loss_bbox: 0.7403  loss_dfl: 0.3873
+2025-05-26 14:30:02,977 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:05,314 - jittordet - INFO - Epoch [ 4/12] Iter [130/456]  eta: 0 day 00:14:53  time: 0.2247  lr: 1.0000e-02  loss: 1.8813  loss_cls: 0.8262  loss_bbox: 0.6900  loss_dfl: 0.3651
+2025-05-26 14:30:07,675 - jittordet - INFO - Epoch [ 4/12] Iter [140/456]  eta: 0 day 00:14:51  time: 0.2248  lr: 1.0000e-02  loss: 1.9740  loss_cls: 0.9018  loss_bbox: 0.6929  loss_dfl: 0.3794
+2025-05-26 14:30:09,888 - jittordet - INFO - Epoch [ 4/12] Iter [150/456]  eta: 0 day 00:14:48  time: 0.2247  lr: 1.0000e-02  loss: 1.9732  loss_cls: 0.8856  loss_bbox: 0.7091  loss_dfl: 0.3785
+2025-05-26 14:30:09,888 - jittordet - INFO - (train) [ 4/12][150/456]  eta: 0 day 00:14:49  time: 0.2248  lr: 1.0000e-02  loss: 1.9768  loss_cls: 0.8778  loss_bbox: 0.7186  loss_dfl: 0.3804
+2025-05-26 14:30:12,165 - jittordet - INFO - Epoch [ 4/12] Iter [160/456]  eta: 0 day 00:14:46  time: 0.2247  lr: 1.0000e-02  loss: 1.9701  loss_cls: 0.9397  loss_bbox: 0.6671  loss_dfl: 0.3633
+2025-05-26 14:30:12,165 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:14,422 - jittordet - INFO - Epoch [ 4/12] Iter [170/456]  eta: 0 day 00:14:44  time: 0.2248  lr: 1.0000e-02  loss: 1.8021  loss_cls: 0.7834  loss_bbox: 0.6687  loss_dfl: 0.3500
+2025-05-26 14:30:16,729 - jittordet - INFO - Epoch [ 4/12] Iter [180/456]  eta: 0 day 00:14:42  time: 0.2248  lr: 1.0000e-02  loss: 1.9390  loss_cls: 0.9168  loss_bbox: 0.6616  loss_dfl: 0.3605
+2025-05-26 14:30:18,966 - jittordet - INFO - Epoch [ 4/12] Iter [190/456]  eta: 0 day 00:14:39  time: 0.2248  lr: 1.0000e-02  loss: 2.0350  loss_cls: 0.9306  loss_bbox: 0.7264  loss_dfl: 0.3780
+2025-05-26 14:30:21,222 - jittordet - INFO - Epoch [ 4/12] Iter [200/456]  eta: 0 day 00:14:37  time: 0.2248  lr: 1.0000e-02  loss: 2.0837  loss_cls: 0.9617  loss_bbox: 0.7289  loss_dfl: 0.3932
+2025-05-26 14:30:21,222 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:21,222 - jittordet - INFO - (train) [ 4/12][200/456]  eta: 0 day 00:14:38  time: 0.2249  lr: 1.0000e-02  loss: 1.9660  loss_cls: 0.9064  loss_bbox: 0.6905  loss_dfl: 0.3690
+2025-05-26 14:30:23,491 - jittordet - INFO - Epoch [ 4/12] Iter [210/456]  eta: 0 day 00:14:35  time: 0.2248  lr: 1.0000e-02  loss: 2.0267  loss_cls: 1.0370  loss_bbox: 0.6340  loss_dfl: 0.3558
+2025-05-26 14:30:25,748 - jittordet - INFO - Epoch [ 4/12] Iter [220/456]  eta: 0 day 00:14:33  time: 0.2247  lr: 1.0000e-02  loss: 2.0598  loss_cls: 0.9653  loss_bbox: 0.7125  loss_dfl: 0.3820
+2025-05-26 14:30:28,037 - jittordet - INFO - Epoch [ 4/12] Iter [230/456]  eta: 0 day 00:14:30  time: 0.2247  lr: 1.0000e-02  loss: 1.9040  loss_cls: 0.8552  loss_bbox: 0.6764  loss_dfl: 0.3724
+2025-05-26 14:30:30,297 - jittordet - INFO - Epoch [ 4/12] Iter [240/456]  eta: 0 day 00:14:28  time: 0.2247  lr: 1.0000e-02  loss: 1.9129  loss_cls: 0.8904  loss_bbox: 0.6664  loss_dfl: 0.3561
+2025-05-26 14:30:30,297 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:32,524 - jittordet - INFO - Epoch [ 4/12] Iter [250/456]  eta: 0 day 00:14:26  time: 0.2247  lr: 1.0000e-02  loss: 2.1162  loss_cls: 1.0236  loss_bbox: 0.7024  loss_dfl: 0.3902
+2025-05-26 14:30:32,524 - jittordet - INFO - (train) [ 4/12][250/456]  eta: 0 day 00:14:26  time: 0.2248  lr: 1.0000e-02  loss: 2.0039  loss_cls: 0.9543  loss_bbox: 0.6783  loss_dfl: 0.3713
+2025-05-26 14:30:34,761 - jittordet - INFO - Epoch [ 4/12] Iter [260/456]  eta: 0 day 00:14:23  time: 0.2247  lr: 1.0000e-02  loss: 2.0388  loss_cls: 0.9690  loss_bbox: 0.6975  loss_dfl: 0.3723
+2025-05-26 14:30:37,041 - jittordet - INFO - Epoch [ 4/12] Iter [270/456]  eta: 0 day 00:14:21  time: 0.2247  lr: 1.0000e-02  loss: 1.9841  loss_cls: 1.0608  loss_bbox: 0.5880  loss_dfl: 0.3353
+2025-05-26 14:30:39,326 - jittordet - INFO - Epoch [ 4/12] Iter [280/456]  eta: 0 day 00:14:19  time: 0.2247  lr: 1.0000e-02  loss: 1.9699  loss_cls: 0.9648  loss_bbox: 0.6565  loss_dfl: 0.3487
+2025-05-26 14:30:39,326 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:41,570 - jittordet - INFO - Epoch [ 4/12] Iter [290/456]  eta: 0 day 00:14:17  time: 0.2247  lr: 1.0000e-02  loss: 2.1504  loss_cls: 0.9119  loss_bbox: 0.8176  loss_dfl: 0.4208
+2025-05-26 14:30:43,845 - jittordet - INFO - Epoch [ 4/12] Iter [300/456]  eta: 0 day 00:14:14  time: 0.2247  lr: 1.0000e-02  loss: 2.0577  loss_cls: 0.9749  loss_bbox: 0.7095  loss_dfl: 0.3734
+2025-05-26 14:30:43,845 - jittordet - INFO - (train) [ 4/12][300/456]  eta: 0 day 00:14:15  time: 0.2248  lr: 1.0000e-02  loss: 2.0402  loss_cls: 0.9763  loss_bbox: 0.6938  loss_dfl: 0.3701
+2025-05-26 14:30:43,845 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:46,098 - jittordet - INFO - Epoch [ 4/12] Iter [310/456]  eta: 0 day 00:14:12  time: 0.2247  lr: 1.0000e-02  loss: 1.9202  loss_cls: 0.9174  loss_bbox: 0.6492  loss_dfl: 0.3536
+2025-05-26 14:30:48,338 - jittordet - INFO - Epoch [ 4/12] Iter [320/456]  eta: 0 day 00:14:10  time: 0.2247  lr: 1.0000e-02  loss: 2.0159  loss_cls: 1.0295  loss_bbox: 0.6266  loss_dfl: 0.3598
+2025-05-26 14:30:48,339 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:50,643 - jittordet - INFO - Epoch [ 4/12] Iter [330/456]  eta: 0 day 00:14:08  time: 0.2247  lr: 1.0000e-02  loss: 2.0932  loss_cls: 0.9463  loss_bbox: 0.7685  loss_dfl: 0.3784
+2025-05-26 14:30:52,874 - jittordet - INFO - Epoch [ 4/12] Iter [340/456]  eta: 0 day 00:14:06  time: 0.2247  lr: 1.0000e-02  loss: 2.0339  loss_cls: 0.9514  loss_bbox: 0.7067  loss_dfl: 0.3758
+2025-05-26 14:30:55,141 - jittordet - INFO - Epoch [ 4/12] Iter [350/456]  eta: 0 day 00:14:03  time: 0.2247  lr: 1.0000e-02  loss: 1.9703  loss_cls: 0.9221  loss_bbox: 0.6805  loss_dfl: 0.3676
+2025-05-26 14:30:55,141 - jittordet - INFO - (train) [ 4/12][350/456]  eta: 0 day 00:14:04  time: 0.2248  lr: 1.0000e-02  loss: 2.0067  loss_cls: 0.9533  loss_bbox: 0.6863  loss_dfl: 0.3670
+2025-05-26 14:30:57,409 - jittordet - INFO - Epoch [ 4/12] Iter [360/456]  eta: 0 day 00:14:01  time: 0.2247  lr: 1.0000e-02  loss: 2.0456  loss_cls: 0.8218  loss_bbox: 0.8214  loss_dfl: 0.4023
+2025-05-26 14:30:57,410 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:30:59,654 - jittordet - INFO - Epoch [ 4/12] Iter [370/456]  eta: 0 day 00:13:59  time: 0.2246  lr: 1.0000e-02  loss: 2.0102  loss_cls: 0.9827  loss_bbox: 0.6589  loss_dfl: 0.3686
+2025-05-26 14:31:01,879 - jittordet - INFO - Epoch [ 4/12] Iter [380/456]  eta: 0 day 00:13:56  time: 0.2246  lr: 1.0000e-02  loss: 1.8978  loss_cls: 0.8912  loss_bbox: 0.6489  loss_dfl: 0.3577
+2025-05-26 14:31:04,184 - jittordet - INFO - Epoch [ 4/12] Iter [390/456]  eta: 0 day 00:13:54  time: 0.2246  lr: 1.0000e-02  loss: 2.0865  loss_cls: 0.9734  loss_bbox: 0.7189  loss_dfl: 0.3942
+2025-05-26 14:31:06,475 - jittordet - INFO - Epoch [ 4/12] Iter [400/456]  eta: 0 day 00:13:52  time: 0.2247  lr: 1.0000e-02  loss: 1.8096  loss_cls: 0.7058  loss_bbox: 0.7229  loss_dfl: 0.3808
+2025-05-26 14:31:06,475 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:31:06,476 - jittordet - INFO - (train) [ 4/12][400/456]  eta: 0 day 00:13:52  time: 0.2247  lr: 1.0000e-02  loss: 1.9699  loss_cls: 0.8750  loss_bbox: 0.7142  loss_dfl: 0.3807
+2025-05-26 14:31:08,728 - jittordet - INFO - Epoch [ 4/12] Iter [410/456]  eta: 0 day 00:13:50  time: 0.2247  lr: 1.0000e-02  loss: 1.9367  loss_cls: 0.9030  loss_bbox: 0.6606  loss_dfl: 0.3730
+2025-05-26 14:31:10,989 - jittordet - INFO - Epoch [ 4/12] Iter [420/456]  eta: 0 day 00:13:47  time: 0.2246  lr: 1.0000e-02  loss: 1.9483  loss_cls: 0.8612  loss_bbox: 0.7084  loss_dfl: 0.3787
+2025-05-26 14:31:13,257 - jittordet - INFO - Epoch [ 4/12] Iter [430/456]  eta: 0 day 00:13:45  time: 0.2247  lr: 1.0000e-02  loss: 2.0511  loss_cls: 0.9385  loss_bbox: 0.7445  loss_dfl: 0.3681
+2025-05-26 14:31:15,500 - jittordet - INFO - Epoch [ 4/12] Iter [440/456]  eta: 0 day 00:13:43  time: 0.2246  lr: 1.0000e-02  loss: 1.9365  loss_cls: 0.9006  loss_bbox: 0.6783  loss_dfl: 0.3576
+2025-05-26 14:31:15,500 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:31:17,785 - jittordet - INFO - Epoch [ 4/12] Iter [450/456]  eta: 0 day 00:13:41  time: 0.2247  lr: 1.0000e-02  loss: 1.9430  loss_cls: 0.8531  loss_bbox: 0.7157  loss_dfl: 0.3742
+2025-05-26 14:31:17,785 - jittordet - INFO - (train) [ 4/12][450/456]  eta: 0 day 00:13:41  time: 0.2247  lr: 1.0000e-02  loss: 1.9631  loss_cls: 0.8913  loss_bbox: 0.7015  loss_dfl: 0.3703
+2025-05-26 14:31:21,753 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_4.pkl
+2025-05-26 14:31:22,660 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.0942
+2025-05-26 14:31:23,553 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0934
+2025-05-26 14:31:23,624 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:31:24,309 - jittordet - INFO - bbox_mAP: 0.016  bbox_mAP_50: 0.031  bbox_mAP_75: 0.018  bbox_mAP_s: 0.004  bbox_mAP_m: 0.038  bbox_mAP_l: 0.032
+2025-05-26 14:31:24,309 - jittordet - INFO - bbox_mAP: 0.016  bbox_mAP_50: 0.031  bbox_mAP_75: 0.018  bbox_mAP_s: 0.004  bbox_mAP_m: 0.038  bbox_mAP_l: 0.032
+2025-05-26 14:31:26,462 - jittordet - INFO - Epoch [ 5/12] Iter [ 10/456]  eta: 0 day 00:13:36  time: 0.2245  lr: 1.0000e-02  loss: 2.0208  loss_cls: 0.9205  loss_bbox: 0.7315  loss_dfl: 0.3688
+2025-05-26 14:31:28,706 - jittordet - INFO - Epoch [ 5/12] Iter [ 20/456]  eta: 0 day 00:13:34  time: 0.2245  lr: 1.0000e-02  loss: 2.1536  loss_cls: 0.9732  loss_bbox: 0.7966  loss_dfl: 0.3838
+2025-05-26 14:31:30,986 - jittordet - INFO - Epoch [ 5/12] Iter [ 30/456]  eta: 0 day 00:13:32  time: 0.2245  lr: 1.0000e-02  loss: 1.9172  loss_cls: 0.7422  loss_bbox: 0.7885  loss_dfl: 0.3866
+2025-05-26 14:31:33,182 - jittordet - INFO - Epoch [ 5/12] Iter [ 40/456]  eta: 0 day 00:13:30  time: 0.2244  lr: 1.0000e-02  loss: 1.9089  loss_cls: 0.8843  loss_bbox: 0.6677  loss_dfl: 0.3569
+2025-05-26 14:31:33,182 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:31:35,465 - jittordet - INFO - Epoch [ 5/12] Iter [ 50/456]  eta: 0 day 00:13:27  time: 0.2245  lr: 1.0000e-02  loss: 1.9259  loss_cls: 0.8723  loss_bbox: 0.6845  loss_dfl: 0.3691
+2025-05-26 14:31:35,466 - jittordet - INFO - (train) [ 5/12][ 50/456]  eta: 0 day 00:13:28  time: 0.2246  lr: 1.0000e-02  loss: 1.9853  loss_cls: 0.8785  loss_bbox: 0.7338  loss_dfl: 0.3731
+2025-05-26 14:31:37,717 - jittordet - INFO - Epoch [ 5/12] Iter [ 60/456]  eta: 0 day 00:13:25  time: 0.2245  lr: 1.0000e-02  loss: 1.8992  loss_cls: 0.9875  loss_bbox: 0.5784  loss_dfl: 0.3332
+2025-05-26 14:31:39,975 - jittordet - INFO - Epoch [ 5/12] Iter [ 70/456]  eta: 0 day 00:13:23  time: 0.2244  lr: 1.0000e-02  loss: 1.8936  loss_cls: 0.9896  loss_bbox: 0.5663  loss_dfl: 0.3378
+2025-05-26 14:31:42,256 - jittordet - INFO - Epoch [ 5/12] Iter [ 80/456]  eta: 0 day 00:13:21  time: 0.2245  lr: 1.0000e-02  loss: 1.9332  loss_cls: 0.9935  loss_bbox: 0.6097  loss_dfl: 0.3300
+2025-05-26 14:31:42,257 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:31:44,552 - jittordet - INFO - Epoch [ 5/12] Iter [ 90/456]  eta: 0 day 00:13:19  time: 0.2245  lr: 1.0000e-02  loss: 1.9254  loss_cls: 0.7897  loss_bbox: 0.7555  loss_dfl: 0.3802
+2025-05-26 14:31:46,829 - jittordet - INFO - Epoch [ 5/12] Iter [100/456]  eta: 0 day 00:13:17  time: 0.2246  lr: 1.0000e-02  loss: 1.9865  loss_cls: 0.9548  loss_bbox: 0.6672  loss_dfl: 0.3644
+2025-05-26 14:31:46,829 - jittordet - INFO - (train) [ 5/12][100/456]  eta: 0 day 00:13:17  time: 0.2247  lr: 1.0000e-02  loss: 1.9276  loss_cls: 0.9430  loss_bbox: 0.6354  loss_dfl: 0.3491
+2025-05-26 14:31:49,060 - jittordet - INFO - Epoch [ 5/12] Iter [110/456]  eta: 0 day 00:13:14  time: 0.2246  lr: 1.0000e-02  loss: 1.9297  loss_cls: 1.0280  loss_bbox: 0.5761  loss_dfl: 0.3256
+2025-05-26 14:31:51,304 - jittordet - INFO - Epoch [ 5/12] Iter [120/456]  eta: 0 day 00:13:12  time: 0.2246  lr: 1.0000e-02  loss: 1.9393  loss_cls: 0.8969  loss_bbox: 0.6677  loss_dfl: 0.3747
+2025-05-26 14:31:51,304 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:31:53,600 - jittordet - INFO - Epoch [ 5/12] Iter [130/456]  eta: 0 day 00:13:10  time: 0.2246  lr: 1.0000e-02  loss: 1.9340  loss_cls: 0.8721  loss_bbox: 0.6977  loss_dfl: 0.3641
+2025-05-26 14:31:55,901 - jittordet - INFO - Epoch [ 5/12] Iter [140/456]  eta: 0 day 00:13:08  time: 0.2246  lr: 1.0000e-02  loss: 1.7806  loss_cls: 0.7175  loss_bbox: 0.6885  loss_dfl: 0.3746
+2025-05-26 14:31:58,093 - jittordet - INFO - Epoch [ 5/12] Iter [150/456]  eta: 0 day 00:13:05  time: 0.2246  lr: 1.0000e-02  loss: 1.8914  loss_cls: 0.9383  loss_bbox: 0.6203  loss_dfl: 0.3328
+2025-05-26 14:31:58,094 - jittordet - INFO - (train) [ 5/12][150/456]  eta: 0 day 00:13:06  time: 0.2247  lr: 1.0000e-02  loss: 1.8950  loss_cls: 0.8906  loss_bbox: 0.6501  loss_dfl: 0.3544
+2025-05-26 14:32:00,411 - jittordet - INFO - Epoch [ 5/12] Iter [160/456]  eta: 0 day 00:13:03  time: 0.2247  lr: 1.0000e-02  loss: 1.9393  loss_cls: 0.9383  loss_bbox: 0.6598  loss_dfl: 0.3411
+2025-05-26 14:32:00,411 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:02,638 - jittordet - INFO - Epoch [ 5/12] Iter [170/456]  eta: 0 day 00:13:01  time: 0.2247  lr: 1.0000e-02  loss: 1.9000  loss_cls: 0.9910  loss_bbox: 0.5772  loss_dfl: 0.3317
+2025-05-26 14:32:04,885 - jittordet - INFO - Epoch [ 5/12] Iter [180/456]  eta: 0 day 00:12:58  time: 0.2245  lr: 1.0000e-02  loss: 1.8962  loss_cls: 0.9543  loss_bbox: 0.6143  loss_dfl: 0.3276
+2025-05-26 14:32:07,159 - jittordet - INFO - Epoch [ 5/12] Iter [190/456]  eta: 0 day 00:12:56  time: 0.2245  lr: 1.0000e-02  loss: 1.8036  loss_cls: 0.8186  loss_bbox: 0.6453  loss_dfl: 0.3397
+2025-05-26 14:32:09,349 - jittordet - INFO - Epoch [ 5/12] Iter [200/456]  eta: 0 day 00:12:54  time: 0.2244  lr: 1.0000e-02  loss: 1.9676  loss_cls: 0.9461  loss_bbox: 0.6576  loss_dfl: 0.3639
+2025-05-26 14:32:09,349 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:09,349 - jittordet - INFO - (train) [ 5/12][200/456]  eta: 0 day 00:12:54  time: 0.2245  lr: 1.0000e-02  loss: 1.9013  loss_cls: 0.9297  loss_bbox: 0.6309  loss_dfl: 0.3408
+2025-05-26 14:32:11,693 - jittordet - INFO - Epoch [ 5/12] Iter [210/456]  eta: 0 day 00:12:52  time: 0.2246  lr: 1.0000e-02  loss: 1.9665  loss_cls: 0.9968  loss_bbox: 0.6268  loss_dfl: 0.3428
+2025-05-26 14:32:14,012 - jittordet - INFO - Epoch [ 5/12] Iter [220/456]  eta: 0 day 00:12:50  time: 0.2247  lr: 1.0000e-02  loss: 1.9129  loss_cls: 0.8864  loss_bbox: 0.6720  loss_dfl: 0.3545
+2025-05-26 14:32:16,340 - jittordet - INFO - Epoch [ 5/12] Iter [230/456]  eta: 0 day 00:12:48  time: 0.2247  lr: 1.0000e-02  loss: 1.9438  loss_cls: 0.8053  loss_bbox: 0.7526  loss_dfl: 0.3860
+2025-05-26 14:32:18,550 - jittordet - INFO - Epoch [ 5/12] Iter [240/456]  eta: 0 day 00:12:45  time: 0.2247  lr: 1.0000e-02  loss: 2.0217  loss_cls: 1.0521  loss_bbox: 0.6269  loss_dfl: 0.3427
+2025-05-26 14:32:18,550 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:20,818 - jittordet - INFO - Epoch [ 5/12] Iter [250/456]  eta: 0 day 00:12:43  time: 0.2247  lr: 1.0000e-02  loss: 1.8757  loss_cls: 0.9261  loss_bbox: 0.6151  loss_dfl: 0.3346
+2025-05-26 14:32:20,819 - jittordet - INFO - (train) [ 5/12][250/456]  eta: 0 day 00:12:43  time: 0.2248  lr: 1.0000e-02  loss: 1.9441  loss_cls: 0.9333  loss_bbox: 0.6587  loss_dfl: 0.3521
+2025-05-26 14:32:23,064 - jittordet - INFO - Epoch [ 5/12] Iter [260/456]  eta: 0 day 00:12:41  time: 0.2247  lr: 1.0000e-02  loss: 2.0359  loss_cls: 0.9478  loss_bbox: 0.7110  loss_dfl: 0.3770
+2025-05-26 14:32:25,421 - jittordet - INFO - Epoch [ 5/12] Iter [270/456]  eta: 0 day 00:12:39  time: 0.2247  lr: 1.0000e-02  loss: 1.9847  loss_cls: 0.9198  loss_bbox: 0.6949  loss_dfl: 0.3699
+2025-05-26 14:32:27,813 - jittordet - INFO - Epoch [ 5/12] Iter [280/456]  eta: 0 day 00:12:37  time: 0.2248  lr: 1.0000e-02  loss: 1.8841  loss_cls: 0.8813  loss_bbox: 0.6466  loss_dfl: 0.3562
+2025-05-26 14:32:27,813 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:30,137 - jittordet - INFO - Epoch [ 5/12] Iter [290/456]  eta: 0 day 00:12:35  time: 0.2249  lr: 1.0000e-02  loss: 1.8394  loss_cls: 0.8410  loss_bbox: 0.6477  loss_dfl: 0.3507
+2025-05-26 14:32:32,420 - jittordet - INFO - Epoch [ 5/12] Iter [300/456]  eta: 0 day 00:12:33  time: 0.2249  lr: 1.0000e-02  loss: 1.9567  loss_cls: 1.0628  loss_bbox: 0.5684  loss_dfl: 0.3255
+2025-05-26 14:32:32,421 - jittordet - INFO - (train) [ 5/12][300/456]  eta: 0 day 00:12:33  time: 0.2250  lr: 1.0000e-02  loss: 1.9402  loss_cls: 0.9305  loss_bbox: 0.6537  loss_dfl: 0.3559
+2025-05-26 14:32:32,421 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:34,699 - jittordet - INFO - Epoch [ 5/12] Iter [310/456]  eta: 0 day 00:12:30  time: 0.2249  lr: 1.0000e-02  loss: 1.8877  loss_cls: 0.8965  loss_bbox: 0.6388  loss_dfl: 0.3524
+2025-05-26 14:32:36,985 - jittordet - INFO - Epoch [ 5/12] Iter [320/456]  eta: 0 day 00:12:28  time: 0.2250  lr: 1.0000e-02  loss: 1.9902  loss_cls: 0.9525  loss_bbox: 0.6663  loss_dfl: 0.3715
+2025-05-26 14:32:36,985 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:39,198 - jittordet - INFO - Epoch [ 5/12] Iter [330/456]  eta: 0 day 00:12:26  time: 0.2248  lr: 1.0000e-02  loss: 1.9337  loss_cls: 0.9488  loss_bbox: 0.6410  loss_dfl: 0.3439
+2025-05-26 14:32:41,471 - jittordet - INFO - Epoch [ 5/12] Iter [340/456]  eta: 0 day 00:12:24  time: 0.2248  lr: 1.0000e-02  loss: 1.9251  loss_cls: 1.0616  loss_bbox: 0.5489  loss_dfl: 0.3146
+2025-05-26 14:32:43,804 - jittordet - INFO - Epoch [ 5/12] Iter [350/456]  eta: 0 day 00:12:21  time: 0.2249  lr: 1.0000e-02  loss: 1.9923  loss_cls: 0.9715  loss_bbox: 0.6652  loss_dfl: 0.3557
+2025-05-26 14:32:43,805 - jittordet - INFO - (train) [ 5/12][350/456]  eta: 0 day 00:12:22  time: 0.2250  lr: 1.0000e-02  loss: 1.9458  loss_cls: 0.9662  loss_bbox: 0.6320  loss_dfl: 0.3476
+2025-05-26 14:32:46,094 - jittordet - INFO - Epoch [ 5/12] Iter [360/456]  eta: 0 day 00:12:19  time: 0.2249  lr: 1.0000e-02  loss: 1.9660  loss_cls: 0.9602  loss_bbox: 0.6436  loss_dfl: 0.3622
+2025-05-26 14:32:46,094 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:48,336 - jittordet - INFO - Epoch [ 5/12] Iter [370/456]  eta: 0 day 00:12:17  time: 0.2249  lr: 1.0000e-02  loss: 1.9693  loss_cls: 1.0463  loss_bbox: 0.5934  loss_dfl: 0.3296
+2025-05-26 14:32:50,604 - jittordet - INFO - Epoch [ 5/12] Iter [380/456]  eta: 0 day 00:12:15  time: 0.2249  lr: 1.0000e-02  loss: 1.9427  loss_cls: 0.8919  loss_bbox: 0.6958  loss_dfl: 0.3551
+2025-05-26 14:32:52,875 - jittordet - INFO - Epoch [ 5/12] Iter [390/456]  eta: 0 day 00:12:12  time: 0.2249  lr: 1.0000e-02  loss: 2.0306  loss_cls: 1.1228  loss_bbox: 0.5886  loss_dfl: 0.3192
+2025-05-26 14:32:55,168 - jittordet - INFO - Epoch [ 5/12] Iter [400/456]  eta: 0 day 00:12:10  time: 0.2248  lr: 1.0000e-02  loss: 1.8672  loss_cls: 0.8757  loss_bbox: 0.6360  loss_dfl: 0.3556
+2025-05-26 14:32:55,168 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:32:55,168 - jittordet - INFO - (train) [ 5/12][400/456]  eta: 0 day 00:12:10  time: 0.2249  lr: 1.0000e-02  loss: 1.9552  loss_cls: 0.9794  loss_bbox: 0.6315  loss_dfl: 0.3443
+2025-05-26 14:32:57,422 - jittordet - INFO - Epoch [ 5/12] Iter [410/456]  eta: 0 day 00:12:08  time: 0.2248  lr: 1.0000e-02  loss: 1.8103  loss_cls: 0.8172  loss_bbox: 0.6455  loss_dfl: 0.3476
+2025-05-26 14:32:59,725 - jittordet - INFO - Epoch [ 5/12] Iter [420/456]  eta: 0 day 00:12:05  time: 0.2248  lr: 1.0000e-02  loss: 1.8129  loss_cls: 0.9119  loss_bbox: 0.5738  loss_dfl: 0.3272
+2025-05-26 14:33:02,062 - jittordet - INFO - Epoch [ 5/12] Iter [430/456]  eta: 0 day 00:12:03  time: 0.2248  lr: 1.0000e-02  loss: 1.8891  loss_cls: 0.9551  loss_bbox: 0.5957  loss_dfl: 0.3383
+2025-05-26 14:33:04,319 - jittordet - INFO - Epoch [ 5/12] Iter [440/456]  eta: 0 day 00:12:01  time: 0.2247  lr: 1.0000e-02  loss: 1.9513  loss_cls: 0.9422  loss_bbox: 0.6552  loss_dfl: 0.3540
+2025-05-26 14:33:04,319 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:06,575 - jittordet - INFO - Epoch [ 5/12] Iter [450/456]  eta: 0 day 00:11:58  time: 0.2247  lr: 1.0000e-02  loss: 1.7789  loss_cls: 0.8887  loss_bbox: 0.5619  loss_dfl: 0.3283
+2025-05-26 14:33:06,575 - jittordet - INFO - (train) [ 5/12][450/456]  eta: 0 day 00:11:59  time: 0.2248  lr: 1.0000e-02  loss: 1.8485  loss_cls: 0.9030  loss_bbox: 0.6064  loss_dfl: 0.3391
+2025-05-26 14:33:10,326 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_5.pkl
+2025-05-26 14:33:11,230 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.0928
+2025-05-26 14:33:12,129 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0923
+2025-05-26 14:33:12,201 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:33:12,786 - jittordet - INFO - bbox_mAP: 0.015  bbox_mAP_50: 0.032  bbox_mAP_75: 0.012  bbox_mAP_s: 0.008  bbox_mAP_m: 0.015  bbox_mAP_l: 0.046
+2025-05-26 14:33:12,787 - jittordet - INFO - bbox_mAP: 0.015  bbox_mAP_50: 0.032  bbox_mAP_75: 0.012  bbox_mAP_s: 0.008  bbox_mAP_m: 0.015  bbox_mAP_l: 0.046
+2025-05-26 14:33:14,993 - jittordet - INFO - Epoch [ 6/12] Iter [ 10/456]  eta: 0 day 00:11:54  time: 0.2246  lr: 1.0000e-02  loss: 1.8427  loss_cls: 0.8921  loss_bbox: 0.6314  loss_dfl: 0.3192
+2025-05-26 14:33:17,244 - jittordet - INFO - Epoch [ 6/12] Iter [ 20/456]  eta: 0 day 00:11:52  time: 0.2246  lr: 1.0000e-02  loss: 1.8529  loss_cls: 0.9312  loss_bbox: 0.5924  loss_dfl: 0.3293
+2025-05-26 14:33:19,486 - jittordet - INFO - Epoch [ 6/12] Iter [ 30/456]  eta: 0 day 00:11:50  time: 0.2246  lr: 1.0000e-02  loss: 2.0448  loss_cls: 1.1092  loss_bbox: 0.6101  loss_dfl: 0.3255
+2025-05-26 14:33:21,781 - jittordet - INFO - Epoch [ 6/12] Iter [ 40/456]  eta: 0 day 00:11:48  time: 0.2246  lr: 1.0000e-02  loss: 1.9219  loss_cls: 0.9775  loss_bbox: 0.6026  loss_dfl: 0.3418
+2025-05-26 14:33:21,781 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:24,014 - jittordet - INFO - Epoch [ 6/12] Iter [ 50/456]  eta: 0 day 00:11:45  time: 0.2246  lr: 1.0000e-02  loss: 1.8547  loss_cls: 0.9034  loss_bbox: 0.6252  loss_dfl: 0.3261
+2025-05-26 14:33:24,014 - jittordet - INFO - (train) [ 6/12][ 50/456]  eta: 0 day 00:11:46  time: 0.2247  lr: 1.0000e-02  loss: 1.9034  loss_cls: 0.9627  loss_bbox: 0.6123  loss_dfl: 0.3284
+2025-05-26 14:33:26,268 - jittordet - INFO - Epoch [ 6/12] Iter [ 60/456]  eta: 0 day 00:11:43  time: 0.2246  lr: 1.0000e-02  loss: 2.0284  loss_cls: 1.1097  loss_bbox: 0.5743  loss_dfl: 0.3444
+2025-05-26 14:33:28,487 - jittordet - INFO - Epoch [ 6/12] Iter [ 70/456]  eta: 0 day 00:11:41  time: 0.2245  lr: 1.0000e-02  loss: 1.9162  loss_cls: 0.8753  loss_bbox: 0.6722  loss_dfl: 0.3687
+2025-05-26 14:33:30,792 - jittordet - INFO - Epoch [ 6/12] Iter [ 80/456]  eta: 0 day 00:11:39  time: 0.2246  lr: 1.0000e-02  loss: 1.9261  loss_cls: 0.8903  loss_bbox: 0.6726  loss_dfl: 0.3633
+2025-05-26 14:33:30,792 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:33,033 - jittordet - INFO - Epoch [ 6/12] Iter [ 90/456]  eta: 0 day 00:11:37  time: 0.2246  lr: 1.0000e-02  loss: 2.0139  loss_cls: 0.9969  loss_bbox: 0.6550  loss_dfl: 0.3619
+2025-05-26 14:33:35,308 - jittordet - INFO - Epoch [ 6/12] Iter [100/456]  eta: 0 day 00:11:34  time: 0.2246  lr: 1.0000e-02  loss: 2.0999  loss_cls: 1.1571  loss_bbox: 0.6006  loss_dfl: 0.3422
+2025-05-26 14:33:35,308 - jittordet - INFO - (train) [ 6/12][100/456]  eta: 0 day 00:11:35  time: 0.2247  lr: 1.0000e-02  loss: 1.9969  loss_cls: 1.0058  loss_bbox: 0.6349  loss_dfl: 0.3561
+2025-05-26 14:33:37,590 - jittordet - INFO - Epoch [ 6/12] Iter [110/456]  eta: 0 day 00:11:32  time: 0.2247  lr: 1.0000e-02  loss: 1.7917  loss_cls: 0.9026  loss_bbox: 0.5664  loss_dfl: 0.3227
+2025-05-26 14:33:39,857 - jittordet - INFO - Epoch [ 6/12] Iter [120/456]  eta: 0 day 00:11:30  time: 0.2247  lr: 1.0000e-02  loss: 1.8695  loss_cls: 0.9689  loss_bbox: 0.5890  loss_dfl: 0.3116
+2025-05-26 14:33:39,857 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:42,075 - jittordet - INFO - Epoch [ 6/12] Iter [130/456]  eta: 0 day 00:11:28  time: 0.2246  lr: 1.0000e-02  loss: 1.8517  loss_cls: 0.9561  loss_bbox: 0.5718  loss_dfl: 0.3238
+2025-05-26 14:33:44,345 - jittordet - INFO - Epoch [ 6/12] Iter [140/456]  eta: 0 day 00:11:25  time: 0.2247  lr: 1.0000e-02  loss: 1.8335  loss_cls: 0.8501  loss_bbox: 0.6419  loss_dfl: 0.3414
+2025-05-26 14:33:46,595 - jittordet - INFO - Epoch [ 6/12] Iter [150/456]  eta: 0 day 00:11:23  time: 0.2246  lr: 1.0000e-02  loss: 1.9384  loss_cls: 1.0631  loss_bbox: 0.5749  loss_dfl: 0.3003
+2025-05-26 14:33:46,596 - jittordet - INFO - (train) [ 6/12][150/456]  eta: 0 day 00:11:23  time: 0.2247  lr: 1.0000e-02  loss: 1.8570  loss_cls: 0.9482  loss_bbox: 0.5888  loss_dfl: 0.3200
+2025-05-26 14:33:48,868 - jittordet - INFO - Epoch [ 6/12] Iter [160/456]  eta: 0 day 00:11:21  time: 0.2246  lr: 1.0000e-02  loss: 1.9376  loss_cls: 1.0029  loss_bbox: 0.5926  loss_dfl: 0.3421
+2025-05-26 14:33:48,868 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:51,193 - jittordet - INFO - Epoch [ 6/12] Iter [170/456]  eta: 0 day 00:11:19  time: 0.2247  lr: 1.0000e-02  loss: 1.8862  loss_cls: 0.9784  loss_bbox: 0.5846  loss_dfl: 0.3233
+2025-05-26 14:33:53,481 - jittordet - INFO - Epoch [ 6/12] Iter [180/456]  eta: 0 day 00:11:17  time: 0.2247  lr: 1.0000e-02  loss: 1.9125  loss_cls: 1.0316  loss_bbox: 0.5669  loss_dfl: 0.3140
+2025-05-26 14:33:55,735 - jittordet - INFO - Epoch [ 6/12] Iter [190/456]  eta: 0 day 00:11:14  time: 0.2246  lr: 1.0000e-02  loss: 1.8553  loss_cls: 0.8845  loss_bbox: 0.6239  loss_dfl: 0.3469
+2025-05-26 14:33:58,026 - jittordet - INFO - Epoch [ 6/12] Iter [200/456]  eta: 0 day 00:11:12  time: 0.2247  lr: 1.0000e-02  loss: 1.8663  loss_cls: 0.9066  loss_bbox: 0.6273  loss_dfl: 0.3324
+2025-05-26 14:33:58,026 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:33:58,026 - jittordet - INFO - (train) [ 6/12][200/456]  eta: 0 day 00:11:12  time: 0.2248  lr: 1.0000e-02  loss: 1.8916  loss_cls: 0.9608  loss_bbox: 0.5991  loss_dfl: 0.3317
+2025-05-26 14:34:00,340 - jittordet - INFO - Epoch [ 6/12] Iter [210/456]  eta: 0 day 00:11:10  time: 0.2247  lr: 1.0000e-02  loss: 1.9284  loss_cls: 1.0262  loss_bbox: 0.5875  loss_dfl: 0.3146
+2025-05-26 14:34:02,564 - jittordet - INFO - Epoch [ 6/12] Iter [220/456]  eta: 0 day 00:11:07  time: 0.2246  lr: 1.0000e-02  loss: 1.8263  loss_cls: 0.8098  loss_bbox: 0.6829  loss_dfl: 0.3337
+2025-05-26 14:34:04,840 - jittordet - INFO - Epoch [ 6/12] Iter [230/456]  eta: 0 day 00:11:05  time: 0.2245  lr: 1.0000e-02  loss: 1.9029  loss_cls: 1.0127  loss_bbox: 0.5715  loss_dfl: 0.3187
+2025-05-26 14:34:07,127 - jittordet - INFO - Epoch [ 6/12] Iter [240/456]  eta: 0 day 00:11:03  time: 0.2246  lr: 1.0000e-02  loss: 1.7870  loss_cls: 0.9807  loss_bbox: 0.5044  loss_dfl: 0.3019
+2025-05-26 14:34:07,127 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:09,455 - jittordet - INFO - Epoch [ 6/12] Iter [250/456]  eta: 0 day 00:11:01  time: 0.2246  lr: 1.0000e-02  loss: 1.8325  loss_cls: 0.8597  loss_bbox: 0.6233  loss_dfl: 0.3496
+2025-05-26 14:34:09,455 - jittordet - INFO - (train) [ 6/12][250/456]  eta: 0 day 00:11:01  time: 0.2247  lr: 1.0000e-02  loss: 1.8554  loss_cls: 0.9378  loss_bbox: 0.5939  loss_dfl: 0.3237
+2025-05-26 14:34:11,726 - jittordet - INFO - Epoch [ 6/12] Iter [260/456]  eta: 0 day 00:10:58  time: 0.2246  lr: 1.0000e-02  loss: 1.8449  loss_cls: 0.8867  loss_bbox: 0.6288  loss_dfl: 0.3294
+2025-05-26 14:34:13,996 - jittordet - INFO - Epoch [ 6/12] Iter [270/456]  eta: 0 day 00:10:56  time: 0.2246  lr: 1.0000e-02  loss: 1.8686  loss_cls: 0.9118  loss_bbox: 0.6130  loss_dfl: 0.3438
+2025-05-26 14:34:16,323 - jittordet - INFO - Epoch [ 6/12] Iter [280/456]  eta: 0 day 00:10:54  time: 0.2247  lr: 1.0000e-02  loss: 1.8777  loss_cls: 0.9237  loss_bbox: 0.6169  loss_dfl: 0.3371
+2025-05-26 14:34:16,323 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:18,574 - jittordet - INFO - Epoch [ 6/12] Iter [290/456]  eta: 0 day 00:10:52  time: 0.2247  lr: 1.0000e-02  loss: 1.8656  loss_cls: 0.9234  loss_bbox: 0.6057  loss_dfl: 0.3365
+2025-05-26 14:34:20,890 - jittordet - INFO - Epoch [ 6/12] Iter [300/456]  eta: 0 day 00:10:50  time: 0.2247  lr: 1.0000e-02  loss: 1.9358  loss_cls: 1.0505  loss_bbox: 0.5643  loss_dfl: 0.3210
+2025-05-26 14:34:20,891 - jittordet - INFO - (train) [ 6/12][300/456]  eta: 0 day 00:10:50  time: 0.2248  lr: 1.0000e-02  loss: 1.8785  loss_cls: 0.9392  loss_bbox: 0.6057  loss_dfl: 0.3336
+2025-05-26 14:34:20,891 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:23,149 - jittordet - INFO - Epoch [ 6/12] Iter [310/456]  eta: 0 day 00:10:47  time: 0.2247  lr: 1.0000e-02  loss: 1.8480  loss_cls: 0.9569  loss_bbox: 0.5665  loss_dfl: 0.3246
+2025-05-26 14:34:25,414 - jittordet - INFO - Epoch [ 6/12] Iter [320/456]  eta: 0 day 00:10:45  time: 0.2247  lr: 1.0000e-02  loss: 1.9381  loss_cls: 1.0042  loss_bbox: 0.6051  loss_dfl: 0.3288
+2025-05-26 14:34:25,414 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:27,663 - jittordet - INFO - Epoch [ 6/12] Iter [330/456]  eta: 0 day 00:10:43  time: 0.2247  lr: 1.0000e-02  loss: 1.9487  loss_cls: 1.0178  loss_bbox: 0.6005  loss_dfl: 0.3305
+2025-05-26 14:34:29,945 - jittordet - INFO - Epoch [ 6/12] Iter [340/456]  eta: 0 day 00:10:41  time: 0.2247  lr: 1.0000e-02  loss: 1.8175  loss_cls: 0.8343  loss_bbox: 0.6374  loss_dfl: 0.3458
+2025-05-26 14:34:32,234 - jittordet - INFO - Epoch [ 6/12] Iter [350/456]  eta: 0 day 00:10:39  time: 0.2248  lr: 1.0000e-02  loss: 1.9641  loss_cls: 1.0612  loss_bbox: 0.5770  loss_dfl: 0.3259
+2025-05-26 14:34:32,234 - jittordet - INFO - (train) [ 6/12][350/456]  eta: 0 day 00:10:39  time: 0.2249  lr: 1.0000e-02  loss: 1.9033  loss_cls: 0.9749  loss_bbox: 0.5973  loss_dfl: 0.3311
+2025-05-26 14:34:34,435 - jittordet - INFO - Epoch [ 6/12] Iter [360/456]  eta: 0 day 00:10:36  time: 0.2247  lr: 1.0000e-02  loss: 1.9788  loss_cls: 1.0379  loss_bbox: 0.5952  loss_dfl: 0.3457
+2025-05-26 14:34:34,435 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:36,696 - jittordet - INFO - Epoch [ 6/12] Iter [370/456]  eta: 0 day 00:10:34  time: 0.2247  lr: 1.0000e-02  loss: 1.9938  loss_cls: 1.1352  loss_bbox: 0.5526  loss_dfl: 0.3060
+2025-05-26 14:34:39,012 - jittordet - INFO - Epoch [ 6/12] Iter [380/456]  eta: 0 day 00:10:32  time: 0.2248  lr: 1.0000e-02  loss: 1.9767  loss_cls: 0.9999  loss_bbox: 0.6250  loss_dfl: 0.3517
+2025-05-26 14:34:41,339 - jittordet - INFO - Epoch [ 6/12] Iter [390/456]  eta: 0 day 00:10:30  time: 0.2248  lr: 1.0000e-02  loss: 1.8407  loss_cls: 0.8358  loss_bbox: 0.6668  loss_dfl: 0.3382
+2025-05-26 14:34:43,603 - jittordet - INFO - Epoch [ 6/12] Iter [400/456]  eta: 0 day 00:10:27  time: 0.2248  lr: 1.0000e-02  loss: 1.9201  loss_cls: 1.0428  loss_bbox: 0.5501  loss_dfl: 0.3272
+2025-05-26 14:34:43,604 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:43,604 - jittordet - INFO - (train) [ 6/12][400/456]  eta: 0 day 00:10:28  time: 0.2249  lr: 1.0000e-02  loss: 1.9420  loss_cls: 1.0103  loss_bbox: 0.5980  loss_dfl: 0.3337
+2025-05-26 14:34:45,903 - jittordet - INFO - Epoch [ 6/12] Iter [410/456]  eta: 0 day 00:10:25  time: 0.2249  lr: 1.0000e-02  loss: 1.8012  loss_cls: 0.8648  loss_bbox: 0.6099  loss_dfl: 0.3264
+2025-05-26 14:34:48,151 - jittordet - INFO - Epoch [ 6/12] Iter [420/456]  eta: 0 day 00:10:23  time: 0.2248  lr: 1.0000e-02  loss: 1.9427  loss_cls: 0.9909  loss_bbox: 0.6141  loss_dfl: 0.3377
+2025-05-26 14:34:50,412 - jittordet - INFO - Epoch [ 6/12] Iter [430/456]  eta: 0 day 00:10:21  time: 0.2249  lr: 1.0000e-02  loss: 1.9175  loss_cls: 0.7976  loss_bbox: 0.7470  loss_dfl: 0.3729
+2025-05-26 14:34:52,666 - jittordet - INFO - Epoch [ 6/12] Iter [440/456]  eta: 0 day 00:10:18  time: 0.2248  lr: 1.0000e-02  loss: 1.8001  loss_cls: 0.9296  loss_bbox: 0.5500  loss_dfl: 0.3206
+2025-05-26 14:34:52,666 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:34:54,939 - jittordet - INFO - Epoch [ 6/12] Iter [450/456]  eta: 0 day 00:10:16  time: 0.2248  lr: 1.0000e-02  loss: 1.8066  loss_cls: 0.8830  loss_bbox: 0.5919  loss_dfl: 0.3318
+2025-05-26 14:34:54,939 - jittordet - INFO - (train) [ 6/12][450/456]  eta: 0 day 00:10:16  time: 0.2249  lr: 1.0000e-02  loss: 1.8536  loss_cls: 0.8932  loss_bbox: 0.6226  loss_dfl: 0.3379
+2025-05-26 14:34:58,774 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_6.pkl
+2025-05-26 14:34:59,677 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.0920
+2025-05-26 14:35:00,569 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0916
+2025-05-26 14:35:00,640 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:35:01,341 - jittordet - INFO - bbox_mAP: 0.016  bbox_mAP_50: 0.029  bbox_mAP_75: 0.014  bbox_mAP_s: 0.009  bbox_mAP_m: 0.025  bbox_mAP_l: 0.053
+2025-05-26 14:35:01,341 - jittordet - INFO - bbox_mAP: 0.016  bbox_mAP_50: 0.029  bbox_mAP_75: 0.014  bbox_mAP_s: 0.009  bbox_mAP_m: 0.025  bbox_mAP_l: 0.053
+2025-05-26 14:35:03,561 - jittordet - INFO - Epoch [ 7/12] Iter [ 10/456]  eta: 0 day 00:10:13  time: 0.2249  lr: 1.0000e-02  loss: 1.7557  loss_cls: 0.7574  loss_bbox: 0.6529  loss_dfl: 0.3454
+2025-05-26 14:35:05,829 - jittordet - INFO - Epoch [ 7/12] Iter [ 20/456]  eta: 0 day 00:10:10  time: 0.2248  lr: 1.0000e-02  loss: 1.8331  loss_cls: 1.0056  loss_bbox: 0.5236  loss_dfl: 0.3039
+2025-05-26 14:35:08,007 - jittordet - INFO - Epoch [ 7/12] Iter [ 30/456]  eta: 0 day 00:10:08  time: 0.2247  lr: 1.0000e-02  loss: 1.9009  loss_cls: 1.0895  loss_bbox: 0.5045  loss_dfl: 0.3069
+2025-05-26 14:35:10,314 - jittordet - INFO - Epoch [ 7/12] Iter [ 40/456]  eta: 0 day 00:10:06  time: 0.2248  lr: 1.0000e-02  loss: 1.7858  loss_cls: 0.9086  loss_bbox: 0.5762  loss_dfl: 0.3009
+2025-05-26 14:35:10,314 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:12,575 - jittordet - INFO - Epoch [ 7/12] Iter [ 50/456]  eta: 0 day 00:10:03  time: 0.2248  lr: 1.0000e-02  loss: 1.8668  loss_cls: 1.0687  loss_bbox: 0.4873  loss_dfl: 0.3107
+2025-05-26 14:35:12,576 - jittordet - INFO - (train) [ 7/12][ 50/456]  eta: 0 day 00:10:04  time: 0.2248  lr: 1.0000e-02  loss: 1.8284  loss_cls: 0.9660  loss_bbox: 0.5489  loss_dfl: 0.3136
+2025-05-26 14:35:14,855 - jittordet - INFO - Epoch [ 7/12] Iter [ 60/456]  eta: 0 day 00:10:01  time: 0.2248  lr: 1.0000e-02  loss: 1.8208  loss_cls: 0.9428  loss_bbox: 0.5562  loss_dfl: 0.3218
+2025-05-26 14:35:17,139 - jittordet - INFO - Epoch [ 7/12] Iter [ 70/456]  eta: 0 day 00:09:59  time: 0.2248  lr: 1.0000e-02  loss: 1.8676  loss_cls: 0.9771  loss_bbox: 0.5641  loss_dfl: 0.3263
+2025-05-26 14:35:19,373 - jittordet - INFO - Epoch [ 7/12] Iter [ 80/456]  eta: 0 day 00:09:57  time: 0.2248  lr: 1.0000e-02  loss: 1.8330  loss_cls: 0.8052  loss_bbox: 0.6971  loss_dfl: 0.3307
+2025-05-26 14:35:19,373 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:21,656 - jittordet - INFO - Epoch [ 7/12] Iter [ 90/456]  eta: 0 day 00:09:55  time: 0.2249  lr: 1.0000e-02  loss: 1.8093  loss_cls: 0.9719  loss_bbox: 0.5311  loss_dfl: 0.3063
+2025-05-26 14:35:23,931 - jittordet - INFO - Epoch [ 7/12] Iter [100/456]  eta: 0 day 00:09:53  time: 0.2250  lr: 1.0000e-02  loss: 1.8292  loss_cls: 0.9903  loss_bbox: 0.5250  loss_dfl: 0.3139
+2025-05-26 14:35:23,932 - jittordet - INFO - (train) [ 7/12][100/456]  eta: 0 day 00:09:53  time: 0.2250  lr: 1.0000e-02  loss: 1.8320  loss_cls: 0.9374  loss_bbox: 0.5747  loss_dfl: 0.3198
+2025-05-26 14:35:26,184 - jittordet - INFO - Epoch [ 7/12] Iter [110/456]  eta: 0 day 00:09:50  time: 0.2250  lr: 1.0000e-02  loss: 1.8514  loss_cls: 0.9458  loss_bbox: 0.5858  loss_dfl: 0.3199
+2025-05-26 14:35:28,450 - jittordet - INFO - Epoch [ 7/12] Iter [120/456]  eta: 0 day 00:09:48  time: 0.2249  lr: 1.0000e-02  loss: 1.9072  loss_cls: 1.0854  loss_bbox: 0.5148  loss_dfl: 0.3070
+2025-05-26 14:35:28,450 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:30,705 - jittordet - INFO - Epoch [ 7/12] Iter [130/456]  eta: 0 day 00:09:46  time: 0.2250  lr: 1.0000e-02  loss: 1.9627  loss_cls: 1.1062  loss_bbox: 0.5507  loss_dfl: 0.3058
+2025-05-26 14:35:32,952 - jittordet - INFO - Epoch [ 7/12] Iter [140/456]  eta: 0 day 00:09:44  time: 0.2250  lr: 1.0000e-02  loss: 1.9560  loss_cls: 1.0531  loss_bbox: 0.5768  loss_dfl: 0.3261
+2025-05-26 14:35:35,234 - jittordet - INFO - Epoch [ 7/12] Iter [150/456]  eta: 0 day 00:09:42  time: 0.2250  lr: 1.0000e-02  loss: 1.8589  loss_cls: 0.9589  loss_bbox: 0.5786  loss_dfl: 0.3214
+2025-05-26 14:35:35,234 - jittordet - INFO - (train) [ 7/12][150/456]  eta: 0 day 00:09:42  time: 0.2251  lr: 1.0000e-02  loss: 1.9073  loss_cls: 1.0299  loss_bbox: 0.5613  loss_dfl: 0.3160
+2025-05-26 14:35:37,447 - jittordet - INFO - Epoch [ 7/12] Iter [160/456]  eta: 0 day 00:09:39  time: 0.2250  lr: 1.0000e-02  loss: 1.8360  loss_cls: 0.9075  loss_bbox: 0.6089  loss_dfl: 0.3196
+2025-05-26 14:35:37,447 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:39,693 - jittordet - INFO - Epoch [ 7/12] Iter [170/456]  eta: 0 day 00:09:37  time: 0.2249  lr: 1.0000e-02  loss: 1.8907  loss_cls: 0.9636  loss_bbox: 0.5971  loss_dfl: 0.3300
+2025-05-26 14:35:41,995 - jittordet - INFO - Epoch [ 7/12] Iter [180/456]  eta: 0 day 00:09:35  time: 0.2249  lr: 1.0000e-02  loss: 1.8690  loss_cls: 1.0397  loss_bbox: 0.5254  loss_dfl: 0.3038
+2025-05-26 14:35:44,258 - jittordet - INFO - Epoch [ 7/12] Iter [190/456]  eta: 0 day 00:09:32  time: 0.2249  lr: 1.0000e-02  loss: 1.9498  loss_cls: 0.9893  loss_bbox: 0.6156  loss_dfl: 0.3450
+2025-05-26 14:35:46,530 - jittordet - INFO - Epoch [ 7/12] Iter [200/456]  eta: 0 day 00:09:30  time: 0.2250  lr: 1.0000e-02  loss: 1.8019  loss_cls: 0.8781  loss_bbox: 0.5984  loss_dfl: 0.3254
+2025-05-26 14:35:46,530 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:46,530 - jittordet - INFO - (train) [ 7/12][200/456]  eta: 0 day 00:09:30  time: 0.2250  lr: 1.0000e-02  loss: 1.8695  loss_cls: 0.9556  loss_bbox: 0.5891  loss_dfl: 0.3248
+2025-05-26 14:35:48,859 - jittordet - INFO - Epoch [ 7/12] Iter [210/456]  eta: 0 day 00:09:28  time: 0.2250  lr: 1.0000e-02  loss: 1.9001  loss_cls: 0.9924  loss_bbox: 0.5821  loss_dfl: 0.3257
+2025-05-26 14:35:51,116 - jittordet - INFO - Epoch [ 7/12] Iter [220/456]  eta: 0 day 00:09:26  time: 0.2250  lr: 1.0000e-02  loss: 2.0125  loss_cls: 1.0596  loss_bbox: 0.6061  loss_dfl: 0.3467
+2025-05-26 14:35:53,345 - jittordet - INFO - Epoch [ 7/12] Iter [230/456]  eta: 0 day 00:09:23  time: 0.2249  lr: 1.0000e-02  loss: 1.7987  loss_cls: 0.9528  loss_bbox: 0.5257  loss_dfl: 0.3202
+2025-05-26 14:35:55,577 - jittordet - INFO - Epoch [ 7/12] Iter [240/456]  eta: 0 day 00:09:21  time: 0.2249  lr: 1.0000e-02  loss: 1.9090  loss_cls: 1.0654  loss_bbox: 0.5177  loss_dfl: 0.3259
+2025-05-26 14:35:55,578 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:35:57,810 - jittordet - INFO - Epoch [ 7/12] Iter [250/456]  eta: 0 day 00:09:19  time: 0.2249  lr: 1.0000e-02  loss: 1.7301  loss_cls: 0.8257  loss_bbox: 0.5924  loss_dfl: 0.3120
+2025-05-26 14:35:57,810 - jittordet - INFO - (train) [ 7/12][250/456]  eta: 0 day 00:09:19  time: 0.2250  lr: 1.0000e-02  loss: 1.8701  loss_cls: 0.9792  loss_bbox: 0.5648  loss_dfl: 0.3261
+2025-05-26 14:36:00,081 - jittordet - INFO - Epoch [ 7/12] Iter [260/456]  eta: 0 day 00:09:17  time: 0.2249  lr: 1.0000e-02  loss: 1.9191  loss_cls: 1.0248  loss_bbox: 0.5633  loss_dfl: 0.3311
+2025-05-26 14:36:02,324 - jittordet - INFO - Epoch [ 7/12] Iter [270/456]  eta: 0 day 00:09:14  time: 0.2249  lr: 1.0000e-02  loss: 1.8750  loss_cls: 0.9219  loss_bbox: 0.6059  loss_dfl: 0.3472
+2025-05-26 14:36:04,587 - jittordet - INFO - Epoch [ 7/12] Iter [280/456]  eta: 0 day 00:09:12  time: 0.2249  lr: 1.0000e-02  loss: 1.9430  loss_cls: 0.9858  loss_bbox: 0.6140  loss_dfl: 0.3433
+2025-05-26 14:36:04,587 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:06,810 - jittordet - INFO - Epoch [ 7/12] Iter [290/456]  eta: 0 day 00:09:10  time: 0.2249  lr: 1.0000e-02  loss: 1.8268  loss_cls: 0.7984  loss_bbox: 0.6697  loss_dfl: 0.3588
+2025-05-26 14:36:09,065 - jittordet - INFO - Epoch [ 7/12] Iter [300/456]  eta: 0 day 00:09:07  time: 0.2248  lr: 1.0000e-02  loss: 1.7626  loss_cls: 0.8891  loss_bbox: 0.5548  loss_dfl: 0.3186
+2025-05-26 14:36:09,066 - jittordet - INFO - (train) [ 7/12][300/456]  eta: 0 day 00:09:08  time: 0.2249  lr: 1.0000e-02  loss: 1.8653  loss_cls: 0.9240  loss_bbox: 0.6015  loss_dfl: 0.3398
+2025-05-26 14:36:09,066 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:11,337 - jittordet - INFO - Epoch [ 7/12] Iter [310/456]  eta: 0 day 00:09:05  time: 0.2248  lr: 1.0000e-02  loss: 1.8277  loss_cls: 0.9723  loss_bbox: 0.5356  loss_dfl: 0.3198
+2025-05-26 14:36:13,628 - jittordet - INFO - Epoch [ 7/12] Iter [320/456]  eta: 0 day 00:09:03  time: 0.2248  lr: 1.0000e-02  loss: 1.9080  loss_cls: 1.1209  loss_bbox: 0.4880  loss_dfl: 0.2992
+2025-05-26 14:36:13,628 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:15,926 - jittordet - INFO - Epoch [ 7/12] Iter [330/456]  eta: 0 day 00:09:01  time: 0.2249  lr: 1.0000e-02  loss: 1.7346  loss_cls: 0.9087  loss_bbox: 0.5248  loss_dfl: 0.3012
+2025-05-26 14:36:18,180 - jittordet - INFO - Epoch [ 7/12] Iter [340/456]  eta: 0 day 00:08:58  time: 0.2248  lr: 1.0000e-02  loss: 1.9264  loss_cls: 0.8983  loss_bbox: 0.6849  loss_dfl: 0.3431
+2025-05-26 14:36:20,391 - jittordet - INFO - Epoch [ 7/12] Iter [350/456]  eta: 0 day 00:08:56  time: 0.2248  lr: 1.0000e-02  loss: 1.7350  loss_cls: 0.9934  loss_bbox: 0.4579  loss_dfl: 0.2837
+2025-05-26 14:36:20,391 - jittordet - INFO - (train) [ 7/12][350/456]  eta: 0 day 00:08:56  time: 0.2249  lr: 1.0000e-02  loss: 1.8263  loss_cls: 0.9787  loss_bbox: 0.5382  loss_dfl: 0.3094
+2025-05-26 14:36:22,718 - jittordet - INFO - Epoch [ 7/12] Iter [360/456]  eta: 0 day 00:08:54  time: 0.2247  lr: 1.0000e-02  loss: 1.8734  loss_cls: 0.9364  loss_bbox: 0.6148  loss_dfl: 0.3222
+2025-05-26 14:36:22,718 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:24,978 - jittordet - INFO - Epoch [ 7/12] Iter [370/456]  eta: 0 day 00:08:51  time: 0.2246  lr: 1.0000e-02  loss: 1.8282  loss_cls: 1.0475  loss_bbox: 0.4838  loss_dfl: 0.2969
+2025-05-26 14:36:27,314 - jittordet - INFO - Epoch [ 7/12] Iter [380/456]  eta: 0 day 00:08:49  time: 0.2247  lr: 1.0000e-02  loss: 1.8163  loss_cls: 0.9076  loss_bbox: 0.5869  loss_dfl: 0.3218
+2025-05-26 14:36:29,577 - jittordet - INFO - Epoch [ 7/12] Iter [390/456]  eta: 0 day 00:08:47  time: 0.2247  lr: 1.0000e-02  loss: 1.8775  loss_cls: 0.9303  loss_bbox: 0.6181  loss_dfl: 0.3291
+2025-05-26 14:36:31,888 - jittordet - INFO - Epoch [ 7/12] Iter [400/456]  eta: 0 day 00:08:45  time: 0.2247  lr: 1.0000e-02  loss: 1.7701  loss_cls: 0.8084  loss_bbox: 0.6282  loss_dfl: 0.3335
+2025-05-26 14:36:31,888 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:31,888 - jittordet - INFO - (train) [ 7/12][400/456]  eta: 0 day 00:08:45  time: 0.2248  lr: 1.0000e-02  loss: 1.8331  loss_cls: 0.9261  loss_bbox: 0.5863  loss_dfl: 0.3207
+2025-05-26 14:36:34,148 - jittordet - INFO - Epoch [ 7/12] Iter [410/456]  eta: 0 day 00:08:42  time: 0.2247  lr: 1.0000e-02  loss: 1.8186  loss_cls: 0.8790  loss_bbox: 0.6129  loss_dfl: 0.3268
+2025-05-26 14:36:36,390 - jittordet - INFO - Epoch [ 7/12] Iter [420/456]  eta: 0 day 00:08:40  time: 0.2247  lr: 1.0000e-02  loss: 1.7401  loss_cls: 0.9460  loss_bbox: 0.5017  loss_dfl: 0.2924
+2025-05-26 14:36:38,727 - jittordet - INFO - Epoch [ 7/12] Iter [430/456]  eta: 0 day 00:08:38  time: 0.2247  lr: 1.0000e-02  loss: 1.7751  loss_cls: 0.9015  loss_bbox: 0.5486  loss_dfl: 0.3250
+2025-05-26 14:36:41,000 - jittordet - INFO - Epoch [ 7/12] Iter [440/456]  eta: 0 day 00:08:36  time: 0.2247  lr: 1.0000e-02  loss: 1.8574  loss_cls: 0.9809  loss_bbox: 0.5780  loss_dfl: 0.2985
+2025-05-26 14:36:41,001 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:36:43,226 - jittordet - INFO - Epoch [ 7/12] Iter [450/456]  eta: 0 day 00:08:33  time: 0.2246  lr: 1.0000e-02  loss: 1.8675  loss_cls: 1.0543  loss_bbox: 0.5180  loss_dfl: 0.2952
+2025-05-26 14:36:43,226 - jittordet - INFO - (train) [ 7/12][450/456]  eta: 0 day 00:08:33  time: 0.2247  lr: 1.0000e-02  loss: 1.8117  loss_cls: 0.9523  loss_bbox: 0.5518  loss_dfl: 0.3076
+2025-05-26 14:36:47,272 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_7.pkl
+2025-05-26 14:36:48,173 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:01  time: 0.0913
+2025-05-26 14:36:49,064 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0910
+2025-05-26 14:36:49,135 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:36:49,870 - jittordet - INFO - bbox_mAP: 0.030  bbox_mAP_50: 0.050  bbox_mAP_75: 0.034  bbox_mAP_s: 0.011  bbox_mAP_m: 0.029  bbox_mAP_l: 0.074
+2025-05-26 14:36:49,870 - jittordet - INFO - bbox_mAP: 0.030  bbox_mAP_50: 0.050  bbox_mAP_75: 0.034  bbox_mAP_s: 0.011  bbox_mAP_m: 0.029  bbox_mAP_l: 0.074
+2025-05-26 14:36:52,027 - jittordet - INFO - Epoch [ 8/12] Iter [ 10/456]  eta: 0 day 00:08:30  time: 0.2246  lr: 1.0000e-02  loss: 1.7211  loss_cls: 0.8513  loss_bbox: 0.5634  loss_dfl: 0.3064
+2025-05-26 14:36:54,335 - jittordet - INFO - Epoch [ 8/12] Iter [ 20/456]  eta: 0 day 00:08:27  time: 0.2247  lr: 1.0000e-02  loss: 1.5764  loss_cls: 0.6979  loss_bbox: 0.5771  loss_dfl: 0.3014
+2025-05-26 14:36:56,625 - jittordet - INFO - Epoch [ 8/12] Iter [ 30/456]  eta: 0 day 00:08:25  time: 0.2247  lr: 1.0000e-02  loss: 1.7186  loss_cls: 0.9194  loss_bbox: 0.5097  loss_dfl: 0.2895
+2025-05-26 14:36:58,863 - jittordet - INFO - Epoch [ 8/12] Iter [ 40/456]  eta: 0 day 00:08:23  time: 0.2246  lr: 1.0000e-02  loss: 1.8351  loss_cls: 1.1139  loss_bbox: 0.4452  loss_dfl: 0.2760
+2025-05-26 14:36:58,863 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:01,077 - jittordet - INFO - Epoch [ 8/12] Iter [ 50/456]  eta: 0 day 00:08:20  time: 0.2246  lr: 1.0000e-02  loss: 1.8978  loss_cls: 1.0476  loss_bbox: 0.5441  loss_dfl: 0.3061
+2025-05-26 14:37:01,078 - jittordet - INFO - (train) [ 8/12][ 50/456]  eta: 0 day 00:08:21  time: 0.2246  lr: 1.0000e-02  loss: 1.7498  loss_cls: 0.9260  loss_bbox: 0.5279  loss_dfl: 0.2959
+2025-05-26 14:37:03,333 - jittordet - INFO - Epoch [ 8/12] Iter [ 60/456]  eta: 0 day 00:08:18  time: 0.2245  lr: 1.0000e-02  loss: 1.8589  loss_cls: 0.9535  loss_bbox: 0.5922  loss_dfl: 0.3132
+2025-05-26 14:37:05,616 - jittordet - INFO - Epoch [ 8/12] Iter [ 70/456]  eta: 0 day 00:08:16  time: 0.2245  lr: 1.0000e-02  loss: 1.8600  loss_cls: 0.9900  loss_bbox: 0.5554  loss_dfl: 0.3146
+2025-05-26 14:37:07,773 - jittordet - INFO - Epoch [ 8/12] Iter [ 80/456]  eta: 0 day 00:08:13  time: 0.2244  lr: 1.0000e-02  loss: 1.8773  loss_cls: 1.1346  loss_bbox: 0.4593  loss_dfl: 0.2834
+2025-05-26 14:37:07,773 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:10,143 - jittordet - INFO - Epoch [ 8/12] Iter [ 90/456]  eta: 0 day 00:08:12  time: 0.2246  lr: 1.0000e-02  loss: 1.8734  loss_cls: 1.0011  loss_bbox: 0.5541  loss_dfl: 0.3182
+2025-05-26 14:37:12,515 - jittordet - INFO - Epoch [ 8/12] Iter [100/456]  eta: 0 day 00:08:10  time: 0.2247  lr: 1.0000e-02  loss: 1.7141  loss_cls: 0.8817  loss_bbox: 0.5291  loss_dfl: 0.3033
+2025-05-26 14:37:12,516 - jittordet - INFO - (train) [ 8/12][100/456]  eta: 0 day 00:08:10  time: 0.2248  lr: 1.0000e-02  loss: 1.8367  loss_cls: 0.9922  loss_bbox: 0.5380  loss_dfl: 0.3065
+2025-05-26 14:37:14,778 - jittordet - INFO - Epoch [ 8/12] Iter [110/456]  eta: 0 day 00:08:07  time: 0.2247  lr: 1.0000e-02  loss: 1.8611  loss_cls: 1.0189  loss_bbox: 0.5219  loss_dfl: 0.3203
+2025-05-26 14:37:17,035 - jittordet - INFO - Epoch [ 8/12] Iter [120/456]  eta: 0 day 00:08:05  time: 0.2247  lr: 1.0000e-02  loss: 1.8488  loss_cls: 0.9186  loss_bbox: 0.6061  loss_dfl: 0.3241
+2025-05-26 14:37:17,035 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:19,351 - jittordet - INFO - Epoch [ 8/12] Iter [130/456]  eta: 0 day 00:08:03  time: 0.2247  lr: 1.0000e-02  loss: 1.8425  loss_cls: 0.9408  loss_bbox: 0.5689  loss_dfl: 0.3328
+2025-05-26 14:37:21,662 - jittordet - INFO - Epoch [ 8/12] Iter [140/456]  eta: 0 day 00:08:01  time: 0.2248  lr: 1.0000e-02  loss: 1.6966  loss_cls: 0.8769  loss_bbox: 0.5299  loss_dfl: 0.2897
+2025-05-26 14:37:23,963 - jittordet - INFO - Epoch [ 8/12] Iter [150/456]  eta: 0 day 00:07:59  time: 0.2248  lr: 1.0000e-02  loss: 1.7110  loss_cls: 0.9753  loss_bbox: 0.4540  loss_dfl: 0.2817
+2025-05-26 14:37:23,964 - jittordet - INFO - (train) [ 8/12][150/456]  eta: 0 day 00:07:59  time: 0.2249  lr: 1.0000e-02  loss: 1.7920  loss_cls: 0.9461  loss_bbox: 0.5362  loss_dfl: 0.3097
+2025-05-26 14:37:26,212 - jittordet - INFO - Epoch [ 8/12] Iter [160/456]  eta: 0 day 00:07:56  time: 0.2249  lr: 1.0000e-02  loss: 1.7530  loss_cls: 0.9505  loss_bbox: 0.5110  loss_dfl: 0.2916
+2025-05-26 14:37:26,212 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:28,504 - jittordet - INFO - Epoch [ 8/12] Iter [170/456]  eta: 0 day 00:07:54  time: 0.2249  lr: 1.0000e-02  loss: 1.8917  loss_cls: 1.0325  loss_bbox: 0.5454  loss_dfl: 0.3137
+2025-05-26 14:37:30,805 - jittordet - INFO - Epoch [ 8/12] Iter [180/456]  eta: 0 day 00:07:52  time: 0.2249  lr: 1.0000e-02  loss: 1.6998  loss_cls: 0.9285  loss_bbox: 0.4835  loss_dfl: 0.2878
+2025-05-26 14:37:33,104 - jittordet - INFO - Epoch [ 8/12] Iter [190/456]  eta: 0 day 00:07:50  time: 0.2250  lr: 1.0000e-02  loss: 1.8880  loss_cls: 1.0365  loss_bbox: 0.5354  loss_dfl: 0.3161
+2025-05-26 14:37:35,347 - jittordet - INFO - Epoch [ 8/12] Iter [200/456]  eta: 0 day 00:07:48  time: 0.2249  lr: 1.0000e-02  loss: 1.7626  loss_cls: 0.8621  loss_bbox: 0.5895  loss_dfl: 0.3110
+2025-05-26 14:37:35,347 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:35,347 - jittordet - INFO - (train) [ 8/12][200/456]  eta: 0 day 00:07:48  time: 0.2250  lr: 1.0000e-02  loss: 1.7990  loss_cls: 0.9620  loss_bbox: 0.5330  loss_dfl: 0.3040
+2025-05-26 14:37:37,590 - jittordet - INFO - Epoch [ 8/12] Iter [210/456]  eta: 0 day 00:07:45  time: 0.2249  lr: 1.0000e-02  loss: 1.8091  loss_cls: 0.8506  loss_bbox: 0.6354  loss_dfl: 0.3230
+2025-05-26 14:37:39,852 - jittordet - INFO - Epoch [ 8/12] Iter [220/456]  eta: 0 day 00:07:43  time: 0.2249  lr: 1.0000e-02  loss: 1.8690  loss_cls: 1.0006  loss_bbox: 0.5585  loss_dfl: 0.3100
+2025-05-26 14:37:42,120 - jittordet - INFO - Epoch [ 8/12] Iter [230/456]  eta: 0 day 00:07:41  time: 0.2249  lr: 1.0000e-02  loss: 1.7774  loss_cls: 0.9175  loss_bbox: 0.5558  loss_dfl: 0.3042
+2025-05-26 14:37:44,396 - jittordet - INFO - Epoch [ 8/12] Iter [240/456]  eta: 0 day 00:07:39  time: 0.2250  lr: 1.0000e-02  loss: 1.8477  loss_cls: 1.0243  loss_bbox: 0.5254  loss_dfl: 0.2980
+2025-05-26 14:37:44,396 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:46,700 - jittordet - INFO - Epoch [ 8/12] Iter [250/456]  eta: 0 day 00:07:36  time: 0.2250  lr: 1.0000e-02  loss: 1.7641  loss_cls: 0.8473  loss_bbox: 0.5862  loss_dfl: 0.3306
+2025-05-26 14:37:46,700 - jittordet - INFO - (train) [ 8/12][250/456]  eta: 0 day 00:07:37  time: 0.2251  lr: 1.0000e-02  loss: 1.8135  loss_cls: 0.9281  loss_bbox: 0.5723  loss_dfl: 0.3132
+2025-05-26 14:37:48,925 - jittordet - INFO - Epoch [ 8/12] Iter [260/456]  eta: 0 day 00:07:34  time: 0.2249  lr: 1.0000e-02  loss: 1.7221  loss_cls: 0.8679  loss_bbox: 0.5411  loss_dfl: 0.3131
+2025-05-26 14:37:51,206 - jittordet - INFO - Epoch [ 8/12] Iter [270/456]  eta: 0 day 00:07:32  time: 0.2249  lr: 1.0000e-02  loss: 1.8353  loss_cls: 1.0247  loss_bbox: 0.5012  loss_dfl: 0.3094
+2025-05-26 14:37:53,395 - jittordet - INFO - Epoch [ 8/12] Iter [280/456]  eta: 0 day 00:07:29  time: 0.2248  lr: 1.0000e-02  loss: 1.9275  loss_cls: 1.0845  loss_bbox: 0.5356  loss_dfl: 0.3074
+2025-05-26 14:37:53,395 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:37:55,659 - jittordet - INFO - Epoch [ 8/12] Iter [290/456]  eta: 0 day 00:07:27  time: 0.2247  lr: 1.0000e-02  loss: 1.7664  loss_cls: 0.9650  loss_bbox: 0.4962  loss_dfl: 0.3051
+2025-05-26 14:37:57,876 - jittordet - INFO - Epoch [ 8/12] Iter [300/456]  eta: 0 day 00:07:25  time: 0.2247  lr: 1.0000e-02  loss: 1.9284  loss_cls: 1.0589  loss_bbox: 0.5532  loss_dfl: 0.3163
+2025-05-26 14:37:57,877 - jittordet - INFO - (train) [ 8/12][300/456]  eta: 0 day 00:07:25  time: 0.2248  lr: 1.0000e-02  loss: 1.8359  loss_cls: 1.0002  loss_bbox: 0.5255  loss_dfl: 0.3103
+2025-05-26 14:37:57,877 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:00,165 - jittordet - INFO - Epoch [ 8/12] Iter [310/456]  eta: 0 day 00:07:23  time: 0.2248  lr: 1.0000e-02  loss: 1.8544  loss_cls: 0.9008  loss_bbox: 0.6173  loss_dfl: 0.3363
+2025-05-26 14:38:02,486 - jittordet - INFO - Epoch [ 8/12] Iter [320/456]  eta: 0 day 00:07:20  time: 0.2248  lr: 1.0000e-02  loss: 1.9204  loss_cls: 1.0274  loss_bbox: 0.5667  loss_dfl: 0.3263
+2025-05-26 14:38:02,486 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:04,727 - jittordet - INFO - Epoch [ 8/12] Iter [330/456]  eta: 0 day 00:07:18  time: 0.2247  lr: 1.0000e-02  loss: 1.8050  loss_cls: 0.9968  loss_bbox: 0.5103  loss_dfl: 0.2978
+2025-05-26 14:38:06,964 - jittordet - INFO - Epoch [ 8/12] Iter [340/456]  eta: 0 day 00:07:16  time: 0.2246  lr: 1.0000e-02  loss: 1.7447  loss_cls: 0.9263  loss_bbox: 0.5111  loss_dfl: 0.3073
+2025-05-26 14:38:09,265 - jittordet - INFO - Epoch [ 8/12] Iter [350/456]  eta: 0 day 00:07:13  time: 0.2247  lr: 1.0000e-02  loss: 2.0010  loss_cls: 1.1205  loss_bbox: 0.5659  loss_dfl: 0.3146
+2025-05-26 14:38:09,265 - jittordet - INFO - (train) [ 8/12][350/456]  eta: 0 day 00:07:14  time: 0.2248  lr: 1.0000e-02  loss: 1.8651  loss_cls: 0.9944  loss_bbox: 0.5543  loss_dfl: 0.3165
+2025-05-26 14:38:11,518 - jittordet - INFO - Epoch [ 8/12] Iter [360/456]  eta: 0 day 00:07:11  time: 0.2247  lr: 1.0000e-02  loss: 1.9086  loss_cls: 1.0991  loss_bbox: 0.5112  loss_dfl: 0.2983
+2025-05-26 14:38:11,518 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:13,857 - jittordet - INFO - Epoch [ 8/12] Iter [370/456]  eta: 0 day 00:07:09  time: 0.2247  lr: 1.0000e-02  loss: 1.8040  loss_cls: 0.8439  loss_bbox: 0.6336  loss_dfl: 0.3264
+2025-05-26 14:38:16,115 - jittordet - INFO - Epoch [ 8/12] Iter [380/456]  eta: 0 day 00:07:07  time: 0.2247  lr: 1.0000e-02  loss: 1.8363  loss_cls: 1.0587  loss_bbox: 0.4966  loss_dfl: 0.2811
+2025-05-26 14:38:18,419 - jittordet - INFO - Epoch [ 8/12] Iter [390/456]  eta: 0 day 00:07:04  time: 0.2247  lr: 1.0000e-02  loss: 1.9116  loss_cls: 1.0741  loss_bbox: 0.5382  loss_dfl: 0.2993
+2025-05-26 14:38:20,746 - jittordet - INFO - Epoch [ 8/12] Iter [400/456]  eta: 0 day 00:07:02  time: 0.2247  lr: 1.0000e-02  loss: 1.8498  loss_cls: 1.0370  loss_bbox: 0.5094  loss_dfl: 0.3033
+2025-05-26 14:38:20,747 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:20,747 - jittordet - INFO - (train) [ 8/12][400/456]  eta: 0 day 00:07:02  time: 0.2248  lr: 1.0000e-02  loss: 1.8620  loss_cls: 1.0226  loss_bbox: 0.5378  loss_dfl: 0.3017
+2025-05-26 14:38:23,005 - jittordet - INFO - Epoch [ 8/12] Iter [410/456]  eta: 0 day 00:07:00  time: 0.2247  lr: 1.0000e-02  loss: 1.7591  loss_cls: 0.9456  loss_bbox: 0.5149  loss_dfl: 0.2985
+2025-05-26 14:38:25,263 - jittordet - INFO - Epoch [ 8/12] Iter [420/456]  eta: 0 day 00:06:58  time: 0.2247  lr: 1.0000e-02  loss: 1.8712  loss_cls: 0.9781  loss_bbox: 0.5850  loss_dfl: 0.3081
+2025-05-26 14:38:27,567 - jittordet - INFO - Epoch [ 8/12] Iter [430/456]  eta: 0 day 00:06:56  time: 0.2248  lr: 1.0000e-02  loss: 1.8525  loss_cls: 0.9609  loss_bbox: 0.5721  loss_dfl: 0.3196
+2025-05-26 14:38:29,841 - jittordet - INFO - Epoch [ 8/12] Iter [440/456]  eta: 0 day 00:06:53  time: 0.2248  lr: 1.0000e-02  loss: 1.6822  loss_cls: 0.8212  loss_bbox: 0.5494  loss_dfl: 0.3116
+2025-05-26 14:38:29,841 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:32,117 - jittordet - INFO - Epoch [ 8/12] Iter [450/456]  eta: 0 day 00:06:51  time: 0.2248  lr: 1.0000e-02  loss: 1.7011  loss_cls: 0.7208  loss_bbox: 0.6571  loss_dfl: 0.3232
+2025-05-26 14:38:32,117 - jittordet - INFO - (train) [ 8/12][450/456]  eta: 0 day 00:06:51  time: 0.2249  lr: 1.0000e-02  loss: 1.7732  loss_cls: 0.8853  loss_bbox: 0.5757  loss_dfl: 0.3122
+2025-05-26 14:38:36,112 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_8.pkl
+2025-05-26 14:38:37,006 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:00  time: 0.0908
+2025-05-26 14:38:37,894 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0905
+2025-05-26 14:38:37,966 - jittordet - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.21s).
+Accumulating evaluation results...
+DONE (t=0.25s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.006
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.002
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.006
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.006
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.007
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.050
+Loading and preparing results...
+DONE (t=0.08s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.22s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.001
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.003
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.005
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.011
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.011
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.011
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.006
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.064
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.34s).
+Accumulating evaluation results...
+DONE (t=0.27s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.002
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.004
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.002
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.002
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.012
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.010
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.040
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.040
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.040
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.004
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.018
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.107
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.38s).
+Accumulating evaluation results...
+DONE (t=0.27s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.016
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.031
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.018
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.004
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.038
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.032
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.010
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.079
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.116
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.26s).
+Accumulating evaluation results...
+DONE (t=0.29s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.015
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.032
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.012
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.008
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.015
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.046
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.058
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.012
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.066
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.146
+Loading and preparing results...
+DONE (t=0.07s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.31s).
+Accumulating evaluation results...
+DONE (t=0.29s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.016
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.029
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.014
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.009
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.025
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.053
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.081
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.081
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.081
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.011
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.060
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.236
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.41s).
+Accumulating evaluation results...
+DONE (t=0.29s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.050
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.034
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.011
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.029
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.074
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.091
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.091
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.091
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.020
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.069
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.217
+Loading and preparing results...2025-05-26 14:38:38,677 - jittordet - INFO - bbox_mAP: 0.030  bbox_mAP_50: 0.054  bbox_mAP_75: 0.035  bbox_mAP_s: 0.021  bbox_mAP_m: 0.057  bbox_mAP_l: 0.072
+2025-05-26 14:38:38,678 - jittordet - INFO - bbox_mAP: 0.030  bbox_mAP_50: 0.054  bbox_mAP_75: 0.035  bbox_mAP_s: 0.021  bbox_mAP_m: 0.057  bbox_mAP_l: 0.072
+2025-05-26 14:38:40,896 - jittordet - INFO - Epoch [ 9/12] Iter [ 10/456]  eta: 0 day 00:06:47  time: 0.2247  lr: 1.0000e-03  loss: 1.7733  loss_cls: 0.9603  loss_bbox: 0.5143  loss_dfl: 0.2987
+2025-05-26 14:38:43,199 - jittordet - INFO - Epoch [ 9/12] Iter [ 20/456]  eta: 0 day 00:06:45  time: 0.2247  lr: 1.0000e-03  loss: 1.7681  loss_cls: 1.0588  loss_bbox: 0.4331  loss_dfl: 0.2761
+2025-05-26 14:38:45,498 - jittordet - INFO - Epoch [ 9/12] Iter [ 30/456]  eta: 0 day 00:06:43  time: 0.2247  lr: 1.0000e-03  loss: 1.6364  loss_cls: 0.8894  loss_bbox: 0.4691  loss_dfl: 0.2780
+2025-05-26 14:38:47,806 - jittordet - INFO - Epoch [ 9/12] Iter [ 40/456]  eta: 0 day 00:06:41  time: 0.2247  lr: 1.0000e-03  loss: 1.6082  loss_cls: 0.8456  loss_bbox: 0.4800  loss_dfl: 0.2826
+2025-05-26 14:38:47,806 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:50,083 - jittordet - INFO - Epoch [ 9/12] Iter [ 50/456]  eta: 0 day 00:06:38  time: 0.2247  lr: 1.0000e-03  loss: 1.7254  loss_cls: 0.9913  loss_bbox: 0.4720  loss_dfl: 0.2621
+2025-05-26 14:38:50,083 - jittordet - INFO - (train) [ 9/12][ 50/456]  eta: 0 day 00:06:39  time: 0.2248  lr: 1.0000e-03  loss: 1.7023  loss_cls: 0.9491  loss_bbox: 0.4737  loss_dfl: 0.2795
+2025-05-26 14:38:52,358 - jittordet - INFO - Epoch [ 9/12] Iter [ 60/456]  eta: 0 day 00:06:36  time: 0.2248  lr: 1.0000e-03  loss: 1.6405  loss_cls: 0.9289  loss_bbox: 0.4437  loss_dfl: 0.2679
+2025-05-26 14:38:54,640 - jittordet - INFO - Epoch [ 9/12] Iter [ 70/456]  eta: 0 day 00:06:34  time: 0.2248  lr: 1.0000e-03  loss: 1.6339  loss_cls: 0.8945  loss_bbox: 0.4651  loss_dfl: 0.2742
+2025-05-26 14:38:56,945 - jittordet - INFO - Epoch [ 9/12] Iter [ 80/456]  eta: 0 day 00:06:32  time: 0.2248  lr: 1.0000e-03  loss: 1.6902  loss_cls: 0.9741  loss_bbox: 0.4496  loss_dfl: 0.2665
+2025-05-26 14:38:56,945 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:38:59,218 - jittordet - INFO - Epoch [ 9/12] Iter [ 90/456]  eta: 0 day 00:06:30  time: 0.2249  lr: 1.0000e-03  loss: 1.6512  loss_cls: 0.8875  loss_bbox: 0.4790  loss_dfl: 0.2847
+2025-05-26 14:39:01,519 - jittordet - INFO - Epoch [ 9/12] Iter [100/456]  eta: 0 day 00:06:27  time: 0.2249  lr: 1.0000e-03  loss: 1.8114  loss_cls: 0.9660  loss_bbox: 0.5379  loss_dfl: 0.3075
+2025-05-26 14:39:01,519 - jittordet - INFO - (train) [ 9/12][100/456]  eta: 0 day 00:06:28  time: 0.2250  lr: 1.0000e-03  loss: 1.6854  loss_cls: 0.9302  loss_bbox: 0.4751  loss_dfl: 0.2802
+2025-05-26 14:39:03,799 - jittordet - INFO - Epoch [ 9/12] Iter [110/456]  eta: 0 day 00:06:25  time: 0.2250  lr: 1.0000e-03  loss: 1.8121  loss_cls: 1.0228  loss_bbox: 0.5002  loss_dfl: 0.2891
+2025-05-26 14:39:06,046 - jittordet - INFO - Epoch [ 9/12] Iter [120/456]  eta: 0 day 00:06:23  time: 0.2250  lr: 1.0000e-03  loss: 1.5793  loss_cls: 0.8380  loss_bbox: 0.4692  loss_dfl: 0.2721
+2025-05-26 14:39:06,046 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:08,392 - jittordet - INFO - Epoch [ 9/12] Iter [130/456]  eta: 0 day 00:06:21  time: 0.2250  lr: 1.0000e-03  loss: 1.7040  loss_cls: 0.8634  loss_bbox: 0.5514  loss_dfl: 0.2892
+2025-05-26 14:39:10,732 - jittordet - INFO - Epoch [ 9/12] Iter [140/456]  eta: 0 day 00:06:19  time: 0.2251  lr: 1.0000e-03  loss: 1.6500  loss_cls: 0.9502  loss_bbox: 0.4359  loss_dfl: 0.2639
+2025-05-26 14:39:13,006 - jittordet - INFO - Epoch [ 9/12] Iter [150/456]  eta: 0 day 00:06:17  time: 0.2251  lr: 1.0000e-03  loss: 1.6096  loss_cls: 0.9363  loss_bbox: 0.4207  loss_dfl: 0.2526
+2025-05-26 14:39:13,006 - jittordet - INFO - (train) [ 9/12][150/456]  eta: 0 day 00:06:17  time: 0.2252  lr: 1.0000e-03  loss: 1.6710  loss_cls: 0.9222  loss_bbox: 0.4755  loss_dfl: 0.2734
+2025-05-26 14:39:15,271 - jittordet - INFO - Epoch [ 9/12] Iter [160/456]  eta: 0 day 00:06:14  time: 0.2251  lr: 1.0000e-03  loss: 1.7315  loss_cls: 0.9391  loss_bbox: 0.4953  loss_dfl: 0.2971
+2025-05-26 14:39:15,271 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:17,476 - jittordet - INFO - Epoch [ 9/12] Iter [170/456]  eta: 0 day 00:06:12  time: 0.2251  lr: 1.0000e-03  loss: 1.6485  loss_cls: 0.9281  loss_bbox: 0.4430  loss_dfl: 0.2774
+2025-05-26 14:39:19,822 - jittordet - INFO - Epoch [ 9/12] Iter [180/456]  eta: 0 day 00:06:10  time: 0.2251  lr: 1.0000e-03  loss: 1.7320  loss_cls: 0.9559  loss_bbox: 0.4864  loss_dfl: 0.2897
+2025-05-26 14:39:22,064 - jittordet - INFO - Epoch [ 9/12] Iter [190/456]  eta: 0 day 00:06:08  time: 0.2251  lr: 1.0000e-03  loss: 1.6635  loss_cls: 1.0393  loss_bbox: 0.3761  loss_dfl: 0.2480
+2025-05-26 14:39:24,365 - jittordet - INFO - Epoch [ 9/12] Iter [200/456]  eta: 0 day 00:06:05  time: 0.2251  lr: 1.0000e-03  loss: 1.7444  loss_cls: 1.0200  loss_bbox: 0.4447  loss_dfl: 0.2798
+2025-05-26 14:39:24,366 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:24,366 - jittordet - INFO - (train) [ 9/12][200/456]  eta: 0 day 00:06:05  time: 0.2252  lr: 1.0000e-03  loss: 1.7040  loss_cls: 0.9765  loss_bbox: 0.4491  loss_dfl: 0.2784
+2025-05-26 14:39:26,604 - jittordet - INFO - Epoch [ 9/12] Iter [210/456]  eta: 0 day 00:06:03  time: 0.2251  lr: 1.0000e-03  loss: 1.5389  loss_cls: 0.7996  loss_bbox: 0.4656  loss_dfl: 0.2737
+2025-05-26 14:39:28,852 - jittordet - INFO - Epoch [ 9/12] Iter [220/456]  eta: 0 day 00:06:01  time: 0.2251  lr: 1.0000e-03  loss: 1.5920  loss_cls: 0.8734  loss_bbox: 0.4466  loss_dfl: 0.2720
+2025-05-26 14:39:31,108 - jittordet - INFO - Epoch [ 9/12] Iter [230/456]  eta: 0 day 00:05:59  time: 0.2251  lr: 1.0000e-03  loss: 1.6861  loss_cls: 1.0439  loss_bbox: 0.3935  loss_dfl: 0.2487
+2025-05-26 14:39:33,412 - jittordet - INFO - Epoch [ 9/12] Iter [240/456]  eta: 0 day 00:05:56  time: 0.2251  lr: 1.0000e-03  loss: 1.7583  loss_cls: 0.9515  loss_bbox: 0.5157  loss_dfl: 0.2911
+2025-05-26 14:39:33,412 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:35,706 - jittordet - INFO - Epoch [ 9/12] Iter [250/456]  eta: 0 day 00:05:54  time: 0.2252  lr: 1.0000e-03  loss: 1.7039  loss_cls: 0.9767  loss_bbox: 0.4508  loss_dfl: 0.2764
+2025-05-26 14:39:35,706 - jittordet - INFO - (train) [ 9/12][250/456]  eta: 0 day 00:05:54  time: 0.2253  lr: 1.0000e-03  loss: 1.6558  loss_cls: 0.9290  loss_bbox: 0.4544  loss_dfl: 0.2724
+2025-05-26 14:39:37,949 - jittordet - INFO - Epoch [ 9/12] Iter [260/456]  eta: 0 day 00:05:52  time: 0.2252  lr: 1.0000e-03  loss: 1.5965  loss_cls: 0.8263  loss_bbox: 0.4958  loss_dfl: 0.2744
+2025-05-26 14:39:40,184 - jittordet - INFO - Epoch [ 9/12] Iter [270/456]  eta: 0 day 00:05:50  time: 0.2251  lr: 1.0000e-03  loss: 1.6530  loss_cls: 0.8853  loss_bbox: 0.4933  loss_dfl: 0.2744
+2025-05-26 14:39:42,543 - jittordet - INFO - Epoch [ 9/12] Iter [280/456]  eta: 0 day 00:05:48  time: 0.2253  lr: 1.0000e-03  loss: 1.7061  loss_cls: 1.0050  loss_bbox: 0.4306  loss_dfl: 0.2706
+2025-05-26 14:39:42,543 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:44,784 - jittordet - INFO - Epoch [ 9/12] Iter [290/456]  eta: 0 day 00:05:45  time: 0.2252  lr: 1.0000e-03  loss: 1.6372  loss_cls: 0.9235  loss_bbox: 0.4443  loss_dfl: 0.2694
+2025-05-26 14:39:47,058 - jittordet - INFO - Epoch [ 9/12] Iter [300/456]  eta: 0 day 00:05:43  time: 0.2252  lr: 1.0000e-03  loss: 1.5659  loss_cls: 0.8817  loss_bbox: 0.4231  loss_dfl: 0.2610
+2025-05-26 14:39:47,058 - jittordet - INFO - (train) [ 9/12][300/456]  eta: 0 day 00:05:43  time: 0.2253  lr: 1.0000e-03  loss: 1.6318  loss_cls: 0.9043  loss_bbox: 0.4574  loss_dfl: 0.2700
+2025-05-26 14:39:47,058 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:49,324 - jittordet - INFO - Epoch [ 9/12] Iter [310/456]  eta: 0 day 00:05:41  time: 0.2252  lr: 1.0000e-03  loss: 1.6533  loss_cls: 0.9422  loss_bbox: 0.4530  loss_dfl: 0.2581
+2025-05-26 14:39:51,592 - jittordet - INFO - Epoch [ 9/12] Iter [320/456]  eta: 0 day 00:05:38  time: 0.2252  lr: 1.0000e-03  loss: 1.5844  loss_cls: 0.7559  loss_bbox: 0.5318  loss_dfl: 0.2967
+2025-05-26 14:39:51,592 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:39:53,800 - jittordet - INFO - Epoch [ 9/12] Iter [330/456]  eta: 0 day 00:05:36  time: 0.2252  lr: 1.0000e-03  loss: 1.8322  loss_cls: 1.1460  loss_bbox: 0.4159  loss_dfl: 0.2702
+2025-05-26 14:39:56,075 - jittordet - INFO - Epoch [ 9/12] Iter [340/456]  eta: 0 day 00:05:34  time: 0.2252  lr: 1.0000e-03  loss: 1.5673  loss_cls: 0.8055  loss_bbox: 0.4804  loss_dfl: 0.2815
+2025-05-26 14:39:58,336 - jittordet - INFO - Epoch [ 9/12] Iter [350/456]  eta: 0 day 00:05:32  time: 0.2252  lr: 1.0000e-03  loss: 1.7115  loss_cls: 0.9364  loss_bbox: 0.4914  loss_dfl: 0.2837
+2025-05-26 14:39:58,337 - jittordet - INFO - (train) [ 9/12][350/456]  eta: 0 day 00:05:32  time: 0.2253  lr: 1.0000e-03  loss: 1.6697  loss_cls: 0.9172  loss_bbox: 0.4745  loss_dfl: 0.2780
+2025-05-26 14:40:00,648 - jittordet - INFO - Epoch [ 9/12] Iter [360/456]  eta: 0 day 00:05:30  time: 0.2253  lr: 1.0000e-03  loss: 1.6895  loss_cls: 0.7841  loss_bbox: 0.6057  loss_dfl: 0.2996
+2025-05-26 14:40:00,649 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:02,901 - jittordet - INFO - Epoch [ 9/12] Iter [370/456]  eta: 0 day 00:05:27  time: 0.2253  lr: 1.0000e-03  loss: 1.7535  loss_cls: 1.0746  loss_bbox: 0.4127  loss_dfl: 0.2662
+2025-05-26 14:40:05,150 - jittordet - INFO - Epoch [ 9/12] Iter [380/456]  eta: 0 day 00:05:25  time: 0.2253  lr: 1.0000e-03  loss: 1.6266  loss_cls: 0.8048  loss_bbox: 0.5387  loss_dfl: 0.2831
+2025-05-26 14:40:07,411 - jittordet - INFO - Epoch [ 9/12] Iter [390/456]  eta: 0 day 00:05:23  time: 0.2253  lr: 1.0000e-03  loss: 1.6081  loss_cls: 0.8173  loss_bbox: 0.5158  loss_dfl: 0.2749
+2025-05-26 14:40:09,661 - jittordet - INFO - Epoch [ 9/12] Iter [400/456]  eta: 0 day 00:05:21  time: 0.2253  lr: 1.0000e-03  loss: 1.8554  loss_cls: 1.1689  loss_bbox: 0.4176  loss_dfl: 0.2689
+2025-05-26 14:40:09,661 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:09,661 - jittordet - INFO - (train) [ 9/12][400/456]  eta: 0 day 00:05:21  time: 0.2254  lr: 1.0000e-03  loss: 1.7066  loss_cls: 0.9299  loss_bbox: 0.4981  loss_dfl: 0.2785
+2025-05-26 14:40:11,935 - jittordet - INFO - Epoch [ 9/12] Iter [410/456]  eta: 0 day 00:05:18  time: 0.2253  lr: 1.0000e-03  loss: 1.5679  loss_cls: 0.7464  loss_bbox: 0.5241  loss_dfl: 0.2974
+2025-05-26 14:40:14,232 - jittordet - INFO - Epoch [ 9/12] Iter [420/456]  eta: 0 day 00:05:16  time: 0.2253  lr: 1.0000e-03  loss: 1.6692  loss_cls: 0.9847  loss_bbox: 0.4181  loss_dfl: 0.2665
+2025-05-26 14:40:16,494 - jittordet - INFO - Epoch [ 9/12] Iter [430/456]  eta: 0 day 00:05:14  time: 0.2253  lr: 1.0000e-03  loss: 1.5511  loss_cls: 0.7764  loss_bbox: 0.5043  loss_dfl: 0.2704
+2025-05-26 14:40:18,788 - jittordet - INFO - Epoch [ 9/12] Iter [440/456]  eta: 0 day 00:05:12  time: 0.2253  lr: 1.0000e-03  loss: 1.5610  loss_cls: 0.7851  loss_bbox: 0.4989  loss_dfl: 0.2770
+2025-05-26 14:40:18,788 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:21,040 - jittordet - INFO - Epoch [ 9/12] Iter [450/456]  eta: 0 day 00:05:09  time: 0.2253  lr: 1.0000e-03  loss: 1.5408  loss_cls: 0.7506  loss_bbox: 0.5115  loss_dfl: 0.2788
+2025-05-26 14:40:21,040 - jittordet - INFO - (train) [ 9/12][450/456]  eta: 0 day 00:05:09  time: 0.2254  lr: 1.0000e-03  loss: 1.5780  loss_cls: 0.8086  loss_bbox: 0.4913  loss_dfl: 0.2780
+2025-05-26 14:40:25,158 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_9.pkl
+2025-05-26 14:40:26,078 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:00  time: 0.0905
+2025-05-26 14:40:26,975 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0903
+2025-05-26 14:40:27,048 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:40:27,817 - jittordet - INFO - bbox_mAP: 0.038  bbox_mAP_50: 0.071  bbox_mAP_75: 0.033  bbox_mAP_s: 0.038  bbox_mAP_m: 0.055  bbox_mAP_l: 0.098
+2025-05-26 14:40:27,818 - jittordet - INFO - bbox_mAP: 0.038  bbox_mAP_50: 0.071  bbox_mAP_75: 0.033  bbox_mAP_s: 0.038  bbox_mAP_m: 0.055  bbox_mAP_l: 0.098
+2025-05-26 14:40:29,940 - jittordet - INFO - Epoch [10/12] Iter [ 10/456]  eta: 0 day 00:05:05  time: 0.2251  lr: 1.0000e-03  loss: 1.6410  loss_cls: 1.0126  loss_bbox: 0.3795  loss_dfl: 0.2489
+2025-05-26 14:40:32,177 - jittordet - INFO - Epoch [10/12] Iter [ 20/456]  eta: 0 day 00:05:03  time: 0.2251  lr: 1.0000e-03  loss: 1.5814  loss_cls: 0.9375  loss_bbox: 0.3946  loss_dfl: 0.2494
+2025-05-26 14:40:34,461 - jittordet - INFO - Epoch [10/12] Iter [ 30/456]  eta: 0 day 00:05:01  time: 0.2251  lr: 1.0000e-03  loss: 1.4632  loss_cls: 0.7356  loss_bbox: 0.4701  loss_dfl: 0.2576
+2025-05-26 14:40:36,721 - jittordet - INFO - Epoch [10/12] Iter [ 40/456]  eta: 0 day 00:04:59  time: 0.2250  lr: 1.0000e-03  loss: 1.6622  loss_cls: 1.0241  loss_bbox: 0.4019  loss_dfl: 0.2362
+2025-05-26 14:40:36,721 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:39,021 - jittordet - INFO - Epoch [10/12] Iter [ 50/456]  eta: 0 day 00:04:56  time: 0.2251  lr: 1.0000e-03  loss: 1.5717  loss_cls: 0.9418  loss_bbox: 0.3838  loss_dfl: 0.2462
+2025-05-26 14:40:39,022 - jittordet - INFO - (train) [10/12][ 50/456]  eta: 0 day 00:04:57  time: 0.2252  lr: 1.0000e-03  loss: 1.5839  loss_cls: 0.9303  loss_bbox: 0.4060  loss_dfl: 0.2476
+2025-05-26 14:40:41,257 - jittordet - INFO - Epoch [10/12] Iter [ 60/456]  eta: 0 day 00:04:54  time: 0.2250  lr: 1.0000e-03  loss: 1.5100  loss_cls: 0.7233  loss_bbox: 0.5151  loss_dfl: 0.2716
+2025-05-26 14:40:43,528 - jittordet - INFO - Epoch [10/12] Iter [ 70/456]  eta: 0 day 00:04:52  time: 0.2250  lr: 1.0000e-03  loss: 1.5999  loss_cls: 0.9956  loss_bbox: 0.3552  loss_dfl: 0.2492
+2025-05-26 14:40:45,817 - jittordet - INFO - Epoch [10/12] Iter [ 80/456]  eta: 0 day 00:04:50  time: 0.2251  lr: 1.0000e-03  loss: 1.5101  loss_cls: 0.8180  loss_bbox: 0.4259  loss_dfl: 0.2662
+2025-05-26 14:40:45,817 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:48,121 - jittordet - INFO - Epoch [10/12] Iter [ 90/456]  eta: 0 day 00:04:47  time: 0.2251  lr: 1.0000e-03  loss: 1.6261  loss_cls: 0.8736  loss_bbox: 0.4799  loss_dfl: 0.2727
+2025-05-26 14:40:50,406 - jittordet - INFO - Epoch [10/12] Iter [100/456]  eta: 0 day 00:04:45  time: 0.2251  lr: 1.0000e-03  loss: 1.5788  loss_cls: 0.8949  loss_bbox: 0.4196  loss_dfl: 0.2644
+2025-05-26 14:40:50,407 - jittordet - INFO - (train) [10/12][100/456]  eta: 0 day 00:04:45  time: 0.2252  lr: 1.0000e-03  loss: 1.5650  loss_cls: 0.8611  loss_bbox: 0.4391  loss_dfl: 0.2648
+2025-05-26 14:40:52,640 - jittordet - INFO - Epoch [10/12] Iter [110/456]  eta: 0 day 00:04:43  time: 0.2251  lr: 1.0000e-03  loss: 1.6560  loss_cls: 1.0075  loss_bbox: 0.3943  loss_dfl: 0.2542
+2025-05-26 14:40:54,866 - jittordet - INFO - Epoch [10/12] Iter [120/456]  eta: 0 day 00:04:41  time: 0.2250  lr: 1.0000e-03  loss: 1.6950  loss_cls: 1.0201  loss_bbox: 0.4045  loss_dfl: 0.2705
+2025-05-26 14:40:54,867 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:40:57,198 - jittordet - INFO - Epoch [10/12] Iter [130/456]  eta: 0 day 00:04:38  time: 0.2251  lr: 1.0000e-03  loss: 1.5819  loss_cls: 0.7878  loss_bbox: 0.5069  loss_dfl: 0.2872
+2025-05-26 14:40:59,487 - jittordet - INFO - Epoch [10/12] Iter [140/456]  eta: 0 day 00:04:36  time: 0.2252  lr: 1.0000e-03  loss: 1.7005  loss_cls: 1.0592  loss_bbox: 0.3887  loss_dfl: 0.2525
+2025-05-26 14:41:01,757 - jittordet - INFO - Epoch [10/12] Iter [150/456]  eta: 0 day 00:04:34  time: 0.2252  lr: 1.0000e-03  loss: 1.5845  loss_cls: 0.9100  loss_bbox: 0.4219  loss_dfl: 0.2526
+2025-05-26 14:41:01,757 - jittordet - INFO - (train) [10/12][150/456]  eta: 0 day 00:04:34  time: 0.2253  lr: 1.0000e-03  loss: 1.6436  loss_cls: 0.9569  loss_bbox: 0.4233  loss_dfl: 0.2634
+2025-05-26 14:41:04,046 - jittordet - INFO - Epoch [10/12] Iter [160/456]  eta: 0 day 00:04:32  time: 0.2252  lr: 1.0000e-03  loss: 1.5296  loss_cls: 0.7900  loss_bbox: 0.4599  loss_dfl: 0.2796
+2025-05-26 14:41:04,046 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:06,322 - jittordet - INFO - Epoch [10/12] Iter [170/456]  eta: 0 day 00:04:30  time: 0.2253  lr: 1.0000e-03  loss: 1.6445  loss_cls: 0.9629  loss_bbox: 0.4229  loss_dfl: 0.2587
+2025-05-26 14:41:08,634 - jittordet - INFO - Epoch [10/12] Iter [180/456]  eta: 0 day 00:04:27  time: 0.2252  lr: 1.0000e-03  loss: 1.5336  loss_cls: 0.8328  loss_bbox: 0.4315  loss_dfl: 0.2693
+2025-05-26 14:41:10,901 - jittordet - INFO - Epoch [10/12] Iter [190/456]  eta: 0 day 00:04:25  time: 0.2251  lr: 1.0000e-03  loss: 1.6112  loss_cls: 0.8899  loss_bbox: 0.4490  loss_dfl: 0.2723
+2025-05-26 14:41:13,133 - jittordet - INFO - Epoch [10/12] Iter [200/456]  eta: 0 day 00:04:23  time: 0.2251  lr: 1.0000e-03  loss: 1.6458  loss_cls: 0.9167  loss_bbox: 0.4406  loss_dfl: 0.2884
+2025-05-26 14:41:13,133 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:13,134 - jittordet - INFO - (train) [10/12][200/456]  eta: 0 day 00:04:23  time: 0.2252  lr: 1.0000e-03  loss: 1.5930  loss_cls: 0.8785  loss_bbox: 0.4408  loss_dfl: 0.2737
+2025-05-26 14:41:15,442 - jittordet - INFO - Epoch [10/12] Iter [210/456]  eta: 0 day 00:04:20  time: 0.2252  lr: 1.0000e-03  loss: 1.6158  loss_cls: 0.8913  loss_bbox: 0.4508  loss_dfl: 0.2737
+2025-05-26 14:41:17,685 - jittordet - INFO - Epoch [10/12] Iter [220/456]  eta: 0 day 00:04:18  time: 0.2251  lr: 1.0000e-03  loss: 1.6161  loss_cls: 0.8899  loss_bbox: 0.4457  loss_dfl: 0.2804
+2025-05-26 14:41:19,938 - jittordet - INFO - Epoch [10/12] Iter [230/456]  eta: 0 day 00:04:16  time: 0.2250  lr: 1.0000e-03  loss: 1.4957  loss_cls: 0.7792  loss_bbox: 0.4646  loss_dfl: 0.2519
+2025-05-26 14:41:22,200 - jittordet - INFO - Epoch [10/12] Iter [240/456]  eta: 0 day 00:04:14  time: 0.2250  lr: 1.0000e-03  loss: 1.5574  loss_cls: 0.8298  loss_bbox: 0.4683  loss_dfl: 0.2592
+2025-05-26 14:41:22,200 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:24,464 - jittordet - INFO - Epoch [10/12] Iter [250/456]  eta: 0 day 00:04:11  time: 0.2250  lr: 1.0000e-03  loss: 1.6844  loss_cls: 1.0010  loss_bbox: 0.4209  loss_dfl: 0.2625
+2025-05-26 14:41:24,465 - jittordet - INFO - (train) [10/12][250/456]  eta: 0 day 00:04:11  time: 0.2251  lr: 1.0000e-03  loss: 1.5939  loss_cls: 0.8783  loss_bbox: 0.4501  loss_dfl: 0.2655
+2025-05-26 14:41:26,786 - jittordet - INFO - Epoch [10/12] Iter [260/456]  eta: 0 day 00:04:09  time: 0.2251  lr: 1.0000e-03  loss: 1.6226  loss_cls: 0.9345  loss_bbox: 0.4345  loss_dfl: 0.2536
+2025-05-26 14:41:29,096 - jittordet - INFO - Epoch [10/12] Iter [270/456]  eta: 0 day 00:04:07  time: 0.2250  lr: 1.0000e-03  loss: 1.6371  loss_cls: 0.9431  loss_bbox: 0.4382  loss_dfl: 0.2558
+2025-05-26 14:41:31,398 - jittordet - INFO - Epoch [10/12] Iter [280/456]  eta: 0 day 00:04:05  time: 0.2250  lr: 1.0000e-03  loss: 1.5657  loss_cls: 0.8535  loss_bbox: 0.4444  loss_dfl: 0.2678
+2025-05-26 14:41:31,398 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:33,690 - jittordet - INFO - Epoch [10/12] Iter [290/456]  eta: 0 day 00:04:02  time: 0.2251  lr: 1.0000e-03  loss: 1.6686  loss_cls: 0.9978  loss_bbox: 0.4008  loss_dfl: 0.2699
+2025-05-26 14:41:35,918 - jittordet - INFO - Epoch [10/12] Iter [300/456]  eta: 0 day 00:04:00  time: 0.2251  lr: 1.0000e-03  loss: 1.6677  loss_cls: 0.9652  loss_bbox: 0.4389  loss_dfl: 0.2636
+2025-05-26 14:41:35,919 - jittordet - INFO - (train) [10/12][300/456]  eta: 0 day 00:04:00  time: 0.2252  lr: 1.0000e-03  loss: 1.6323  loss_cls: 0.9388  loss_bbox: 0.4314  loss_dfl: 0.2621
+2025-05-26 14:41:35,919 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:38,203 - jittordet - INFO - Epoch [10/12] Iter [310/456]  eta: 0 day 00:03:58  time: 0.2251  lr: 1.0000e-03  loss: 1.5579  loss_cls: 0.9045  loss_bbox: 0.4076  loss_dfl: 0.2458
+2025-05-26 14:41:40,519 - jittordet - INFO - Epoch [10/12] Iter [320/456]  eta: 0 day 00:03:56  time: 0.2252  lr: 1.0000e-03  loss: 1.4965  loss_cls: 0.6955  loss_bbox: 0.5167  loss_dfl: 0.2843
+2025-05-26 14:41:40,519 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:42,777 - jittordet - INFO - Epoch [10/12] Iter [330/456]  eta: 0 day 00:03:53  time: 0.2251  lr: 1.0000e-03  loss: 1.6174  loss_cls: 0.9215  loss_bbox: 0.4507  loss_dfl: 0.2452
+2025-05-26 14:41:45,109 - jittordet - INFO - Epoch [10/12] Iter [340/456]  eta: 0 day 00:03:51  time: 0.2252  lr: 1.0000e-03  loss: 1.5706  loss_cls: 0.8755  loss_bbox: 0.4255  loss_dfl: 0.2696
+2025-05-26 14:41:47,388 - jittordet - INFO - Epoch [10/12] Iter [350/456]  eta: 0 day 00:03:49  time: 0.2252  lr: 1.0000e-03  loss: 1.6026  loss_cls: 0.9003  loss_bbox: 0.4370  loss_dfl: 0.2654
+2025-05-26 14:41:47,388 - jittordet - INFO - (train) [10/12][350/456]  eta: 0 day 00:03:49  time: 0.2253  lr: 1.0000e-03  loss: 1.5690  loss_cls: 0.8595  loss_bbox: 0.4475  loss_dfl: 0.2621
+2025-05-26 14:41:49,665 - jittordet - INFO - Epoch [10/12] Iter [360/456]  eta: 0 day 00:03:47  time: 0.2252  lr: 1.0000e-03  loss: 1.5976  loss_cls: 0.8924  loss_bbox: 0.4300  loss_dfl: 0.2753
+2025-05-26 14:41:49,665 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:51,973 - jittordet - INFO - Epoch [10/12] Iter [370/456]  eta: 0 day 00:03:45  time: 0.2253  lr: 1.0000e-03  loss: 1.7226  loss_cls: 1.0631  loss_bbox: 0.3944  loss_dfl: 0.2650
+2025-05-26 14:41:54,184 - jittordet - INFO - Epoch [10/12] Iter [380/456]  eta: 0 day 00:03:42  time: 0.2253  lr: 1.0000e-03  loss: 1.7116  loss_cls: 0.9819  loss_bbox: 0.4524  loss_dfl: 0.2773
+2025-05-26 14:41:56,477 - jittordet - INFO - Epoch [10/12] Iter [390/456]  eta: 0 day 00:03:40  time: 0.2254  lr: 1.0000e-03  loss: 1.6016  loss_cls: 0.9310  loss_bbox: 0.4205  loss_dfl: 0.2500
+2025-05-26 14:41:58,746 - jittordet - INFO - Epoch [10/12] Iter [400/456]  eta: 0 day 00:03:38  time: 0.2253  lr: 1.0000e-03  loss: 1.5299  loss_cls: 0.9235  loss_bbox: 0.3647  loss_dfl: 0.2417
+2025-05-26 14:41:58,746 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:41:58,746 - jittordet - INFO - (train) [10/12][400/456]  eta: 0 day 00:03:38  time: 0.2254  lr: 1.0000e-03  loss: 1.6326  loss_cls: 0.9584  loss_bbox: 0.4124  loss_dfl: 0.2619
+2025-05-26 14:42:01,055 - jittordet - INFO - Epoch [10/12] Iter [410/456]  eta: 0 day 00:03:36  time: 0.2253  lr: 1.0000e-03  loss: 1.5980  loss_cls: 0.9518  loss_bbox: 0.3911  loss_dfl: 0.2550
+2025-05-26 14:42:03,451 - jittordet - INFO - Epoch [10/12] Iter [420/456]  eta: 0 day 00:03:33  time: 0.2255  lr: 1.0000e-03  loss: 1.7199  loss_cls: 0.9162  loss_bbox: 0.5092  loss_dfl: 0.2945
+2025-05-26 14:42:05,738 - jittordet - INFO - Epoch [10/12] Iter [430/456]  eta: 0 day 00:03:31  time: 0.2255  lr: 1.0000e-03  loss: 1.5484  loss_cls: 0.7937  loss_bbox: 0.4781  loss_dfl: 0.2766
+2025-05-26 14:42:07,966 - jittordet - INFO - Epoch [10/12] Iter [440/456]  eta: 0 day 00:03:29  time: 0.2255  lr: 1.0000e-03  loss: 1.6677  loss_cls: 1.0787  loss_bbox: 0.3517  loss_dfl: 0.2373
+2025-05-26 14:42:07,966 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:42:10,309 - jittordet - INFO - Epoch [10/12] Iter [450/456]  eta: 0 day 00:03:27  time: 0.2255  lr: 1.0000e-03  loss: 1.5788  loss_cls: 0.8776  loss_bbox: 0.4400  loss_dfl: 0.2612
+2025-05-26 14:42:10,310 - jittordet - INFO - (train) [10/12][450/456]  eta: 0 day 00:03:27  time: 0.2256  lr: 1.0000e-03  loss: 1.6225  loss_cls: 0.9236  loss_bbox: 0.4340  loss_dfl: 0.2649
+2025-05-26 14:42:14,151 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_10.pkl
+2025-05-26 14:42:15,055 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:00  time: 0.0902
+2025-05-26 14:42:15,948 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0901
+2025-05-26 14:42:16,020 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:42:16,725 - jittordet - INFO - bbox_mAP: 0.044  bbox_mAP_50: 0.076  bbox_mAP_75: 0.046  bbox_mAP_s: 0.042  bbox_mAP_m: 0.051  bbox_mAP_l: 0.106
+2025-05-26 14:42:16,725 - jittordet - INFO - bbox_mAP: 0.044  bbox_mAP_50: 0.076  bbox_mAP_75: 0.046  bbox_mAP_s: 0.042  bbox_mAP_m: 0.051  bbox_mAP_l: 0.106
+2025-05-26 14:42:18,906 - jittordet - INFO - Epoch [11/12] Iter [ 10/456]  eta: 0 day 00:03:23  time: 0.2254  lr: 1.0000e-03  loss: 1.7080  loss_cls: 0.9632  loss_bbox: 0.4780  loss_dfl: 0.2667
+2025-05-26 14:42:21,276 - jittordet - INFO - Epoch [11/12] Iter [ 20/456]  eta: 0 day 00:03:21  time: 0.2255  lr: 1.0000e-03  loss: 1.5765  loss_cls: 0.8827  loss_bbox: 0.4344  loss_dfl: 0.2593
+2025-05-26 14:42:23,552 - jittordet - INFO - Epoch [11/12] Iter [ 30/456]  eta: 0 day 00:03:19  time: 0.2254  lr: 1.0000e-03  loss: 1.5611  loss_cls: 0.8963  loss_bbox: 0.4174  loss_dfl: 0.2474
+2025-05-26 14:42:25,844 - jittordet - INFO - Epoch [11/12] Iter [ 40/456]  eta: 0 day 00:03:16  time: 0.2254  lr: 1.0000e-03  loss: 1.6092  loss_cls: 0.9381  loss_bbox: 0.4108  loss_dfl: 0.2604
+2025-05-26 14:42:25,844 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:42:28,141 - jittordet - INFO - Epoch [11/12] Iter [ 50/456]  eta: 0 day 00:03:14  time: 0.2255  lr: 1.0000e-03  loss: 1.5174  loss_cls: 0.7649  loss_bbox: 0.4742  loss_dfl: 0.2783
+2025-05-26 14:42:28,142 - jittordet - INFO - (train) [11/12][ 50/456]  eta: 0 day 00:03:14  time: 0.2256  lr: 1.0000e-03  loss: 1.5944  loss_cls: 0.8890  loss_bbox: 0.4430  loss_dfl: 0.2624
+2025-05-26 14:42:30,399 - jittordet - INFO - Epoch [11/12] Iter [ 60/456]  eta: 0 day 00:03:12  time: 0.2254  lr: 1.0000e-03  loss: 1.6651  loss_cls: 0.9528  loss_bbox: 0.4380  loss_dfl: 0.2743
+2025-05-26 14:42:32,636 - jittordet - INFO - Epoch [11/12] Iter [ 70/456]  eta: 0 day 00:03:10  time: 0.2254  lr: 1.0000e-03  loss: 1.6370  loss_cls: 0.9867  loss_bbox: 0.3940  loss_dfl: 0.2563
+2025-05-26 14:42:34,910 - jittordet - INFO - Epoch [11/12] Iter [ 80/456]  eta: 0 day 00:03:07  time: 0.2254  lr: 1.0000e-03  loss: 1.6635  loss_cls: 0.9152  loss_bbox: 0.4770  loss_dfl: 0.2714
+2025-05-26 14:42:34,910 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:42:37,204 - jittordet - INFO - Epoch [11/12] Iter [ 90/456]  eta: 0 day 00:03:05  time: 0.2255  lr: 1.0000e-03  loss: 1.5143  loss_cls: 0.8102  loss_bbox: 0.4569  loss_dfl: 0.2473
+2025-05-26 14:42:39,522 - jittordet - INFO - Epoch [11/12] Iter [100/456]  eta: 0 day 00:03:03  time: 0.2255  lr: 1.0000e-03  loss: 1.6610  loss_cls: 1.1170  loss_bbox: 0.3198  loss_dfl: 0.2242
+2025-05-26 14:42:39,523 - jittordet - INFO - (train) [11/12][100/456]  eta: 0 day 00:03:03  time: 0.2256  lr: 1.0000e-03  loss: 1.6282  loss_cls: 0.9564  loss_bbox: 0.4171  loss_dfl: 0.2547
+2025-05-26 14:42:41,808 - jittordet - INFO - Epoch [11/12] Iter [110/456]  eta: 0 day 00:03:01  time: 0.2255  lr: 1.0000e-03  loss: 1.5337  loss_cls: 0.7569  loss_bbox: 0.5018  loss_dfl: 0.2750
+2025-05-26 14:42:44,023 - jittordet - INFO - Epoch [11/12] Iter [120/456]  eta: 0 day 00:02:58  time: 0.2254  lr: 1.0000e-03  loss: 1.6239  loss_cls: 1.0245  loss_bbox: 0.3577  loss_dfl: 0.2417
+2025-05-26 14:42:44,023 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:42:46,329 - jittordet - INFO - Epoch [11/12] Iter [130/456]  eta: 0 day 00:02:56  time: 0.2254  lr: 1.0000e-03  loss: 1.5142  loss_cls: 0.8806  loss_bbox: 0.3811  loss_dfl: 0.2525
+2025-05-26 14:42:48,536 - jittordet - INFO - Epoch [11/12] Iter [140/456]  eta: 0 day 00:02:54  time: 0.2254  lr: 1.0000e-03  loss: 1.4685  loss_cls: 0.8760  loss_bbox: 0.3625  loss_dfl: 0.2301
+2025-05-26 14:42:50,758 - jittordet - INFO - Epoch [11/12] Iter [150/456]  eta: 0 day 00:02:51  time: 0.2253  lr: 1.0000e-03  loss: 1.5209  loss_cls: 0.9454  loss_bbox: 0.3418  loss_dfl: 0.2338
+2025-05-26 14:42:50,759 - jittordet - INFO - (train) [11/12][150/456]  eta: 0 day 00:02:51  time: 0.2254  lr: 1.0000e-03  loss: 1.5323  loss_cls: 0.8967  loss_bbox: 0.3889  loss_dfl: 0.2466
+2025-05-26 14:42:53,004 - jittordet - INFO - Epoch [11/12] Iter [160/456]  eta: 0 day 00:02:49  time: 0.2253  lr: 1.0000e-03  loss: 1.5694  loss_cls: 0.8844  loss_bbox: 0.4131  loss_dfl: 0.2719
+2025-05-26 14:42:53,005 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:42:55,293 - jittordet - INFO - Epoch [11/12] Iter [170/456]  eta: 0 day 00:02:47  time: 0.2253  lr: 1.0000e-03  loss: 1.6236  loss_cls: 0.8720  loss_bbox: 0.4929  loss_dfl: 0.2587
+2025-05-26 14:42:57,563 - jittordet - INFO - Epoch [11/12] Iter [180/456]  eta: 0 day 00:02:45  time: 0.2253  lr: 1.0000e-03  loss: 1.5217  loss_cls: 0.8530  loss_bbox: 0.4089  loss_dfl: 0.2598
+2025-05-26 14:42:59,838 - jittordet - INFO - Epoch [11/12] Iter [190/456]  eta: 0 day 00:02:42  time: 0.2252  lr: 1.0000e-03  loss: 1.6409  loss_cls: 0.9607  loss_bbox: 0.4172  loss_dfl: 0.2630
+2025-05-26 14:43:02,095 - jittordet - INFO - Epoch [11/12] Iter [200/456]  eta: 0 day 00:02:40  time: 0.2252  lr: 1.0000e-03  loss: 1.4431  loss_cls: 0.8287  loss_bbox: 0.3629  loss_dfl: 0.2515
+2025-05-26 14:43:02,095 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:02,095 - jittordet - INFO - (train) [11/12][200/456]  eta: 0 day 00:02:40  time: 0.2253  lr: 1.0000e-03  loss: 1.5597  loss_cls: 0.8798  loss_bbox: 0.4190  loss_dfl: 0.2610
+2025-05-26 14:43:04,376 - jittordet - INFO - Epoch [11/12] Iter [210/456]  eta: 0 day 00:02:38  time: 0.2252  lr: 1.0000e-03  loss: 1.6012  loss_cls: 1.0067  loss_bbox: 0.3541  loss_dfl: 0.2404
+2025-05-26 14:43:06,656 - jittordet - INFO - Epoch [11/12] Iter [220/456]  eta: 0 day 00:02:36  time: 0.2252  lr: 1.0000e-03  loss: 1.5853  loss_cls: 0.8387  loss_bbox: 0.4726  loss_dfl: 0.2740
+2025-05-26 14:43:08,948 - jittordet - INFO - Epoch [11/12] Iter [230/456]  eta: 0 day 00:02:33  time: 0.2251  lr: 1.0000e-03  loss: 1.6444  loss_cls: 0.9667  loss_bbox: 0.4272  loss_dfl: 0.2505
+2025-05-26 14:43:11,223 - jittordet - INFO - Epoch [11/12] Iter [240/456]  eta: 0 day 00:02:31  time: 0.2251  lr: 1.0000e-03  loss: 1.5622  loss_cls: 0.8698  loss_bbox: 0.4319  loss_dfl: 0.2604
+2025-05-26 14:43:11,223 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:13,486 - jittordet - INFO - Epoch [11/12] Iter [250/456]  eta: 0 day 00:02:29  time: 0.2251  lr: 1.0000e-03  loss: 1.5991  loss_cls: 0.9113  loss_bbox: 0.4356  loss_dfl: 0.2522
+2025-05-26 14:43:13,487 - jittordet - INFO - (train) [11/12][250/456]  eta: 0 day 00:02:29  time: 0.2252  lr: 1.0000e-03  loss: 1.5984  loss_cls: 0.9186  loss_bbox: 0.4243  loss_dfl: 0.2555
+2025-05-26 14:43:15,756 - jittordet - INFO - Epoch [11/12] Iter [260/456]  eta: 0 day 00:02:27  time: 0.2252  lr: 1.0000e-03  loss: 1.6602  loss_cls: 0.9570  loss_bbox: 0.4542  loss_dfl: 0.2491
+2025-05-26 14:43:18,068 - jittordet - INFO - Epoch [11/12] Iter [270/456]  eta: 0 day 00:02:24  time: 0.2252  lr: 1.0000e-03  loss: 1.5485  loss_cls: 0.9150  loss_bbox: 0.3877  loss_dfl: 0.2458
+2025-05-26 14:43:20,305 - jittordet - INFO - Epoch [11/12] Iter [280/456]  eta: 0 day 00:02:22  time: 0.2252  lr: 1.0000e-03  loss: 1.6645  loss_cls: 0.8889  loss_bbox: 0.4954  loss_dfl: 0.2802
+2025-05-26 14:43:20,305 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:22,589 - jittordet - INFO - Epoch [11/12] Iter [290/456]  eta: 0 day 00:02:20  time: 0.2252  lr: 1.0000e-03  loss: 1.5044  loss_cls: 0.8361  loss_bbox: 0.4058  loss_dfl: 0.2626
+2025-05-26 14:43:24,871 - jittordet - INFO - Epoch [11/12] Iter [300/456]  eta: 0 day 00:02:18  time: 0.2252  lr: 1.0000e-03  loss: 1.6332  loss_cls: 0.9058  loss_bbox: 0.4587  loss_dfl: 0.2687
+2025-05-26 14:43:24,871 - jittordet - INFO - (train) [11/12][300/456]  eta: 0 day 00:02:18  time: 0.2253  lr: 1.0000e-03  loss: 1.6022  loss_cls: 0.9005  loss_bbox: 0.4404  loss_dfl: 0.2613
+2025-05-26 14:43:24,871 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:27,156 - jittordet - INFO - Epoch [11/12] Iter [310/456]  eta: 0 day 00:02:15  time: 0.2252  lr: 1.0000e-03  loss: 1.5348  loss_cls: 0.9308  loss_bbox: 0.3553  loss_dfl: 0.2488
+2025-05-26 14:43:29,412 - jittordet - INFO - Epoch [11/12] Iter [320/456]  eta: 0 day 00:02:13  time: 0.2252  lr: 1.0000e-03  loss: 1.4917  loss_cls: 0.8690  loss_bbox: 0.3733  loss_dfl: 0.2494
+2025-05-26 14:43:29,413 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:31,733 - jittordet - INFO - Epoch [11/12] Iter [330/456]  eta: 0 day 00:02:11  time: 0.2252  lr: 1.0000e-03  loss: 1.5060  loss_cls: 0.8365  loss_bbox: 0.4071  loss_dfl: 0.2624
+2025-05-26 14:43:34,031 - jittordet - INFO - Epoch [11/12] Iter [340/456]  eta: 0 day 00:02:09  time: 0.2252  lr: 1.0000e-03  loss: 1.5358  loss_cls: 0.8726  loss_bbox: 0.4074  loss_dfl: 0.2558
+2025-05-26 14:43:36,304 - jittordet - INFO - Epoch [11/12] Iter [350/456]  eta: 0 day 00:02:06  time: 0.2253  lr: 1.0000e-03  loss: 1.6076  loss_cls: 0.8628  loss_bbox: 0.4756  loss_dfl: 0.2691
+2025-05-26 14:43:36,305 - jittordet - INFO - (train) [11/12][350/456]  eta: 0 day 00:02:06  time: 0.2254  lr: 1.0000e-03  loss: 1.5352  loss_cls: 0.8743  loss_bbox: 0.4037  loss_dfl: 0.2571
+2025-05-26 14:43:38,636 - jittordet - INFO - Epoch [11/12] Iter [360/456]  eta: 0 day 00:02:04  time: 0.2254  lr: 1.0000e-03  loss: 1.4925  loss_cls: 0.8479  loss_bbox: 0.3885  loss_dfl: 0.2561
+2025-05-26 14:43:38,636 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:40,869 - jittordet - INFO - Epoch [11/12] Iter [370/456]  eta: 0 day 00:02:02  time: 0.2253  lr: 1.0000e-03  loss: 1.6016  loss_cls: 0.8504  loss_bbox: 0.4676  loss_dfl: 0.2836
+2025-05-26 14:43:43,079 - jittordet - INFO - Epoch [11/12] Iter [380/456]  eta: 0 day 00:02:00  time: 0.2252  lr: 1.0000e-03  loss: 1.5995  loss_cls: 1.0317  loss_bbox: 0.3398  loss_dfl: 0.2281
+2025-05-26 14:43:45,374 - jittordet - INFO - Epoch [11/12] Iter [390/456]  eta: 0 day 00:01:57  time: 0.2252  lr: 1.0000e-03  loss: 1.6287  loss_cls: 0.9894  loss_bbox: 0.3862  loss_dfl: 0.2531
+2025-05-26 14:43:47,670 - jittordet - INFO - Epoch [11/12] Iter [400/456]  eta: 0 day 00:01:55  time: 0.2253  lr: 1.0000e-03  loss: 1.4868  loss_cls: 0.8674  loss_bbox: 0.3823  loss_dfl: 0.2372
+2025-05-26 14:43:47,670 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:47,671 - jittordet - INFO - (train) [11/12][400/456]  eta: 0 day 00:01:55  time: 0.2254  lr: 1.0000e-03  loss: 1.5618  loss_cls: 0.9174  loss_bbox: 0.3929  loss_dfl: 0.2516
+2025-05-26 14:43:49,980 - jittordet - INFO - Epoch [11/12] Iter [410/456]  eta: 0 day 00:01:53  time: 0.2253  lr: 1.0000e-03  loss: 1.4191  loss_cls: 0.8093  loss_bbox: 0.3738  loss_dfl: 0.2360
+2025-05-26 14:43:52,222 - jittordet - INFO - Epoch [11/12] Iter [420/456]  eta: 0 day 00:01:51  time: 0.2254  lr: 1.0000e-03  loss: 1.4561  loss_cls: 0.8626  loss_bbox: 0.3513  loss_dfl: 0.2421
+2025-05-26 14:43:54,474 - jittordet - INFO - Epoch [11/12] Iter [430/456]  eta: 0 day 00:01:48  time: 0.2253  lr: 1.0000e-03  loss: 1.4981  loss_cls: 0.8712  loss_bbox: 0.3798  loss_dfl: 0.2471
+2025-05-26 14:43:56,770 - jittordet - INFO - Epoch [11/12] Iter [440/456]  eta: 0 day 00:01:46  time: 0.2254  lr: 1.0000e-03  loss: 1.6866  loss_cls: 1.0168  loss_bbox: 0.4197  loss_dfl: 0.2501
+2025-05-26 14:43:56,770 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:43:59,026 - jittordet - INFO - Epoch [11/12] Iter [450/456]  eta: 0 day 00:01:44  time: 0.2253  lr: 1.0000e-03  loss: 1.6918  loss_cls: 1.0684  loss_bbox: 0.3738  loss_dfl: 0.2496
+2025-05-26 14:43:59,026 - jittordet - INFO - (train) [11/12][450/456]  eta: 0 day 00:01:44  time: 0.2254  lr: 1.0000e-03  loss: 1.5503  loss_cls: 0.9257  loss_bbox: 0.3797  loss_dfl: 0.2450
+2025-05-26 14:44:02,950 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_11.pkl
+2025-05-26 14:44:03,853 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:00  time: 0.0900
+2025-05-26 14:44:04,746 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0899
+2025-05-26 14:44:04,818 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:44:05,525 - jittordet - INFO - bbox_mAP: 0.050  bbox_mAP_50: 0.085  bbox_mAP_75: 0.048  bbox_mAP_s: 0.039  bbox_mAP_m: 0.071  bbox_mAP_l: 0.115
+2025-05-26 14:44:05,526 - jittordet - INFO - bbox_mAP: 0.050  bbox_mAP_50: 0.085  bbox_mAP_75: 0.048  bbox_mAP_s: 0.039  bbox_mAP_m: 0.071  bbox_mAP_l: 0.115
+2025-05-26 14:44:07,733 - jittordet - INFO - Epoch [12/12] Iter [ 10/456]  eta: 0 day 00:01:40  time: 0.2253  lr: 1.0000e-04  loss: 1.4085  loss_cls: 0.7696  loss_bbox: 0.3848  loss_dfl: 0.2541
+2025-05-26 14:44:10,094 - jittordet - INFO - Epoch [12/12] Iter [ 20/456]  eta: 0 day 00:01:38  time: 0.2254  lr: 1.0000e-04  loss: 1.5697  loss_cls: 1.0156  loss_bbox: 0.3314  loss_dfl: 0.2227
+2025-05-26 14:44:12,341 - jittordet - INFO - Epoch [12/12] Iter [ 30/456]  eta: 0 day 00:01:36  time: 0.2254  lr: 1.0000e-04  loss: 1.5346  loss_cls: 0.9042  loss_bbox: 0.3877  loss_dfl: 0.2427
+2025-05-26 14:44:14,610 - jittordet - INFO - Epoch [12/12] Iter [ 40/456]  eta: 0 day 00:01:33  time: 0.2254  lr: 1.0000e-04  loss: 1.5582  loss_cls: 0.9386  loss_bbox: 0.3827  loss_dfl: 0.2369
+2025-05-26 14:44:14,610 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:44:16,896 - jittordet - INFO - Epoch [12/12] Iter [ 50/456]  eta: 0 day 00:01:31  time: 0.2254  lr: 1.0000e-04  loss: 1.5715  loss_cls: 0.9868  loss_bbox: 0.3435  loss_dfl: 0.2412
+2025-05-26 14:44:16,896 - jittordet - INFO - (train) [12/12][ 50/456]  eta: 0 day 00:01:31  time: 0.2255  lr: 1.0000e-04  loss: 1.5285  loss_cls: 0.9229  loss_bbox: 0.3660  loss_dfl: 0.2395
+2025-05-26 14:44:19,174 - jittordet - INFO - Epoch [12/12] Iter [ 60/456]  eta: 0 day 00:01:29  time: 0.2254  lr: 1.0000e-04  loss: 1.5184  loss_cls: 0.8892  loss_bbox: 0.3896  loss_dfl: 0.2396
+2025-05-26 14:44:21,431 - jittordet - INFO - Epoch [12/12] Iter [ 70/456]  eta: 0 day 00:01:27  time: 0.2253  lr: 1.0000e-04  loss: 1.5692  loss_cls: 0.8989  loss_bbox: 0.4067  loss_dfl: 0.2636
+2025-05-26 14:44:23,698 - jittordet - INFO - Epoch [12/12] Iter [ 80/456]  eta: 0 day 00:01:24  time: 0.2253  lr: 1.0000e-04  loss: 1.4313  loss_cls: 0.7814  loss_bbox: 0.3816  loss_dfl: 0.2683
+2025-05-26 14:44:23,698 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:44:25,917 - jittordet - INFO - Epoch [12/12] Iter [ 90/456]  eta: 0 day 00:01:22  time: 0.2254  lr: 1.0000e-04  loss: 1.4942  loss_cls: 0.8992  loss_bbox: 0.3603  loss_dfl: 0.2347
+2025-05-26 14:44:28,178 - jittordet - INFO - Epoch [12/12] Iter [100/456]  eta: 0 day 00:01:20  time: 0.2254  lr: 1.0000e-04  loss: 1.6163  loss_cls: 1.0052  loss_bbox: 0.3609  loss_dfl: 0.2502
+2025-05-26 14:44:28,179 - jittordet - INFO - (train) [12/12][100/456]  eta: 0 day 00:01:20  time: 0.2255  lr: 1.0000e-04  loss: 1.5259  loss_cls: 0.8948  loss_bbox: 0.3798  loss_dfl: 0.2513
+2025-05-26 14:44:30,404 - jittordet - INFO - Epoch [12/12] Iter [110/456]  eta: 0 day 00:01:18  time: 0.2254  lr: 1.0000e-04  loss: 1.3759  loss_cls: 0.7557  loss_bbox: 0.3750  loss_dfl: 0.2452
+2025-05-26 14:44:32,727 - jittordet - INFO - Epoch [12/12] Iter [120/456]  eta: 0 day 00:01:15  time: 0.2254  lr: 1.0000e-04  loss: 1.5726  loss_cls: 0.9365  loss_bbox: 0.3847  loss_dfl: 0.2514
+2025-05-26 14:44:32,727 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:44:34,983 - jittordet - INFO - Epoch [12/12] Iter [130/456]  eta: 0 day 00:01:13  time: 0.2254  lr: 1.0000e-04  loss: 1.4489  loss_cls: 0.8408  loss_bbox: 0.3686  loss_dfl: 0.2395
+2025-05-26 14:44:37,224 - jittordet - INFO - Epoch [12/12] Iter [140/456]  eta: 0 day 00:01:11  time: 0.2254  lr: 1.0000e-04  loss: 1.5614  loss_cls: 0.8559  loss_bbox: 0.4444  loss_dfl: 0.2612
+2025-05-26 14:44:39,514 - jittordet - INFO - Epoch [12/12] Iter [150/456]  eta: 0 day 00:01:09  time: 0.2254  lr: 1.0000e-04  loss: 1.3461  loss_cls: 0.7385  loss_bbox: 0.3699  loss_dfl: 0.2377
+2025-05-26 14:44:39,515 - jittordet - INFO - (train) [12/12][150/456]  eta: 0 day 00:01:09  time: 0.2255  lr: 1.0000e-04  loss: 1.4610  loss_cls: 0.8255  loss_bbox: 0.3885  loss_dfl: 0.2470
+2025-05-26 14:44:41,778 - jittordet - INFO - Epoch [12/12] Iter [160/456]  eta: 0 day 00:01:06  time: 0.2254  lr: 1.0000e-04  loss: 1.6275  loss_cls: 1.0437  loss_bbox: 0.3508  loss_dfl: 0.2330
+2025-05-26 14:44:41,778 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:44:44,111 - jittordet - INFO - Epoch [12/12] Iter [170/456]  eta: 0 day 00:01:04  time: 0.2255  lr: 1.0000e-04  loss: 1.4122  loss_cls: 0.7666  loss_bbox: 0.3953  loss_dfl: 0.2503
+2025-05-26 14:44:46,415 - jittordet - INFO - Epoch [12/12] Iter [180/456]  eta: 0 day 00:01:02  time: 0.2255  lr: 1.0000e-04  loss: 1.6085  loss_cls: 0.9352  loss_bbox: 0.4101  loss_dfl: 0.2633
+2025-05-26 14:44:48,673 - jittordet - INFO - Epoch [12/12] Iter [190/456]  eta: 0 day 00:01:00  time: 0.2254  lr: 1.0000e-04  loss: 1.4499  loss_cls: 0.7167  loss_bbox: 0.4686  loss_dfl: 0.2646
+2025-05-26 14:44:50,940 - jittordet - INFO - Epoch [12/12] Iter [200/456]  eta: 0 day 00:00:57  time: 0.2255  lr: 1.0000e-04  loss: 1.5914  loss_cls: 0.9435  loss_bbox: 0.3978  loss_dfl: 0.2501
+2025-05-26 14:44:50,940 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:44:50,940 - jittordet - INFO - (train) [12/12][200/456]  eta: 0 day 00:00:57  time: 0.2256  lr: 1.0000e-04  loss: 1.5379  loss_cls: 0.8811  loss_bbox: 0.4045  loss_dfl: 0.2523
+2025-05-26 14:44:53,186 - jittordet - INFO - Epoch [12/12] Iter [210/456]  eta: 0 day 00:00:55  time: 0.2255  lr: 1.0000e-04  loss: 1.5746  loss_cls: 0.9729  loss_bbox: 0.3649  loss_dfl: 0.2368
+2025-05-26 14:44:55,451 - jittordet - INFO - Epoch [12/12] Iter [220/456]  eta: 0 day 00:00:53  time: 0.2254  lr: 1.0000e-04  loss: 1.5244  loss_cls: 0.8836  loss_bbox: 0.3978  loss_dfl: 0.2430
+2025-05-26 14:44:57,759 - jittordet - INFO - Epoch [12/12] Iter [230/456]  eta: 0 day 00:00:51  time: 0.2254  lr: 1.0000e-04  loss: 1.5051  loss_cls: 0.8787  loss_bbox: 0.3760  loss_dfl: 0.2504
+2025-05-26 14:45:00,015 - jittordet - INFO - Epoch [12/12] Iter [240/456]  eta: 0 day 00:00:48  time: 0.2254  lr: 1.0000e-04  loss: 1.6362  loss_cls: 0.8995  loss_bbox: 0.4491  loss_dfl: 0.2876
+2025-05-26 14:45:00,015 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:02,286 - jittordet - INFO - Epoch [12/12] Iter [250/456]  eta: 0 day 00:00:46  time: 0.2254  lr: 1.0000e-04  loss: 1.5105  loss_cls: 0.7622  loss_bbox: 0.4737  loss_dfl: 0.2746
+2025-05-26 14:45:02,287 - jittordet - INFO - (train) [12/12][250/456]  eta: 0 day 00:00:46  time: 0.2255  lr: 1.0000e-04  loss: 1.5502  loss_cls: 0.8794  loss_bbox: 0.4123  loss_dfl: 0.2585
+2025-05-26 14:45:04,549 - jittordet - INFO - Epoch [12/12] Iter [260/456]  eta: 0 day 00:00:44  time: 0.2254  lr: 1.0000e-04  loss: 1.5612  loss_cls: 0.8965  loss_bbox: 0.4201  loss_dfl: 0.2446
+2025-05-26 14:45:06,811 - jittordet - INFO - Epoch [12/12] Iter [270/456]  eta: 0 day 00:00:42  time: 0.2254  lr: 1.0000e-04  loss: 1.7315  loss_cls: 1.1650  loss_bbox: 0.3269  loss_dfl: 0.2396
+2025-05-26 14:45:09,088 - jittordet - INFO - Epoch [12/12] Iter [280/456]  eta: 0 day 00:00:39  time: 0.2254  lr: 1.0000e-04  loss: 1.5843  loss_cls: 0.9807  loss_bbox: 0.3634  loss_dfl: 0.2402
+2025-05-26 14:45:09,088 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:11,325 - jittordet - INFO - Epoch [12/12] Iter [290/456]  eta: 0 day 00:00:37  time: 0.2253  lr: 1.0000e-04  loss: 1.6450  loss_cls: 1.0060  loss_bbox: 0.3877  loss_dfl: 0.2513
+2025-05-26 14:45:13,667 - jittordet - INFO - Epoch [12/12] Iter [300/456]  eta: 0 day 00:00:35  time: 0.2254  lr: 1.0000e-04  loss: 1.5616  loss_cls: 0.8706  loss_bbox: 0.4236  loss_dfl: 0.2674
+2025-05-26 14:45:13,667 - jittordet - INFO - (train) [12/12][300/456]  eta: 0 day 00:00:35  time: 0.2255  lr: 1.0000e-04  loss: 1.6167  loss_cls: 0.9837  loss_bbox: 0.3844  loss_dfl: 0.2486
+2025-05-26 14:45:13,667 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:15,919 - jittordet - INFO - Epoch [12/12] Iter [310/456]  eta: 0 day 00:00:33  time: 0.2254  lr: 1.0000e-04  loss: 1.5421  loss_cls: 0.9043  loss_bbox: 0.3889  loss_dfl: 0.2490
+2025-05-26 14:45:18,146 - jittordet - INFO - Epoch [12/12] Iter [320/456]  eta: 0 day 00:00:30  time: 0.2254  lr: 1.0000e-04  loss: 1.6131  loss_cls: 1.0700  loss_bbox: 0.3174  loss_dfl: 0.2257
+2025-05-26 14:45:18,146 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:20,419 - jittordet - INFO - Epoch [12/12] Iter [330/456]  eta: 0 day 00:00:28  time: 0.2254  lr: 1.0000e-04  loss: 1.6016  loss_cls: 0.9397  loss_bbox: 0.4072  loss_dfl: 0.2546
+2025-05-26 14:45:22,744 - jittordet - INFO - Epoch [12/12] Iter [340/456]  eta: 0 day 00:00:26  time: 0.2254  lr: 1.0000e-04  loss: 1.5814  loss_cls: 0.9335  loss_bbox: 0.3958  loss_dfl: 0.2521
+2025-05-26 14:45:25,028 - jittordet - INFO - Epoch [12/12] Iter [350/456]  eta: 0 day 00:00:24  time: 0.2254  lr: 1.0000e-04  loss: 1.5671  loss_cls: 0.8805  loss_bbox: 0.4333  loss_dfl: 0.2532
+2025-05-26 14:45:25,028 - jittordet - INFO - (train) [12/12][350/456]  eta: 0 day 00:00:24  time: 0.2255  lr: 1.0000e-04  loss: 1.5811  loss_cls: 0.9456  loss_bbox: 0.3885  loss_dfl: 0.2469
+2025-05-26 14:45:27,324 - jittordet - INFO - Epoch [12/12] Iter [360/456]  eta: 0 day 00:00:21  time: 0.2254  lr: 1.0000e-04  loss: 1.5161  loss_cls: 0.7563  loss_bbox: 0.4863  loss_dfl: 0.2735
+2025-05-26 14:45:27,324 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:29,587 - jittordet - INFO - Epoch [12/12] Iter [370/456]  eta: 0 day 00:00:19  time: 0.2253  lr: 1.0000e-04  loss: 1.5022  loss_cls: 0.8967  loss_bbox: 0.3640  loss_dfl: 0.2415
+2025-05-26 14:45:31,884 - jittordet - INFO - Epoch [12/12] Iter [380/456]  eta: 0 day 00:00:17  time: 0.2254  lr: 1.0000e-04  loss: 1.6718  loss_cls: 0.9491  loss_bbox: 0.4586  loss_dfl: 0.2640
+2025-05-26 14:45:34,200 - jittordet - INFO - Epoch [12/12] Iter [390/456]  eta: 0 day 00:00:15  time: 0.2254  lr: 1.0000e-04  loss: 1.5167  loss_cls: 0.8281  loss_bbox: 0.4466  loss_dfl: 0.2419
+2025-05-26 14:45:36,483 - jittordet - INFO - Epoch [12/12] Iter [400/456]  eta: 0 day 00:00:12  time: 0.2254  lr: 1.0000e-04  loss: 1.4763  loss_cls: 0.8033  loss_bbox: 0.4240  loss_dfl: 0.2489
+2025-05-26 14:45:36,483 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:36,483 - jittordet - INFO - (train) [12/12][400/456]  eta: 0 day 00:00:12  time: 0.2255  lr: 1.0000e-04  loss: 1.5366  loss_cls: 0.8467  loss_bbox: 0.4359  loss_dfl: 0.2540
+2025-05-26 14:45:38,759 - jittordet - INFO - Epoch [12/12] Iter [410/456]  eta: 0 day 00:00:10  time: 0.2254  lr: 1.0000e-04  loss: 1.5568  loss_cls: 0.9166  loss_bbox: 0.3930  loss_dfl: 0.2473
+2025-05-26 14:45:41,017 - jittordet - INFO - Epoch [12/12] Iter [420/456]  eta: 0 day 00:00:08  time: 0.2254  lr: 1.0000e-04  loss: 1.3476  loss_cls: 0.6756  loss_bbox: 0.4308  loss_dfl: 0.2412
+2025-05-26 14:45:43,265 - jittordet - INFO - Epoch [12/12] Iter [430/456]  eta: 0 day 00:00:06  time: 0.2253  lr: 1.0000e-04  loss: 1.5434  loss_cls: 0.9831  loss_bbox: 0.3256  loss_dfl: 0.2348
+2025-05-26 14:45:45,561 - jittordet - INFO - Epoch [12/12] Iter [440/456]  eta: 0 day 00:00:03  time: 0.2253  lr: 1.0000e-04  loss: 1.5074  loss_cls: 0.9038  loss_bbox: 0.3633  loss_dfl: 0.2403
+2025-05-26 14:45:45,561 - jittordet - INFO - experiment name: gfl_r50_fpn_coco_1x_enhanced_20250526_142350
+2025-05-26 14:45:47,808 - jittordet - INFO - Epoch [12/12] Iter [450/456]  eta: 0 day 00:00:01  time: 0.2253  lr: 1.0000e-04  loss: 1.5095  loss_cls: 0.8591  loss_bbox: 0.4008  loss_dfl: 0.2496
+2025-05-26 14:45:47,809 - jittordet - INFO - (train) [12/12][450/456]  eta: 0 day 00:00:01  time: 0.2254  lr: 1.0000e-04  loss: 1.4930  loss_cls: 0.8676  loss_bbox: 0.3827  loss_dfl: 0.2427
+2025-05-26 14:45:51,680 - jittordet - INFO - save checkpoint to /root/data-fs/GFocalV2/GFocalV2Jittor/comparison_results/jittor/work_dirs/20250526_142350_train/epoch_12.pkl
+2025-05-26 14:45:52,580 - jittordet - INFO - (val) [1/1][10/20]  eta: 0 day 00:00:00  time: 0.0898
+2025-05-26 14:45:53,473 - jittordet - INFO - (val) [1/1][20/20]  eta: 0 day 00:00:00  time: 0.0897
+2025-05-26 14:45:53,545 - jittordet - INFO - Evaluating bbox...
+2025-05-26 14:45:54,253 - jittordet - INFO - bbox_mAP: 0.051  bbox_mAP_50: 0.089  bbox_mAP_75: 0.055  bbox_mAP_s: 0.044  bbox_mAP_m: 0.075  bbox_mAP_l: 0.116
+2025-05-26 14:45:54,254 - jittordet - INFO - bbox_mAP: 0.051  bbox_mAP_50: 0.089  bbox_mAP_75: 0.055  bbox_mAP_s: 0.044  bbox_mAP_m: 0.075  bbox_mAP_l: 0.116
+
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.39s).
+Accumulating evaluation results...
+DONE (t=0.28s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.054
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.035
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.021
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.057
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.072
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.098
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.098
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.098
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.025
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.096
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.218
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.43s).
+Accumulating evaluation results...
+DONE (t=0.31s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.038
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.071
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.033
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.038
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.055
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.098
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.169
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.169
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.169
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.070
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.145
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.348
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.36s).
+Accumulating evaluation results...
+DONE (t=0.31s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.044
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.076
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.046
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.042
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.051
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.106
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.153
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.153
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.153
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.067
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.116
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.305
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.35s).
+Accumulating evaluation results...
+DONE (t=0.32s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.050
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.085
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.048
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.039
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.071
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.115
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.168
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.168
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.168
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.063
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.154
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.333
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.35s).
+Accumulating evaluation results...
+DONE (t=0.32s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.051
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.089
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.055
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.044
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.075
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.116
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.187
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.187
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.187
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.072
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.184
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.365
