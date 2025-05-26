@@ -348,7 +348,7 @@ python compare_gfl_inference.py \
 
 | 指标 | Jittor | PyTorch | 提升比例 |
 |------|--------|---------|---------|
-| 平均迭代时间(秒) | 0.1822 | 0.2118 | 13.96% |
+| 平均迭代时间(秒) | 0.2298 | 0.2082 | -10.36% |
 
 ![速度对比](./framework_comparison/visualization/speed_comparison.png)
 
