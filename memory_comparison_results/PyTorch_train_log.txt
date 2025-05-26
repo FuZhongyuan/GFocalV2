@@ -1,0 +1,11 @@
+===== STDOUT =====
+
+===== STDERR =====
+usage: train.py [-h] [--work-dir WORK_DIR] [--amp] [--auto-scale-lr]
+                [--resume [RESUME]]
+                [--cfg-options CFG_OPTIONS [CFG_OPTIONS ...]]
+                [--launcher {none,pytorch,slurm,mpi}]
+                [--local_rank LOCAL_RANK]
+                config
+train.py: error: the following arguments are required: config
+

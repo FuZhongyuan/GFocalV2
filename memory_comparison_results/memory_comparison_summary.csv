@@ -1,0 +1,5 @@
+framework,mode,max_ram_mb,avg_ram_mb,max_gpu_mb,avg_gpu_mb,duration_seconds
+Jittor,train,0.59375,0.59375,0,0.0,1335.7867364883423
+PyTorch,train,0.59375,0.59375,0,0.0,3.4110116958618164
+Jittor,test,0.5859375,0.5859375,0,0.0,16.470409154891968
+PyTorch,test,0.59375,0.59375,0,0.0,12.570619344711304

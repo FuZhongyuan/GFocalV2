@@ -282,11 +282,11 @@ def main():
     
     # 运行测试命令（为了演示，我们只运行几秒钟）
     # 实际使用时可以移除--max-iters参数或调整为更大的值
-    jittor_train_cmd += " --max-iters 20"  # 仅运行20次迭代
-    pytorch_train_cmd += " --max-iters 20"  # 仅运行20次迭代
+    # jittor_train_cmd += " --max-iters 20"  # 仅运行20次迭代
+    # pytorch_train_cmd += " --max-iters 20"  # 仅运行20次迭代
     
-    jittor_test_cmd += " --eval-options 'max_det=100'"  # 限制检测数量
-    pytorch_test_cmd += " --eval-options 'max_det=100'"  # 限制检测数量
+    # jittor_test_cmd += " --eval-options 'max_det=100'"  # 限制检测数量
+    # pytorch_test_cmd += " --eval-options 'max_det=100'"  # 限制检测数量
     
     # 运行Jittor训练并监控
     run_command_with_monitoring(jittor_train_cmd, "Jittor", "train", jittor_dir)

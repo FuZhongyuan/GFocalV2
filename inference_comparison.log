@@ -94,3 +94,9 @@
 2025-05-26 12:49:41,922 - INFO - mAP对比图已保存到 /root/data-fs/GFocalV2/inference_comparison_results/ap_comparison.png
 2025-05-26 12:49:41,923 - INFO - 推理对比报告已保存到 /root/data-fs/GFocalV2/inference_comparison_results/inference_comparison_report.md
 2025-05-26 12:49:41,923 - INFO - 推理对比完成! 报告保存在: /root/data-fs/GFocalV2/inference_comparison_results/inference_comparison_report.md
+2025-05-26 16:36:23,244 - INFO - 开始GFL框架推理性能对比测试
+2025-05-26 16:36:23,244 - INFO - 参数: Namespace(batch_size=1, jittor_checkpoint='/root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl', jittor_log=None, jittor_only=False, num_samples=None, output_dir='inference_comparison_results', pytorch_checkpoint='/root/data-fs/GFocalV2/GFocalV2Pytorch/work_dirs/20250520_111249/epoch_12.pth', pytorch_log=None, pytorch_only=False)
+2025-05-26 16:36:23,245 - INFO - 开始在 jittor 框架下运行推理测试...
+2025-05-26 16:36:23,245 - INFO - 使用检查点: /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl
+2025-05-26 16:36:23,245 - INFO - 运行命令: cd /root/data-fs/GFocalV2/GFocalV2Jittor && python tools/test.py /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/gfl_r50_fpn_coco_1x_enhanced.yml /root/data-fs/GFocalV2/GFocalV2Jittor/work_dirs/20250520_110958/epoch_12.pkl --work-dir /root/data-fs/GFocalV2/inference_results/gfl_jittor_20250526_163623
+2025-05-26 16:36:23,245 - INFO - 日志将保存到: /root/data-fs/GFocalV2/inference_results/gfl_jittor_20250526_163623/inference.log
