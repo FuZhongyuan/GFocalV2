@@ -33,8 +33,28 @@ def box_iou(box1, box2):
     area1 = box_area(box1.permute(1,0))
     area2 = box_area(box2.permute(1,0))
 
+    # a=box1[:, None, 2:]
+    # b=box2[:, 2:]
     # inter(N,M) = (rb(N,M,2) - lt(N,M,2)).clamp(0).prod(2)
-    inter = (jt.minimum(box1[:, None, 2:], box2[:, 2:]) - jt.maximum(box1[:, None, :2], box2[:, :2])).clamp(0).prod(2)
+    # inter = (jt.minimum(box1[:, None, 2:], box2[:, 2:]) - jt.maximum(box1[:, None, :2], box2[:, :2])).clamp(0).prod(2)
+    # 手动进行维度适配
+    box1_expanded = box1[:, None, :4]  # 形状变为 [n_boxes1, 1, 4]
+    box2_expanded = box2[None, :, :4]  # 形状变为 [1, n_boxes2, 4]
+
+    # 计算交集的右下角坐标
+    min_xy = jt.minimum(box1_expanded[..., 2:], box2_expanded[..., 2:])  # 取较小的x2和y2
+
+    # 计算交集的左上角坐标
+    max_xy = jt.maximum(box1_expanded[..., :2], box2_expanded[..., :2])  # 取较大的x1和y1
+
+    # 计算交集区域的宽度和高度，并确保非负
+    inter_xy = (min_xy - max_xy).clamp(0)
+
+    # 计算交集面积
+    inter = inter_xy[..., 0] * inter_xy[..., 1]
+
+    # 或者，可以使用 prod(2) 来计算两个维度的乘积
+    # inter = inter_xy.prod(2)
     return inter / (area1[:, None] + area2 - inter)  # iou = inter / (area1 + area2 - inter)
 
 

@@ -515,4 +515,4 @@ python compare_gfl_inference.py \
 
 ### 注意事项
 
-在使用独立实现的GFLv2代码时，建议先使用PyTorch版本进行测试。Jittor版本由于尚有bug，暂不建议用于实际项目中。
+在使用独立实现的GFLv2代码时，建议先使用PyTorch版本进行测试。Jittor版本由于尚有bug，暂不建议用于实际项目中。 

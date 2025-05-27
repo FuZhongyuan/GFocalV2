@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch import nn
 import time
 import datetime
-from torch import amp
+# from torch import amp
 from torch.utils.data.distributed import DistributedSampler
 from datasets.coco import COCODataSets
 from nets.retinanet import GFocal
@@ -82,7 +82,8 @@ class DDPMixSolver(object):
         self.model = nn.parallel.distributed.DistributedDataParallel(model,
                                                                      device_ids=[local_rank],
                                                                      output_device=local_rank)
-        self.scaler = amp.GradScaler('cuda',enabled=True) if self.optim_cfg['amp'] else None
+        # self.scaler = amp.GradScaler('cuda',enabled=True) if self.optim_cfg['amp'] else None
+        self.scaler = None
         self.optimizer = optimizer
         self.ema = ModelEMA(self.model)
         self.lr_adjuster = IterWarmUpCosineDecayMultiStepLRAdjust(init_lr=self.optim_cfg['lr'],
@@ -124,18 +125,18 @@ class DDPMixSolver(object):
                 targets_tensor = targets_tensor.to(self.device)
             self.optimizer.zero_grad()
             if self.scaler is not None:
-                with amp.autocast(device_type='cuda',enabled=True):
-                    out = self.model(img_tensor,
-                                     targets={"target": targets_tensor, "batch_len": batch_len})
-                    loss_qfl = out['loss_qfl']
-                    loss_iou = out['loss_iou']
-                    loss_dfl = out['loss_dfl']
-                    match_num = out['match_num']
-                    loss = loss_qfl + loss_iou + loss_dfl
-                    self.scaler.scale(loss).backward()
-                    self.lr_adjuster(self.optimizer, i, epoch)
-                    self.scaler.step(self.optimizer)
-                    self.scaler.update()
+                # with amp.autocast(device_type='cuda',enabled=True):
+                out = self.model(img_tensor,
+                                    targets={"target": targets_tensor, "batch_len": batch_len})
+                loss_qfl = out['loss_qfl']
+                loss_iou = out['loss_iou']
+                loss_dfl = out['loss_dfl']
+                match_num = out['match_num']
+                loss = loss_qfl + loss_iou + loss_dfl
+                self.scaler.scale(loss).backward()
+                self.lr_adjuster(self.optimizer, i, epoch)
+                self.scaler.step(self.optimizer)
+                self.scaler.update()
             else:
                 out = self.model(img_tensor,
                                  targets={"target": targets_tensor, "batch_len": batch_len})

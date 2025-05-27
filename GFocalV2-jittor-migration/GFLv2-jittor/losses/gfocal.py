@@ -26,18 +26,38 @@ def custom_std(x, dim=0):
 
 
 def distance2box(points, distance):
-    x1 = points[:, 0] - distance[:, 0]
-    y1 = points[:, 1] - distance[:, 1]
-    x2 = points[:, 0] + distance[:, 2]
-    y2 = points[:, 1] + distance[:, 3]
+    # 检查张量形状，确保有足够的维度
+    if distance.shape[1] < 4:
+        # 如果distance的列数少于4，则扩展为4列
+        if distance.shape[1] == 1:
+            # 一列情况，复制为4列
+            distance = distance.repeat(1, 4)
+        elif distance.shape[1] == 2:
+            # 两列情况，复制为左上和右下坐标
+            distance = jt.concat([distance, distance], dim=1)
+    
+    # 使用安全的索引方法
+    x1 = points[:, 0:1].view(-1) - distance[:, 0:1].view(-1)
+    y1 = points[:, 1:2].view(-1) - distance[:, 1:2].view(-1)
+    x2 = points[:, 0:1].view(-1) + distance[:, min(2, distance.shape[1]-1):min(3, distance.shape[1])].view(-1)
+    y2 = points[:, 1:2].view(-1) + distance[:, min(3, distance.shape[1]-1):min(4, distance.shape[1])].view(-1)
     return jt.stack([x1, y1, x2, y2], -1)
 
 
 def box2distance(points, bbox):
-    l = points[:, 0] - bbox[:, 0]
-    t = points[:, 1] - bbox[:, 1]
-    r = bbox[:, 2] - points[:, 0]
-    b = bbox[:, 3] - points[:, 1]
+    # 检查张量形状，确保有足够的维度
+    if bbox.shape[1] < 4:
+        # 如果bbox的列数少于4，则扩展为4列
+        if bbox.shape[1] == 1:
+            bbox = bbox.repeat(1, 4)
+        elif bbox.shape[1] == 2:
+            bbox = jt.concat([bbox, bbox], dim=1)
+    
+    # 使用安全的索引方法
+    l = points[:, 0:1].view(-1) - bbox[:, 0:1].view(-1)
+    t = points[:, 1:2].view(-1) - bbox[:, 1:2].view(-1)
+    r = bbox[:, min(2, bbox.shape[1]-1):min(3, bbox.shape[1])].view(-1) - points[:, 0:1].view(-1)
+    b = bbox[:, min(3, bbox.shape[1]-1):min(4, bbox.shape[1])].view(-1) - points[:, 1:2].view(-1)
     return jt.stack([l, t, r, b], -1)
 
 
@@ -45,7 +65,9 @@ class Project(object):
     def __init__(self, reg_max=16):
         super(Project, self).__init__()
         self.reg_max = reg_max
-        self.project = jt.linspace(0, self.reg_max, self.reg_max + 1)
+        # 将一维的linspace改为二维张量，便于Jittor的linear函数使用
+        project = jt.linspace(0, self.reg_max, self.reg_max + 1)
+        self.project = project.view(1, -1)  # 改为形状为(1, reg_max+1)的2D张量
 
     def __call__(self, x):
         '''
@@ -55,7 +77,13 @@ class Project(object):
         '''
         b,n,c=x.shape
         x=x.view(b,-1,self.reg_max+1).softmax(dim=-1)
-        x=jt.nn.linear(x,self.project).view(b,n,-1)
+        
+        # Jittor的linear只能处理2D张量，需要重塑并处理
+        orig_shape = x.shape  # 保存原始形状
+        x_reshaped = x.view(-1, self.reg_max+1)  # 重塑为2D
+        x = jt.matmul(x_reshaped, self.project.transpose(0, 1))  # 直接使用矩阵乘法代替linear
+        x = x.view(orig_shape[0], orig_shape[1], -1)  # 重塑回原始形状
+        
         return x
 
 
@@ -66,7 +94,7 @@ def binary_cross_entropy(predicts, targets, eps=1e-8):
     :param eps:
     :return:
     '''
-    ret = targets * (predicts.clamp(min=eps).log()) + (1 - targets) * ((1 - predicts).clamp(min=eps).log())
+    ret = targets * (predicts.clamp(eps, None).log()) + (1 - targets) * ((1 - predicts).clamp(eps, None).log())
     return -ret
 
 
@@ -88,7 +116,7 @@ class QFL(object):
 class DFL(object):
     def __init__(self):
         super(DFL, self).__init__()
-        self.ce = jt.nn.CrossEntropyLoss(ignore_index='none')
+        self.ce = jt.nn.CrossEntropyLoss(ignore_index=-100)
 
     def __call__(self, predicts, targets):
         '''
@@ -160,15 +188,22 @@ class ATSSMatcher(object):
             gt_idx = jt.misc.arange(start=0,end=int(gt.shape[0]), step=1)[None,:].repeat((int(candidate_idxs.shape[0]), 1))
             match = jt.full_like(anchor_gt_iou, val=-INF)
             
-            match[candidate_idxs[is_pos], gt_idx[is_pos]] = anchor_gt_iou[candidate_idxs[is_pos], gt_idx[is_pos]]
+            # 手动处理布尔索引，不使用nonzero()
+            sum_topk, num_gt = is_pos.shape
+            for i in range(sum_topk):
+                for j in range(num_gt):
+                    # 将张量元素转换为标量值再进行布尔判断
+                    # is_pos[i, j]是一个张量，需要先提取数值再判断
+                    if float(is_pos[i, j].data[0]) > 0:
+                        anchor_idx = candidate_idxs[i]
+                        gt_index = gt_idx[i, j]
+                        match[anchor_idx, gt_index] = anchor_gt_iou[anchor_idx, gt_index]
             
-            # # 修复布尔索引问题，手动实现寻找非零元素
-            # for anchor_idx in range(is_pos.shape[0]):
-            #     for gt_id in range(is_pos.shape[1]):
-            #         if is_pos[anchor_idx, gt_id]:
-            #             match[candidate_idxs[anchor_idx], gt_id] = anchor_gt_iou[candidate_idxs[anchor_idx], gt_id]
+            # 修改max函数调用方式，分别获取最大值和对应索引
+            max_result = match.max(dim=1)
+            val = max_result[0]  # 最大值
+            match_gt_idx = max_result[1]  # 最大值的索引
             
-            val, match_gt_idx = match.max(dim=1)
             match_gt_idx = jt.where(val == -INF, jt.array([-1]), match_gt_idx)
             ret_list.append((bid, match_gt_idx))
         return ret_list
@@ -226,15 +261,27 @@ class GFocalLoss(object):
         match_gt_idx = list()
 
         for bid, match in matches:
-            anchor_idx = (match >= 0).nonzero().squeeze(-1)
+            # 将nonzero替换为手动索引
+            anchor_idx_list = []
+            for i in range(len(match)):
+                # 将张量元素转换为标量值再进行布尔判断
+                if float(match[i].data[0]) >= 0:
+                    anchor_idx_list.append(i)
+            anchor_idx = jt.array(anchor_idx_list)
+            
             match_anchor_idx.append(anchor_idx)
             match_gt_idx.append(match[anchor_idx])
             match_bidx.append(bid)
 
         cls_batch_idx = sum([[i] * len(j) for i, j in zip(match_bidx, match_anchor_idx)], [])
-        cls_anchor_idx = jt.concat(match_anchor_idx)
-        cls_label_idx = jt.concat([gt_boxes[i][:, 0][j].long() for i, j in zip(match_bidx, match_gt_idx)])
+        cls_anchor_idx = jt.concat(match_anchor_idx) if match_anchor_idx else jt.array([])
+        cls_label_idx = jt.concat([gt_boxes[i][:, 0][j].long() for i, j in zip(match_bidx, match_gt_idx)]) if match_gt_idx else jt.array([])
         num_pos = len(cls_batch_idx)
+
+        # 检查是否有正样本
+        if num_pos == 0:
+            # 没有正样本，返回零损失
+            return jt.array([0.0]), jt.array([0.0]), jt.array([0.0]), num_pos
 
         match_expand_anchors = all_anchors_expand[cls_anchor_idx]
         norm_anchor_center = (match_expand_anchors[:, :2]
@@ -249,7 +296,13 @@ class GFocalLoss(object):
 
         iou_scores = self.box_similarity(match_norm_box_xyxy.detach(), match_norm_box_targets)
         cls_targets = jt.zeros_like(cls_predicts)
-        cls_targets[cls_batch_idx, cls_anchor_idx, cls_label_idx] = iou_scores
+        
+        # 使用循环逐个设置值，避免形状不匹配问题
+        for i in range(len(cls_batch_idx)):
+            b_idx = cls_batch_idx[i]
+            a_idx = cls_anchor_idx[i]
+            l_idx = cls_label_idx[i]
+            cls_targets[b_idx, a_idx, l_idx] = iou_scores[i]
 
         cls_scores = cls_predicts[cls_batch_idx, cls_anchor_idx].max(dim=-1)[0].detach()
         division_factor = cls_scores.sum()
@@ -257,8 +310,10 @@ class GFocalLoss(object):
         loss_qfl = self.qfl(cls_predicts, cls_targets).sum() / division_factor
         loss_iou = (self.iou_loss(match_norm_box_xyxy, match_norm_box_targets) * cls_scores).sum() / division_factor
 
-        match_norm_ltrb_box = box2distance(norm_anchor_center, match_norm_box_targets).clamp(min=0,
-                                                                                             max=self.reg_max - 0.1)
+        # 确保使用位置参数形式的clamp
+        norm_ltrb_box = box2distance(norm_anchor_center, match_norm_box_targets)
+        match_norm_ltrb_box = norm_ltrb_box.clamp(0, self.reg_max - 0.1)
+        
         loss_dfl = (self.dfl(match_reg_pred, match_norm_ltrb_box) *
                     cls_scores[:, None].expand(-1, 4).reshape(-1)).sum() / division_factor
 

@@ -135,15 +135,15 @@ class DDPMixSolver(object):
                 loss_dfl = out['loss_dfl']
                 match_num = out['match_num']
                 loss = loss_qfl + loss_iou + loss_dfl
-                loss.backward()
+                self.optimizer.backward(loss)
                 self.lr_adjuster(self.optimizer, i, epoch)
                 self.optimizer.step()
             self.ema.update(self.model)
             lr = self.optimizer.param_groups[0]['lr']
-            self.loss_logger.update(loss.item())
-            self.iou_loss_logger.update(loss_iou.item())
-            self.box_loss_logger.update(loss_dfl.item())
-            self.cls_loss_logger.update(loss_qfl.item())
+            self.loss_logger.update(float(loss))
+            self.iou_loss_logger.update(float(loss_iou))
+            self.box_loss_logger.update(float(loss_dfl))
+            self.cls_loss_logger.update(float(loss_qfl))
             self.match_num_logger.update(match_num)
             str_template = \
                 "epoch:{:2d}|match_num:{:0>4d}|size:{:3d}|loss:{:6.4f}|qfl:{:6.4f}|dfl:{:6.4f}|iou:{:6.4f}|lr:{:8.6f}"
@@ -159,11 +159,11 @@ class DDPMixSolver(object):
                     lr)
                 )
         self.ema.update_attr(self.model)
-        loss_avg = reduce_sum(jt.Var(self.loss_logger.avg())) / self.gpu_num
-        iou_loss_avg = reduce_sum(jt.Var(self.iou_loss_logger.avg())).item() / self.gpu_num
-        box_loss_avg = reduce_sum(jt.Var(self.box_loss_logger.avg())).item() / self.gpu_num
-        cls_loss_avg = reduce_sum(jt.Var(self.cls_loss_logger.avg())).item() / self.gpu_num
-        match_num_sum = reduce_sum(jt.Var(self.match_num_logger.sum())).item() / self.gpu_num
+        loss_avg = float(reduce_sum(jt.Var(self.loss_logger.avg()))) / self.gpu_num
+        iou_loss_avg = float(reduce_sum(jt.Var(self.iou_loss_logger.avg()))) / self.gpu_num
+        box_loss_avg = float(reduce_sum(jt.Var(self.box_loss_logger.avg()))) / self.gpu_num
+        cls_loss_avg = float(reduce_sum(jt.Var(self.cls_loss_logger.avg()))) / self.gpu_num
+        match_num_sum = float(reduce_sum(jt.Var(self.match_num_logger.sum()))) / self.gpu_num
         if self.local_rank == 0:
             final_template = "epoch:{:2d}|match_num:{:d}|loss:{:6.4f}|qfl:{:6.4f}|dfl:{:6.4f}|iou:{:6.4f}"
             print(final_template.format(
